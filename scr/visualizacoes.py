@@ -14,6 +14,7 @@ def plotar_contabilidade_co2(
     caminho_saida: Path | str,
     *,
     titulo: str = "Contabilidade setorial de CO2",
+    metadados: dict[str, str] | None = None,
 ) -> tuple[plt.Figure, plt.Axes]:
     """Gera e salva barras de consumo/renda e linha de producao por atividade.
 
@@ -81,5 +82,5 @@ def plotar_contabilidade_co2(
 
     destino = Path(caminho_saida)
     destino.parent.mkdir(parents=True, exist_ok=True)
-    figura.savefig(destino, dpi=300, bbox_inches="tight")
+    figura.savefig(destino, dpi=300, bbox_inches="tight", metadata=metadados)
     return figura, eixo

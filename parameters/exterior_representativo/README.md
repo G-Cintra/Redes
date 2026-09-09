@@ -17,3 +17,5 @@ L_exterior = L_Brasil (MIP brasileira de 2015)
 Assim, o exterior representativo inicialmente possui a mesma intensidade direta de CO2 e a mesma tecnologia de produção do Brasil. Essa hipótese permite calcular emissões incorporadas em importações sem uma MRIO global, mas não representa parceiros comerciais reais.
 
 Para usar outro cenário, substitua os CSVs mantendo os 67 códigos de atividade, sua ordem e unidades. Documente neste arquivo a fonte, o ano, a concordância setorial e qualquer transformação aplicada.
+
+Os dois CSVs têm SHA-256 registrado em `SHA256SUMS`, verificado antes de cada leitura. Ao substituir o cenário, revise os dados e atualize explicitamente esse manifesto. O script de geração atualiza o manifesto junto aos CSVs do cenário inicial; o carregamento nunca recalcula o hash esperado para aceitar alterações.
