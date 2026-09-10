@@ -1,2 +1,0 @@
-"""Funções reutilizáveis do projeto."""
-

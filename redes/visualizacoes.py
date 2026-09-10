@@ -1,4 +1,4 @@
-"""Visualizacoes reutilizaveis do projeto."""
+"""Visualizações reutilizáveis do projeto."""
 
 from __future__ import annotations
 

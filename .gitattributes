@@ -1,3 +1,2 @@
-# Preserve os bytes do CSV cujo SHA-256 está registrado no repositório.
-references/sanguinet_azzoni_2024/coeficientes_co2_2011_2018.csv -text
-parameters/exterior_representativo/*.csv -text
+# Os hashes das entradas canônicas dependem de seus bytes exatos.
+raw/*.csv -text

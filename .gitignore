@@ -3,3 +3,4 @@ planilhas_de_aula/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
+outputs/
