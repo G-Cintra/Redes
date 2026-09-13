@@ -1,42 +1,53 @@
-# Redes
+# Rede intersetorial de emissões da produção brasileira
 
-Análise da Matriz de Insumo-Produto brasileira de 2015 e contabilidade setorial de CO₂ por produção, consumo e renda.
+> Como se organiza a rede intersetorial de emissões atribuídas à produção brasileira, quais setores ocupam posições mais centrais e de maior alcance, e em que medida os fluxos de emissões se concentram em determinados setores?
 
-O notebook [analise_matriz_insumo_produto.ipynb](analise_matriz_insumo_produto.ipynb) é o roteiro principal. Ele mostra as entradas, as hipóteses, as transformações da MIP, os cálculos de Leontief e Ghosh, os resultados e a figura final.
+Este trabalho parte dessa pergunta para estudar as relações entre 67 setores da economia brasileira, com dados de 2015. A entrega tem como objetivo validar o problema de pesquisa para a disciplina de redes. A preparação das matrizes pela análise insumo-produto está concluída para o recorte adotado. A análise de redes ainda está em estágio exploratório: os indicadores e suas interpretações estão sendo avaliados.
 
-## Executar
+[Explorar os resultados](https://g-cintra.github.io/Redes/)
 
-No Windows:
+## Organização do trabalho
+
+- [**Matriz insumo-produto**](analise_matriz_insumo_produto.ipynb): organiza os dados do IBGE e calcula as matrizes de emissões. As hipóteses e as contas ficam explícitas no notebook.
+- [**Análise de redes**](analise_redes_emissoes.ipynb): utiliza a matriz de emissões atribuídas à produção brasileira para explorar concentração, centralidade, alcance e dependência entre setores.
+
+As conexões atribuem emissões de um setor produtor à demanda final por bens de outro setor, incluindo efeitos diretos e indiretos e a produção destinada à exportação. Não representam transações diretas entre empresas. O interesse é distinguir quem emite mais, quem distribui suas emissões por mais destinos relevantes e quais destinos dependem fortemente de determinados emissores.
+
+## Exploração inicial
+
+**1. Estrutura da rede.** Cada nó representa um setor. O tamanho indica suas emissões totais; a cor, o número efetivo de destinos; e a espessura das ligações, o peso da atribuição de emissões. A figura mostra as 75 maiores ligações para facilitar a leitura; os indicadores utilizam todas as ligações positivas entre setores. A posição dos nós não tem significado econômico.
+
+[![Rede intersetorial com disposição por forças.](docs/imagens/rede_forcas.png)](docs/imagens/rede_forcas.png)
+
+**2. Concentração dos emissores.** As curvas acumulam a participação dos setores, do maior para o menor emissor. Comparam as emissões totais, incluindo atribuições ao próprio setor, com a parcela atribuída a outros setores.
+
+[![Participação acumulada dos maiores emissores no total e no componente intersetorial.](docs/imagens/concentracao_emissores.png)](docs/imagens/concentracao_emissores.png)
+
+**3. Volume e alcance.** Cada ponto é um setor. O número efetivo de destinos considera como suas atribuições intersetoriais se distribuem: cresce quando os pesos estão menos concentrados em poucos destinos. A cor indica a maior participação desse emissor nas emissões intersetoriais recebidas por um destino. As duas dimensões permitem examinar diferenças que um ranking de emissões, sozinho, não mostra.
+
+[![Emissões totais por setor e número efetivo de destinos.](docs/imagens/volume_alcance.png)](docs/imagens/volume_alcance.png)
+
+As imagens abrem em tamanho completo. A exploração interativa permite identificar os setores e consultar os valores. Estes resultados são preliminares e não demonstram, por si só, o efeito de uma intervenção econômica.
+
+## Referências principais
+
+1. **Miller, R. E.; Blair, P. D. (2009).** [*Input–Output Analysis: Foundations and Extensions*, 2ª ed.](references/miller_blair_2009/input_output_analysis_foundations_extensions_2ed.pdf). Fundamenta a construção e a interpretação das matrizes insumo-produto.
+2. **Sanguinet, E. R.; Azzoni, C. R. (2024).** [*Carbon emissions drivers in Brazilian regional production chains: Value-added and consumption-based approaches*.](references/sanguinet_azzoni_2024/carbon_emissions_drivers_brazilian_regional_production_chains.pdf) Fornece os coeficientes de emissão usados no trabalho e discute formas de atribuição de emissões nas cadeias produtivas brasileiras. [DOI](https://doi.org/10.1016/j.rspp.2024.100015).
+3. **Montoya, M. A.; Bertussi, L. A. S.; Allegretti, G.; Talamini, E. (2026).** [*Brazilian energy and carbon footprints: structural changes and sectoral contributions to climate change*.](references/montoya_et_al_2026/brazilian_energy_carbon_footprints.pdf) Oferece uma aplicação da análise insumo-produto às pegadas energética e de carbono no Brasil. [DOI](https://doi.org/10.1007/s10668-024-05251-8).
+4. **Marques, A.; Rodrigues, J.; Lenzen, M.; Domingos, T. (2012).** [*Income-based environmental responsibility*.](references/marques_et_al_2012/income_based_environmental_responsibility.pdf) Contribui para a discussão das formas de atribuição da responsabilidade ambiental. A abordagem por renda não é aplicada no recorte atual. [DOI](https://doi.org/10.1016/j.ecolecon.2012.09.010).
+
+<details>
+<summary>Reproduzir a análise</summary>
+
+No Windows, com Python 3.12, execute na pasta do repositório:
 
 ```powershell
-uv venv .venv --python 3.12
-uv pip install --python .venv\Scripts\python.exe -r requirements.txt
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -m pip install ipykernel
+.venv\Scripts\python.exe -m ipykernel install --user --name redes-1 --display-name "Python (Redes-1 .venv)"
 ```
 
-Abra o notebook e execute as células em ordem. As intensidades de CO₂ de 2015 são estimadas por interpolação linear entre 2011 e 2018, com peso de 4/7 para a variação entre os anos, e aplicadas à MIP de 2015. Os resultados atuais são gravados em `outputs/contabilidade_co2_2015.csv` e `outputs/contabilidade_co2_2015.png`; uma nova execução os sobrescreve.
+Selecione esse kernel e execute primeiro o notebook da MIP, depois o de redes. A segunda etapa lê apenas a matriz de produção e o catálogo de setores exportados pela primeira. Os arquivos de entrada são verificados por SHA-256 conforme o [manifesto](raw/manifesto.csv). A execução do notebook de redes gera os CSVs em `outputs/redes/` e a página interativa em `docs/index.html`.
 
-## Estrutura
-
-| Local | Conteúdo |
-| --- | --- |
-| `redes/dados.py` | Leitura e verificação das entradas canônicas. |
-| `redes/mip.py` | Extração das tabelas da MIP do IBGE. |
-| `redes/modelo.py` | Matrizes de Leontief e Ghosh. |
-| `redes/emissoes.py` | Contabilidade de CO₂. |
-| `redes/visualizacoes.py` | Figura final. |
-| `raw/` | Entradas canônicas e seu manifesto. |
-| `references/` | Artigos e demais fontes bibliográficas. |
-
-## Entradas verificadas
-
-[raw/manifesto.csv](raw/manifesto.csv) é a lista única das entradas que podem alterar os resultados. Cada linha informa o identificador usado no notebook, arquivo, SHA-256, fonte, ano e descrição.
-
-O notebook escolhe explicitamente os coeficientes brasileiros e o cenário exterior por identificador. `dados.py` encontra a linha correspondente, compara o SHA-256 do arquivo e só então chama `pandas`. Para alterar uma entrada intencionalmente, atualize seu arquivo e o hash no manifesto na mesma alteração versionada.
-
-## Verificar
-
-```powershell
-.venv\Scripts\python.exe -m unittest discover -s tests -v
-```
-
-Os testes verificam as entradas declaradas, a verificação de hash antes da leitura e os interpolação linear e os totais de referência de 2015.
+</details>

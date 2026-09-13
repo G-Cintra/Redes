@@ -37,12 +37,10 @@ class ConsistenciaAcademica(unittest.TestCase):
         np.testing.assert_allclose(exterior[2015], estimados[2015], rtol=1e-14)
 
     def test_resultado_2015(self):
-        self.assertEqual(self.resultados["totais_contabilidade_co2"].index.tolist(), [2015])
-        totais = self.resultados["totais_contabilidade_co2"].loc[2015]
         # Referência obtida ponderando os resultados anteriores de 2011 e 2018.
         np.testing.assert_allclose(
-            totais[["producao", "consumo", "renda"]],
-            [683696.0414285715, 683890.2443365547, 683696.0414285713],
+            [self.resultados["producao_co2"].sum(), self.resultados["consumo_co2"].sum()],
+            [683696.0414285715, 683890.2443365547],
             rtol=1e-12,
         )
 
