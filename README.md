@@ -13,7 +13,7 @@ uv venv .venv --python 3.12
 uv pip install --python .venv\Scripts\python.exe -r requirements.txt
 ```
 
-Abra o notebook e execute as células em ordem. Os resultados atuais são gravados em `outputs/contabilidade_co2_2018.csv` e `outputs/contabilidade_co2_2018.png`; uma nova execução os sobrescreve.
+Abra o notebook e execute as células em ordem. As intensidades de CO₂ de 2015 são estimadas por interpolação linear entre 2011 e 2018, com peso de 4/7 para a variação entre os anos, e aplicadas à MIP de 2015. Os resultados atuais são gravados em `outputs/contabilidade_co2_2015.csv` e `outputs/contabilidade_co2_2015.png`; uma nova execução os sobrescreve.
 
 ## Estrutura
 
@@ -39,4 +39,4 @@ O notebook escolhe explicitamente os coeficientes brasileiros e o cenário exter
 .venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-Os testes verificam as entradas declaradas, a verificação de hash antes da leitura e os totais de referência de 2018.
+Os testes verificam as entradas declaradas, a verificação de hash antes da leitura e os interpolação linear e os totais de referência de 2015.

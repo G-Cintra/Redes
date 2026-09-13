@@ -24,11 +24,25 @@ class ConsistenciaAcademica(unittest.TestCase):
                 if celula["cell_type"] == "code" and "pasta_outputs =" not in fonte:
                     exec(compile(fonte, "<notebook>", "exec"), cls.resultados)
 
-    def test_resultado_2018(self):
-        totais = self.resultados["totais_contabilidade_co2"].loc[2018]
+    def test_interpolacao_2015(self):
+        estimados = self.resultados["matriz_coeficientes_co2"]
+        self.assertEqual(estimados.columns.tolist(), [2015])
+        inicio = self.resultados["coeficientes_2011"][2011]
+        fim = self.resultados["coeficientes_2018"][2018]
+        self.assertTrue(estimados.index.equals(inicio.index))
+        np.testing.assert_allclose(estimados[2015], (3 * inicio + 4 * fim) / 7, rtol=1e-14)
+        exterior = self.resultados["intensidades_co2_exterior"]
+        self.assertEqual(exterior.columns.tolist(), [2015])
+        # O cenário externo de referência usa as mesmas intensidades brasileiras.
+        np.testing.assert_allclose(exterior[2015], estimados[2015], rtol=1e-14)
+
+    def test_resultado_2015(self):
+        self.assertEqual(self.resultados["totais_contabilidade_co2"].index.tolist(), [2015])
+        totais = self.resultados["totais_contabilidade_co2"].loc[2015]
+        # Referência obtida ponderando os resultados anteriores de 2011 e 2018.
         np.testing.assert_allclose(
             totais[["producao", "consumo", "renda"]],
-            [677191.9300000001, 675133.2396386318, 677191.9300000001],
+            [683696.0414285715, 683890.2443365547, 683696.0414285713],
             rtol=1e-12,
         )
 
@@ -37,8 +51,8 @@ class ConsistenciaAcademica(unittest.TestCase):
             "mip_ibge_2015_67",
             "sanguinet_azzoni_2011",
             "sanguinet_azzoni_2018",
-            "exterior_proxy_brasil",
-            "exterior_proxy_brasil_2015",
+            "coeficientes_co2_exterior_proxy_brasil",
+            "inversa_leontief_exterior_proxy_brasil_2015",
         ):
             item = dados.entrada(id_entrada)
             self.assertTrue((dados.RAIZ_PROJETO / item["arquivo"]).is_file())

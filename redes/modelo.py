@@ -8,9 +8,9 @@ import pandas as pd
 from .mip import (
     carregar_matriz_bm_67,
     carregar_matriz_bn_67,
-    carregar_matriz_participacao_67,
-    carregar_matriz_producao_67,
-    carregar_matriz_uso_nacional_67,
+    carregar_matriz_participacao_tabela_13_67,
+    carregar_matriz_producao_tabela_01_67,
+    carregar_matriz_uso_nacional_tabela_03_67,
 )
 
 
@@ -21,7 +21,7 @@ def calcular_coeficientes_tecnicos_67(tabelas: dict[str, pd.DataFrame]) -> pd.Da
     composição publicada pelo IBGE na Tabela 14 (D.Bn).
     """
     matriz_bn = carregar_matriz_bn_67(tabelas)
-    matriz_d = carregar_matriz_participacao_67(tabelas)
+    matriz_d = carregar_matriz_participacao_tabela_13_67(tabelas)
     if not matriz_d.columns.equals(matriz_bn.index):
         raise ValueError("Os produtos das matrizes D e Bn não estão alinhados.")
 
@@ -35,8 +35,8 @@ def calcular_matriz_transacoes_intersetoriais_67(
     tabelas: dict[str, pd.DataFrame],
 ) -> pd.DataFrame:
     """Calcula Z = D @ U, a matriz de fluxos intersetoriais nacionais."""
-    matriz_d = carregar_matriz_participacao_67(tabelas)
-    matriz_u = carregar_matriz_uso_nacional_67(tabelas)
+    matriz_d = carregar_matriz_participacao_tabela_13_67(tabelas)
+    matriz_u = carregar_matriz_uso_nacional_tabela_03_67(tabelas)
     if not matriz_d.columns.equals(matriz_u.index):
         raise ValueError("Os produtos das matrizes D e U não estão alinhados.")
 
@@ -48,7 +48,7 @@ def calcular_matriz_transacoes_intersetoriais_67(
 
 def calcular_producao_bruta_67(tabelas: dict[str, pd.DataFrame]) -> pd.Series:
     """Calcula x, o vetor de produção bruta das 67 atividades."""
-    matriz_v = carregar_matriz_producao_67(tabelas)
+    matriz_v = carregar_matriz_producao_tabela_01_67(tabelas)
     producao_bruta = matriz_v.sum(axis=0)
     producao_bruta.name = "producao_bruta"
     producao_bruta.index.name = "atividade"
@@ -63,7 +63,7 @@ def calcular_coeficientes_importados_67(tabelas: dict[str, pd.DataFrame]) -> pd.
     Am é expresso na classificação atividade × atividade e permite calcular os
     insumos importados induzidos pela produção nacional.
     """
-    matriz_d = carregar_matriz_participacao_67(tabelas)
+    matriz_d = carregar_matriz_participacao_tabela_13_67(tabelas)
     matriz_bm = carregar_matriz_bm_67(tabelas)
     if not matriz_d.columns.equals(matriz_bm.index):
         raise ValueError("Os produtos das matrizes D e Bm não estão alinhados.")

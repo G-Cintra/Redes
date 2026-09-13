@@ -75,7 +75,7 @@ def carregar_matriz_bm_67(tabelas: dict[str, pd.DataFrame]) -> pd.DataFrame:
     return _extrair_produto_atividade_67(tabela, 2, 69)
 
 
-def carregar_matriz_participacao_67(tabelas: dict[str, pd.DataFrame]) -> pd.DataFrame:
+def carregar_matriz_participacao_tabela_13_67(tabelas: dict[str, pd.DataFrame]) -> pd.DataFrame:
     """Extrai D (atividade × produto) da Tabela 13 da MIP.
 
     D é a matriz de participação setorial (*market share*) da produção nacional.
@@ -119,7 +119,7 @@ def _extrair_produto_atividade_67(
     return matriz
 
 
-def carregar_matriz_producao_67(tabelas: dict[str, pd.DataFrame]) -> pd.DataFrame:
+def carregar_matriz_producao_tabela_01_67(tabelas: dict[str, pd.DataFrame]) -> pd.DataFrame:
     """Extrai V, a produção nacional por produto (linhas) e atividade (colunas)."""
     try:
         return _extrair_produto_atividade_67(tabelas["01"], 7, 74)
@@ -127,7 +127,7 @@ def carregar_matriz_producao_67(tabelas: dict[str, pd.DataFrame]) -> pd.DataFram
         raise ValueError("A Tabela 01 não foi encontrada no arquivo da MIP.") from erro
 
 
-def carregar_matriz_uso_nacional_67(tabelas: dict[str, pd.DataFrame]) -> pd.DataFrame:
+def carregar_matriz_uso_nacional_tabela_03_67(tabelas: dict[str, pd.DataFrame]) -> pd.DataFrame:
     """Extrai U, os usos intermediários nacionais por produto e atividade."""
     try:
         return _extrair_produto_atividade_67(tabelas["03"], 3, 70)
@@ -150,7 +150,7 @@ def carregar_demanda_final_nacional_67(tabelas: dict[str, pd.DataFrame]) -> pd.S
 
     # Coluna 77: "Demanda final"; linhas 5:132: os 127 produtos.
     demanda_por_produto = pd.to_numeric(tabela.iloc[5:132, 77], errors="raise").to_numpy(dtype=float)
-    matriz_d = carregar_matriz_participacao_67(tabelas)
+    matriz_d = carregar_matriz_participacao_tabela_13_67(tabelas)
     demanda_final = pd.Series(matriz_d.to_numpy() @ demanda_por_produto, index=matriz_d.index)
     demanda_final.name = "demanda_final_nacional"
     demanda_final.index.name = "atividade"
@@ -167,7 +167,7 @@ def _carregar_demanda_final_por_produto_67(
         raise ValueError(f"A Tabela {aba} não foi encontrada no arquivo da MIP.") from erro
 
     demanda_por_produto = tabela.iloc[5:132, colunas].apply(pd.to_numeric, errors="raise").sum(axis=1).to_numpy(dtype=float)
-    matriz_d = carregar_matriz_participacao_67(tabelas)
+    matriz_d = carregar_matriz_participacao_tabela_13_67(tabelas)
     demanda_final = pd.Series(matriz_d.to_numpy() @ demanda_por_produto, index=matriz_d.index, name=nome)
     demanda_final.index.name = "atividade"
     return demanda_final
