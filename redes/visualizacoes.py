@@ -118,7 +118,7 @@ def figura_rede(arestas, metricas, posicoes, titulo, max_peso, max_forca):
             f"Força de saída: {linha['forca_saida']:,.2f} Gg<br>"
             f"Emissões totais: {linha['emissoes_totais']:,.2f} Gg<br>"
             f"PageRank emissor: {linha['pagerank_emissor']:.5f}<br>"
-            f"Destinos efetivos: {linha['destinos_efetivos']:.2f}<br>"
+            f"Diversidade de destinos (1/Σq²): {linha['destinos_efetivos']:.2f}<br>"
             f"Diagonal separada: {linha['diagonal']:,.2f} Gg"
         )
     figura.add_trace(go.Scatter(
@@ -126,7 +126,7 @@ def figura_rede(arestas, metricas, posicoes, titulo, max_peso, max_forca):
         mode="markers", text=hover, hoverinfo="text", showlegend=False,
         marker=dict(size=[8 + 27 * math.sqrt(v / max_forca) if max_forca else 8 for v in metricas['emissoes_totais']],
                     color=metricas['destinos_efetivos'], colorscale="Viridis", cmin=0,
-                    cmax=max(1, metricas['destinos_efetivos'].max()), colorbar=dict(title="Destinos<br>efetivos"),
+                    cmax=max(1, metricas['destinos_efetivos'].max()), colorbar=dict(title="Diversidade<br>de destinos"),
                     line=dict(width=1.5, color="white")),
     ))
     figura.update_layout(title=titulo, height=590, template="plotly_white",
@@ -136,7 +136,7 @@ def figura_rede(arestas, metricas, posicoes, titulo, max_peso, max_forca):
     return figura
 
 
-def exportar_pagina_redes(caminho, figuras, tabelas, conclusoes, proveniencia, cobertura, descricoes_figuras):
+def exportar_pagina_redes(caminho, figuras, tabelas, conclusoes, proveniencia, cobertura, descricoes_figuras, notas_metodologicas):
     """Empacota figuras e resultados já calculados em um único HTML offline."""
     from base64 import b64encode
     from html import escape
@@ -184,6 +184,10 @@ a{color:#006b78}code{overflow-wrap:anywhere}
     pagina += '''<script>document.querySelectorAll('details').forEach(el => el.addEventListener('toggle', () => {
 if(el.open) el.querySelectorAll('.plotly-graph-div').forEach(g => Plotly.Plots.resize(g));
 }));</script>'''
+    pagina += '<section class="note"><h2>Definições e limites da análise</h2>'
+    for titulo, texto in notas_metodologicas.items():
+        pagina += f'<h3>{escape(titulo)}</h3><p>{escape(texto)}</p>'
+    pagina += '<p>Referências: <a href="https://doi.org/10.2307/1934352">Hill (1973)</a>; <a href="https://doi.org/10.1155/2008/375452">Antoniou e Tsompa (2008)</a>; <a href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.link_analysis.pagerank_alg.pagerank.html">PageRank — NetworkX</a>; <a href="https://doi.org/10.1016/j.rspp.2024.100015">Sanguinet e Azzoni (2024)</a>.</p></section>'
     pagina += '<h2>Tabelas e rankings</h2>'
     pagina += ''.join(tabelas_html)
     pagina += '<details><summary>Inputs, código e versões</summary><div class="scroll">'

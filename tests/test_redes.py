@@ -132,6 +132,26 @@ class RedesEmissoes(unittest.TestCase):
             self.assertEqual(linha.top5, 1 if sum(valores) else 0)
             self.assertEqual(s['concentracao'].loc['intersetorial_sem_diagonal', 'peso_gg'], 0.)
 
+    def test_diversidade_invariante_a_escala_da_linha(self):
+        ids = ['construcao', 'volumes', 'pagerank', 'alcance-dependencia']
+        original = self.executar_metodo(self.matriz, ids)
+        escalada = self.matriz.copy()
+        escalada.loc['01'] *= 10
+        alterada = self.executar_metodo(escalada, ids)
+        # Intensidade do emissor cancela em q, mas afeta a participação na coluna.
+        pd.testing.assert_frame_equal(original['q'], alterada['q'])
+        pd.testing.assert_series_equal(original['metricas']['destinos_efetivos'],
+                                      alterada['metricas']['destinos_efetivos'])
+        self.assertGreater(alterada['d'].loc['01', '03'], original['d'].loc['01', '03'])
+
+    def test_isolado_tem_pagerank_sem_distribuicao_de_saidas(self):
+        matriz = self.matriz * 0
+        matriz.loc['01', '02'] = 1
+        s = self.executar_metodo(matriz, ['construcao', 'volumes', 'pagerank', 'alcance-dependencia'])
+        self.assertEqual(s['metricas'].loc['03', 'destinos_efetivos'], 0)
+        self.assertGreater(s['metricas'].loc['03', 'pagerank_destino'], 0)
+        self.assertGreater(s['metricas'].loc['03', 'pagerank_emissor'], 0)
+
     def test_mapa_dependencia_percentual(self):
         from redes.visualizacoes import figura_mapa_calor
         d = self.matriz * 0

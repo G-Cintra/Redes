@@ -9,3 +9,5 @@ Esta pasta reúne referências que apoiam a interpretação metodológica ou amb
 - [`unfccc_2008/`](unfccc_2008/README.md): UNFCCC (2008). *Kyoto Protocol reference manual on accounting of emissions and assigned amount*. Manual institucional sobre contabilidade de emissões no Protocolo de Quioto.
 - [`rissman_et_al_2020/`](rissman_et_al_2020/README.md): Rissman, Jeffrey et al. (2020). “Technologies and policies to decarbonize global industry: Review and assessment of mitigation drivers through 2070”. *Applied Energy*, 266, 114848. [DOI](https://doi.org/10.1016/j.apenergy.2020.114848). Revisão sobre descarbonização industrial.
 - [`armstrong_mckay_et_al_2022/`](armstrong_mckay_et_al_2022/README.md): Armstrong McKay, David I. et al. (2022). “Exceeding 1.5°C global warming could trigger multiple climate tipping points”. *Science*, 377, eabn7950. [DOI](https://doi.org/10.1126/science.abn7950). Síntese sobre pontos de inflexão climáticos e limiares de aquecimento.
+- [Hill (1973)](hill_1973/README.md): fundamento da medida de diversidade de destinos.
+- [Antoniou e Tsompa (2008)](antoniou_tsompa_2008/README.md): fundamento da medida de diversidade de destinos.
