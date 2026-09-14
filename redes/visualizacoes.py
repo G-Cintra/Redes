@@ -136,7 +136,7 @@ def figura_rede(arestas, metricas, posicoes, titulo, max_peso, max_forca):
     return figura
 
 
-def exportar_pagina_redes(caminho, figuras, tabelas, conclusoes, proveniencia, cobertura):
+def exportar_pagina_redes(caminho, figuras, tabelas, conclusoes, proveniencia, cobertura, descricoes_figuras):
     """Empacota figuras e resultados já calculados em um único HTML offline."""
     from base64 import b64encode
     from html import escape
@@ -147,7 +147,8 @@ def exportar_pagina_redes(caminho, figuras, tabelas, conclusoes, proveniencia, c
     for i, (titulo, figura) in enumerate(figuras.items()):
         grafico = pio.to_html(figura, full_html=False, include_plotlyjs=(i == 0),
                               div_id=f"grafico-{i}", config={"responsive": True, "displaylogo": False})
-        bloco = f'<section class="figure"><h2>{escape(titulo)}</h2>{grafico}</section>'
+        bloco = (f'<section class="figure"><h2>{escape(titulo)}</h2>'
+                 f'<p class="descricao">{escape(descricoes_figuras[titulo])}</p>{grafico}</section>')
         blocos.append(bloco)
     tabelas_html = []
     for nome, tabela in tabelas.items():
@@ -166,6 +167,7 @@ main{max-width:1280px;margin:auto;padding:40px 24px}header{max-width:900px;margi
 h1{font-size:clamp(30px,5vw,52px);line-height:1.1;letter-spacing:-1.5px}h2{font-size:21px}
 .eyebrow{color:#087f8c;font-weight:700;letter-spacing:.15em;font-size:12px}
 .figure,details,.note{background:white;border:1px solid #dbe3df;border-radius:12px;padding:20px;margin:18px 0}
+.descricao{max-width:90ch;margin:0 0 20px;color:#334e5a;line-height:1.65}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid .figure{min-width:0}
 .scroll{overflow:auto;max-height:520px}.plotly-graph-div{max-width:100%}table{border-collapse:collapse;width:100%;font-size:13px}
 th,td{text-align:left;padding:9px;border-bottom:1px solid #e5ebe8;white-space:nowrap}
@@ -175,7 +177,8 @@ a{color:#006b78}code{overflow-wrap:anywhere}
 </style></head><body><main><header><p class="eyebrow">CNM410028 - Desigualdade, Diversidade e Redes</p>
 <p>Gabriel Cintra</p>
 <h1>Rede intersetorial de emissões no Brasil</h1>
-</header>''' + ''.join(blocos[:2]) + '<div class="note">'
+</header>''' + ''.join(blocos[:2]) + '''<div class="note"><h2>Cobertura das relações exibidas</h2>
+<p>A tabela informa o número de relações exibidas nas duas disposições da rede, o número utilizado nos cálculos e a participação das relações exibidas no peso intersetorial total.</p>'''
     pagina += '<div class="scroll">' + cobertura.to_html(float_format=lambda v: f"{v:.3f}", escape=True) + '</div></div>'
     pagina += '<div class="grid">' + ''.join(blocos[2:4]) + '</div>' + ''.join(blocos[4:])
     pagina += '''<script>document.querySelectorAll('details').forEach(el => el.addEventListener('toggle', () => {
