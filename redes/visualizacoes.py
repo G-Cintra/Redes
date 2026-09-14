@@ -160,58 +160,32 @@ def exportar_pagina_redes(caminho, figuras, tabelas, conclusoes, proveniencia, c
         )
     pagina = '''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Redes de emissões · Brasil 2015</title><style>
+<title>Rede intersetorial de emissões no Brasil</title><style>
 :root{color-scheme:light}body{margin:0;background:#f4f6f3;color:#172f3b;font:16px/1.6 system-ui,sans-serif}
 main{max-width:1280px;margin:auto;padding:40px 24px}header{max-width:900px;margin-bottom:32px}
 h1{font-size:clamp(30px,5vw,52px);line-height:1.1;letter-spacing:-1.5px}h2{font-size:21px}
-.eyebrow{color:#087f8c;font-weight:700;letter-spacing:.15em;font-size:12px}.lead{font-size:19px}
+.eyebrow{color:#087f8c;font-weight:700;letter-spacing:.15em;font-size:12px}
 .figure,details,.note{background:white;border:1px solid #dbe3df;border-radius:12px;padding:20px;margin:18px 0}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid .figure{min-width:0}
 .scroll{overflow:auto;max-height:520px}.plotly-graph-div{max-width:100%}table{border-collapse:collapse;width:100%;font-size:13px}
 th,td{text-align:left;padding:9px;border-bottom:1px solid #e5ebe8;white-space:nowrap}
 thead{position:sticky;top:0;background:#eaf0ed}summary{cursor:pointer;font-weight:650}
-a{color:#006b78}code{overflow-wrap:anywhere}footer{font-size:13px;color:#49626c}
+a{color:#006b78}code{overflow-wrap:anywhere}
 @media(max-width:800px){.grid{grid-template-columns:1fr}main{padding:24px 12px}.figure{padding:8px}}
-</style></head><body><main><header><p class="eyebrow">BRASIL · 2015 · ANÁLISE DE REDES</p>
-<h1>Emissões, atividades<br>e demanda final</h1>
-<p class="lead">Quem emite mais, quem alcança mais destinos relevantes e onde se concentram as atribuições de emissões da produção brasileira.</p>
-</header>''' + ''.join(blocos[:2]) + '''<div class="note"><b>Como ler as redes</b><p>A seta i → j associa emissões da atividade i
-à demanda final pelo bem da atividade j. O peso é medido em Gg de CO₂. São relações acumuladas diretas e indiretas,
-não vendas diretas nem trajetórias físicas de carbono. A fonte é P, incluindo a produção brasileira para exportações.</p>
-<p>Os indicadores usam todas as arestas positivas entre setores, sem threshold. A diagonal é contabilizada à parte.
-Os mapas mostram magnitudes em log10(1 + Gg) e dependência de 0 a 100%, na mesma ordem de setores.
-Dependência é a participação de um emissor nas atribuições intersetoriais de cada destino.
-A diagonal é mascarada; as lacunas não são zeros. O hover mostra os valores originais.</p>
-<p>Na exploração por setor, escolha uma atividade para ver até dez origens à esquerda e dez destinos à direita.
-As larguras representam pesos; entrada e saída são atribuições diferentes e não precisam se equilibrar.
-Um mesmo setor pode aparecer nos dois lados. A cobertura e a diagonal são informadas para cada seleção.
-Essa figura não supõe conservação de fluxo através do setor central.</p>
-<p>Os painéis circular e por forças mostram a mesma rede,
-mostrando as 75 maiores arestas e todos os nós.
-Tamanhos indicam emissões totais, incluindo diagonal; cores indicam número efetivo de destinos.
-Espessuras indicam pesos. Tamanhos e espessuras usam raiz quadrada.
-Posições não têm significado econômico.</p>'''
+</style></head><body><main><header><p class="eyebrow">CNM410028 - Desigualdade, Diversidade e Redes</p>
+<p>Gabriel Cintra</p>
+<h1>Rede intersetorial de emissões no Brasil</h1>
+</header>''' + ''.join(blocos[:2]) + '<div class="note">'
     pagina += '<div class="scroll">' + cobertura.to_html(float_format=lambda v: f"{v:.3f}", escape=True) + '</div></div>'
     pagina += '<div class="grid">' + ''.join(blocos[2:4]) + '</div>' + ''.join(blocos[4:])
     pagina += '''<script>document.querySelectorAll('details').forEach(el => el.addEventListener('toggle', () => {
 if(el.open) el.querySelectorAll('.plotly-graph-div').forEach(g => Plotly.Plots.resize(g));
 }));</script>'''
-    pagina += '<section class="note"><h2>Leitura dos resultados</h2><ul>'
-    pagina += ''.join(f'<li>{escape(t)}</li>' for t in conclusoes) + '</ul></section>'
-    pagina += '<h2>Tabelas e rankings</h2><p>Abra uma tabela para consultar os 67 setores e baixar os dados.</p>'
+    pagina += '<h2>Tabelas e rankings</h2>'
     pagina += ''.join(tabelas_html)
-    pagina += '''<details><summary>Método e limites</summary><p>Graus contam conexões. Forças somam pesos,
-em Gg e excluem a diagonal. PageRank usa amortecimento 0,85 e distribuição uniforme para teletransporte
-e nós sem saída: no grafo original destaca destinos; no invertido destaca emissores.
-O número efetivo de destinos é o inverso da soma dos quadrados das participações de saída; sem saídas vale zero.
-Gini, HHI e participações dos maiores distinguem concentração das emissões totais e intersetoriais.
-Essas dimensões são apresentadas separadamente, sem índice único de criticidade ou previsão causal de intervenção.</p>
-<p>Os resultados herdam as hipóteses da etapa MIP: intensidades interpoladas de valores arredondados,
-fator monetário 1 entre as bases de 2018 e 2015. Não equivalem a um inventário territorial completo.
-Alcance significa distribuição ponderada por destinos, não alcançabilidade por caminhos nem número de empresas.</p></details>'''
     pagina += '<details><summary>Inputs, código e versões</summary><div class="scroll">'
     pagina += proveniencia.to_html(index=False, escape=True) + '</div></details>'
-    pagina += '<footer><p>Gerado por analise_redes_emissoes.ipynb. Os cálculos são feitos em Python; esta página apenas apresenta os resultados.</p></footer></main></body></html>'
+    pagina += '</main></body></html>'
     caminho = Path(caminho)
     caminho.parent.mkdir(parents=True, exist_ok=True)
     caminho.write_text(pagina, encoding="utf-8")
