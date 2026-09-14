@@ -45,7 +45,7 @@ Como diagnóstico adicional, as emissões territoriais brasileiras associadas à
 
 ## Marques, Rodrigues, Lenzen e Domingos (2012)
 
-Fonte: [`marques_et_al_2012/income_based_environmental_responsibility.pdf`](marques_et_al_2012/income_based_environmental_responsibility.pdf).
+Fonte: [artigo na editora](https://doi.org/10.1016/j.ecolecon.2012.09.010).
 
 ### Método e dimensões
 
@@ -71,7 +71,7 @@ A ordenação é **consumo < produção < renda**. Em relação à produção, c
 
 ## Montoya, Bertussi, Allegretti e Talamini (2026)
 
-Fonte: [`montoya_et_al_2026/brazilian_energy_carbon_footprints.pdf`](montoya_et_al_2026/brazilian_energy_carbon_footprints.pdf).
+Fonte: [artigo na editora](https://doi.org/10.1007/s10668-024-05251-8).
 
 ### Método e dimensões
 
@@ -106,7 +106,7 @@ Resultados setoriais publicados:
 
 ## Sanguinet e Azzoni (2024)
 
-Fonte: [`sanguinet_azzoni_2024/carbon_emissions_drivers_brazilian_regional_production_chains.pdf`](sanguinet_azzoni_2024/carbon_emissions_drivers_brazilian_regional_production_chains.pdf).
+Fonte: [artigo na editora](https://doi.org/10.1016/j.rspp.2024.100015).
 
 ### Método e dimensões
 
