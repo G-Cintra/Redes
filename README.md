@@ -16,7 +16,7 @@ A primeira hipótese é de que as emissões incorporadas nas relações interset
 
 A segunda hipótese é de que existam setores intermediários ou finais com baixos níveis de emissões próprias, mas fortemente conectados a múltiplos setores intensivos em emissões.
 
-A rede será construída a partir da MIP 2015, nível 67 ([IBGE](https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9085-matriz-de-insumo-produto.html)), utilizando coeficientes de emissão propostos por [Sanguinet e Azzoni (2024)](https://doi.org/10.1016/j.rspp.2024.100015) e adotando a abordagem de responsabilidade baseada na produção discutida por [Marques et al. (2012)](https://doi.org/10.1016/j.ecolecon.2012.09.010). As relações entre os setores serão representadas por uma rede ponderada pelos volumes de emissões atribuídos às relações intersetoriais. A análise será feita em Python, utilizando a biblioteca NetworkX. O código-fonte e os resultados serão disponibilizados no [repositório do projeto](https://github.com/G-Cintra/Redes).
+A rede será construída a partir da MIP 2015, nível 67 ([IBGE](https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9085-matriz-de-insumo-produto.html)), utilizando coeficientes de emissão propostos por [Sanguinet e Azzoni (2024)](https://doi.org/10.1016/j.rspp.2024.100015) e adotando a abordagem de responsabilidade baseada na produção discutida por [Marques et al. (2012)](https://doi.org/10.1016/j.ecolecon.2012.09.010) e adotada no protocolo de Kyoto ([UNFCCC, 2008](https://unfccc.int/resource/docs/publications/08_unfccc_kp_ref_manual.pdf)). As relações entre os setores serão representadas por uma rede ponderada pelos volumes de emissões atribuídos às relações intersetoriais. A análise será feita em Python, utilizando a biblioteca NetworkX. O código-fonte e os resultados serão disponibilizados no [repositório do projeto](https://github.com/G-Cintra/Redes).
 
 A partir dos resultados, serão discutidas possíveis implicações para políticas públicas e tecnologias de mitigação, considerando as propostas apresentadas por [Rissman et al. (2020)](https://doi.org/10.1016/j.apenergy.2020.114848).
 
@@ -27,21 +27,15 @@ A partir dos resultados, serão discutidas possíveis implicações para políti
 
 ## Exploração inicial
 
-[Os resultados preliminares podem ser explorados aqui.](https://g-cintra.github.io/Redes/)
+[Saiba mais sobre os resultados e a metodologia na página interativa.](https://g-cintra.github.io/Redes/)
 
-**1. Estrutura da rede.** Cada nó representa um setor. O tamanho indica suas emissões totais; a cor, o número efetivo de destinos; e a espessura das ligações, o peso da atribuição de emissões. A figura mostra as 75 maiores ligações para facilitar a leitura; os indicadores utilizam todas as ligações positivas entre setores. A posição dos nós não tem significado econômico.
+[![Rede circular](docs/imagens/rede_circular.png)](https://g-cintra.github.io/Redes/)
 
-[![Rede intersetorial com disposição por forças.](docs/imagens/rede_forcas.png)](docs/imagens/rede_forcas.png)
+[![Rede por forças](docs/imagens/rede_forcas.png)](https://g-cintra.github.io/Redes/)
 
-**2. Concentração dos emissores.** As curvas acumulam a participação dos setores, do maior para o menor emissor. Comparam as emissões totais, incluindo atribuições ao próprio setor, com a parcela atribuída a outros setores.
+[![Mapa de calor das atribuições intersetoriais](docs/imagens/magnitude_intersetorial.png)](https://g-cintra.github.io/Redes/)
 
-[![Participação acumulada dos maiores emissores no total e no componente intersetorial.](docs/imagens/concentracao_emissores.png)](docs/imagens/concentracao_emissores.png)
-
-**3. Volume e alcance.** Cada ponto é um setor. O número efetivo de destinos considera como suas atribuições intersetoriais se distribuem: cresce quando os pesos estão menos concentrados em poucos destinos. A cor indica a maior participação desse emissor nas emissões intersetoriais recebidas por um destino. As duas dimensões permitem examinar diferenças que um ranking de emissões, sozinho, não mostra.
-
-[![Emissões totais por setor e número efetivo de destinos.](docs/imagens/volume_alcance.png)](docs/imagens/volume_alcance.png)
-
-As imagens abrem em tamanho completo. A exploração interativa permite identificar os setores e consultar os valores. Estes resultados são preliminares e não demonstram, por si só, o efeito de uma intervenção econômica.
+[![Volume e diversidade dos destinos](docs/imagens/volume_diversidade.png)](https://g-cintra.github.io/Redes/)
 
 ## Referências
 
