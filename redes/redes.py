@@ -50,6 +50,20 @@ def carregar_setores(id_entrada):
     return setores["descricao"]
 
 
+def carregar_valor_adicionado(id_entrada):
+    """Lê o VAB exportado pela MIP, com hash e códigos setoriais preservados."""
+    item = dados.entrada(id_entrada)
+    caminho = dados.RAIZ_PROJETO / item["arquivo"]
+    dados.check_sha256(caminho, item["sha256"])
+    tabela = pd.read_csv(caminho, dtype={"atividade": str})
+    if tabela["atividade"].isna().any() or not tabela["atividade"].is_unique:
+        raise ValueError("VAB com códigos ausentes ou repetidos.")
+    vab = tabela.set_index("atividade")["vab_r_milhao"].apply(pd.to_numeric, errors="raise")
+    if vab.empty or not np.isfinite(vab).all() or (vab <= 0).any():
+        raise ValueError("O VAB deve ser finito e positivo em todas as atividades.")
+    return vab
+
+
 def matriz_para_grafo(matriz):
     """Linha i → coluna j, peso original; zeros ausentes e diagonal preservada."""
     validar_matriz(matriz)

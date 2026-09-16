@@ -36,9 +36,9 @@ class RedesEmissoes(unittest.TestCase):
              patch.object(dados, 'entrada', wraps=dados.entrada) as entrada, \
              contextlib.redirect_stdout(io.StringIO()):
             for c in n['cells']:
-                if c['cell_type'] == 'code' and c.get('id') not in ['figuras', 'interpretacao', 'exportar-redes']:
+                if c['cell_type'] == 'code' and c.get('id') not in ['figuras', 'grafico-contas-atividade', 'figuras-sankeys-destaques', 'interpretacao', 'exportar-redes']:
                     exec(compile(''.join(c['source']), c['id'], 'exec'), s)
-        self.assertEqual({c.args[0] for c in entrada.call_args_list}, {'matriz_emissoes_producao_2015', 'setores_mip_2015'})
+        self.assertEqual({c.args[0] for c in entrada.call_args_list}, {'matriz_emissoes_producao_2015', 'setores_mip_2015', 'valor_adicionado_2015'})
         self.assertEqual(s['G'].number_of_nodes(), 67)
         np.testing.assert_allclose(s['metricas']['forca_entrada'] + s['diagonal'], s['P'].sum(axis=0))
         np.testing.assert_allclose(s['metricas']['forca_saida'] + s['diagonal'], s['P'].sum(axis=1))
@@ -85,11 +85,13 @@ class RedesEmissoes(unittest.TestCase):
             with patch('redes.redes.dados.entrada', return_value=item), self.assertRaises(ValueError):
                 carregar_matriz_emissoes('x')
 
-    def executar_metodo(self, matriz, ids):
+    def executar_metodo(self, matriz, ids, vab=None):
         # Executa as próprias células metodológicas; não duplica sua implementação.
         n = json.loads(Path('analise_redes_emissoes.ipynb').read_text(encoding='utf-8'))
         s = {'np': np, 'pd': pd, 'nx': nx, 'matriz_para_grafo': matriz_para_grafo,
              'P': matriz, 'setores': pd.Series(matriz.index, index=matriz.index), 'display': lambda *a: None}
+        if vab is not None:
+            s['vab'] = vab
         with contextlib.redirect_stdout(io.StringIO()):
             for c in n['cells']:
                 if c.get('id') in ids:
@@ -110,6 +112,64 @@ class RedesEmissoes(unittest.TestCase):
         self.assertEqual(s['d'].loc['01', '03'], .2)
         np.testing.assert_allclose(s['d'].sum(), [0, 1, 1])
         self.assertEqual(m.loc['01', 'forca_saida'], 2.5)
+
+    def test_contas_atividade_separam_origem_destino_e_diagonal(self):
+        antes = self.matriz.copy()
+        s = self.executar_metodo(self.matriz, ['contas-atividade'])
+        contas = s['contas_atividade']
+        self.assertEqual(contas.index.tolist(), ['02', '03', '01'])
+        np.testing.assert_allclose(contas.loc[self.matriz.index, 'emissoes_proprias'], [7.5, 8, 7])
+        np.testing.assert_allclose(contas.loc[self.matriz.index, 'emissoes_intermediarias'], [0, 2, 2.5])
+        np.testing.assert_allclose(contas['soma_emissoes'], [10, 9.5, 7.5])
+        pd.testing.assert_frame_equal(self.matriz, antes)
+
+    def test_contas_atividade_preservam_diagonal_isolados_e_empates(self):
+        matriz = self.matriz * 0
+        matriz.loc['01', '01'] = matriz.loc['02', '02'] = 5
+        s = self.executar_metodo(matriz, ['contas-atividade'])
+        contas = s['contas_atividade']
+        self.assertEqual(contas.index.tolist(), ['01', '02', '03'])
+        np.testing.assert_allclose(contas['emissoes_intermediarias'], 0)
+        np.testing.assert_allclose(contas['soma_emissoes'], [5, 5, 0])
+
+    def test_indice_vab_razoes_e_alinhamento(self):
+        matriz = pd.DataFrame(np.diag([1., 2., 4.]), index=self.matriz.index, columns=self.matriz.columns)
+        vab = pd.Series([4., 4., 6.], index=['03', '01', '02'])
+        contas = self.executar_metodo(matriz, ['contas-atividade', 'indice-vab'], vab)['contas_atividade']
+        np.testing.assert_allclose(contas.loc[['01', '02', '03'], 'indice_emissoes_vab'], [.5, 2/3, 2])
+        self.assertAlmostEqual(contas['participacao_vab'].sum(), 1)
+        self.assertAlmostEqual(contas['participacao_emissoes'].sum(), 1)
+        proporcional = pd.Series([1., 2., 4.], index=matriz.index)
+        contas = self.executar_metodo(matriz, ['contas-atividade', 'indice-vab'], proporcional)['contas_atividade']
+        np.testing.assert_allclose(contas['indice_emissoes_vab'], 1)
+
+    def test_indice_vab_emissoes_nulas_e_vab_invalido(self):
+        ids = ['contas-atividade', 'indice-vab']
+        vab = pd.Series([1., 1., 1.], index=self.matriz.index)
+        contas = self.executar_metodo(self.matriz * 0, ids, vab)['contas_atividade']
+        self.assertTrue(contas['indice_emissoes_vab'].isna().all())
+        self.assertTrue(contas['participacao_emissoes'].isna().all())
+        for valor in [0, -1, np.nan, np.inf]:
+            invalido = vab.copy()
+            invalido.iloc[0] = valor
+            with self.assertRaises(ValueError):
+                self.executar_metodo(self.matriz, ids, invalido)
+        with self.assertRaises(ValueError):
+            self.executar_metodo(self.matriz, ids, vab.iloc[:2])
+
+    def test_sankeys_destaque_preservam_sentido_diagonal_e_cobertura(self):
+        matriz = self.matriz.rename(index={'01': '4180', '02': '8400'}, columns={'01': '4180', '02': '8400'})
+        estados = self.executar_metodo(matriz, ['sankeys-destaques'])['estados_destaque']
+        construcao, administracao = estados
+        self.assertEqual(construcao['entradas'], [])
+        self.assertEqual(construcao['cobertura_entrada'], 0)
+        self.assertEqual(construcao['diagonal'], 5)
+        self.assertEqual(construcao['saidas'][0][0], '8400')
+        self.assertEqual(construcao['cobertura_saida'], 100)
+        self.assertEqual(administracao['entradas'], [('4180', '4180', 2.)])
+        self.assertEqual(administracao['saidas'], [('03', '03', 2.)])
+        self.assertEqual(administracao['diagonal'], 6)
+        self.assertEqual(administracao['cobertura_entrada'], 100)
 
     def test_k_destinos_iguais_e_pagerank_invertido(self):
         matriz = self.matriz * 0
@@ -151,6 +211,112 @@ class RedesEmissoes(unittest.TestCase):
         self.assertEqual(s['metricas'].loc['03', 'destinos_efetivos'], 0)
         self.assertGreater(s['metricas'].loc['03', 'pagerank_destino'], 0)
         self.assertGreater(s['metricas'].loc['03', 'pagerank_emissor'], 0)
+
+    def test_layouts_separados_preservam_arestas(self):
+        from redes.visualizacoes import figura_rede
+        codigos = [f'{i:02}' for i in range(10)]
+        matriz = pd.DataFrame(np.ones((10, 10)), index=codigos, columns=codigos)
+        s = self.executar_metodo(matriz, ['construcao', 'volumes', 'pagerank', 'alcance-dependencia'])
+        import matplotlib.pyplot as plt
+        from matplotlib.patches import FancyArrowPatch
+        arestas_antes = list(s['G'].edges(data=True))
+        for organizacao in ['forcas', 'circular']:
+            figura, eixo = figura_rede(s['G'], s['metricas'], 'Teste', 1, 10, organizacao=organizacao)
+            self.assertEqual(sum(isinstance(p, FancyArrowPatch) for p in eixo.patches), 90)
+            self.assertEqual(len(eixo.collections[0].get_sizes()), 10)
+            self.assertEqual(list(s['G'].edges(data=True)), arestas_antes)
+            plt.close(figura)
+        with self.assertRaises(ValueError):
+            figura_rede(s['G'], s['metricas'], 'Teste', 1, 10, organizacao='inexistente')
+
+    def test_agregacao_visual_soma_blocos_sem_perder_emissoes(self):
+        codigos = [f'{i:02}' for i in range(22)]
+        matriz = pd.DataFrame(np.ones((22, 22)), index=codigos, columns=codigos)
+        for i in range(20):
+            matriz.iloc[i, i] = 30 - i
+        antes = matriz.copy()
+        s = self.executar_metodo(matriz, ['agregacao-visual'])
+        agregado = s['P_visual']
+        self.assertEqual(agregado.index.tolist(), codigos[:20] + ['Outras'])
+        self.assertEqual(agregado.loc['Outras', 'Outras'], 4)
+        self.assertEqual(agregado.loc['00', 'Outras'], 2)
+        self.assertEqual(agregado.loc['Outras', '00'], 2)
+        self.assertEqual(s['peso_interno_outras'], 2)
+        self.assertEqual(agregado.to_numpy().sum(), matriz.to_numpy().sum())
+        np.testing.assert_allclose(s['metricas_visuais']['emissoes_totais'].sum(), matriz.to_numpy().sum())
+        pd.testing.assert_frame_equal(matriz, antes)
+
+        self.assertEqual(set(s['redes_visuais']), {20})
+        for limite, rede in s['redes_visuais'].items():
+            self.assertEqual(len(rede['grafo']), limite + 1)
+            restantes = codigos[limite:]
+            self.assertEqual(rede['P'].loc['Outras', 'Outras'], matriz.loc[restantes, restantes].to_numpy().sum())
+            self.assertEqual(rede['P'].to_numpy().sum(), matriz.to_numpy().sum())
+
+    def test_rede_interativa_preserva_direcoes_pesos_e_grafo(self):
+        from copy import deepcopy
+        from redes.visualizacoes import figura_rede_interativa
+        s = self.executar_metodo(self.matriz, ['construcao', 'volumes', 'pagerank', 'alcance-dependencia'])
+        grafo = s['G']
+        antes = deepcopy(grafo)
+        for organizacao in ['circular', 'forcas']:
+            visual = figura_rede_interativa(grafo, s['metricas'], organizacao)
+            recebido = {(e['from'], e['to']): e['weight'] for e in visual.edges}
+            esperado = {(u, v): d['weight'] for u, v, d in grafo.edges(data=True)}
+            self.assertEqual(recebido, esperado)
+            self.assertEqual(len(visual.edges), grafo.number_of_edges())
+            self.assertTrue(all(e['arrows'] == 'to' for e in visual.edges))
+            self.assertEqual(dict(grafo.nodes(data=True)), dict(antes.nodes(data=True)))
+            self.assertEqual(list(grafo.edges(data=True)), list(antes.edges(data=True)))
+            for no in visual.nodes:
+                proporcao = s['metricas'].loc[no['id'], 'emissoes_totais'] / s['metricas']['emissoes_totais'].max()
+                self.assertAlmostEqual((no['size'] / 35) ** 2, proporcao)
+
+    def test_area_dos_nos_proporcional_as_emissoes(self):
+        from redes.visualizacoes import figura_rede
+        s = self.executar_metodo(self.matriz, ['construcao', 'volumes', 'pagerank', 'alcance-dependencia'])
+        metricas = s['metricas'].copy()
+        metricas['emissoes_totais'] = [0., 25., 100.]
+        import matplotlib.pyplot as plt
+        figura, eixo = figura_rede(s['G'], metricas, '?rea', 2, 100)
+        tamanhos = eixo.collections[0].get_sizes()
+        np.testing.assert_allclose(tamanhos, [0, 625, 2500])
+        self.assertAlmostEqual(tamanhos[2] / tamanhos[1], 4)
+        plt.close(figura)
+
+    def test_distribuicao_p_preserva_celulas_e_separa_zeros_do_log(self):
+        matriz = pd.DataFrame([[0., 1e-12, 1.], [1., 1., 1.], [1., 1., 1.]],
+                             index=self.matriz.index, columns=self.matriz.columns)
+        antes = matriz.copy()
+        s = self.executar_metodo(matriz, ['distribuicao-p'])
+        celulas = s['celulas_p']
+        self.assertEqual(len(celulas), 9)
+        self.assertEqual(celulas['diagonal'].sum(), 3)
+        self.assertEqual(celulas['log10_peso'].isna().sum(), 1)
+        resumo = s['resumo_distribuicao_p']
+        self.assertEqual(resumo.loc['original_gg', 'zeros'], 1)
+        self.assertEqual(resumo.loc['original_gg', 'outliers_inferiores'], 2)
+        self.assertEqual(resumo.loc['log10_positivos', 'outliers_inferiores'], 1)
+        menor = celulas.loc[celulas['peso_gg'] == 1e-12].iloc[0]
+        self.assertEqual((menor['origem'], menor['destino'], menor['peso_gg']), ('01', '02', 1e-12))
+        pd.testing.assert_frame_equal(matriz, antes)
+
+    def test_distribuicao_p_sem_valores_positivos(self):
+        s = self.executar_metodo(self.matriz * 0, ['distribuicao-p'])
+        self.assertTrue(s['celulas_p']['log10_peso'].isna().all())
+        self.assertEqual(s['resumo_distribuicao_p'].loc['log10_positivos', 'celulas'], 0)
+        self.assertTrue(np.isnan(s['resumo_distribuicao_p'].loc['log10_positivos', 'limite_inferior']))
+
+    def test_mapa_completo_preserva_diagonal_e_valores(self):
+        from redes.visualizacoes import figura_mapa_calor
+        setores = pd.Series(self.matriz.index, index=self.matriz.index)
+        antes = self.matriz.copy()
+        completo = figura_mapa_calor(self.matriz, setores, 'P', 10, incluir_diagonal=True)
+        np.testing.assert_array_equal(completo.data[0].customdata, self.matriz.to_numpy())
+        np.testing.assert_allclose(completo.data[0].z, np.log10(1 + self.matriz.to_numpy()))
+        intersetorial = figura_mapa_calor(self.matriz, setores, 'W', 10)
+        self.assertTrue(np.isnan(np.diag(intersetorial.data[0].customdata)).all())
+        pd.testing.assert_frame_equal(self.matriz, antes)
 
     def test_mapa_dependencia_percentual(self):
         from redes.visualizacoes import figura_mapa_calor

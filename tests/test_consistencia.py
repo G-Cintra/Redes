@@ -24,6 +24,14 @@ class ConsistenciaAcademica(unittest.TestCase):
                 if celula["cell_type"] == "code" and "pasta_outputs =" not in fonte:
                     exec(compile(fonte, "<notebook>", "exec"), cls.resultados)
 
+    def test_vab_desconta_consumo_intermediario_a_preco_consumidor(self):
+        s = self.resultados
+        self.assertTrue(s['vab'].index.equals(s['x'].index))
+        self.assertTrue((s['vab'] > 0).all())
+        np.testing.assert_allclose(s['x'], s['consumo_intermediario'] + s['vab'])
+        self.assertAlmostEqual(s['vab'].sum(), 5155601.)
+        self.assertGreater(s['consumo_intermediario'].sum(), s['Z'].to_numpy().sum())
+
     def test_interpolacao_2015(self):
         estimados = self.resultados["matriz_coeficientes_co2"]
         self.assertEqual(estimados.columns.tolist(), [2015])
