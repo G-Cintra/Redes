@@ -11,9 +11,9 @@ import seaborn as sns
 
 SECAO_EMISSOES_VAB = '''<section class="figure" id="emissoes-vab">
 <h2>2. Emissões por atividade e participação na economia</h2>
-<p class="descricao">Próprias = soma da linha; intermediárias atribuídas = soma da coluna sem diagonal. Índice = participação nas emissões associadas ÷ participação no VAB; acima de 1, a primeira é maior. A soma contém sobreposição entre atividades; VAB não é PIB.</p>
+<p class="descricao">Emissões próprias por atividade e participação no valor adicionado bruto (VAB). Índice acima de 1 indica participação nas emissões superior à participação no VAB; abaixo de 1, inferior.</p>
 <a href="imagens/emissoes_vab.png" target="_blank" rel="noopener" title="Abrir gráfico em tamanho original">
-<img src="imagens/emissoes_vab.png" alt="Comparação das 67 atividades: emissões, índice emissões/VAB e participação no valor adicionado bruto" style="display:block;width:100%;height:auto">
+<img src="imagens/emissoes_vab.png" alt="Comparação das 67 atividades: emissões próprias, índice emissões próprias/VAB e participação no valor adicionado bruto" style="display:block;width:100%;height:auto">
 </a><p>Selecione a imagem para ampliar.</p>
 </section>'''
 
@@ -30,23 +30,12 @@ def plotar_emissoes_atividade(contas: pd.DataFrame) -> tuple[plt.Figure, tuple[p
     """Desenha as contas já calculadas e ordenadas no notebook, em Gg de CO₂.
 
     Recebe uma atividade por linha, com descrição, emissões próprias,
-    intermediárias, soma, participacao_vab e indice_emissoes_vab.
+    participacao_vab e indice_emissoes_vab.
     Preserva a ordem recebida e não calcula indicadores.
     """
     dados = contas.copy()
     dados["atividade"] = dados.index.astype(str) + " · " + dados["descricao"]
     ordem = dados["atividade"].tolist()
-
-    # Cada atividade vira duas linhas, uma para cada barra do Seaborn.
-    barras = dados.melt(
-        id_vars="atividade",
-        value_vars=["emissoes_proprias", "emissoes_intermediarias"],
-        var_name="conta", value_name="emissoes_gg",
-    )
-    barras["conta"] = barras["conta"].map({
-        "emissoes_proprias": "Emissões próprias",
-        "emissoes_intermediarias": "Emissões intermediárias atribuídas",
-    })
 
     with sns.axes_style("whitegrid"):
         figura, eixos = plt.subplots(
@@ -55,18 +44,9 @@ def plotar_emissoes_atividade(contas: pd.DataFrame) -> tuple[plt.Figure, tuple[p
         )
         eixo, eixo_indice, eixo_vab = eixos
         sns.barplot(
-            data=barras, x="emissoes_gg", y="atividade", hue="conta",
-            order=ordem,
-            hue_order=["Emissões próprias", "Emissões intermediárias atribuídas"],
-            palette=["#4C78A8", "#F58518"],
-            orient="h", errorbar=None, ax=eixo,
-        )
-        # As posições numéricas alinham a linha ao centro de cada par de barras.
-        sns.lineplot(
-            x=dados["soma_emissoes"].to_numpy(), y=list(range(len(dados))),
-            sort=False, estimator=None, errorbar=None,
-            marker="o", markersize=4, linewidth=1.4, color="#202020",
-            label="Próprias + intermediárias atribuídas", ax=eixo,
+            data=dados, x="emissoes_proprias", y="atividade", order=ordem,
+            color="#4C78A8", orient="h", errorbar=None,
+            label="Emissões próprias", ax=eixo,
         )
 
         sns.scatterplot(
@@ -85,7 +65,7 @@ def plotar_emissoes_atividade(contas: pd.DataFrame) -> tuple[plt.Figure, tuple[p
     from matplotlib.lines import Line2D
     from matplotlib.transforms import ScaledTranslation
     eixo_indice.set_title("2. Emissões em relação ao VAB", pad=145, fontweight="bold")
-    eixo_indice.set_xlabel("Índice = % emissões associadas / % VAB\n< 1: menor participação | > 1: maior participação", labelpad=12)
+    eixo_indice.set_xlabel("Índice = % emissões próprias / % VAB\n< 1: menor participação | > 1: maior participação", labelpad=12)
     eixo_indice.xaxis.set_major_locator(MaxNLocator(nbins=4))
     eixo_indice.set_xlim(left=0)
     eixo_vab.set_title("3. Relevância econômica", pad=145, fontweight="bold")
@@ -107,7 +87,7 @@ def plotar_emissoes_atividade(contas: pd.DataFrame) -> tuple[plt.Figure, tuple[p
         sns.despine(ax=painel, left=True)
 
     eixo.set_title("1. Emissões por atividade", pad=145, fontweight="bold")
-    eixo.set_xlabel("Emissões de CO$_2$ (Gg)\nPróprias e intermediárias atribuídas", labelpad=12)
+    eixo.set_xlabel("Emissões de CO$_2$ (Gg)\nEmissões próprias", labelpad=12)
     eixo.set_ylabel("Atividade")
     eixo.set_xlim(left=0)
     eixo.tick_params(axis="y", labelsize=9)
@@ -354,15 +334,15 @@ a{color:#006b78}code{overflow-wrap:anywhere}
 </style></head><body><main><header><p class="eyebrow">CNM410028 - Desigualdade, Diversidade e Redes</p>
 <p>Gabriel Cintra</p>
 <h1>Rede intersetorial de emissões no Brasil</h1>
-<p class="descricao">Brasil, 2015 · 67 atividades · CO₂ estimado. <a href="https://github.com/G-Cintra/Redes#readme">Apresentação do estudo</a>.</p>
+<p class="descricao">Brasil, 2015 · 67 atividades · CO₂ estimado. <a href="https://github.com/G-Cintra/Redes#nota-metodol%C3%B3gica">Nota metodológica</a> e <a href="https://github.com/G-Cintra/Redes#terminologia">terminologia</a>.</p>
 <nav aria-label="Seções"><a href="#dados">Dados</a> · <a href="#emissoes-vab">Emissões e VAB</a> · <a href="#redes">Redes</a> · <a href="#concentracao">Concentração</a> · <a href="#sankeys-setores">Setores</a> · <a href="#metodo">Método e dados</a></nav>
 </header><section id="dados"><h2>1. De onde vêm os dados</h2>
 
-<p class="descricao"><strong>Linhas:</strong> quem emite. <strong>Colunas:</strong> a demanda final à qual as emissões são atribuídas. <strong>Diagonal:</strong> atribuições à própria atividade. Incluem efeitos diretos e indiretos.</p>'''
+'''
     pagina += blocos["Matriz P completa"] + '</section>' + SECAO_EMISSOES_VAB
     pagina += '<section id="redes"><h2>3. Da matriz à rede</h2>'
     pagina += '<p class="descricao">20 maiores emissoras pela soma das linhas; demais em Outras. Relações internas ficam na diagonal, fora do desenho. As demais análises usam os 67 setores.</p>'
-    pagina += '<p class="descricao"><strong>Área:</strong> emissões próprias · <strong>Espessura:</strong> peso · <strong>Cor:</strong> diversidade de destinos (roxo → amarelo: menor → maior) · <strong>Seta:</strong> destino da atribuição.</p><p class="descricao">Passe o mouse para consultar valores. Posições não têm significado econômico.</p>'
+    pagina += '<p class="descricao"><strong>Área:</strong> emissões próprias · <strong>Espessura:</strong> peso · <strong>Cor:</strong> diversidade de destinos (roxo → amarelo: menor → maior) · <strong>Seta:</strong> da atividade emissora ao destino da demanda final.</p><p class="descricao">Passe o mouse para consultar valores. Posições não têm significado econômico.</p>'
     pagina += SECAO_REDES_INTERATIVAS
     pagina += '<details><summary>Cobertura das relações exibidas</summary><p class="descricao">Comparação entre a rede agregada e a original, excluindo relações internas a Outras do desenho.</p><div class="scroll">'
     pagina += cobertura.to_html(float_format=lambda v: f"{v:.3f}", escape=True) + '</div></details></section>'

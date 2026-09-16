@@ -2,7 +2,13 @@
 
 ## Índice
 
-[Apresentação](#apresentacao) · [Nota metodológica](#nota-metodológica) · [Terminologia](#terminologia) · [Exploração inicial](#exploração-inicial) · [Código fonte](#código-fonte) · [Referências](#referências) · [Reprodução da análise](#reprodução-da-análise)
+- [Apresentação](#apresentacao)
+- [Exploração inicial](#exploração-inicial)
+- [Nota metodológica](#nota-metodológica)
+- [Terminologia](#terminologia)
+- [Código fonte](#código-fonte)
+- [Referências](#referências)
+- [Reprodução da análise](#reprodução-da-análise)
 
 <a id="apresentacao"></a>
 
@@ -26,6 +32,10 @@ A rede será construída a partir da MIP 2015, nível 67 ([IBGE](https://www.ibg
 
 A partir dos resultados, serão discutidas possíveis implicações para políticas públicas e tecnologias de mitigação, considerando as propostas apresentadas por [Rissman et al. (2020)](https://doi.org/10.1016/j.apenergy.2020.114848).
 
+## Exploração inicial
+
+[Resultados preliminares e exploratórios.](https://g-cintra.github.io/Redes/)
+
 ## Nota metodológica
 
 O [notebook da MIP](analise_matriz_insumo_produto.ipynb) constrói a matriz de emissões $P$ a partir da matriz insumo-produto brasileira de 2015. Essa matriz é a entrada da análise de redes.
@@ -37,7 +47,7 @@ A sequência abaixo resume as operações implementadas. Os símbolos e suas uni
 **1. Dados de produção e uso.** Carregam-se $V$ da Tabela 01, $U$ da Tabela 03 e $D$ da Tabela 13 do IBGE. Calculam-se $x$ e $q$ a partir de $V$; a expressão de $D$ abaixo explicita o cálculo das participações publicadas.
 
 $$
-x=V^\top\mathbf{1},\qquad q=V\mathbf{1},\qquad D=V^\top\operatorname{diag}(q)^{-1}.
+x=V^\top\mathbf{1},\qquad q=V\mathbf{1},\qquad D=V^\top\mathrm{diag}(q)^{-1}.
 $$
 
 **2. Transações e demanda final por atividade.** Aplicam-se as participações de $D$ aos usos intermediários e à demanda final por produto:
@@ -51,7 +61,7 @@ As compras registradas por produto são atribuídas às atividades fornecedoras 
 **3. Coeficientes técnicos e encadeamentos.** Cada coluna de $Z$ é dividida pela produção bruta da compradora:
 
 $$
-A=Z\operatorname{diag}(x)^{-1},\qquad L=(I-A)^{-1},\qquad x=Ly.
+A=Z\mathrm{diag}(x)^{-1},\qquad L=(I-A)^{-1},\qquad x=Ly.
 $$
 
 O notebook confere $A$ e $L$ com as Tabelas 14 e 15 do IBGE e verifica a identidade $x=Ly$.
@@ -64,10 +74,10 @@ $$
 
 Os coeficientes publicados são arredondados. Além disso, o notebook adota fator monetário 1 entre a base de preços dos coeficientes e os valores de 2015, sem deflação efetiva; os níveis de emissão são, portanto, aproximações.
 
-**5. Emissões por origem e destino da demanda final.** Primeiro, $L\operatorname{diag}(y)$ distribui a produção requerida entre os destinos finais. Depois, cada linha é multiplicada pela intensidade da atividade emissora:
+**5. Emissões por origem e destino da demanda final.** Primeiro, $L\mathrm{diag}(y)$ distribui a produção requerida entre os destinos finais. Depois, cada linha é multiplicada pela intensidade da atividade emissora:
 
 $$
-\boxed{P=\operatorname{diag}(\gamma)\,L\,\operatorname{diag}(y).}
+\boxed{P=\mathrm{diag}(\gamma)\,L\,\mathrm{diag}(y).}
 $$
 
 O cálculo atribui as emissões geradas no Brasil aos destinos da demanda final por produtos nacionais, incluindo exportações.
@@ -92,7 +102,7 @@ A soma da linha e a soma da coluna de uma mesma atividade geralmente diferem; ap
 
 Os valores monetários estão em R$ milhões e as emissões, em Gg de CO₂ (mil toneladas). Os índices $p$, $i$ e $j$ identificam produtos e atividades, conforme os eixos de cada matriz.
 
-**Notação matricial:** $\operatorname{diag}(v)$ é a matriz diagonal formada pelo vetor $v$; $\mathbf{1}$ é um vetor de uns com dimensão compatível; $I$ é a matriz identidade; $V^\top$ é a transposta de $V$. Multiplicar uma matriz por $\mathbf{1}$ à direita soma suas linhas.
+**Notação matricial:** $\mathrm{diag}(v)$ é a matriz diagonal formada pelo vetor $v$; $\mathbf{1}$ é um vetor de uns com dimensão compatível; $I$ é a matriz identidade; $V^\top$ é a transposta de $V$. Multiplicar uma matriz por $\mathbf{1}$ à direita soma suas linhas.
 
 **Matriz de produção ($V$):** registra o valor produzido de cada produto por cada atividade. As linhas representam os 127 produtos e as colunas, as 67 atividades; $V_{pi}$ é a produção do produto $p$ pela atividade $i$.
 
@@ -131,10 +141,6 @@ $$
 **Intensidade de emissão ($\gamma$):** emissões diretas por unidade de produção bruta de cada atividade, em Gg de CO₂ por R$ milhão.
 
 **Matriz de emissões ($P$):** emissões brasileiras modeladas por atividade emissora (linhas) e atividade da demanda final (colunas). Tem dimensão $67\times67$, em Gg de CO₂, e cobre a produção nacional destinada à demanda final doméstica e às exportações.
-
-## Exploração inicial
-
-[Resultados preliminares e exploratórios.](https://g-cintra.github.io/Redes/)
 
 ## Código Fonte
 

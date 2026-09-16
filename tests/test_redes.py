@@ -117,10 +117,8 @@ class RedesEmissoes(unittest.TestCase):
         antes = self.matriz.copy()
         s = self.executar_metodo(self.matriz, ['contas-atividade'])
         contas = s['contas_atividade']
-        self.assertEqual(contas.index.tolist(), ['02', '03', '01'])
+        self.assertEqual(contas.index.tolist(), ['02', '01', '03'])
         np.testing.assert_allclose(contas.loc[self.matriz.index, 'emissoes_proprias'], [7.5, 8, 7])
-        np.testing.assert_allclose(contas.loc[self.matriz.index, 'emissoes_intermediarias'], [0, 2, 2.5])
-        np.testing.assert_allclose(contas['soma_emissoes'], [10, 9.5, 7.5])
         pd.testing.assert_frame_equal(self.matriz, antes)
 
     def test_contas_atividade_preservam_diagonal_isolados_e_empates(self):
@@ -129,8 +127,6 @@ class RedesEmissoes(unittest.TestCase):
         s = self.executar_metodo(matriz, ['contas-atividade'])
         contas = s['contas_atividade']
         self.assertEqual(contas.index.tolist(), ['01', '02', '03'])
-        np.testing.assert_allclose(contas['emissoes_intermediarias'], 0)
-        np.testing.assert_allclose(contas['soma_emissoes'], [5, 5, 0])
 
     def test_indice_vab_razoes_e_alinhamento(self):
         matriz = pd.DataFrame(np.diag([1., 2., 4.]), index=self.matriz.index, columns=self.matriz.columns)
@@ -142,6 +138,13 @@ class RedesEmissoes(unittest.TestCase):
         proporcional = pd.Series([1., 2., 4.], index=matriz.index)
         contas = self.executar_metodo(matriz, ['contas-atividade', 'indice-vab'], proporcional)['contas_atividade']
         np.testing.assert_allclose(contas['indice_emissoes_vab'], 1)
+
+    def test_indice_vab_usa_linhas_com_fluxos_intersetoriais(self):
+        vab = pd.Series([1., 1., 1.], index=self.matriz.index)
+        contas = self.executar_metodo(self.matriz, ['contas-atividade', 'indice-vab'], vab)['contas_atividade']
+        esperado = self.matriz.sum(axis=1) / self.matriz.to_numpy().sum()
+        np.testing.assert_allclose(contas.loc[self.matriz.index, 'participacao_emissoes'], esperado)
+        np.testing.assert_allclose(contas.loc[self.matriz.index, 'indice_emissoes_vab'], esperado * 3)
 
     def test_indice_vab_emissoes_nulas_e_vab_invalido(self):
         ids = ['contas-atividade', 'indice-vab']
