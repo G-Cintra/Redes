@@ -2,7 +2,7 @@
 
 ## Índice
 
-- [Apresentação](#apresentacao)
+- [Resumo](#resumo)
 - [Exploração inicial](#exploração-inicial)
 - [Nota metodológica](#nota-metodológica)
 - [Terminologia](#terminologia)
@@ -10,7 +10,7 @@
 - [Referências](#referências)
 - [Reprodução da análise](#reprodução-da-análise)
 
-<a id="apresentacao"></a>
+## Resumo
 
 Os processos produtivos geram externalidades ambientais. A percepção geral é de que os níveis atuais de produção são insustentáveis e de que estamos caminhando para mudanças climáticas irreversíveis ([Armstrong McKay et al., 2022](https://doi.org/10.1126/science.abn7950)).
 
@@ -170,8 +170,3 @@ Execute integralmente as células de cada notebook, na ordem em que aparecem, se
 2. [**Análise de redes**](analise_redes_emissoes.ipynb): utiliza esses arquivos para construir a rede, calcular os indicadores e gerar as visualizações.
 
 Os arquivos de entrada são verificados por SHA-256 conforme o [manifesto](raw/manifesto.csv), portanto mantenha os arquivos com permissões apenas para leitura. As hipóteses e decisões metodológicas estão documentadas nos notebooks. A execução da análise de redes gera as tabelas em `outputs/redes/` e a página interativa em `docs/index.html`.
-
-
-### Redes interativas
-
-Execute `analise_redes_interativas.ipynb` após exportar os dados da MIP. O notebook verifica as entradas pelo manifesto, agrega P em 20 atividades e Outras e cria o grafo NetworkX antes de renderizar com PyVis. Os arquivos `docs/redes_interativas/circular.html` e `forcas.html` alimentam os dois cards interativos em `docs/index.html`; reexecutar o notebook atualiza esses cards. Instale as dependências de `requirements.txt` no mesmo ambiente do notebook.
