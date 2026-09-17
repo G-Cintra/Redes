@@ -11,7 +11,7 @@ import seaborn as sns
 
 SECAO_EMISSOES_VAB = '''<section class="figure" id="emissoes-vab">
 <h2>2. Emissões por atividade e participação na economia</h2>
-<p class="descricao">Emissões próprias por atividade e participação no valor adicionado bruto (VAB). Índice acima de 1 indica participação nas emissões superior à participação no VAB; abaixo de 1, inferior.</p>
+<p class="descricao">O peso de uma atividade nas emissões pode diferir de sua participação na economia. A comparação com o valor adicionado bruto (VAB) permite examinar essa diferença.</p>
 <a href="imagens/emissoes_vab.png" target="_blank" rel="noopener" title="Abrir gráfico em tamanho original">
 <img src="imagens/emissoes_vab.png" alt="Comparação das 67 atividades: emissões próprias, índice emissões próprias/VAB e participação no valor adicionado bruto" style="display:block;width:100%;height:auto">
 </a><p>Selecione a imagem para ampliar.</p>
@@ -20,7 +20,7 @@ SECAO_EMISSOES_VAB = '''<section class="figure" id="emissoes-vab">
 
 SECAO_SANKEYS_SETORES = '''<section class="figure" id="sankeys-setores">
 <h2>5. Construção e Administração pública: origens e destinos</h2>
-<p class="descricao">Origens à esquerda; destinos à direita. Faixas em Gg de CO₂; percentuais indicam a cobertura dos dez maiores fluxos de cada lado. Entradas e saídas são atribuições distintas, sem conservação de fluxo.</p>
+<p class="descricao">Construção e Administração pública são exemplos exploratórios selecionados para comparar os dois lados da atribuição. As entradas reúnem emissões de outras atividades associadas à demanda final do setor; as saídas distribuem suas emissões próprias entre outros destinos finais. Essa diferença explica por que os dois lados não precisam ter o mesmo volume.</p><details><summary>Leitura dos diagramas</summary><p>As faixas mostram até dez origens e dez destinos, em Gg de CO₂, com cobertura percentual e diagonal separada.</p></details>
 <iframe src="sankeys_setores.html" title="Sankeys da Construção e da Administração pública" style="width:100%;height:1700px;border:0" loading="lazy"></iframe>
 <a href="sankeys_setores.html" target="_blank" rel="noopener">Abrir os diagramas em uma página separada</a>
 </section>'''
@@ -291,7 +291,7 @@ def exportar_pagina_redes(caminho, figuras, tabelas, conclusoes, proveniencia, c
         else:
             grafico = pio.to_html(figura, full_html=False, include_plotlyjs=(titulo == "Matriz P completa"),
                                   div_id=f"grafico-{i}", config={"responsive": True, "displaylogo": False})
-        bloco = (f'<section class="figure"><h3>{escape(titulo)}</h3>'
+        bloco = (f'<section class="figure"><h3>{escape("Matriz P: Heatmap" if titulo == "Matriz P completa" else titulo)}</h3>'
                  f'<p class="descricao">{escape(descricoes_figuras[titulo])}</p>{grafico}</section>')
         blocos[titulo] = bloco
     tabelas_html = []
@@ -334,25 +334,26 @@ a{color:#006b78}code{overflow-wrap:anywhere}
 </style></head><body><main><header><p class="eyebrow">CNM410028 - Desigualdade, Diversidade e Redes</p>
 <p>Gabriel Cintra</p>
 <h1>Rede intersetorial de emissões no Brasil</h1>
-<p class="descricao">Brasil, 2015 · 67 atividades · CO₂ estimado. <a href="https://github.com/G-Cintra/Redes#nota-metodol%C3%B3gica">Nota metodológica</a> e <a href="https://github.com/G-Cintra/Redes#terminologia">terminologia</a>.</p>
+<p>Esta página acompanha a análise exploratória do trabalho apresentado no <a href="https://github.com/G-Cintra/Redes#readme">README</a>. A matriz de emissões construída a partir da MIP brasileira de 2015 é a base da rede examinada aqui.</p>
+<p>Nesta etapa, buscamos reconhecer padrões na distribuição das emissões e avaliar quais medidas ajudam a descrevê-los. Os resultados e suas interpretações são preliminares; a <a href="https://github.com/G-Cintra/Redes#nota-metodol%C3%B3gica">nota metodológica</a> e a <a href="https://github.com/G-Cintra/Redes#terminologia">terminologia</a> estão no README.</p>
 <nav aria-label="Seções"><a href="#dados">Dados</a> · <a href="#emissoes-vab">Emissões e VAB</a> · <a href="#redes">Redes</a> · <a href="#concentracao">Concentração</a> · <a href="#sankeys-setores">Setores</a> · <a href="#metodo">Método e dados</a></nav>
-</header><section id="dados"><h2>1. De onde vêm os dados</h2>
+</header><section id="dados"><h2>1. Da matriz de emissões à estrutura setorial</h2>
 
 '''
     pagina += blocos["Matriz P completa"] + '</section>' + SECAO_EMISSOES_VAB
-    pagina += '<section id="redes"><h2>3. Da matriz à rede</h2>'
-    pagina += '<p class="descricao">20 maiores emissoras pela soma das linhas; demais em Outras. Relações internas ficam na diagonal, fora do desenho. As demais análises usam os 67 setores.</p>'
-    pagina += '<p class="descricao"><strong>Área:</strong> emissões próprias · <strong>Espessura:</strong> peso · <strong>Cor:</strong> diversidade de destinos (roxo → amarelo: menor → maior) · <strong>Seta:</strong> da atividade emissora ao destino da demanda final.</p><p class="descricao">Passe o mouse para consultar valores. Posições não têm significado econômico.</p>'
+    pagina += '<section id="redes"><h2>3. Distribuição das emissões na rede</h2>'
+    pagina += f"""<p class="descricao">A rede completa tem {format(tabelas['resumo_redes'].iloc[0]['densidade'], '.1%').replace('.', ',')} das ligações possíveis entre atividades distintas. Essa densidade torna a presença de uma conexão pouco relevante.</p><p class="descricao">Nas visualizações abaixo estão representadas as 20 atividades com maior nível de emissões; as demais estão consolidadas no grupo Outras.</p>"""
+    pagina += '<p class="descricao">A área dos nós representa emissões próprias; a espessura das ligações, as emissões daquela relação; e a cor, a diversidade de destinos. Em P<sub>ij</sub>, i é a atividade emissora e j é o destino da demanda final. A área do nó corresponde à soma de sua linha, incluindo a diagonal, e não apenas a P<sub>ii</sub>.</p><details><summary>Leitura dos desenhos</summary><p>As arestas atribuem emissões aos destinos da demanda final. A inversa de Leontief já incorpora requisitos diretos e indiretos; percursos no desenho não representam etapas físicas adicionais da produção.</p><p>As cores vão do roxo ao amarelo conforme aumenta a diversidade entre grupos. Relações internas ficam fora do desenho; as demais análises mantêm as 67 atividades. As duas disposições usam os mesmos dados e suas posições não têm significado econômico.</p></details>'
     pagina += SECAO_REDES_INTERATIVAS
     pagina += '<details><summary>Cobertura das relações exibidas</summary><p class="descricao">Comparação entre a rede agregada e a original, excluindo relações internas a Outras do desenho.</p><div class="scroll">'
     pagina += cobertura.to_html(float_format=lambda v: f"{v:.3f}", escape=True) + '</div></details></section>'
-    pagina += '<section id="concentracao"><h2>4. Concentração e distribuição dos destinos</h2>'
+    pagina += '<section id="concentracao"><h2>4. Concentração e diversidade</h2><p>As emissões se concentram em poucos emissores? E cada emissor distribui suas atribuições entre muitos destinos relevantes? As duas figuras examinam essas dimensões separadamente.</p>'
     pagina += blocos["Participação acumulada dos maiores"] + blocos["Volume e diversidade dos destinos"]
     pagina += '<details><summary>Análises complementares</summary>' + blocos["Curva de Lorenz"] + blocos["Distribuição das células de P"] + ''.join(tabelas_distribuicao)
     pagina += blocos["Magnitude intersetorial"] + blocos["Participação dos emissores por destino"] + '</details></section>'
     pagina += SECAO_SANKEYS_SETORES
     pagina += '<details><summary>Explorar outro setor</summary>' + blocos["Explorar um setor"] + '</details>'
-    pagina += '<section id="metodo"><h2>6. Método, referências e dados</h2><p class="descricao">Estimativas aproximadas; resultados descritivos. Hipóteses e limitações abaixo.</p><details><summary>Fórmulas, hipóteses e referências</summary>'
+    pagina += f"""<section id="metodo"><h2>6. Método, referências e dados</h2><details><summary>Fórmulas, hipóteses e referências</summary>"""
     for titulo, texto in notas_metodologicas.items():
         pagina += f'<h3>{escape(titulo)}</h3><p>{escape(texto)}</p>'
     pagina += '<p>Referências: <a href="https://doi.org/10.2307/1934352">Hill (1973)</a>; <a href="https://doi.org/10.1155/2008/375452">Antoniou e Tsompa (2008)</a>; <a href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.link_analysis.pagerank_alg.pagerank.html">PageRank — NetworkX</a>; <a href="https://doi.org/10.1016/j.rspp.2024.100015">Sanguinet e Azzoni (2024)</a>.</p></details>'
