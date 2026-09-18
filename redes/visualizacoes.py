@@ -336,7 +336,7 @@ a{color:#006b78}code{overflow-wrap:anywhere}
 <h1>Rede intersetorial de emissões no Brasil</h1>
 <p>Esta página acompanha a análise exploratória do trabalho apresentado no <a href="https://github.com/G-Cintra/Redes#readme">README</a>. A matriz de emissões construída a partir da MIP brasileira de 2015 é a base da rede examinada aqui.</p>
 <p>Nesta etapa, buscamos reconhecer padrões na distribuição das emissões e avaliar quais medidas ajudam a descrevê-los. Os resultados e suas interpretações são preliminares; a <a href="https://github.com/G-Cintra/Redes#nota-metodol%C3%B3gica">nota metodológica</a> e a <a href="https://github.com/G-Cintra/Redes#terminologia">terminologia</a> estão no README.</p>
-<nav aria-label="Seções"><a href="#dados">Dados</a> · <a href="#emissoes-vab">Emissões e VAB</a> · <a href="#redes">Redes</a> · <a href="#concentracao">Concentração</a> · <a href="#sankeys-setores">Setores</a> · <a href="#metodo">Método e dados</a></nav>
+<nav aria-label="Seções"><a href="#dados">Dados</a> · <a href="#emissoes-vab">Emissões e VAB</a> · <a href="#redes">Redes</a> · <a href="#concentracao">Concentração</a> · <a href="#sankeys-setores">Setores</a> · <a href="#metodo">Método e dados</a> · <a href="index.html">Página principal · Árvores geradoras</a></nav>
 </header><section id="dados"><h2>1. Da matriz de emissões à estrutura setorial</h2>
 
 '''

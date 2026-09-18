@@ -1,2 +1,3 @@
 # Os hashes das entradas canônicas dependem de seus bytes exatos.
 raw/*.csv -text
+raw/experimento_arvores/P.csv -text

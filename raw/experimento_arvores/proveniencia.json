@@ -1,0 +1,7 @@
+{
+  "origem": "outputs/matriz_emissoes_producao_2015.csv",
+  "copia": "raw/experimento_arvores/P.csv",
+  "sha256_copia": "47c25e57c53c5b59503d7381ef0c462a9b7f1141d4bf96568748a3fadf0ad583",
+  "sha256_manifesto_canonico": "99DF37C9CCE571783DB0D54280766F53F4E6FBB577E1EA74AE25AAB218CAE714",
+  "nota": "Cópia experimental autorizada do CSV local; divergência canônica não resolvida."
+}

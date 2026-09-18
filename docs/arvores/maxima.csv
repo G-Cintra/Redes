@@ -1,0 +1,66 @@
+atividade_1,atividade_2,descricao_1,descricao_2,peso_gg_co2
+0191,3500,"Agricultura, inclusive o apoio à agricultura e a pós-colheita","Energia elétrica, gás natural e outras utilidades",1702.210363883274
+0191,2091,"Agricultura, inclusive o apoio à agricultura e a pós-colheita","Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",1531.3547589159034
+0191,2092,"Agricultura, inclusive o apoio à agricultura e a pós-colheita","Fabricação de defensivos, desinfestantes, tintas e químicos diversos",560.2120505771694
+0191,1992,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",Fabricação de biocombustíveis,365.0579901780369
+0191,1200,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",Fabricação de produtos do fumo,198.6947354549674
+0192,1091,"Pecuária, inclusive o apoio à pecuária","Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",3371.587491666219
+0280,1091,Produção florestal; pesca e aquicultura,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",425.5942547411681
+0580,4180,Extração de carvão mineral e de minerais não metálicos,Construção,682.8604416649961
+0680,7700,"Extração de petróleo e gás, inclusive as atividades de apoio",Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,492.1584270405065
+0680,5000,"Extração de petróleo e gás, inclusive as atividades de apoio",Transporte aquaviário,245.2393934961683
+0791,3500,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração","Energia elétrica, gás natural e outras utilidades",386.8085360584809
+0792,2492,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",Metalurgia de metais não ferosos e a fundição de metais,260.7510954272534
+1091,1093,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",Outros produtos alimentares,3167.83047125238
+1091,3500,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca","Energia elétrica, gás natural e outras utilidades",1935.2899296700198
+1091,5600,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",Alimentação,1661.2195812677369
+1091,1500,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",Fabricação de calçados e de artefatos de couro,364.4963567500211
+1092,1991,Fabricação e refino de açúcar,Refino de petróleo e coquerias,1646.5304877389594
+1092,1093,Fabricação e refino de açúcar,Outros produtos alimentares,1620.0398741713093
+1092,2093,Fabricação e refino de açúcar,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",237.26279947287284
+1100,5600,Fabricação de bebidas,Alimentação,8601.739197779541
+1300,1400,Fabricação de produtos têxteis,Confecção de artefatos do vestuário e acessórios,1026.3216705141367
+1400,3500,Confecção de artefatos do vestuário e acessórios,"Energia elétrica, gás natural e outras utilidades",311.4404403592424
+1600,4180,Fabricação de produtos da madeira,Construção,306.56826847261186
+1700,3500,"Fabricação de celulose, papel e produtos de papel","Energia elétrica, gás natural e outras utilidades",449.2519760580007
+1800,4580,Impressão e reprodução de gravações,Comércio por atacado e varejo,843.9148726479259
+1991,4900,Refino de petróleo e coquerias,Transporte terrestre,811.6079983123683
+2100,8692,Fabricação de produtos farmoquímicos e farmacêuticos,Saúde privada,403.2758329050601
+2200,4180,Fabricação de produtos de borracha e de material plástico,Construção,936.5091999951372
+2300,4180,Fabricação de produtos de minerais não metálicos,Construção,2960.927052995068
+2491,3680,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura","Água, esgoto e gestão de resíduos",1095.52020368527
+2492,3680,Metalurgia de metais não ferosos e a fundição de metais,"Água, esgoto e gestão de resíduos",714.7310792658906
+2500,4180,"Fabricação de produtos de metal, exceto máquinas e equipamentos",Construção,1044.5145886380383
+2600,4580,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",Comércio por atacado e varejo,291.0002499968617
+2700,4180,Fabricação de máquinas e equipamentos elétricos,Construção,569.0542217694531
+2800,3500,Fabricação de máquinas e equipamentos mecânicos,"Energia elétrica, gás natural e outras utilidades",500.9423077934478
+2991,2992,"Fabricação de automóveis, caminhões e ônibus, exceto peças",Fabricação de peças e acessórios para veículos automotores,1119.237373736701
+2991,3500,"Fabricação de automóveis, caminhões e ônibus, exceto peças","Energia elétrica, gás natural e outras utilidades",844.5906817086977
+3000,3500,"Fabricação de outros equipamentos de transporte, exceto veículos automotores","Energia elétrica, gás natural e outras utilidades",232.75571964103565
+3180,8692,Fabricação de móveis e de produtos de indústrias diversas,Saúde privada,444.39894216422243
+3300,4180,"Manutenção, reparação e instalação de máquinas e equipamentos",Construção,263.14012879654473
+3500,4580,"Energia elétrica, gás natural e outras utilidades",Comércio por atacado e varejo,4317.234990237488
+3500,4180,"Energia elétrica, gás natural e outras utilidades",Construção,2275.4586487804418
+3500,8592,"Energia elétrica, gás natural e outras utilidades",Educação privada,633.2715103656168
+3680,8400,"Água, esgoto e gestão de resíduos","Administração pública, defesa e seguridade social",8503.726364819042
+3680,4580,"Água, esgoto e gestão de resíduos",Comércio por atacado e varejo,2994.505783818485
+3680,8692,"Água, esgoto e gestão de resíduos",Saúde privada,1672.383319179501
+3680,8691,"Água, esgoto e gestão de resíduos",Saúde pública,1620.9881799672182
+3680,9480,"Água, esgoto e gestão de resíduos",Organizações associativas e outros serviços pessoais,1373.647485286184
+3680,8591,"Água, esgoto e gestão de resíduos",Educação pública,1306.5564516885372
+4580,7380,Comércio por atacado e varejo,"Outras atividades profissionais, científicas e técnicas",1896.3035143092236
+4580,5980,Comércio por atacado e varejo,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",1705.5224793780415
+4580,6980,Comércio por atacado e varejo,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",1569.0895349396865
+4580,6800,Comércio por atacado e varejo,Atividades imobiliárias,802.8774854287019
+4580,5280,Comércio por atacado e varejo,"Armazenamento, atividades auxiliares dos transportes e correio",475.9810107756659
+5100,9480,Transporte aéreo,Organizações associativas e outros serviços pessoais,430.47613534099656
+5500,9480,Alojamento,Organizações associativas e outros serviços pessoais,941.922467194254
+5800,8591,Edição e edição integrada à impressão,Educação pública,621.2736095671637
+5980,6100,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",Telecomunicações,1150.1785196005862
+6280,8400,Desenvolvimento de sistemas e outros serviços de informação,"Administração pública, defesa e seguridade social",1037.998640297014
+6480,8400,"Intermediação financeira, seguros e previdência complementar","Administração pública, defesa e seguridade social",1855.348801959581
+7180,8400,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D","Administração pública, defesa e seguridade social",1017.2003895204791
+7700,8400,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,"Administração pública, defesa e seguridade social",1179.4354413927692
+7880,8400,Outras atividades administrativas e serviços complementares,"Administração pública, defesa e seguridade social",1767.8513379359472
+8000,8400,"Atividades de vigilância, segurança e investigação","Administração pública, defesa e seguridade social",2764.3171848630986
+9080,9480,"Atividades artísticas, criativas e de espetáculos",Organizações associativas e outros serviços pessoais,379.4437862920067

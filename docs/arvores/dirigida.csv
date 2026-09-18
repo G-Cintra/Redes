@@ -1,0 +1,66 @@
+origem,destino,descricao_1,descricao_2,peso_gg_co2
+0191,1092,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",Fabricação e refino de açúcar,578.8612848172806
+0191,1200,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",Fabricação de produtos do fumo,198.62824951631416
+0191,1992,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",Fabricação de biocombustíveis,338.16104121946364
+0192,1091,"Pecuária, inclusive o apoio à pecuária","Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",3291.5026276840435
+0280,1600,Produção florestal; pesca e aquicultura,Fabricação de produtos da madeira,153.04756077640346
+1091,1500,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",Fabricação de calçados e de artefatos de couro,361.0482567056062
+1092,1093,Fabricação e refino de açúcar,Outros produtos alimentares,1598.3938167311862
+1092,1991,Fabricação e refino de açúcar,Refino de petróleo e coquerias,1570.0268657464426
+1092,2093,Fabricação e refino de açúcar,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",230.80517793029222
+1100,5600,Fabricação de bebidas,Alimentação,8598.713005051191
+1300,1400,Fabricação de produtos têxteis,Confecção de artefatos do vestuário e acessórios,1024.113556036045
+1800,5800,Impressão e reprodução de gravações,Edição e edição integrada à impressão,153.84342727834178
+1991,4900,Refino de petróleo e coquerias,Transporte terrestre,736.2997848187284
+2091,2092,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros","Fabricação de defensivos, desinfestantes, tintas e químicos diversos",120.0538415342371
+2300,4180,Fabricação de produtos de minerais não metálicos,Construção,2958.748065920968
+2800,3300,Fabricação de máquinas e equipamentos mecânicos,"Manutenção, reparação e instalação de máquinas e equipamentos",67.91761170124778
+2992,2991,Fabricação de peças e acessórios para veículos automotores,"Fabricação de automóveis, caminhões e ônibus, exceto peças",1118.5148162407277
+3500,0191,"Energia elétrica, gás natural e outras utilidades","Agricultura, inclusive o apoio à agricultura e a pós-colheita",1693.3060060429298
+3500,0192,"Energia elétrica, gás natural e outras utilidades","Pecuária, inclusive o apoio à pecuária",539.7240953632812
+3500,0280,"Energia elétrica, gás natural e outras utilidades",Produção florestal; pesca e aquicultura,89.85107825690952
+3500,0580,"Energia elétrica, gás natural e outras utilidades",Extração de carvão mineral e de minerais não metálicos,32.76421751160197
+3500,0791,"Energia elétrica, gás natural e outras utilidades","Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",385.9745951591079
+3500,0792,"Energia elétrica, gás natural e outras utilidades","Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",115.08822975623096
+3500,1300,"Energia elétrica, gás natural e outras utilidades",Fabricação de produtos têxteis,248.69813128028935
+3500,1700,"Energia elétrica, gás natural e outras utilidades","Fabricação de celulose, papel e produtos de papel",439.5747252680707
+3500,1800,"Energia elétrica, gás natural e outras utilidades",Impressão e reprodução de gravações,5.1317373965285995
+3500,2091,"Energia elétrica, gás natural e outras utilidades","Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",342.6963475417728
+3500,2200,"Energia elétrica, gás natural e outras utilidades",Fabricação de produtos de borracha e de material plástico,232.40825616251
+3500,2300,"Energia elétrica, gás natural e outras utilidades",Fabricação de produtos de minerais não metálicos,208.31311622802343
+3500,2500,"Energia elétrica, gás natural e outras utilidades","Fabricação de produtos de metal, exceto máquinas e equipamentos",234.2535310851718
+3500,2700,"Energia elétrica, gás natural e outras utilidades",Fabricação de máquinas e equipamentos elétricos,322.28163971253406
+3500,2800,"Energia elétrica, gás natural e outras utilidades",Fabricação de máquinas e equipamentos mecânicos,483.30155283398545
+3500,2992,"Energia elétrica, gás natural e outras utilidades",Fabricação de peças e acessórios para veículos automotores,199.0741149316497
+3500,3000,"Energia elétrica, gás natural e outras utilidades","Fabricação de outros equipamentos de transporte, exceto veículos automotores",230.13945449978482
+3500,3180,"Energia elétrica, gás natural e outras utilidades",Fabricação de móveis e de produtos de indústrias diversas,326.4344591054867
+3500,3680,"Energia elétrica, gás natural e outras utilidades","Água, esgoto e gestão de resíduos",362.5833360675376
+3500,4580,"Energia elétrica, gás natural e outras utilidades",Comércio por atacado e varejo,4223.992882238764
+3500,5500,"Energia elétrica, gás natural e outras utilidades",Alojamento,175.8545751636137
+3500,8592,"Energia elétrica, gás natural e outras utilidades",Educação privada,627.7551316182647
+3500,9080,"Energia elétrica, gás natural e outras utilidades","Atividades artísticas, criativas e de espetáculos",229.93197824365416
+3680,2491,"Água, esgoto e gestão de resíduos","Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",1088.5750185602308
+3680,2492,"Água, esgoto e gestão de resíduos",Metalurgia de metais não ferosos e a fundição de metais,710.634044884423
+3680,7880,"Água, esgoto e gestão de resíduos",Outras atividades administrativas e serviços complementares,785.9402719888865
+3680,8400,"Água, esgoto e gestão de resíduos","Administração pública, defesa e seguridade social",8501.064382219074
+3680,8591,"Água, esgoto e gestão de resíduos",Educação pública,1306.4528601944369
+3680,8691,"Água, esgoto e gestão de resíduos",Saúde pública,1620.9808693559485
+3680,8692,"Água, esgoto e gestão de resíduos",Saúde privada,1672.361391528048
+3680,9480,"Água, esgoto e gestão de resíduos",Organizações associativas e outros serviços pessoais,1371.7847275828487
+5980,6100,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",Telecomunicações,1147.9052698829842
+5980,7380,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem","Outras atividades profissionais, científicas e técnicas",436.55545839529776
+6480,6800,"Intermediação financeira, seguros e previdência complementar",Atividades imobiliárias,608.0447516697393
+6980,2100,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",Fabricação de produtos farmoquímicos e farmacêuticos,262.3966416978317
+6980,2600,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ","Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",225.53957804225092
+6980,7180,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ","Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",114.52951794362585
+7180,3500,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D","Energia elétrica, gás natural e outras utilidades",346.85946332989147
+7380,1100,"Outras atividades profissionais, científicas e técnicas",Fabricação de bebidas,433.8500103895847
+7380,6980,"Outras atividades profissionais, científicas e técnicas","Atividades jurídicas, contábeis, consultoria e sedes de empresas ",95.6015775852574
+7380,7700,"Outras atividades profissionais, científicas e técnicas",Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,25.176807181392082
+7700,0680,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,"Extração de petróleo e gás, inclusive as atividades de apoio",491.52507930714887
+7700,5000,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,Transporte aquaviário,66.44429600623576
+7700,5100,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,Transporte aéreo,202.21637172191717
+7880,6280,Outras atividades administrativas e serviços complementares,Desenvolvimento de sistemas e outros serviços de informação,190.94079381327808
+8000,5280,"Atividades de vigilância, segurança e investigação","Armazenamento, atividades auxiliares dos transportes e correio",286.92561500288645
+8000,5980,"Atividades de vigilância, segurança e investigação","Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",7.091662778804947
+8000,6480,"Atividades de vigilância, segurança e investigação","Intermediação financeira, seguros e previdência complementar",1191.6086065647341
