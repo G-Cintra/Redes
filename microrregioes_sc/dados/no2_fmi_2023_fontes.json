@@ -1,0 +1,28 @@
+{
+  "url": "https://tropomi-no2-l3.data.lit.fmi.fi/S5P_OFFL_L3_NO2_yearlycomposite_2023.nc.gz",
+  "acesso_utc": "2026-09-18T12:38:54.778366+00:00",
+  "sha256_gzip": "6704741108896c11142ae64da2cbaac23e350a93fab46e1b1522927ae60675e4",
+  "sha256_recorte": "55ee4c3b63c8a573cb3b9a2f2111fc122dc37ea53acb03a90adaf6b229de8a10",
+  "ano": 2023,
+  "inicio_observacoes": "2023-01-01 00:35:13.869000",
+  "fim_observacoes": "2023-12-31 22:46:04.926000",
+  "unidade_origem": "10^15 moleculas/cm2",
+  "resolucao_graus": 0.05,
+  "conversao_mol_m2": 1.6605390671738467e-05,
+  "atributos_netcdf": {
+    "Conventions": "HARP-1.0",
+    "datetime_start": "8401.02446607639",
+    "datetime_stop": "8765.948668125",
+    "history": "2023-11-07T08:19:55Z [harp-1.18] harp.import_product('/data/tropomi/S3_no2-offl/S5P_OFFL_L2__NO2____20230101*.nc',operations='tropospheric_NO2_column_number_density_validity>75;derive(solar_hour_angle {time});solar_hour_angle>-42.5;solar_hour_angle<87.5;keep(latitude_bounds,longitude_bounds,datetime_start,datetime_length,tropospheric_NO2_column_number_density,tropospheric_NO2_column_number_density_uncertainty);derive(tropospheric_NO2_column_number_density float [Pmolec/cm2]);derive(tropospheric_NO2_column_number_density_uncertainty float [Pmolec/cm2]);derive(datetime_stop {time} [days since 2000-01-01]);derive(datetime_start [days since 2000-01-01]);exclude(datetime_length);bin_spatial(3601, -90, 0.05, 7201, -180, 0.05);derive(latitude float {latitude});derive(longitude float {longitude})',reduce_operations='squash(time, (latitude, longitude, latitude_bounds, longitude_bounds));set(\"propagate_uncertainty\", \"correlated\");bin()',post_operations='exclude(longitude_bounds, latitude_bounds)')\n2023-11-08T08:09:01Z [harp-1.18] harp.import_product('/data/tropomi/S3_no2-offl/S5P_OFFL_L3_NO2_dailycomposite_202301*.nc',post_operations='squash(time, (latitude, longitude));bin()')\n2024-01-26T07:36:13Z [harp-1.18] harp.import_product('/data/tropomi/S3_no2-offl/S5P_OFFL_L3_NO2_monthlycomposite_2023*.nc',post_operations='squash(time, (latitude, longitude));bin()')",
+    "data_provider": "Finnish Meteorological Institute",
+    "data_origin": "Copernicus Sentinel-5P/TROPOMI",
+    "legal_notice": "Contains modified Copernicus Sentinel data processed by Finnish Meteorological Institute.",
+    "processor_version": "2.5.0"
+  },
+  "count_global_harp": -988489494,
+  "nota_peso": "Peso acumulado HARP; nao e numero de dias validos.",
+  "metodo_regional": "Media espacial da composicao anual FMI ponderada pela area de intersecao em LAEA local.",
+  "projecao_area": "+proj=laea +lat_0=-27 +lon_0=-51 +datum=WGS84 +units=m +no_defs",
+  "sha256_malha": "e2007d9a0aae788b211e93a38cc6bacf84d4fa1eef3b15701586a23c3a661c02",
+  "documentacao": "https://sampo.fmi.fi/tropomi_l3/info_dev.php"
+}

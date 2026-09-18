@@ -1,0 +1,9 @@
+{
+  "malha_url": "https://servicodados.ibge.gov.br/api/v3/malhas/estados/42?formato=application/vnd.geo+json&qualidade=intermediaria&intrarregiao=microrregiao",
+  "nomes_url": "https://servicodados.ibge.gov.br/api/v1/localidades/estados/42/microrregioes",
+  "acesso_utc": "2026-09-18T12:27:49.685078+00:00",
+  "sha256_resposta_malha": "6745e54f78115cf643071d8f9a45cfc92e32a8773c99c2dedcfb38df6eb6b315",
+  "sha256_geojson": "e2007d9a0aae788b211e93a38cc6bacf84d4fa1eef3b15701586a23c3a661c02",
+  "nota": "Recorte histórico de microrregiões; API sem ano fixado. Cópia local é a referência reproduzível.",
+  "semente_exemplo": 42
+}

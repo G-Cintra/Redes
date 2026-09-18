@@ -1,0 +1,22 @@
+{
+  "acesso": "2026-09-18",
+  "uso": "Evidência qualitativa de localização. Nenhuma fonte fornece os fatores numéricos adotados. Fatores e extensões para setores relacionados são hipóteses do cenário, não estatísticas publicadas.",
+  "periodo": "Base monetária 2015; referências de diferentes anos usadas como aproximação de vocações persistentes. Não constitui reconstrução histórica observada de 2015.",
+  "fontes": {
+    "FIESC_HISTORIA": {"url": "https://fiesc.com.br/pt-br/imprensa/superar-desafios-e-historia-da-industria", "evidencia": "Agroindústria no Oeste, base florestal nos planaltos, carvão e cerâmica no Sul, têxteis no Vale e eletrometalmecânica no Norte.", "periodo": "2020; retrospectiva histórica"},
+    "FIESC_OESTE": {"url": "https://fiesc.com.br/imprensa/muito-mais-do-que-aves-e-suinos", "evidencia": "Oeste com carnes e diversificação em madeira, móveis e máquinas; cidades-polo São Miguel do Oeste, Chapecó, Concórdia, Joaçaba e Caçador.", "periodo": "publicação posterior a 2015; uso qualitativo"},
+    "FIESC_MADEIRA": {"url": "https://fiesc.com.br/imprensa/portas-abertas-para-o-futuro", "evidencia": "Base florestal e moveleira na Serra e no Planalto Norte, incluindo São Bento do Sul, Curitibanos e Lages. Investimentos recentes não foram tratados como capacidade existente em 2015.", "periodo": "posterior a 2015"},
+    "FIESC_PORTOS": {"url": "https://fiesc.com.br/pt-br/imprensa/podio-da-industria-os-setores-que-mais-se-destacaram-em-sc", "evidencia": "Portos em Itajaí, Navegantes, São Francisco do Sul, Itapoá e Imbituba.", "periodo": "2022"},
+    "FIESC_CALCADOS": {"url": "https://fiesc.com.br/sites/default/files/2018-04/IC_FIESC15_REVISAO_FINAL_0.pdf", "evidencia": "Polo de calçados de São João Batista, pertencente à microrregião histórica de Tijucas.", "periodo": "2018; informação qualitativa"},
+    "ACATE": {"url": "https://www.acate.com.br/noticias/acate-completa-30-anos-e-comemora-consolidacao-do-setor-em-sc/", "evidencia": "História da tecnologia em Florianópolis e polos em Blumenau, Joinville, Chapecó e outras cidades, já existentes antes de 2015.", "periodo": "2016; histórico até 2015"},
+    "BMW": {"url": "https://www.press.bmwgroup.com/portugal/article/detail/T0194787PT/bmw-group-assembles-first-car-in-brazil?language=pt", "evidencia": "Montagem de automóveis em Araquari em 2014; Araquari pertence à microrregião de Joinville.", "periodo": "2014"},
+    "TIJUCAS": {"url": "https://cincatarina.sc.gov.br/noticias.aspx?id=3670&s=43", "evidencia": "Economia municipal ligada à cerâmica, extração mineral e madeira de reflorestamento.", "periodo": "2025; uso qualitativo"},
+    "ITAPIRANGA": {"url": "https://servicos.itapiranga.sc.gov.br/pagina-4919/", "evidencia": "Agropecuária, aves, leite, suínos e milho em Itapiranga, na microrregião de São Miguel do Oeste.", "periodo": "página municipal sem ano de referência"},
+    "ITUPORANGA": {"url": "https://cimamavi.sc.gov.br/municipios-associados/perfil/ituporanga", "evidencia": "Perfil econômico municipal de Ituporanga, usado como contexto qualitativo agrícola.", "periodo": "página sem ano único"},
+    "WIKI_FLORIPA": {"url": "https://pt.wikipedia.org/wiki/Regi%C3%A3o_Metropolitana_de_Florian%C3%B3polis", "evidencia": "Tecnologia, turismo, construção, comércio e serviços. Região metropolitana não equivale à microrregião; uso apenas como contexto do polo.", "periodo": "página atual; fonte secundária"},
+    "WIKI_ENERGIA": {"url": "https://pt.wikipedia.org/wiki/Complexo_Termoel%C3%A9trico_Jorge_Lacerda", "evidencia": "Localização do complexo em Capivari de Baixo, microrregião de Tubarão. O fator não é participação na geração nem nas emissões.", "periodo": "histórico; fonte secundária"},
+    "WIKI_REGIOES": {"url": "https://pt.wikipedia.org/wiki/Lista_de_mesorregi%C3%B5es_e_microrregi%C3%B5es_de_Santa_Catarina", "evidencia": "Correspondência territorial histórica das 20 microrregiões; não usada como evidência de intensidade produtiva.", "periodo": "divisão 1989–2017"},
+    "VAB": {"url": "https://sidra.ibge.gov.br/tabela/5938", "evidencia": "VAB observado em quatro grupos, já congelado no repositório. Base para escala e distribuição inicial; não contém as 67 atividades.", "periodo": "2015"},
+    "HIPOTESE": {"url": "", "evidencia": "Julgamento exploratório autorizado pelo usuário: proximidade a mercados, polos industriais, serviços urbanos ou recursos rurais. Não é evidência de estabelecimento real nem ausência comprovada.", "periodo": "cenário elaborado em 2026 para base monetária 2015"}
+  }
+}

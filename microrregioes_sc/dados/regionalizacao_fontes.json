@@ -1,0 +1,15 @@
+{
+  "url": "https://servicodados.ibge.gov.br/api/v3/agregados/5938/periodos/2015/variaveis/513|517|6575|525?localidades=N9[42001,42002,42003,42004,42005,42006,42007,42008,42009,42010,42011,42012,42013,42014,42015,42016,42017,42018,42019,42020]|N1[1]|N3[42]",
+  "tabela": "IBGE SIDRA 5938",
+  "ano": 2015,
+  "acesso_utc": "2026-09-18T13:20:56.379468+00:00",
+  "sha256_resposta": "1b0566c58175791846cf1dbd27877758996acf0d843cfd3782b2a4559da3349f",
+  "metadados_url": "https://servicodados.ibge.gov.br/api/v3/agregados/5938/metadados",
+  "metodo": "w[r,i] = soma_r(b[r,i]) * b[r,i]*f[r,i] / soma_r(b[r,i]*f[r,i]); b=VAB micro/grupo Brasil; f=hipotese setorial",
+  "limite": "67 perfis julgamentais, nao observados; escala SC/Brasil ainda por quatro grupos; fontes multitemporais; nao e estimativa estatistica de 2015",
+  "sha256_pesos": "057ec537bc5227a4f8305ea8a244a3f77888ee98c57289eec13d750f8eff97e1",
+  "sha256_catalogo": "6e2b4c662ec615249e5c2e8cfce0d77d18f4b4a14b9e51999394eb3010a3b643",
+  "sha256_base_vab": "3ac0e7f9224261f7a670a26f3abd23c7b3dadba760fe1f11eb0017116750db0e",
+  "sha256_fatores": "9249c1cd1ab613aeb9fca44dbc9ce32ae88478c43edf4b1ae4f938ad02df878e",
+  "sha256_fontes_perfis": "2963cebe0a12a75e5f9e2251586f3b8d023ba04fd70a5aa986e79c9a4ad3ca23"
+}

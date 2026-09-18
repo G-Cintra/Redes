@@ -1,0 +1,16 @@
+categoria,arquivo,ano,fonte,sha256,papel
+MIP,../raw/Matriz_de_Insumo_Produto_2015_Nivel_67.xls,2015,IBGE — Matriz de Insumo-Produto 2015,12d8f1a565f9668269532df9d2ed896c2cfc5ce4c39b56d0f24300c7719a4b08,entrada da analise original que gerou P
+coeficientes_CO2,../raw/coeficientes_co2_sanguinet_azzoni_2011.csv,2011,"Sanguinet e Azzoni (2024), Tabela 2",f49e8560468b541d6f2e2c60bfabd43a7953634ffbe0618759829c1def7d835d,entrada da analise original que gerou P
+coeficientes_CO2,../raw/coeficientes_co2_sanguinet_azzoni_2018.csv,2018,"Sanguinet e Azzoni (2024), Tabela 2",99f26b00d2ad794ee5925c7fd5b4a87d975a8117af8379c31d7c4be930d027f7,entrada da analise original que gerou P
+P,dados/matriz_p_nacional_2015.csv,2015,analise_matriz_insumo_produto.ipynb,99df37c9cce571783db0d54280766f53f4e6fbb577e1ea74ae25aab218cae714,emissoes nacionais 67 x 67
+tecnologia,dados/tecnologia_nacional_2015.npz,2015,MIP IBGE / coeficientes Sanguinet e Azzoni,9bc86d245e4fbfd1e1d171692d44fe7735e342c251cb9042991422e71fb723b2,"gamma, producao bruta x e L nacional; diretas=gamma*x; totais=(gamma@L)*x"
+catalogo,dados/setores_mip_2015.csv,2015,analise MIP / IBGE,6e2b4c662ec615249e5c2e8cfce0d77d18f4b4a14b9e51999394eb3010a3b643,identifica codigos das 67 atividades
+satelite,dados/no2_fmi_2023_sc.npz,2023,TROPOMI/Copernicus - FMI/SAMPO,55ee4c3b63c8a573cb3b9a2f2111fc122dc37ea53acb03a90adaf6b229de8a10,coluna NO2 anual; grade 0.05 grau
+base_pesos,dados/sidra_vab_2015.json,2015,IBGE SIDRA 5938,1b0566c58175791846cf1dbd27877758996acf0d843cfd3782b2a4559da3349f,VAB observado; ancora da escala e base dos pesos
+vab_microrregional,dados/vab_microrregioes_2015.csv,2015,IBGE SIDRA 5938,cb053c8bdaf432dc638a046046e5cf5e1d1ba749d15fca570fabac2903feb8c4,soma dos quatro componentes do VAB; painel E; bilhoes de reais correntes
+pesos_microregioes,dados/pesos_setores_microrregioes_2015.csv,2015,regionalizacao.py / SIDRA 5938,057ec537bc5227a4f8305ea8a244a3f77888ee98c57289eec13d750f8eff97e1,VAB ajustado por hipotese setorial; 1340 pares
+hipoteses_setoriais,dados/fatores_setoriais_estimados.csv,cenario 2026; base 2015,julgamento informado por pesquisa online,9249c1cd1ab613aeb9fca44dbc9ce32ae88478c43edf4b1ae4f938ad02df878e,67 atividades x 20 fatores; numeros estimados
+fontes_hipoteses,dados/fontes_perfis_setoriais.json,multitemporal,FIESC; ACATE; BMW; fontes locais; Wikipedia,2963cebe0a12a75e5f9e2251586f3b8d023ba04fd70a5aa986e79c9a4ad3ca23,"URLs e evidencias qualitativas, nao fatores medidos"
+base_comparacao,dados/pesos_vab_quatro_grupos_2015.csv,2015,SIDRA 5938,3ac0e7f9224261f7a670a26f3abd23c7b3dadba760fe1f11eb0017116750db0e,cenario anterior sem ajuste setorial
+limites,dados/microrregioes_sc.geojson,recorte historico,IBGE API malhas,e2007d9a0aae788b211e93a38cc6bacf84d4fa1eef3b15701586a23c3a661c02,limites administrativos originais
+terra,dados/microrregioes_sc_terra.geojson,GSHHG 2.3.7,IBGE intersecao GSHHG,ed33d55ad9d8dc5b46e836ecf63cd39f5619821d6a413044a022262731ff507d,exclusao de agua cartografada

@@ -1,0 +1,80 @@
+{
+  "ano_no2": 2023,
+  "ano_mip": 2015,
+  "status_mip_regional": "cenario_julgamental_67_atividades_ancorado_vab",
+  "contas": "C: diretas=gamma*x; D: insumos=(gamma@(L-I))*x; cadeia nacional; pegadas sobrepostas",
+  "colunas_mapas": [
+    "emissoes_diretas",
+    "emissoes_insumos"
+  ],
+  "escala_no2": {
+    "comum_a": [
+      "A",
+      "B"
+    ],
+    "minimo": 0.27506708222636267,
+    "maximo": 2.388021519645596,
+    "paleta": "viridis_r",
+    "normalizacao": "linear entre minimo e maximo das celulas validas com intersecao terrestre em SC",
+    "interpretacao": "contraste espacial relativo; nao representa fundo natural nem limite sanitario; dados originais preservados"
+  },
+  "escala_vab": {
+    "painel": "E",
+    "minimo": 0.0,
+    "maximo": 36.349092,
+    "unidade": "bilhoes de reais correntes de 2015",
+    "paleta": "viridis_r"
+  },
+  "sha256_vab": "cb053c8bdaf432dc638a046046e5cf5e1d1ba749d15fca570fabac2903feb8c4",
+  "sha256_fonte_vab": "1b0566c58175791846cf1dbd27877758996acf0d843cfd3782b2a4559da3349f",
+  "escala_co2": {
+    "comum_a": [
+      "C",
+      "D"
+    ],
+    "minimo": 0.0,
+    "maximo": 6771.77161893998,
+    "paleta": "viridis_r",
+    "rgba_amostras": [
+      [
+        0.993248,
+        0.906157,
+        0.143936,
+        1.0
+      ],
+      [
+        0.360741,
+        0.785964,
+        0.387814,
+        1.0
+      ],
+      [
+        0.128729,
+        0.563265,
+        0.551229,
+        1.0
+      ],
+      [
+        0.231674,
+        0.318106,
+        0.544834,
+        1.0
+      ],
+      [
+        0.267004,
+        0.004874,
+        0.329415,
+        1.0
+      ]
+    ]
+  },
+  "sha256_tecnologia": "9bc86d245e4fbfd1e1d171692d44fe7735e342c251cb9042991422e71fb723b2",
+  "sha256_fatores": "9249c1cd1ab613aeb9fca44dbc9ce32ae88478c43edf4b1ae4f938ad02df878e",
+  "sha256_fontes_perfis": "2963cebe0a12a75e5f9e2251586f3b8d023ba04fd70a5aa986e79c9a4ad3ca23",
+  "sha256_pesos": "057ec537bc5227a4f8305ea8a244a3f77888ee98c57289eec13d750f8eff97e1",
+  "sha256_mip_regional": "dc27d400ce899a5df053058c268039e37a7d33eb35ffd4d5aa1032790237a237",
+  "total_p_gg_co2": 683696.0414285716,
+  "sha256_terra": "ed33d55ad9d8dc5b46e836ecf63cd39f5619821d6a413044a022262731ff507d",
+  "sha256_recorte_no2": "55ee4c3b63c8a573cb3b9a2f2111fc122dc37ea53acb03a90adaf6b229de8a10",
+  "sha256_p": "99df37c9cce571783db0d54280766f53f4e6fbb577e1ea74ae25aab218cae714"
+}

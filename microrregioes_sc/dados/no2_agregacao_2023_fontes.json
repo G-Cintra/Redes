@@ -1,0 +1,9 @@
+{
+  "ano": 2023,
+  "metodo": "media ponderada pela area terrestre valida de intersecao",
+  "mascara": "IBGE intersecao GSHHG 2.3.7 full, niveis 1 a 4",
+  "sha256_terra": "ed33d55ad9d8dc5b46e836ecf63cd39f5619821d6a413044a022262731ff507d",
+  "sha256_recorte_no2": "55ee4c3b63c8a573cb3b9a2f2111fc122dc37ea53acb03a90adaf6b229de8a10",
+  "sha256_resultados": "756a65e0698ead4371adb903378e29fb499d92796a53768298a8e746192c214d",
+  "limite": "celulas costeiras conservam o valor L3; apenas seus pesos espaciais excluem agua"
+}

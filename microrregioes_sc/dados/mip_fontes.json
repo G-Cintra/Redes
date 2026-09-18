@@ -1,0 +1,45 @@
+{
+  "origem": {
+    "id": "matriz_emissoes_producao_2015",
+    "arquivo": "outputs/matriz_emissoes_producao_2015.csv",
+    "sha256": "99DF37C9CCE571783DB0D54280766F53F4E6FBB577E1EA74AE25AAB218CAE714",
+    "fonte": "analise_matriz_insumo_produto.ipynb",
+    "ano": "2015",
+    "descricao": "Matriz P: emissoes brasileiras por destino da demanda final."
+  },
+  "sha256": "99df37c9cce571783db0d54280766f53f4e6fbb577e1ea74ae25aab218cae714",
+  "escopo": "Brasil, 67 atividades, 2015",
+  "entradas_da_analise_original": [
+    {
+      "id": "mip_ibge_2015_67",
+      "arquivo": "raw/Matriz_de_Insumo_Produto_2015_Nivel_67.xls",
+      "sha256": "12D8F1A565F9668269532DF9D2ED896C2CFC5CE4C39B56D0F24300C7719A4B08",
+      "fonte": "IBGE — Matriz de Insumo-Produto 2015",
+      "ano": "2015",
+      "descricao": "MIP brasileira no nível de detalhamento 67."
+    },
+    {
+      "id": "sanguinet_azzoni_2011",
+      "arquivo": "raw/coeficientes_co2_sanguinet_azzoni_2011.csv",
+      "sha256": "F49E8560468B541D6F2E2C60BFABD43A7953634FFBE0618759829C1DEF7D835D",
+      "fonte": "Sanguinet e Azzoni (2024), Tabela 2",
+      "ano": "2011",
+      "descricao": "Coeficientes diretos de CO2 transcritos para 2011."
+    },
+    {
+      "id": "sanguinet_azzoni_2018",
+      "arquivo": "raw/coeficientes_co2_sanguinet_azzoni_2018.csv",
+      "sha256": "99F26B00D2AD794EE5925C7FD5B4A87D975A8117AF8379C31D7C4BE930D027F7",
+      "fonte": "Sanguinet e Azzoni (2024), Tabela 2",
+      "ano": "2018",
+      "descricao": "Coeficientes diretos de CO2 transcritos para 2018."
+    }
+  ],
+  "coeficientes_2015": "interpolacao linear gamma_2011 + (4/7)*(gamma_2018-gamma_2011), conforme notebook MIP",
+  "diretas": "soma das linhas de P, incluindo diagonal",
+  "demanda_final": "soma das colunas de P, incluindo emissões diretas e indiretas",
+  "regionalizacao": "P nacional; pesos externos de VAB são aplicados em regionalizacao.py",
+  "sha256_tecnologia": "9bc86d245e4fbfd1e1d171692d44fe7735e342c251cb9042991422e71fb723b2",
+  "tecnologia": "x: tabela 01; A=D@Bn: tabelas 13 e 11; L=inv(I-A); gamma interpolado 2011/2018",
+  "contas_mapas": "diretas=gamma*x; totais=(gamma@L)*x; insumos=totais-diretas; cadeia nacional, sem emissoes externas"
+}
