@@ -42,10 +42,11 @@ def entrada(id_entrada):
 
 
 def carregar_matriz_67(id_entrada):
-    """Verifica e abre a MIP brasileira de nível 67."""
+    """Verifica e abre a MIP brasileira de nível 67 indicada no manifesto."""
     item = entrada(id_entrada)
     caminho = RAIZ_PROJETO / item["arquivo"]
     check_sha256(caminho, item["sha256"])
+    # O conteúdo continua sendo XLS, mesmo com o sufixo .original.
     return pd.read_excel(caminho, sheet_name=None, header=None, engine="xlrd")
 
 

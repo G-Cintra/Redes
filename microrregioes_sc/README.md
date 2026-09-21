@@ -129,7 +129,7 @@ O VAB é uma estatística publicada, ao contrário dos fatores setoriais julgame
 
 | Entrada | Fonte / período | Papel e localização |
 | --- | --- | --- |
-| MIP brasileira | IBGE, 2015, 67 atividades | `../raw/Matriz_de_Insumo_Produto_2015_Nivel_67.xls`; alimenta o notebook original. [Fonte IBGE](https://ftp.ibge.gov.br/Contas_Nacionais/Matriz_de_Insumo_Produto/2015/) |
+| MIP brasileira | IBGE, 2015, 67 atividades | `../raw/Matriz_de_Insumo_Produto_2015_Nivel_67.xls.original`; alimenta o notebook original. [Fonte IBGE](https://ftp.ibge.gov.br/Contas_Nacionais/Matriz_de_Insumo_Produto/2015/) |
 | Coeficientes de CO₂ | Sanguinet e Azzoni (2024), valores de 2011 e 2018 | `../raw/coeficientes_co2_sanguinet_azzoni_2011.csv` e `_2018.csv`; interpolação linear para 2015: γ2011 + 4/7 × (γ2018 − γ2011). [Referência do projeto](../references/sanguinet_azzoni_2024/README.md) |
 | Matriz P | Análise MIP deste repositório, 2015 | Cópia em `dados/matriz_p_nacional_2015.csv`; verificação das emissões diretas; linhas somam gamma × x |
 | Tecnologia nacional | Mesmas fontes da MIP, 2015 | `dados/tecnologia_nacional_2015.npz`: gamma, x e L para calcular diretas e totais |
