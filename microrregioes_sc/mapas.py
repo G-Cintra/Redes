@@ -7,7 +7,10 @@ from pathlib import Path
 import unicodedata
 
 import matplotlib
-matplotlib.use("Agg")
+# A execução em linha de comando usa um backend sem janela; importar a função
+# no notebook deve preservar o backend responsável pela exibição das figuras.
+if __name__ == "__main__":
+    matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 from matplotlib.path import Path as Caminho

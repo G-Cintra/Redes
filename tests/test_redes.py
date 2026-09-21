@@ -331,5 +331,44 @@ class RedesEmissoes(unittest.TestCase):
         self.assertEqual(figura.data[0].zmax, 100)
 
 
+class VisualizacoesResponsabilidade(unittest.TestCase):
+    def tearDown(self):
+        import matplotlib.pyplot as plt
+        plt.close('all')
+
+    def test_heatmap_preserva_diagonal_orientacao_e_zeros(self):
+        import matplotlib.pyplot as plt
+        from redes.visualizacoes import mostrar_heatmap_emissoes
+        C = pd.DataFrame([[.1, .02], [0., .3]], index=['0191', '0192'], columns=['0191', '0192'])
+        with patch.object(plt, 'show'):
+            mostrar_heatmap_emissoes(C)
+        imagem = plt.gcf().axes[0].images[0].get_array()
+        np.testing.assert_array_equal(imagem.data, C.to_numpy())
+        np.testing.assert_array_equal(np.ma.getmaskarray(imagem), [[False, False], [True, False]])
+        self.assertEqual(plt.gcf().axes[0].get_xticklabels()[0].get_text(), 'Agricultura e apoio')
+
+    def test_paineis_alinham_vab_e_calculam_razao_das_participacoes(self):
+        import matplotlib.pyplot as plt
+        from redes import visualizacoes
+        c = pd.Series([10., 30.], index=['0191', '0192'])
+        vab = pd.Series([100., 300.], index=['0192', '0191'])
+        with patch.object(plt, 'show'), patch.object(
+            visualizacoes, 'plotar_emissoes_atividade', wraps=visualizacoes.plotar_emissoes_atividade
+        ) as plotar:
+            visualizacoes.mostrar_emissoes_vab(c, vab)
+        contas = plotar.call_args.args[0]
+        self.assertEqual(contas.index.tolist(), ['0192', '0191'])
+        np.testing.assert_allclose(contas['indice_emissoes_vab'], [3., 1 / 3])
+        np.testing.assert_allclose(contas['participacao_vab'], [.25, .75])
+        self.assertEqual(plt.gcf().axes[0].get_yticklabels()[0].get_text(), 'Pecuária e apoio')
+
+    def test_paineis_rejeitam_setores_diferentes_e_vab_nulo(self):
+        from redes.visualizacoes import mostrar_emissoes_vab
+        c = pd.Series([1.], index=['0191'])
+        for vab in [pd.Series([1.], index=['0192']), pd.Series([0.], index=['0191'])]:
+            with self.assertRaises(ValueError):
+                mostrar_emissoes_vab(c, vab)
+
+
 if __name__ == '__main__':
     unittest.main()

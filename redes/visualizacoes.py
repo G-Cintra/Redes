@@ -5,8 +5,82 @@ from __future__ import annotations
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import seaborn as sns
+
+
+# Rótulos abreviados das 67 atividades da MIP IBGE 2015 (aba 15).
+# Usados somente nos gráficos; os códigos e a ordem dos dados são preservados.
+ROTULOS_ATIVIDADES_IBGE = {
+    "0191": "Agricultura e apoio",
+    "0192": "Pecuária e apoio",
+    "0280": "Produção florestal, pesca e aquic.",
+    "0580": "Extração de carvão e não metálicos",
+    "0680": "Extração de petróleo e gás",
+    "0791": "Extração de minério de ferro",
+    "0792": "Extração de metais não ferrosos",
+    "1091": "Carnes, laticínios e pescado",
+    "1092": "Açúcar",
+    "1093": "Outros alimentos",
+    "1100": "Bebidas",
+    "1200": "Produtos do fumo",
+    "1300": "Têxteis",
+    "1400": "Vestuário e acessórios",
+    "1500": "Calçados e couro",
+    "1600": "Produtos de madeira",
+    "1700": "Celulose e papel",
+    "1800": "Impressão e reprodução",
+    "1991": "Refino de petróleo e coquerias",
+    "1992": "Biocombustíveis",
+    "2091": "Químicos, resinas e elastômeros",
+    "2092": "Defensivos, tintas e outros quím.",
+    "2093": "Limpeza, cosméticos e higiene",
+    "2100": "Farmoquímicos e farmacêuticos",
+    "2200": "Borracha e plástico",
+    "2300": "Produtos minerais não metálicos",
+    "2491": "Siderurgia e ferro-ligas",
+    "2492": "Metais não ferrosos e fundição",
+    "2500": "Produtos de metal",
+    "2600": "Informática, eletrônicos e ópticos",
+    "2700": "Máquinas e equip. elétricos",
+    "2800": "Máquinas e equip. mecânicos",
+    "2991": "Automóveis, caminhões e ônibus",
+    "2992": "Peças e acessórios automotivos",
+    "3000": "Outros equip. de transporte",
+    "3180": "Móveis e indústrias diversas",
+    "3300": "Manutenção e instalação de equip.",
+    "3500": "Eletricidade, gás e utilidades",
+    "3680": "Água, esgoto e resíduos",
+    "4180": "Construção",
+    "4580": "Comércio",
+    "4900": "Transporte terrestre",
+    "5000": "Transporte aquaviário",
+    "5100": "Transporte aéreo",
+    "5280": "Armazenamento, apoio e correio",
+    "5500": "Alojamento",
+    "5600": "Alimentação",
+    "5800": "Edição e impressão integrada",
+    "5980": "TV, rádio, cinema, som e imagem",
+    "6100": "Telecomunicações",
+    "6280": "Sistemas e serviços de informação",
+    "6480": "Finanças, seguros e previdência",
+    "6800": "Atividades imobiliárias",
+    "6980": "Jurídico, contábil e consultoria",
+    "7180": "Arquitetura, engenharia e P&D",
+    "7380": "Outros serv. profissionais e técn.",
+    "7700": "Aluguéis e ativos intelectuais",
+    "7880": "Serv. administrativos e de apoio",
+    "8000": "Vigilância e segurança",
+    "8400": "Admin. pública, defesa e segurid.",
+    "8591": "Educação pública",
+    "8592": "Educação privada",
+    "8691": "Saúde pública",
+    "8692": "Saúde privada",
+    "9080": "Artes, cultura e espetáculos",
+    "9480": "Associações e serviços pessoais",
+    "9700": "Serviços domésticos",
+}
 
 
 SECAO_EMISSOES_VAB = '''<section class="figure" id="emissoes-vab">
@@ -34,7 +108,7 @@ def plotar_emissoes_atividade(contas: pd.DataFrame) -> tuple[plt.Figure, tuple[p
     Preserva a ordem recebida e não calcula indicadores.
     """
     dados = contas.copy()
-    dados["atividade"] = dados.index.astype(str) + " · " + dados["descricao"]
+    dados["atividade"] = (dados.index.astype(str) + " · " + dados["descricao"]).str.rstrip(" ·")
     ordem = dados["atividade"].tolist()
 
     with sns.axes_style("whitegrid"):
@@ -121,6 +195,179 @@ def plotar_emissoes_atividade(contas: pd.DataFrame) -> tuple[plt.Figure, tuple[p
             transform=figura.transFigure, color="#657486", linewidth=2,
         ))
     return figura, tuple(eixos)
+
+
+def mostrar_heatmap_emissoes(C: pd.DataFrame) -> None:
+    """Mostra C = ΦL: linhas emissoras e colunas de demanda final unitária.
+
+    Mantém a diagonal e os valores originais; zeros recebem a cor mais clara.
+    Códigos IBGE recebem nomes abreviados, sem consultar arquivos externos.
+    """
+    from matplotlib.colors import LogNorm, Normalize
+
+    if C.empty or not C.index.is_unique or not C.index.equals(C.columns):
+        raise ValueError("C deve ter as mesmas atividades únicas nas linhas e colunas.")
+    valores = C.to_numpy(dtype=float)
+    if not np.isfinite(valores).all() or (valores < 0).any():
+        raise ValueError("C deve conter valores finitos e não negativos.")
+    positivos = valores[valores > 0]
+    cores = plt.get_cmap("viridis_r")
+    cores = cores.with_extremes(bad=cores(0.0))
+    norma = LogNorm(vmin=positivos.min(), vmax=positivos.max()) if positivos.size else Normalize(0, 1)
+
+    figura, eixo = plt.subplots(figsize=(17, 15), layout="constrained")
+    imagem = eixo.imshow(np.ma.masked_equal(valores, 0), cmap=cores,
+                         interpolation="nearest", norm=norma)
+    rotulos = [ROTULOS_ATIVIDADES_IBGE.get(str(codigo), str(codigo)) for codigo in C.index]
+    eixo.set_xticks(range(len(C)), labels=rotulos, rotation=90, fontsize=8)
+    eixo.set_yticks(range(len(C)), labels=rotulos, fontsize=8)
+    eixo.set_xlabel("Atividade j da demanda final — uma coluna por experimento de R$ 1 milhão")
+    eixo.set_ylabel("Atividade emissora i")
+    eixo.set_title("C = ΦL: emissões nacionais por demanda final unitária\nClaro = menos emissões · escuro = mais emissões")
+    if positivos.size:
+        figura.colorbar(imagem, ax=eixo, shrink=0.75,
+                        label="Gg de CO₂ / R$ milhão de demanda final (escala logarítmica)")
+    plt.show()
+
+
+def mostrar_emissoes_vab(c: pd.Series, vab: pd.Series) -> None:
+    """Compara emissões e VAB em três painéis, ordenados por emissões.
+
+    c em Gg de CO₂ e vab em R$ milhões. O painel central usa
+    (c_i / soma(c)) / (vab_i / soma(vab)), não c_i / vab_i.
+    Os dois vetores devem cobrir as mesmas atividades; a ordem pode diferir.
+    """
+    if c.empty or not c.index.is_unique or not vab.index.is_unique:
+        raise ValueError("c e vab devem conter atividades únicas e não podem estar vazios.")
+    if len(c) != len(vab) or not c.index.isin(vab.index).all():
+        raise ValueError("c e vab devem representar as mesmas atividades.")
+    vab = vab.reindex(c.index)
+    if not np.isfinite(c).all() or (c < 0).any() or not np.isfinite(vab).all() or (vab <= 0).any():
+        raise ValueError("Emissões devem ser finitas e não negativas; VAB deve ser finito e positivo.")
+
+    participacao_vab = vab / vab.sum()
+    participacao_emissoes = c / c.sum() if c.sum() > 0 else c * np.nan
+    contas = pd.DataFrame({
+        "descricao": "", "emissoes_proprias": c,
+        "participacao_vab": participacao_vab,
+        "indice_emissoes_vab": participacao_emissoes / participacao_vab,
+    }).sort_values("emissoes_proprias", ascending=False, kind="stable")
+    _, eixos = plotar_emissoes_atividade(contas)
+    rotulos = [ROTULOS_ATIVIDADES_IBGE.get(str(codigo), str(codigo)) for codigo in contas.index]
+    eixos[0].set_yticks(range(len(contas)), labels=rotulos)
+    plt.show()
+
+
+def mostrar_pesos_microrregioes(participacoes: pd.DataFrame) -> None:
+    """Heatmap anotado: atividade × microrregião, frações do total setorial em SC."""
+    valores = participacoes.to_numpy(dtype=float)
+    if not np.isfinite(valores).all() or (valores < 0).any():
+        raise ValueError("As participações devem ser finitas e não negativas.")
+    np.testing.assert_allclose(valores.sum(axis=1), 1, rtol=0, atol=1e-8)
+    rotulos = [ROTULOS_ATIVIDADES_IBGE.get(str(codigo), str(codigo)) for codigo in participacoes.index]
+    figura, eixo = plt.subplots(figsize=(18, 23), layout="constrained")
+    sns.heatmap(
+        participacoes * 100, ax=eixo, cmap="viridis_r", vmin=0,
+        annot=True, fmt=".1f", annot_kws={"fontsize": 8},
+        yticklabels=rotulos, xticklabels=participacoes.columns,
+        linewidths=0.2, linecolor="#dddddd",
+        cbar_kws={"label": "% da produção estimada do setor em SC", "shrink": 0.5},
+    )
+    eixo.set_title("Distribuição estimada de cada setor entre as microrregiões de SC\n"
+                   "Cada linha soma 100% antes do arredondamento · pesos de cenário", pad=16)
+    eixo.set_xlabel("Microrregião histórica")
+    eixo.set_ylabel("Atividade produtiva")
+    eixo.tick_params(axis="y", labelsize=9, rotation=0)
+    eixo.tick_params(axis="x", labelsize=9, rotation=90)
+    plt.show()
+
+
+def mostrar_mapa_microrregioes(emissoes: pd.Series, regioes: list[dict]) -> None:
+    """Exibe o mapa já usado no projeto, recebendo totais por código e GeoJSON."""
+    from io import BytesIO
+    from IPython.display import SVG, display
+    from matplotlib.colors import Normalize
+    from microrregioes_sc.mapas import desenhar_mapa, normalizar
+
+    codigos = [r["properties"]["codigo_ibge"] for r in regioes]
+    if not emissoes.index.is_unique or set(emissoes.index) != set(codigos):
+        raise ValueError("As emissões devem cobrir exatamente as microrregiões da malha.")
+    if not np.isfinite(emissoes).all() or (emissoes < 0).any():
+        raise ValueError("Emissões regionais devem ser finitas e não negativas.")
+    valores = {normalizar(r["properties"]["microrregiao"]): emissoes.loc[r["properties"]["codigo_ibge"]]
+               for r in regioes}
+    arquivo = BytesIO()
+    desenhar_mapa(
+        regioes, valores, arquivo, "Emissões da produção regionalizada", "Gg de CO₂",
+        "MIP 2015 × pesos setoriais estimados · cenário exploratório\n"
+        "Intensidades nacionais comuns às regiões · não é um inventário observado",
+        Normalize(vmin=0, vmax=float(emissoes.max()) or 1), paleta="viridis_r",
+    )
+    display(SVG(data=arquivo.getvalue().decode("utf-8")))
+
+
+def mostrar_comparacao_satelite(emissoes: pd.Series, regioes: list[dict], grade: dict) -> None:
+    """Compara o cenário de CO₂ de 2015 à coluna de NO₂ de 2023, em escalas próprias."""
+    from matplotlib.colors import Normalize
+    from shapely.geometry import shape, box
+    from shapely.ops import unary_union
+    from shapely.plotting import patch_from_polygon
+
+    codigos = [r["properties"]["codigo_ibge"] for r in regioes]
+    if not emissoes.index.is_unique or set(emissoes.index) != set(codigos):
+        raise ValueError("Emissões e limites devem conter as mesmas microrregiões.")
+    if not np.isfinite(emissoes).all() or (emissoes < 0).any():
+        raise ValueError("As emissões devem ser finitas e não negativas.")
+    lat, lon = grade["latitude"], grade["longitude"]
+    valores, pesos = grade["no2_pmolec_cm2"], grade["peso_harp"]
+    if valores.shape != (len(lat), len(lon)) or pesos.shape != valores.shape:
+        raise ValueError("A grade deve ter latitude nas linhas e longitude nas colunas.")
+    if not (np.allclose(np.diff(lat), .05) and np.allclose(np.diff(lon), .05)):
+        raise ValueError("Este recorte FMI deve ter grade crescente de 0,05 grau.")
+    poligonos = [shape(r["geometry"]) for r in regioes]
+    terra = unary_union(poligonos)
+    # Mesma máscara terrestre do painel original; não modifica os valores L3.
+    participa = np.array([
+        [terra.intersection(box(x-.025, y-.025, x+.025, y+.025)).area > 0
+         for x in lon] for y in lat
+    ])
+    validos = participa & np.isfinite(valores) & np.isfinite(pesos) & (pesos > 0)
+    if not validos.any():
+        raise ValueError("Não há observações válidas sobre o recorte terrestre.")
+    minimo, maximo = valores[validos].min(), valores[validos].max()
+    norma_no2 = Normalize(minimo, maximo if maximo > minimo else minimo + 1e-12)
+    norma_co2 = Normalize(0, float(emissoes.max()) or 1)
+    paleta = plt.get_cmap("viridis_r").copy()
+    paleta.set_bad("#d9d9d9")
+    figura, eixos = plt.subplots(1, 2, figsize=(16, 7), layout="constrained")
+    imagem = eixos[1].pcolormesh(
+        np.r_[lon-.025, lon[-1]+.025], np.r_[lat-.025, lat[-1]+.025],
+        np.ma.array(valores, mask=~validos), cmap=paleta, norm=norma_no2,
+        shading="flat",
+    )
+    imagem.set_clip_path(patch_from_polygon(terra, transform=eixos[1].transData))
+    for codigo, poligono in zip(codigos, poligonos):
+        eixos[0].add_patch(patch_from_polygon(
+            poligono, facecolor=paleta(norma_co2(emissoes.loc[codigo])),
+            edgecolor="#475569", linewidth=.5,
+        ))
+        eixos[1].add_patch(patch_from_polygon(
+            poligono, facecolor="none", edgecolor="#475569", linewidth=.5,
+        ))
+    xmin, ymin, xmax, ymax = terra.bounds
+    for eixo in eixos:
+        eixo.set(xlim=(xmin-.1, xmax+.1), ylim=(ymin-.1, ymax+.1))
+        eixo.set_aspect(1 / np.cos(np.deg2rad(27)))
+        eixo.set_axis_off()
+    eixos[0].set_title("CO₂ estimado · base 2015\nProdução regionalizada por microrregião")
+    eixos[1].set_title("NO₂ por satélite · 2023\nComposição anual TROPOMI/FMI · grade de 0,05°")
+    figura.colorbar(plt.cm.ScalarMappable(norm=norma_co2, cmap=paleta),
+                   ax=eixos[0], orientation="horizontal", shrink=.8, pad=.04,
+                   label="Emissões estimadas (Gg de CO₂)")
+    figura.colorbar(imagem, ax=eixos[1], orientation="horizontal", shrink=.8, pad=.04,
+                   label="Coluna troposférica de NO₂ (10¹⁵ moléculas/cm²)")
+    figura.suptitle("Santa Catarina · comparação espacial descritiva", fontsize=16)
+    plt.show()
 
 
 def figura_distribuicao_p(celulas):
