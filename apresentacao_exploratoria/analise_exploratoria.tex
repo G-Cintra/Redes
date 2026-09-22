@@ -49,9 +49,22 @@
 \end{minipage}
 \vspace{1.0em}\hrule\vspace{1.0em}
 }
+
+% SVGs completos estão em figuras/. PDFs irmãos preservam os mesmos vetores.
+\newcommand{\figuraInteira}[2]{%
+  \newgeometry{margin=1.2cm}
+  \begin{center}
+    \includegraphics[width=\linewidth,height=.91\textheight,keepaspectratio]{#1}
+    \captionof{figure}{#2}
+  \end{center}
+  \restoregeometry
+}
+
 \input{dados_notebook.tex}
 \begin{document}
 \imprimirtitulodois
+
+Esse documento apresenta uma síntese da análise exploratória desenvolvida \href{https://github.com/G-Cintra/Redes/blob/main/analise_exploratoria.ipynb}{\texttt{neste notebook}} e apresentada em sala de aula.
 
 \section*{1. Tema e objetivos}
 O trabalho trata da atribuição de emissões de CO\textsubscript{2} às atividades econômicas e de sua relação com as cadeias produtivas. O local em que se emite pode diferir do local de consumo e daquele em que se obtém renda com a produção.
@@ -63,7 +76,7 @@ O trabalho trata da atribuição de emissões de CO\textsubscript{2} às ativida
 \captionof{figure}{Motivação: produção, consumo e geração de renda podem ocorrer em países diferentes. Ilustração esquemática da apresentação, sem representar fluxos medidos.}
 \end{center}
 
-O objetivo deste exercício é calcular emissões por atividade com a MIP brasileira de 2015, verificar sua recuperação pela demanda final e explorar uma distribuição para Santa Catarina. A análise acompanha o notebook \texttt{analise\_exploratoria.ipynb}. Utiliza contabilidade de insumo-produto com coeficientes fixos; não estima um modelo de equilíbrio geral computável nem reproduz integralmente os artigos.
+O objetivo deste exercício é calcular emissões por atividade com a MIP brasileira de 2015, verificar sua recuperação pela demanda final e explorar uma distribuição para Santa Catarina.
 
 \newpage
 \section*{2. Metodologia, dados e resultados dos artigos}
@@ -92,11 +105,13 @@ Para Marques et al., os critérios redistribuem a responsabilidade sem modificar
 
 Sanguinet e Azzoni destacam a distribuição desigual dos benefícios econômicos e das emissões entre regiões. Pela demanda, sobressaem estrutura produtiva, exportações e demanda doméstica; pela renda, estrutura de alocação e atividade econômica. Regiões mais ricas podem beneficiar-se de insumos intensivos em emissões provenientes de regiões menos desenvolvidas.
 
-\textbf{Recorte do exercício.} Aqui, $c_i$ identifica \emph{quem emite}. O vetor $\Phi Ly$ mantém essa atribuição, mesmo quando calculado a partir da demanda. A atribuição ao setor de demanda final seria $\operatorname{diag}(y)L^{\mathsf T}\varphi$. Não calculamos a conta de renda/Ghosh; por isso, a igualdade verificada a seguir não reproduz a comparação entre os critérios dos artigos.
+
 
 \newpage
 \section*{3. Dados e hipóteses do exercício}
-Usamos vetores em minúsculas e matrizes em maiúsculas. Todos os vetores são coluna. Os códigos identificam as atividades da MIP do IBGE.
+Neste exercício, atribuímos as emissões às atividades produtoras: $c_i$ identifica quem emite. O cálculo $\Phi Ly$ mantém essa atribuição, embora utilize a demanda final. A atribuição ao setor de demanda final seria $\operatorname{diag}(y)L^{\mathsf T}\varphi$. A conta de renda/Ghosh não é estimada; a igualdade analisada adiante refere-se às emissões por atividade produtora.
+
+Usamos vetores coluna em minúsculas e matrizes em maiúsculas. Os códigos identificam as atividades da MIP do IBGE.
 
 \begin{center}
 \small\renewcommand{\arraystretch}{1.22}
@@ -114,121 +129,58 @@ $\Phi$ & $67\times67$ & Intensidades na diagonal & $\operatorname{diag}(\varphi)
 $ci$ & $67\times1$ & Consumo intermediário; R\$ milhões & 02!C134:BQ134\\
 \bottomrule
 \end{tabularx}
-\captionof{table}{Entradas utilizadas. Os números 01, 02, 03, 13 e 15 identificam as abas da MIP de 2015, nível 67. A matriz $L$ é lida diretamente da planilha.}
+\captionof{table}{Entradas utilizadas. Os números 01, 02, 03, 13 e 15 identificam as abas da MIP de 2015, nível 67.}
 \end{center}
 
-\textbf{Intensidades.} Interpolamos linearmente os coeficientes de 2011 e 2018 de Sanguinet e Azzoni:
-\[
-\varphi_{2015}=\varphi_{2011}+\frac{4}{7}(\varphi_{2018}-\varphi_{2011}).
-\]
-\begin{center}
-\small
-\begin{tabular}{lrrr}
-\toprule
-Atividade & $\varphi_{2011}$ & $\varphi_{2018}$ & $\varphi_{2015}$ estimada\\
-\midrule
-\LinhasCoeficientes
-\bottomrule
-\end{tabular}
-\captionof{table}{Primeiras quatro intensidades, em Gg CO$_2$/R\$ milhão. 0191: agricultura; 0192: pecuária; 0280: produção florestal, pesca e aquicultura; 0580: extração de carvão e minerais não metálicos.}
-\end{center}
-
-\textbf{Hipóteses principais.} A estrutura econômica é a de 2015; consideramos a produção para exportação e excluímos emissões ocorridas no exterior. Aplicamos os coeficientes interpolados sem ajuste adicional de preços, diferentemente da harmonização monetária do artigo: o resultado é um cenário exploratório, não um inventário observado. A regionalização utiliza VAB de 2015 e hipóteses de especialização de diferentes anos, mantendo a intensidade nacional por setor. A comparação espacial utiliza NO$_2$ de 2023, outro gás e outro ano.
+\textbf{Hipóteses e recorte da análise}
+\begin{itemize}
+\item \textbf{Estrutura econômica:} usamos a MIP nacional do IBGE de \textbf{2015}, com 67 atividades e 127 produtos. As emissões são atribuídas às atividades produtoras, incluindo a produção para exportação e excluindo emissões ocorridas no exterior associadas às importações.
+\item \textbf{Coeficientes de emissão:} aproximamos as intensidades de 2015 por interpolação linear dos coeficientes de 2011 e 2018 de Sanguinet e Azzoni: $\varphi_{2015}=\varphi_{2011}+\frac{4}{7}(\varphi_{2018}-\varphi_{2011})$. Assumimos variação linear no período e aplicamos os coeficientes à produção de 2015 sem ajuste adicional de preços. As emissões resultantes são estimativas do cenário, não um inventário observado de 2015.
+\item \textbf{Estimativa para SC:} distribuímos uma parcela da produção brasileira entre as 20 microrregiões históricas por pesos baseados no VAB de 2015 e em hipóteses de especialização setorial, apoiadas em fontes de diferentes anos. Mantemos a intensidade nacional de cada atividade em todas as regiões e preservamos sua participação estadual estimada pela base do VAB.
+\item \textbf{Comparação com o satélite:} comparamos as emissões estimadas de \textbf{CO$_2$, com base econômica em 2015}, à coluna troposférica de \textbf{NO$_2$ observada em 2023} pelo Sentinel-5P/TROPOMI. A comparação descreve padrões espaciais de gases, grandezas e anos diferentes; não constitui validação direta das emissões estimadas.
+\end{itemize}
 
 \newpage
-\section*{4. Cálculo das emissões: da matriz ao vetor}
-\textbf{Passo 1: demanda final por atividade.} Convertendo os 127 produtos em 67 atividades, obtemos $y=Df$. No sistema completo, verificamos $Ly=x$.
+\section*{4. Cálculo das emissões pela produção e pela demanda}
+A demanda final da MIP é apresentada por produto. Para relacioná-la às atividades produtoras, utilizamos a matriz de participação $D$, obtendo $y=Df$. A inversa de Leontief relaciona essa demanda à produção necessária em toda a cadeia: $x=Ly$.
 
-\textbf{Passo 2: emissões por demanda unitária.} Construímos $C=\Phi L$. Multiplicar pela diagonal $\Phi$ equivale a multiplicar cada linha $i$ de $L$ por $\varphi_i$. O exemplo introdutório do notebook usa os coeficientes de 2011 $(0{,}04;\,0{,}05;\,0{,}19;\,0{,}07)$ e as quatro primeiras atividades:
+Cada atividade possui uma intensidade de emissão $\varphi_i$, que expressa quanto CO$_2$ é emitido por unidade monetária produzida. Reunindo essas intensidades na diagonal de $\Phi$, calculamos:
 \[
-\Phi_4=\operatorname{diag}(0{,}04;\,0{,}05;\,0{,}19;\,0{,}07),\qquad
-L_4=\LExemplo.
+c=\Phi x.
 \]
-\[
-C_4=\Phi_4L_4\approx\CExemplo.
-\]
-\textbf{Passo 3: multiplicação pela demanda.} Para o recorte $y_4$, temos:
-\[
-y_4=\YExemplo,\qquad C_4y_4\approx\DemandaExemplo.
-\]
-O primeiro elemento é a soma dos produtos da primeira linha de $C_4$ pelo vetor:
-\[
-(C_4y_4)_1=C_{11}y_1+C_{12}y_2+C_{13}y_3+C_{14}y_4.
-\]
-\textbf{Passo 4: multiplicação pela produção.} Com o mesmo $\Phi_4$:
-\[
-x_4=\XExemplo,\qquad \Phi_4x_4=\OfertaExemplo.
-\]
-O recorte $4\times4$ omite os outros 63 setores; portanto, $L_4y_4\neq x_4$. A equivalência é verificada no sistema completo, usando as intensidades interpoladas. Os valores acima são arredondados apenas para exibição.
+O elemento $c_i=\varphi_i x_i$ representa as emissões da atividade $i$ associadas à sua produção, destinada tanto a usos intermediários quanto à demanda final doméstica e às exportações.
 
-\begin{center}
-\footnotesize
-\begin{tabular}{lrrrr}
-\toprule
-Atividade & $x_i$ & $y_i$ & $(\Phi x)_i$ & $(Cy)_i$\\
-\midrule
-\LinhasContas
-\bottomrule
-\end{tabular}
-\captionof{table}{Recorte das saídas efetivas do notebook: $x$ e $y$ em R\$ milhões; emissões em Gg de CO$_2$, com as intensidades interpoladas.}
-\end{center}
-
-\newpage
-\section*{5. Interpretação da matriz e igualdade das contas}
-No sistema completo de 67 atividades, temos:
+Substituindo a produção por sua relação com a demanda final, temos:
 \[
-c=\Phi x=\Phi Ly=Cy,\qquad \sum_i c_i=\TotalBrasil\ \text{Gg de CO}_2.
+c=\Phi Ly=Cy,\qquad C=\Phi L.
 \]
-Pela produção, $c_i$ é a emissão da atividade $i$ ao produzir $x_i$. Pela demanda, é a emissão nessa mesma atividade para atender à demanda final de toda a economia. A maior diferença numérica entre as duas contas é aproximadamente $2{,}18\times10^{-11}$ Gg.
-
-\textbf{Leitura de $C$.} A linha $i$ identifica quem emite; a coluna $j$, a atividade que recebe demanda final:
+Multiplicar $\Phi$ por $L$  equivale a ponderar cada linha da inversa de Leontief pela intensidade da atividade emissora. Em seguida, multiplicar $C$ por $y$ pondera cada coluna pela demanda final correspondente. Para cada atividade, o resultado é:
 \[
-C_{ij}=\varphi_iL_{ij}.
+c_i=\sum_j C_{ij}y_j=\varphi_i\sum_jL_{ij}y_j.
 \]
-Cada elemento mede a emissão em $i$ para atender a R\$ 1 milhão de demanda final de $j$, considerando a cadeia nacional. A diagonal $C_{ii}$ inclui a produção final e os retornos da cadeia à própria atividade, além do efeito direto.
+As duas expressões recuperam as mesmas emissões no sistema completo. A primeira utiliza diretamente a produção observada; a segunda explica essa produção pela demanda final e pelos encadeamentos produtivos. Em ambas, a atribuição permanece na atividade que emite.
 
-Somando uma \textbf{coluna}, obtemos as emissões de todas as atividades para atender à demanda unitária de $j$. Somando uma \textbf{linha}, obtemos a emissão em $i$ no cenário hipotético de R\$ 1 milhão de demanda final em cada uma das 67 atividades. Essa demanda uniforme serve à interpretação dos coeficientes; não representa a composição observada da demanda.
+\section*{5. Interpretação da matriz de emissões}
+A matriz $C$ permite examinar os encadeamentos antes de ponderá-los pela demanda observada. Cada elemento $C_{ij}=\varphi_iL_{ij}$ mede as emissões na atividade $i$ necessárias para atender a uma unidade monetária de demanda final da atividade $j$. As linhas identificam quem emite e as colunas identificam a atividade que recebe a demanda final.
 
-\begin{center}
-\includegraphics[width=\linewidth,height=11.5cm,keepaspectratio]{figuras/heatmap_c.pdf}
-\captionof{figure}{Recorte de $C$: oito atividades de maior emissão total, nas linhas e colunas. A escala logarítmica usa os limites da matriz completa; tons escuros indicam valores maiores. Números arredondados a três casas. O notebook apresenta as 67 atividades.}
-\end{center}
+Na diagonal, $C_{ii}$ inclui a produção final e os retornos da cadeia à própria atividade; portanto, seu significado é mais amplo que o da intensidade direta $\varphi_i$. A soma de uma coluna reúne as emissões de todas as atividades necessárias para atender à demanda unitária de $j$.
 
-\newpage
+O heatmap abaixo apresenta a matriz completa. A escala logarítmica permite visualizar coeficientes de ordens de grandeza distintas: tons claros representam valores menores e tons escuros, maiores. Os zeros são exibidos na cor mais clara e não entram na transformação logarítmica.
+
+\figuraInteira{figuras/heatmap_c.pdf}{Matriz completa $C=\Phi L$, com as 67 atividades nas linhas e colunas. Unidade: Gg de CO$_2$ por R\$ milhão de demanda final. Escala logarítmica; zeros na cor mais clara.}
+
 \section*{6. Emissões e valor adicionado bruto}
-O VAB permite relacionar a emissão de cada atividade à sua participação econômica. Calculamos:
-\[
-vab_i=x_i-ci_i.
-\]
-\begin{center}
-\small
-\begin{tabular}{lrrr}
-\toprule
-Atividade & Produção $x_i$ & Consumo intermediário $ci_i$ & $vab_i$\\
-\midrule
-\LinhasVAB
-\bottomrule
-\end{tabular}
-\captionof{table}{Primeiras quatro atividades, em R\$ milhões. O consumo intermediário é lido a preços de consumidor na aba 02 da MIP.}
-\end{center}
-
-Apresentamos três indicadores: emissão absoluta $c_i$; razão entre a participação nas emissões e a participação no VAB; e participação no VAB nacional:
+O VAB permite relacionar a emissão de cada atividade à sua participação econômica. Apresentamos três indicadores na figura abaixo: emissão absoluta $c_i$; razão entre a participação nas emissões e a participação no VAB; e participação no VAB nacional:
 \[
 I_i=\frac{c_i/\sum_jc_j}{vab_i/\sum_jvab_j},\qquad
 P_i=100\frac{vab_i}{\sum_jvab_j}.
 \]
 Se $I_i>1$, a atividade participa mais das emissões do que do VAB. Se $I_i<1$, ocorre o inverso. O índice é adimensional; não é a intensidade de emissões por unidade monetária.
 
-\begin{center}
-\includegraphics[width=\linewidth]{figuras/emissoes_vab.pdf}
-\captionof{figure}{As oito atividades de maior emissão do cenário. Os denominadores das participações consideram todas as 67 atividades, como no notebook. No primeiro painel, a unidade foi convertida para mil Gg para facilitar a leitura.}
-\end{center}
+\figuraInteira{figuras/emissoes_vab.pdf}{Emissões, razão entre participações nas emissões e no VAB, e participação no VAB: 67 atividades ordenadas da maior para a menor emissão. Todos os indicadores e atividades do notebook são apresentados.}
 
-A atividade de maior emissão é \textbf{\MaiorAtividade}, com $\MaiorEmissao$ Gg de CO$_2$. O gráfico distingue escala de produção, participação econômica e contribuição às emissões. Esses resultados dependem das intensidades interpoladas aplicadas à MIP de 2015.
-
-\newpage
 \section*{7. Estimativa para as microrregiões de SC}
-Distribuímos uma parcela da produção brasileira entre 20 microrregiões históricas. A matriz $W$ ($67\times20$) contém a fração da produção nacional do setor $i$ atribuída à região $r$.
+Distribuímos uma parcela da produção brasileira entre 20 microrregiões de SC. A matriz $W$ ($67\times20$) contém a fração da produção nacional do setor $i$ atribuída à região $r$.
 
 Os pesos partem da participação microrregional no VAB brasileiro de 2015, em quatro grupos (IBGE/SIDRA, tabela 5938), e de fatores hipotéticos de especialização setorial. Esses fatores redistribuem a produção dentro de SC, preservando a participação estadual da base VAB; não são medidas observadas de produção setorial.
 \[
@@ -236,49 +188,22 @@ q_i=\sum_rW_{ir},\qquad S_{ir}=\frac{W_{ir}}{q_i},\qquad\sum_rS_{ir}=1.
 \]
 O vetor $q$ ($67\times1$) representa a participação estadual; $S$ ($67\times20$), a distribuição de cada setor dentro de SC.
 
-\begin{center}
-\footnotesize
-\begin{tabular}{lrrrrr}
-\toprule
- & SC/Brasil & \multicolumn{2}{c}{Joinville} & \multicolumn{2}{c}{Tubarão}\\
-Atividade & $100q_i$ & $100W_{ir}$ & $100S_{ir}$ & $100W_{ir}$ & $100S_{ir}$\\
-\midrule
-\LinhasPesos
-\bottomrule
-\end{tabular}
-\captionof{table}{Exemplo dos pesos, em porcentagem. $W$ usa a produção nacional como base; $S$, a produção estadual do setor.}
-\end{center}
-\begin{center}
-\includegraphics[width=\linewidth]{figuras/pesos_sc.pdf}
-\captionof{figure}{Distribuição das quatro primeiras atividades entre as 20 microrregiões: $100S_{ir}$. Cada linha soma 100\% antes do arredondamento.}
-\end{center}
-
 Aplicamos os pesos à produção e mantemos a intensidade nacional por atividade:
 \[
 X^{SC}_{ir}=W_{ir}x_i,\quad E^{SC}_{ir}=\varphi_iX^{SC}_{ir}=W_{ir}c_i,
 \quad e^{SC}_r=\sum_iE^{SC}_{ir}.
 \]
-$X^{SC}$ e $E^{SC}$ têm dimensão $67\times20$; somamos as atividades de cada \textbf{coluna} para obter $e^{SC}$ ($20\times1$). Assim, $e^{SC}=W^{\mathsf T}c$ e $\sum_re^{SC}_r=\sum_iq_ic_i$. O cenário atribui a SC $\TotalSC$ Gg, equivalentes a $\ParcelaSC\%$ do total brasileiro. Não aplicamos $L$ novamente: $c$ já contém as emissões da produção nacional.
+$X^{SC}$ e $E^{SC}$ têm dimensão $67\times20$; somamos as atividades de cada \textbf{coluna} para obter $e^{SC}$ ($20\times1$). Assim, $e^{SC}=W^{\mathsf T}c$ e $\sum_re^{SC}_r=\sum_iq_ic_i$.
 
-\newpage
-\begingroup\small
+\figuraInteira{figuras/pesos_sc.pdf}{Distribuição completa dos 67 setores entre as 20 microrregiões: $100S_{ir}$. Cada linha soma 100\% antes do arredondamento. Os números representam participações na produção estadual de cada atividade.}
+
 \section*{8. Resultados regionais e comparação espacial}
-\begin{center}
-\small
-\begin{tabular}{lr}
-\toprule
-Microrregião & Emissões estimadas (Gg CO$_2$)\\
-\midrule
-\LinhasRegioes
-\bottomrule
-\end{tabular}
-\captionof{table}{Cinco maiores valores regionais do cenário. Os pesos econômicos originais são mantidos, sem ajuste ao satélite.}
-\end{center}
+
 
 Comparamos o mapa estimado à coluna troposférica de NO$_2$ de 2023 do Sentinel-5P/TROPOMI (FMI/SAMPO). A composição anual tem grade de $0{,}05^\circ$, filtro de qualidade de origem $qa>0{,}75$ e recorte terrestre IBGE/GSHHG. Utilizamos células válidas com peso HARP positivo.
 \begin{center}
-\includegraphics[width=.85\linewidth,height=5.4cm,keepaspectratio]{figuras/comparacao_satelite.pdf}
-\captionof{figure}{Totais regionais de CO$_2$ (base 2015) e coluna de NO$_2$ por área (2023), em escalas próprias.}
+\includegraphics[width=\linewidth]{figuras/comparacao_satelite.pdf}
+\captionof{figure}{Comparação completa entre os totais regionais de CO$_2$ estimados (base 2015) e a coluna de NO$_2$ observada por satélite (2023). Os painéis usam escalas próprias e preservam todas as microrregiões e células válidas do recorte.}
 \end{center}
 
 \section*{9. Conclusões}
@@ -293,5 +218,4 @@ SANGUINET, E. R.; AZZONI, C. R. Carbon emissions drivers in Brazilian regional p
 MARQUES, A.; RODRIGUES, J.; LENZEN, M.; DOMINGOS, T. Income-based environmental responsibility. \textit{Ecological Economics}, v.~84, p.~57--65, 2012. \href{https://doi.org/10.1016/j.ecolecon.2012.09.010}{DOI: 10.1016/j.ecolecon.2012.09.010}.
 
 \textbf{Dados:} IBGE, MIP 2015 e SIDRA 5938; Copernicus/FMI, \href{https://sampo.fmi.fi/tropomi_l3/info_dev.php}{TROPOMI/SAMPO}, NO$_2$ de 2023. Arquivos e hipóteses identificados no notebook.\par}
-\endgroup
 \end{document}

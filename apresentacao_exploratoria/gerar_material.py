@@ -1,7 +1,7 @@
-r"""Reproduz os dados do notebook e exporta exemplos e figuras para a entrega LaTeX.
+r"""Exporta as figuras completas do notebook em SVG e PDF vetoriais.
 
-Execute da raiz do repositório: .venv\Scripts\python apresentacao_exploratoria/gerar_material.py
-Não modifica o notebook. Os recortes gráficos são identificados na entrega.
+Execute da raiz: .venv\Scripts\python apresentacao_exploratoria/gerar_material.py
+As contas e o notebook são preservados; o LaTeX incorpora os PDFs vetoriais.
 """
 from pathlib import Path
 import contextlib
@@ -12,143 +12,102 @@ import sys
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.colors import LogNorm
+from matplotlib.collections import QuadMesh
 import nbformat
 import numpy as np
-import pandas as pd
-import seaborn as sns
 
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ))
 PASTA = Path(__file__).resolve().parent
 FIGURAS = PASTA / 'figuras'
 FIGURAS.mkdir(exist_ok=True)
+plt.rcParams.update({'svg.fonttype': 'none', 'pdf.fonttype': 42})
 notebook = RAIZ / 'analise_exploratoria.ipynb'
 hash_antes = hashlib.sha256(notebook.read_bytes()).hexdigest()
-nb = nbformat.read(notebook, 4)
 ambiente = {'__name__': '__main__'}
 
-# Executa as mesmas contas; somente a exibição é suprimida.
+# Reproduz todas as contas sem modificar as células ou seus resultados salvos.
 plt.show = lambda: plt.close('all')
 with contextlib.redirect_stdout(io.StringIO()):
-    for celula in nb.cells:
+    for celula in nbformat.read(notebook, 4).cells:
         if celula.cell_type == 'code':
             ambiente['display'] = lambda *args, **kwargs: None
             exec(compile(celula.source, str(notebook), 'exec'), ambiente)
 
-from redes.visualizacoes import ROTULOS_ATIVIDADES_IBGE, mostrar_comparacao_satelite
-L, C, Phi = (ambiente[k] for k in ('L', 'C', 'Phi'))
-x, y, c, phi, vab = (ambiente[k] for k in ('x', 'y', 'c', 'phi', 'vab'))
-W, q, S, e_sc = (ambiente[k] for k in ('W', 'q', 'S', 'e_sc'))
-nomes_micro = ambiente['nomes_micro']
-assert np.allclose(c, C @ y)
+from redes.visualizacoes import (
+    ROTULOS_ATIVIDADES_IBGE, mostrar_heatmap_emissoes, mostrar_emissoes_vab,
+    mostrar_pesos_microrregioes, mostrar_comparacao_satelite,
+)
+C, x, y, c, vab, q, S, e_sc = (ambiente[k] for k in ('C', 'x', 'y', 'c', 'vab', 'q', 'S', 'e_sc'))
+np.testing.assert_allclose(c, C @ y)
 np.testing.assert_allclose(e_sc.sum(), q @ c)
 np.testing.assert_allclose(S.sum(axis=1), 1)
 
-def numero(valor, casas=4):
+def numero(valor, casas=2):
     return f'{valor:,.{casas}f}'.replace(',', '@').replace('.', '{,}').replace('@', r'\,')
-
-def matriz(valores, casas=4):
-    a = np.asarray(valores)
-    if a.ndim == 1:
-        a = a[:, None]
-    linhas = [' & '.join(numero(v, casas) for v in linha) for linha in a]
-    return r'\begin{bmatrix}' + r' \\ '.join(linhas) + r'\end{bmatrix}'
 
 def macro(nome, conteudo):
     return '\\newcommand{\\' + nome + '}{' + conteudo + '}\n'
 
-dados = '% Gerado a partir de analise_exploratoria.ipynb; valores completos nas contas.\n'
-for nome, valor in [('TotalBrasil', c.sum()), ('TotalSC', e_sc.sum()), ('ParcelaSC', 100*e_sc.sum()/c.sum())]:
-    dados += macro(nome, numero(valor, 2))
-ids = x.index[:4]
-phi_didatica = np.array([.04, .05, .19, .07])
-l_didatica = L.loc[ids, ids].to_numpy()
-c_didatica = phi_didatica[:, None] * l_didatica
-for nome, valor, casas in [
-    ('PhiExemplo', np.diag(phi_didatica), 4), ('LExemplo', l_didatica, 4),
-    ('CExemplo', c_didatica, 4), ('YExemplo', y.loc[ids], 4),
-    ('XExemplo', x.loc[ids], 0), ('DemandaExemplo', c_didatica @ y.loc[ids], 4),
-    ('OfertaExemplo', phi_didatica * x.loc[ids], 4),
-    ('PhiInterpolada', Phi.loc[ids, ids], 6), ('CInterpolada', C.loc[ids, ids], 6),
-]:
-    dados += macro(nome, matriz(valor, casas))
-
-coef11, coef18 = ambiente['coef_2011'], ambiente['coef_2018']
-linhas_coef, linhas_contas, linhas_vab, linhas_pesos = [], [], [], []
-for posicao, codigo in enumerate(ids):
-    linhas_coef.append(codigo + ' & ' + ' & '.join('$'+numero(v, 6)+'$' for v in [coef11.iloc[posicao], coef18.iloc[posicao], phi.loc[codigo]]) + r' \\')
-    linhas_contas.append(codigo + ' & ' + ' & '.join('$'+numero(v, 4)+'$' for v in [x.loc[codigo],y.loc[codigo],c.loc[codigo],(C@y).loc[codigo]]) + r' \\')
-    linhas_vab.append(codigo + ' & ' + ' & '.join('$'+numero(v, 2)+'$' for v in [x.loc[codigo],ambiente['ci'].loc[codigo],vab.loc[codigo]]) + r' \\')
-    linhas_pesos.append(codigo + ' & ' + ' & '.join('$'+numero(v, 4)+'$' for v in [100*q.loc[codigo],100*W.loc[codigo,'42008'],100*S.loc[codigo,'42008'],100*W.loc[codigo,'42018'],100*S.loc[codigo,'42018']]) + r' \\')
-for nome, linhas in [('LinhasCoeficientes',linhas_coef),('LinhasContas',linhas_contas),('LinhasVAB',linhas_vab),('LinhasPesos',linhas_pesos)]:
-    dados += macro(nome,'\n'.join(linhas))
-top_regioes = e_sc.sort_values(ascending=False).head(5)
-dados += macro('LinhasRegioes', '\n'.join(nomes_micro.loc[k]+' & $'+numero(v,2)+r'$ \\' for k,v in top_regioes.items()))
-dados += macro('EmissaoAgricultura',numero(c.iloc[0],4))
+dados = '% Valores calculados pelo notebook; gerado por gerar_material.py.\n'
+for nome, valor in [('TotalBrasil',c.sum()),('TotalSC',e_sc.sum()),('ParcelaSC',100*e_sc.sum()/c.sum()),('MaiorEmissao',c.max())]:
+    dados += macro(nome,numero(valor))
 dados += macro('MaiorAtividade',ROTULOS_ATIVIDADES_IBGE[c.idxmax()])
-dados += macro('MaiorEmissao',numero(c.max(),2))
-(PASTA / 'dados_notebook.tex').write_text(dados,encoding='utf-8')
+linhas = []
+for codigo in x.index[:4]:
+    valores = [x.loc[codigo],ambiente['ci'].loc[codigo],vab.loc[codigo]]
+    linhas.append(codigo + ' & ' + ' & '.join('$'+numero(v)+'$' for v in valores) + r' \\')
+dados += macro('LinhasVAB','\n'.join(linhas))
+(PASTA/'dados_notebook.tex').write_text(dados,encoding='utf-8')
 
-# Recorte de C: as mesmas oito atividades de maior emissão nas linhas e colunas.
-selecionados = c.nlargest(8).index
-recorte = C.loc[selecionados, selecionados]
-rotulos = [ROTULOS_ATIVIDADES_IBGE[k] for k in selecionados]
-fig, ax = plt.subplots(figsize=(10, 6), layout='constrained')
-positivos = C.to_numpy()[C.to_numpy() > 0]
-sns.heatmap(recorte, ax=ax, cmap='viridis_r', norm=LogNorm(positivos.min(), positivos.max()),
-            annot=True, fmt='.3f', annot_kws={'size':8}, xticklabels=rotulos, yticklabels=rotulos,
-            cbar_kws={'label':'Gg CO₂ / R$ milhão de demanda final'})
-ax.tick_params(axis='both',labelsize=9)
-plt.setp(ax.get_xticklabels(),rotation=35,ha='right')
-ax.set_xlabel('Atividade que recebe demanda final')
-ax.set_ylabel('Atividade emissora')
-fig.savefig(FIGURAS/'heatmap_c.pdf',bbox_inches='tight')
-plt.close(fig)
-
-# Participações calculadas sobre as 67 atividades, antes da seleção gráfica.
-indice = (c/c.sum()) / (vab/vab.sum())
-fig, axes = plt.subplots(1,3,figsize=(12,4),sharey=True,layout='constrained',gridspec_kw={'width_ratios':[1.7,1,1]})
-pos = np.arange(len(selecionados))
-axes[0].barh(pos,c.loc[selecionados]/1000,color='#4C78A8')
-axes[1].scatter(indice.loc[selecionados],pos,color='#5B4B8A',s=20)
-axes[1].axvline(1,color='gray',ls='--',lw=.8)
-axes[2].barh(pos,100*vab.loc[selecionados]/vab.sum(),color='#28689B')
-axes[0].set_yticks(pos,rotulos,fontsize=9)
-axes[0].invert_yaxis()
-for ax,titulo,unidade in zip(axes,['Emissões','Emissões / VAB','Participação no VAB'],['Mil Gg de CO₂','Razão das participações','% do VAB nacional']):
-    ax.set_title(titulo,fontsize=11)
-    ax.set_xlabel(unidade,fontsize=9)
-    ax.set_xlim(left=0)
-    ax.spines[['top','right']].set_visible(False)
-    ax.grid(axis='x',alpha=.2)
-fig.savefig(FIGURAS/'emissoes_vab.pdf',bbox_inches='tight')
-plt.close(fig)
-
-fig, ax = plt.subplots(figsize=(12,3.3),layout='constrained')
-sns.heatmap(100*S.loc[ids].rename(columns=nomes_micro),ax=ax,cmap='viridis_r',vmin=0,
-            annot=True,fmt='.1f',annot_kws={'size':8},cbar_kws={'label':'% da produção do setor em SC'})
-ax.set_yticklabels([ROTULOS_ATIVIDADES_IBGE[k] for k in ids],rotation=0,fontsize=9)
-ax.set_xticklabels(ax.get_xticklabels(),rotation=55,ha='right',fontsize=8)
-ax.set_xlabel('Microrregião'); ax.set_ylabel('Atividade')
-fig.savefig(FIGURAS/'pesos_sc.pdf',bbox_inches='tight')
-plt.close(fig)
-
-def salvar_mapa():
+def salvar_vetorial(nome):
     figura = plt.gcf()
-    figura.set_size_inches(12, 5.6)
-    figura.suptitle('')
-    for eixo, titulo in zip(figura.axes[:2], ['CO₂ estimado · base 2015', 'NO₂ por satélite · 2023']):
-        eixo.set_title(titulo, fontsize=17)
+    # imshow é raster mesmo em SVG. Substitui cada célula por um quadrilátero
+    # com os mesmos valores, cores, normalização e limites do gráfico original.
+    for eixo in figura.axes:
+        for imagem in list(eixo.images):
+            valores = imagem.get_array()
+            xmin, xmax = eixo.get_xlim()
+            ymin, ymax = eixo.get_ylim()
+            eixo.pcolormesh(np.arange(valores.shape[1]+1)-.5,
+                           np.arange(valores.shape[0]+1)-.5, valores,
+                           norm=imagem.norm, cmap=imagem.cmap, shading='flat',
+                           edgecolors='face', linewidth=.05, antialiased=False)
+            imagem.remove()
+            eixo.set_xlim(xmin,xmax)
+            eixo.set_ylim(ymin,ymax)
+        if nome == 'heatmap_c':
+            eixo.tick_params(axis='both',labelsize=11)
+        elif nome == 'pesos_sc':
+            eixo.tick_params(axis='both',labelsize=12)
+            for anotacao in eixo.texts:
+                anotacao.set_fontsize(11)
+        elif nome == 'emissoes_vab':
+            eixo.tick_params(axis='y',labelsize=13)
+        # Contornos da mesma cor eliminam frestas de antialiasing entre células
+        # em leitores de PDF. O heatmap de S mantém sua grade explícita original.
         for colecao in eixo.collections:
-            colecao.set_rasterized(True)  # Evita linhas brancas entre pixels no PDF.
-    for eixo, rotulo in zip(figura.axes[2:], ['CO₂ (Gg)', 'NO₂ (10¹⁵ moléculas/cm²)']):
-        eixo.set_xlabel(rotulo, fontsize=15)
-        eixo.tick_params(labelsize=13)
-    figura.savefig(FIGURAS/'comparacao_satelite.pdf',bbox_inches='tight',dpi=300)
-    plt.close('all')
-plt.show = salvar_mapa
-mostrar_comparacao_satelite(e_sc,ambiente['regioes_sc'],ambiente['grade_no2'])
+            if isinstance(colecao, QuadMesh) and (nome != 'pesos_sc' or eixo is not figura.axes[0]):
+                colecao.set_edgecolor('face')
+                colecao.set_linewidth(.05)
+                colecao.set_antialiased(False)
+    # Colorbars podem ser rasterizadas automaticamente pelo Matplotlib.
+    for artista in figura.findobj():
+        if hasattr(artista,'set_rasterized'):
+            artista.set_rasterized(False)
+    for extensao in ('svg','pdf'):
+        figura.savefig(FIGURAS/f'{nome}.{extensao}',bbox_inches='tight')
+    plt.close(figura)
+
+for nome, funcao, argumentos in [
+    ('heatmap_c',mostrar_heatmap_emissoes,(C,)),
+    ('emissoes_vab',mostrar_emissoes_vab,(c,vab)),
+    ('pesos_sc',mostrar_pesos_microrregioes,(S.rename(columns=ambiente['nomes_micro']),)),
+    ('comparacao_satelite',mostrar_comparacao_satelite,(e_sc,ambiente['regioes_sc'],ambiente['grade_no2'])),
+]:
+    plt.show = lambda nome=nome: salvar_vetorial(nome)
+    funcao(*argumentos)
+    svg = (FIGURAS/f'{nome}.svg').read_text(encoding='utf-8')
+    assert '<image' not in svg, f'Imagem raster inesperada: {nome}'
 assert hashlib.sha256(notebook.read_bytes()).hexdigest() == hash_antes
-print('Material gerado sem modificar o notebook.')
-print('Brasil:',c.sum(),'SC:',e_sc.sum(),'Maior atividade:',c.idxmax())
+print('Quatro figuras completas exportadas em SVG e PDF, sem imagens raster embutidas.')
