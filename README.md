@@ -186,3 +186,9 @@ A conclusão exploratória distingue proeminência emissora de importância como
 Verificações específicas: `python -m unittest discover -s tests -p test_investigacao_2015.py -v`. A execução do notebook também confere balanços, conservação, as duas versões de extração e derivadas ambientais.
 
 Para avaliação pelo repositório público, consulte o [roteiro de revisão independente](docs/revisao_investigacao_2015.md). O relatório, as tabelas e as figuras da investigação de 2015 estão versionados em `outputs/investigacao_redes_2015/`; as demais saídas continuam ignoradas pelo Git.
+
+### Validação focal da interpretação
+
+A etapa posterior está no [notebook de validação adversarial](validacao_emissao_centralidade_2015.ipynb) e no [relatório de validação](outputs/validacao_emissao_centralidade_2015/relatorio.html). Ela testa somente emissão própria × presença de fornecedor, com S como principal, A e HEM como robustezes finais, e L no suplemento. Execute o notebook da raiz; as matrizes e intensidades são conferidas contra a exploração anterior. A conclusão mantém a divergência dos rankings e a atenuação por tamanho, mas rejeita a universalidade do destaque de Energia sob HEM normalizada. Comércio também é uma exceção importante.
+
+Testes específicos: `python -m unittest discover -s tests -p test_validacao_centralidade.py -v`. Todas as saídas desta etapa estão em `outputs/validacao_emissao_centralidade_2015/`, sem modificar as análises anteriores.

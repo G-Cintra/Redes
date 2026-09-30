@@ -1,0 +1,9 @@
+﻿,tentativa,resultado,consequencia
+0,Ranks se aproximam com outra medida,"A/L/S quase redundantes, mas diferem de e; h também não aproxima o ranking emissor.",P1 resiste; não afirmar independência.
+1,O resultado depende de destino com peso igual,"Mediana, peso por x e denominadores alternativos preservam o contraste principal; mudam magnitudes.","S defensável para a pergunta padronizada, não único estimando."
+2,A associação é um artefato de dois pontos,"Exclusão de Energia/Comércio, top5 output e leave-one-out preserva atenuação para S.",P2 resiste dentro de A/L/S.
+3,Controle de tamanho elimina toda relação,"Parcial por ranks ≈0,17; log–log ≈0,27. Comércio/Refino/Transporte ainda têm resíduos positivos.",Eliminar a frase “tudo é tamanho”.
+4,Energia lidera em toda noção de fornecedor,h coloca Energia em 37º e Comércio em 41º; F coloca em 10º e 1º.,P3 irrestrita falha. Não descartar h por contrariar a história.
+5,Energia é a única exceção,Comércio é 1º fornecedor e 5º–8º emissor nos cenários.,Excepcionalidade exclusiva falha.
+6,Pareto prova posição simultaneamente alta,O maior emissor entra na fronteira independentemente do rank estrutural.,Pareto sozinho é insuficiente.
+7,Novo ano de coeficientes derruba a narrativa,γ2011/γ2018 preservam os contrastes A/L/S e o contraexemplo h.,Robusto à fonte existente; não valida emissões observadas.

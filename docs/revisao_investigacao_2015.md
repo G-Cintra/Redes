@@ -65,3 +65,9 @@ Produza um parecer independente com:
 - correções indispensáveis antes de usar o estudo em dissertação ou artigo.
 
 Separe claramente erro demonstrado, dúvida metodológica e sugestão de ampliação. Não aceite a narrativa do relatório como evidência de sua própria validade.
+
+## Validação focal posterior
+
+O [notebook de validação adversarial](../validacao_emissao_centralidade_2015.ipynb) testa especificamente a interpretação emissão própria × presença como fornecedor, usando S, A, L e uma definição de HEM. O [novo relatório](../outputs/validacao_emissao_centralidade_2015/relatorio.html) contém duas figuras e uma tabela principais, com os demais diagnósticos no suplemento.
+
+Essa etapa qualifica a narrativa anterior: Energia e Comércio se destacam em A/L/S, mas sua posição não é invariável à normalização da extração. Na revisão, examine especialmente a diferença entre HEM externa absoluta e por unidade de output, sem tratar uma como substituta silenciosa da outra. Os [testes específicos](../tests/test_validacao_centralidade.py) verificam direção da extração, efeito próprio, normalização, Pareto e correlação parcial. O exercício continua sendo validação interna da mesma base, não confirmação independente.

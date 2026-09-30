@@ -1,0 +1,31 @@
+{
+  "versoes": {
+    "Python": "3.12.10",
+    "numpy": "2.2.6",
+    "pandas": "3.0.0",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.3"
+  },
+  "entradas_contexto_sha256": {
+    "investigacao_redes_emissoes_2015.ipynb": "30737807b3b8ad72cc87ba7b9ea7175ef34c4b039f3219dabec78929d5d62ca6",
+    "docs/revisao_investigacao_2015.md": "40862a6ca843dc5117fdaa788171489f6ceceb253ec56fd06edd5d8c4e5f0bca",
+    "raw/manifesto.csv": "0106c07e4ef63c076549841d5e63f3e27e5a69dcd85f8cc37287006a992ba610",
+    "outputs\\investigacao_redes_2015\\metricas_setoriais.csv": "7f28cfab8008845deca522f0b1ffd30fff80854fbb5f08890c9cbdd0ce61a87f",
+    "outputs\\investigacao_redes_2015\\comparacoes_rankings.csv": "e1f26001722d632982153cf6f9ad9e980349a10223e459deb87c292845f30208",
+    "outputs\\investigacao_redes_2015\\cenarios_coeficientes.csv": "0a109a38229155b860434af76eb402ce9022f851c13aa9427db5e403a50c1f43",
+    "outputs\\investigacao_redes_2015\\matriz_A.csv": "e700cbfe266edcffef34e2d69a0889b4752d39e33d580a3195b401509f5fdf0e",
+    "outputs\\investigacao_redes_2015\\matriz_L.csv": "a4a116796378ae6a077473cd0661db7723b49f11e2db599bd41e72766304f2f3",
+    "outputs\\investigacao_redes_2015\\matriz_S.csv": "2e07b6070d724afeb8744c8645d4597bc39079c4eea4e1c2d01552adb675c2c9",
+    "outputs\\investigacao_redes_2015\\matriz_H.csv": "660a769bca8c4c807c100495fd94d4b00dd959e9c5ba58e2e4626044f6ffd43b",
+    "outputs\\investigacao_redes_2015\\matriz_R.csv": "5663ceab73e23941135f0c67138c08cc14e43f50a292cbd835f288bc238abd0e",
+    "outputs\\investigacao_redes_2015\\matriz_P.csv": "384f50158e7c5ec2454f3a27beae9056b6d2bea9e6ccfeb9c74462922912214d"
+  },
+  "notebook": "validacao_emissao_centralidade_2015.ipynb",
+  "HEM": "extracao completa Ghosh; efeito externo F; principal F/x",
+  "medida_principal": "S",
+  "robustez_final": [
+    "A",
+    "HEM externa por x"
+  ],
+  "suplementar_redundante": "L"
+}

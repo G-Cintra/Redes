@@ -1,0 +1,805 @@
+﻿,cenario,metrica,setor,nome,participacao_e,rank_e,rank_central,k_ambos,pareto
+0,2011,A,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.017869162937713817,17.0,2.0,17.0,False
+1,2011,A,0192,"Pecuária, inclusive o apoio à pecuária",0.009894879774878159,33.0,20.0,33.0,False
+2,2011,A,0280,Produção florestal; pesca e aquicultura,0.008894241660640127,35.0,38.0,38.0,False
+3,2011,A,0580,Extração de carvão mineral e de minerais não metálicos,0.001995051216896605,65.0,45.0,65.0,False
+4,2011,A,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.002483996267939461,62.0,27.0,62.0,False
+5,2011,A,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.001523842393741399,66.0,54.0,66.0,False
+6,2011,A,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0030235213434632218,60.0,49.0,60.0,False
+7,2011,A,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.051602197379980716,2.0,30.0,30.0,False
+8,2011,A,1092,Fabricação e refino de açúcar,0.029157492056358036,11.0,48.0,48.0,False
+9,2011,A,1093,Outros produtos alimentares,0.05120385441162454,3.0,19.0,19.0,False
+10,2011,A,1100,Fabricação de bebidas,0.04526787979673068,7.0,43.0,43.0,False
+11,2011,A,1200,Fabricação de produtos do fumo,0.0010893048104939655,67.0,66.0,67.0,False
+12,2011,A,1300,Fabricação de produtos têxteis,0.004694178685476581,52.0,22.0,52.0,False
+13,2011,A,1400,Confecção de artefatos do vestuário e acessórios,0.005312375775091572,47.0,59.0,59.0,False
+14,2011,A,1500,Fabricação de calçados e de artefatos de couro,0.0029053905552766652,61.0,63.0,63.0,False
+15,2011,A,1600,Fabricação de produtos da madeira,0.002304091988974825,63.0,44.0,63.0,False
+16,2011,A,1700,"Fabricação de celulose, papel e produtos de papel",0.005801609689780808,45.0,17.0,45.0,False
+17,2011,A,1800,Impressão e reprodução de gravações,0.0042187813394488835,55.0,40.0,55.0,False
+18,2011,A,1991,Refino de petróleo e coquerias,0.016177043026774522,21.0,6.0,21.0,False
+19,2011,A,1992,Fabricação de biocombustíveis,0.003093801868627153,59.0,47.0,59.0,False
+20,2011,A,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.014713717566949456,26.0,7.0,26.0,False
+21,2011,A,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.005378929959217218,46.0,15.0,46.0,False
+22,2011,A,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.005845878043588338,44.0,56.0,56.0,False
+23,2011,A,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.008373001653932136,37.0,55.0,55.0,False
+24,2011,A,2200,Fabricação de produtos de borracha e de material plástico,0.010228618388721756,32.0,13.0,32.0,False
+25,2011,A,2300,Fabricação de produtos de minerais não metálicos,0.006468306985622778,42.0,33.0,42.0,False
+26,2011,A,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.005869247112580373,43.0,14.0,43.0,False
+27,2011,A,2492,Metalurgia de metais não ferosos e a fundição de metais,0.004128005938574387,56.0,29.0,56.0,False
+28,2011,A,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.006591074035333712,41.0,16.0,41.0,False
+29,2011,A,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.014768269466568066,24.0,53.0,53.0,False
+30,2011,A,2700,Fabricação de máquinas e equipamentos elétricos,0.007279161684190025,40.0,39.0,40.0,False
+31,2011,A,2800,Fabricação de máquinas e equipamentos mecânicos,0.008711983142957505,36.0,31.0,36.0,False
+32,2011,A,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.002115146277878537,64.0,61.0,64.0,False
+33,2011,A,2992,Fabricação de peças e acessórios para veículos automotores,0.004072804095751423,57.0,32.0,57.0,False
+34,2011,A,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.0036840947300019653,58.0,60.0,60.0,False
+35,2011,A,3180,Fabricação de móveis e de produtos de indústrias diversas,0.00813416919110625,38.0,46.0,46.0,False
+36,2011,A,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.004510605838202935,53.0,12.0,53.0,False
+37,2011,A,3500,"Energia elétrica, gás natural e outras utilidades",0.06025764990734192,1.0,9.0,9.0,True
+38,2011,A,3680,"Água, esgoto e gestão de resíduos",0.049922498605835704,4.0,34.0,34.0,False
+39,2011,A,4180,Construção,0.045662698628601055,6.0,25.0,25.0,False
+40,2011,A,4580,Comércio por atacado e varejo,0.04769556209680862,5.0,1.0,5.0,True
+41,2011,A,4900,Transporte terrestre,0.004807485450768614,51.0,3.0,51.0,False
+42,2011,A,5000,Transporte aquaviário,0.005220343817355328,48.0,51.0,51.0,False
+43,2011,A,5100,Transporte aéreo,0.004314236331394715,54.0,41.0,54.0,False
+44,2011,A,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.00498913735479384,50.0,10.0,50.0,False
+45,2011,A,5500,Alojamento,0.011087742202598878,30.0,52.0,52.0,False
+46,2011,A,5600,Alimentação,0.012907929811160155,28.0,36.0,36.0,False
+47,2011,A,5800,Edição e edição integrada à impressão,0.010355906154498516,31.0,58.0,58.0,False
+48,2011,A,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.016299189019645742,20.0,21.0,21.0,False
+49,2011,A,6100,Telecomunicações,0.013955493824752401,27.0,26.0,27.0,False
+50,2011,A,6280,Desenvolvimento de sistemas e outros serviços de informação,0.019944691566491517,15.0,28.0,28.0,False
+51,2011,A,6480,"Intermediação financeira, seguros e previdência complementar",0.03319684574185881,9.0,4.0,9.0,False
+52,2011,A,6800,Atividades imobiliárias,0.03153980832077221,10.0,18.0,18.0,False
+53,2011,A,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.021707294207147208,12.0,5.0,12.0,False
+54,2011,A,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.01637140493124041,18.0,24.0,24.0,False
+55,2011,A,7380,"Outras atividades profissionais, científicas e técnicas",0.01635257102149652,19.0,11.0,19.0,False
+56,2011,A,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.021101836004337512,13.0,23.0,23.0,False
+57,2011,A,7880,Outras atividades administrativas e serviços complementares,0.021072747435147185,14.0,8.0,14.0,False
+58,2011,A,8000,"Atividades de vigilância, segurança e investigação",0.01846647518569563,16.0,35.0,35.0,False
+59,2011,A,8400,"Administração pública, defesa e seguridade social",0.04157441144140373,8.0,37.0,37.0,False
+60,2011,A,8591,Educação pública,0.008926868809498598,34.0,62.0,62.0,False
+61,2011,A,8592,Educação privada,0.008000584197838435,39.0,57.0,57.0,False
+62,2011,A,8691,Saúde pública,0.005175136656697066,49.0,64.0,64.0,False
+63,2011,A,8692,Saúde privada,0.012864889127849732,29.0,65.0,65.0,False
+64,2011,A,9080,"Atividades artísticas, criativas e de espetáculos",0.016005819100383564,23.0,50.0,50.0,False
+65,2011,A,9480,Organizações associativas e outros serviços pessoais,0.01471948039669471,25.0,42.0,42.0,False
+66,2011,A,9700,Serviços domésticos,0.01611755155880283,22.0,67.0,67.0,False
+67,2011,L,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.017869162937713817,17.0,5.0,17.0,False
+68,2011,L,0192,"Pecuária, inclusive o apoio à pecuária",0.009894879774878159,33.0,25.0,33.0,False
+69,2011,L,0280,Produção florestal; pesca e aquicultura,0.008894241660640127,35.0,40.0,40.0,False
+70,2011,L,0580,Extração de carvão mineral e de minerais não metálicos,0.001995051216896605,65.0,45.0,65.0,False
+71,2011,L,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.002483996267939461,62.0,10.0,62.0,False
+72,2011,L,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.001523842393741399,66.0,53.0,66.0,False
+73,2011,L,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0030235213434632218,60.0,50.0,60.0,False
+74,2011,L,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.051602197379980716,2.0,35.0,35.0,False
+75,2011,L,1092,Fabricação e refino de açúcar,0.029157492056358036,11.0,44.0,44.0,False
+76,2011,L,1093,Outros produtos alimentares,0.05120385441162454,3.0,21.0,21.0,False
+77,2011,L,1100,Fabricação de bebidas,0.04526787979673068,7.0,46.0,46.0,False
+78,2011,L,1200,Fabricação de produtos do fumo,0.0010893048104939655,67.0,66.0,67.0,False
+79,2011,L,1300,Fabricação de produtos têxteis,0.004694178685476581,52.0,28.0,52.0,False
+80,2011,L,1400,Confecção de artefatos do vestuário e acessórios,0.005312375775091572,47.0,59.0,59.0,False
+81,2011,L,1500,Fabricação de calçados e de artefatos de couro,0.0029053905552766652,61.0,63.0,63.0,False
+82,2011,L,1600,Fabricação de produtos da madeira,0.002304091988974825,63.0,47.0,63.0,False
+83,2011,L,1700,"Fabricação de celulose, papel e produtos de papel",0.005801609689780808,45.0,20.0,45.0,False
+84,2011,L,1800,Impressão e reprodução de gravações,0.0042187813394488835,55.0,41.0,55.0,False
+85,2011,L,1991,Refino de petróleo e coquerias,0.016177043026774522,21.0,2.0,21.0,False
+86,2011,L,1992,Fabricação de biocombustíveis,0.003093801868627153,59.0,39.0,59.0,False
+87,2011,L,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.014713717566949456,26.0,8.0,26.0,False
+88,2011,L,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.005378929959217218,46.0,15.0,46.0,False
+89,2011,L,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.005845878043588338,44.0,55.0,55.0,False
+90,2011,L,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.008373001653932136,37.0,57.0,57.0,False
+91,2011,L,2200,Fabricação de produtos de borracha e de material plástico,0.010228618388721756,32.0,13.0,32.0,False
+92,2011,L,2300,Fabricação de produtos de minerais não metálicos,0.006468306985622778,42.0,31.0,42.0,False
+93,2011,L,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.005869247112580373,43.0,17.0,43.0,False
+94,2011,L,2492,Metalurgia de metais não ferosos e a fundição de metais,0.004128005938574387,56.0,29.0,56.0,False
+95,2011,L,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.006591074035333712,41.0,19.0,41.0,False
+96,2011,L,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.014768269466568066,24.0,54.0,54.0,False
+97,2011,L,2700,Fabricação de máquinas e equipamentos elétricos,0.007279161684190025,40.0,36.0,40.0,False
+98,2011,L,2800,Fabricação de máquinas e equipamentos mecânicos,0.008711983142957505,36.0,30.0,36.0,False
+99,2011,L,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.002115146277878537,64.0,61.0,64.0,False
+100,2011,L,2992,Fabricação de peças e acessórios para veículos automotores,0.004072804095751423,57.0,32.0,57.0,False
+101,2011,L,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.0036840947300019653,58.0,60.0,60.0,False
+102,2011,L,3180,Fabricação de móveis e de produtos de indústrias diversas,0.00813416919110625,38.0,51.0,51.0,False
+103,2011,L,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.004510605838202935,53.0,14.0,53.0,False
+104,2011,L,3500,"Energia elétrica, gás natural e outras utilidades",0.06025764990734192,1.0,7.0,7.0,True
+105,2011,L,3680,"Água, esgoto e gestão de resíduos",0.049922498605835704,4.0,33.0,33.0,False
+106,2011,L,4180,Construção,0.045662698628601055,6.0,27.0,27.0,False
+107,2011,L,4580,Comércio por atacado e varejo,0.04769556209680862,5.0,1.0,5.0,True
+108,2011,L,4900,Transporte terrestre,0.004807485450768614,51.0,3.0,51.0,False
+109,2011,L,5000,Transporte aquaviário,0.005220343817355328,48.0,48.0,48.0,False
+110,2011,L,5100,Transporte aéreo,0.004314236331394715,54.0,43.0,54.0,False
+111,2011,L,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.00498913735479384,50.0,11.0,50.0,False
+112,2011,L,5500,Alojamento,0.011087742202598878,30.0,56.0,56.0,False
+113,2011,L,5600,Alimentação,0.012907929811160155,28.0,38.0,38.0,False
+114,2011,L,5800,Edição e edição integrada à impressão,0.010355906154498516,31.0,58.0,58.0,False
+115,2011,L,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.016299189019645742,20.0,16.0,20.0,False
+116,2011,L,6100,Telecomunicações,0.013955493824752401,27.0,22.0,27.0,False
+117,2011,L,6280,Desenvolvimento de sistemas e outros serviços de informação,0.019944691566491517,15.0,23.0,23.0,False
+118,2011,L,6480,"Intermediação financeira, seguros e previdência complementar",0.03319684574185881,9.0,4.0,9.0,False
+119,2011,L,6800,Atividades imobiliárias,0.03153980832077221,10.0,18.0,18.0,False
+120,2011,L,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.021707294207147208,12.0,6.0,12.0,False
+121,2011,L,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.01637140493124041,18.0,24.0,24.0,False
+122,2011,L,7380,"Outras atividades profissionais, científicas e técnicas",0.01635257102149652,19.0,12.0,19.0,False
+123,2011,L,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.021101836004337512,13.0,26.0,26.0,False
+124,2011,L,7880,Outras atividades administrativas e serviços complementares,0.021072747435147185,14.0,9.0,14.0,False
+125,2011,L,8000,"Atividades de vigilância, segurança e investigação",0.01846647518569563,16.0,34.0,34.0,False
+126,2011,L,8400,"Administração pública, defesa e seguridade social",0.04157441144140373,8.0,37.0,37.0,False
+127,2011,L,8591,Educação pública,0.008926868809498598,34.0,62.0,62.0,False
+128,2011,L,8592,Educação privada,0.008000584197838435,39.0,52.0,52.0,False
+129,2011,L,8691,Saúde pública,0.005175136656697066,49.0,65.0,65.0,False
+130,2011,L,8692,Saúde privada,0.012864889127849732,29.0,64.0,64.0,False
+131,2011,L,9080,"Atividades artísticas, criativas e de espetáculos",0.016005819100383564,23.0,49.0,49.0,False
+132,2011,L,9480,Organizações associativas e outros serviços pessoais,0.01471948039669471,25.0,42.0,42.0,False
+133,2011,L,9700,Serviços domésticos,0.01611755155880283,22.0,67.0,67.0,False
+134,2011,S,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.017869162937713817,17.0,7.0,17.0,False
+135,2011,S,0192,"Pecuária, inclusive o apoio à pecuária",0.009894879774878159,33.0,28.0,33.0,False
+136,2011,S,0280,Produção florestal; pesca e aquicultura,0.008894241660640127,35.0,42.0,42.0,False
+137,2011,S,0580,Extração de carvão mineral e de minerais não metálicos,0.001995051216896605,65.0,45.0,65.0,False
+138,2011,S,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.002483996267939461,62.0,10.0,62.0,False
+139,2011,S,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.001523842393741399,66.0,56.0,66.0,False
+140,2011,S,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0030235213434632218,60.0,53.0,60.0,False
+141,2011,S,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.051602197379980716,2.0,36.0,36.0,False
+142,2011,S,1092,Fabricação e refino de açúcar,0.029157492056358036,11.0,46.0,46.0,False
+143,2011,S,1093,Outros produtos alimentares,0.05120385441162454,3.0,22.0,22.0,False
+144,2011,S,1100,Fabricação de bebidas,0.04526787979673068,7.0,44.0,44.0,False
+145,2011,S,1200,Fabricação de produtos do fumo,0.0010893048104939655,67.0,66.0,67.0,False
+146,2011,S,1300,Fabricação de produtos têxteis,0.004694178685476581,52.0,27.0,52.0,False
+147,2011,S,1400,Confecção de artefatos do vestuário e acessórios,0.005312375775091572,47.0,59.0,59.0,False
+148,2011,S,1500,Fabricação de calçados e de artefatos de couro,0.0029053905552766652,61.0,63.0,63.0,False
+149,2011,S,1600,Fabricação de produtos da madeira,0.002304091988974825,63.0,47.0,63.0,False
+150,2011,S,1700,"Fabricação de celulose, papel e produtos de papel",0.005801609689780808,45.0,20.0,45.0,False
+151,2011,S,1800,Impressão e reprodução de gravações,0.0042187813394488835,55.0,39.0,55.0,False
+152,2011,S,1991,Refino de petróleo e coquerias,0.016177043026774522,21.0,2.0,21.0,False
+153,2011,S,1992,Fabricação de biocombustíveis,0.003093801868627153,59.0,43.0,59.0,False
+154,2011,S,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.014713717566949456,26.0,8.0,26.0,False
+155,2011,S,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.005378929959217218,46.0,15.0,46.0,False
+156,2011,S,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.005845878043588338,44.0,54.0,54.0,False
+157,2011,S,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.008373001653932136,37.0,57.0,57.0,False
+158,2011,S,2200,Fabricação de produtos de borracha e de material plástico,0.010228618388721756,32.0,13.0,32.0,False
+159,2011,S,2300,Fabricação de produtos de minerais não metálicos,0.006468306985622778,42.0,31.0,42.0,False
+160,2011,S,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.005869247112580373,43.0,18.0,43.0,False
+161,2011,S,2492,Metalurgia de metais não ferosos e a fundição de metais,0.004128005938574387,56.0,29.0,56.0,False
+162,2011,S,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.006591074035333712,41.0,19.0,41.0,False
+163,2011,S,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.014768269466568066,24.0,52.0,52.0,False
+164,2011,S,2700,Fabricação de máquinas e equipamentos elétricos,0.007279161684190025,40.0,35.0,40.0,False
+165,2011,S,2800,Fabricação de máquinas e equipamentos mecânicos,0.008711983142957505,36.0,30.0,36.0,False
+166,2011,S,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.002115146277878537,64.0,61.0,64.0,False
+167,2011,S,2992,Fabricação de peças e acessórios para veículos automotores,0.004072804095751423,57.0,34.0,57.0,False
+168,2011,S,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.0036840947300019653,58.0,60.0,60.0,False
+169,2011,S,3180,Fabricação de móveis e de produtos de indústrias diversas,0.00813416919110625,38.0,51.0,51.0,False
+170,2011,S,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.004510605838202935,53.0,14.0,53.0,False
+171,2011,S,3500,"Energia elétrica, gás natural e outras utilidades",0.06025764990734192,1.0,6.0,6.0,True
+172,2011,S,3680,"Água, esgoto e gestão de resíduos",0.049922498605835704,4.0,32.0,32.0,False
+173,2011,S,4180,Construção,0.045662698628601055,6.0,25.0,25.0,False
+174,2011,S,4580,Comércio por atacado e varejo,0.04769556209680862,5.0,1.0,5.0,True
+175,2011,S,4900,Transporte terrestre,0.004807485450768614,51.0,3.0,51.0,False
+176,2011,S,5000,Transporte aquaviário,0.005220343817355328,48.0,48.0,48.0,False
+177,2011,S,5100,Transporte aéreo,0.004314236331394715,54.0,40.0,54.0,False
+178,2011,S,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.00498913735479384,50.0,11.0,50.0,False
+179,2011,S,5500,Alojamento,0.011087742202598878,30.0,55.0,55.0,False
+180,2011,S,5600,Alimentação,0.012907929811160155,28.0,38.0,38.0,False
+181,2011,S,5800,Edição e edição integrada à impressão,0.010355906154498516,31.0,58.0,58.0,False
+182,2011,S,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.016299189019645742,20.0,17.0,20.0,False
+183,2011,S,6100,Telecomunicações,0.013955493824752401,27.0,21.0,27.0,False
+184,2011,S,6280,Desenvolvimento de sistemas e outros serviços de informação,0.019944691566491517,15.0,23.0,23.0,False
+185,2011,S,6480,"Intermediação financeira, seguros e previdência complementar",0.03319684574185881,9.0,4.0,9.0,False
+186,2011,S,6800,Atividades imobiliárias,0.03153980832077221,10.0,16.0,16.0,False
+187,2011,S,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.021707294207147208,12.0,5.0,12.0,False
+188,2011,S,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.01637140493124041,18.0,24.0,24.0,False
+189,2011,S,7380,"Outras atividades profissionais, científicas e técnicas",0.01635257102149652,19.0,12.0,19.0,False
+190,2011,S,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.021101836004337512,13.0,26.0,26.0,False
+191,2011,S,7880,Outras atividades administrativas e serviços complementares,0.021072747435147185,14.0,9.0,14.0,False
+192,2011,S,8000,"Atividades de vigilância, segurança e investigação",0.01846647518569563,16.0,33.0,33.0,False
+193,2011,S,8400,"Administração pública, defesa e seguridade social",0.04157441144140373,8.0,37.0,37.0,False
+194,2011,S,8591,Educação pública,0.008926868809498598,34.0,62.0,62.0,False
+195,2011,S,8592,Educação privada,0.008000584197838435,39.0,49.0,49.0,False
+196,2011,S,8691,Saúde pública,0.005175136656697066,49.0,65.0,65.0,False
+197,2011,S,8692,Saúde privada,0.012864889127849732,29.0,64.0,64.0,False
+198,2011,S,9080,"Atividades artísticas, criativas e de espetáculos",0.016005819100383564,23.0,50.0,50.0,False
+199,2011,S,9480,Organizações associativas e outros serviços pessoais,0.01471948039669471,25.0,41.0,41.0,False
+200,2011,S,9700,Serviços domésticos,0.01611755155880283,22.0,67.0,67.0,False
+201,2011,HEM,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.017869162937713817,17.0,36.0,36.0,False
+202,2011,HEM,0192,"Pecuária, inclusive o apoio à pecuária",0.009894879774878159,33.0,27.0,33.0,False
+203,2011,HEM,0280,Produção florestal; pesca e aquicultura,0.008894241660640127,35.0,34.0,35.0,False
+204,2011,HEM,0580,Extração de carvão mineral e de minerais não metálicos,0.001995051216896605,65.0,3.0,65.0,False
+205,2011,HEM,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.002483996267939461,62.0,5.0,62.0,False
+206,2011,HEM,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.001523842393741399,66.0,50.0,66.0,False
+207,2011,HEM,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0030235213434632218,60.0,32.0,60.0,False
+208,2011,HEM,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.051602197379980716,2.0,57.0,57.0,False
+209,2011,HEM,1092,Fabricação e refino de açúcar,0.029157492056358036,11.0,33.0,33.0,False
+210,2011,HEM,1093,Outros produtos alimentares,0.05120385441162454,3.0,46.0,46.0,False
+211,2011,HEM,1100,Fabricação de bebidas,0.04526787979673068,7.0,45.0,45.0,False
+212,2011,HEM,1200,Fabricação de produtos do fumo,0.0010893048104939655,67.0,64.0,67.0,False
+213,2011,HEM,1300,Fabricação de produtos têxteis,0.004694178685476581,52.0,38.0,52.0,False
+214,2011,HEM,1400,Confecção de artefatos do vestuário e acessórios,0.005312375775091572,47.0,56.0,56.0,False
+215,2011,HEM,1500,Fabricação de calçados e de artefatos de couro,0.0029053905552766652,61.0,61.0,61.0,False
+216,2011,HEM,1600,Fabricação de produtos da madeira,0.002304091988974825,63.0,25.0,63.0,False
+217,2011,HEM,1700,"Fabricação de celulose, papel e produtos de papel",0.005801609689780808,45.0,29.0,45.0,False
+218,2011,HEM,1800,Impressão e reprodução de gravações,0.0042187813394488835,55.0,2.0,55.0,False
+219,2011,HEM,1991,Refino de petróleo e coquerias,0.016177043026774522,21.0,26.0,26.0,False
+220,2011,HEM,1992,Fabricação de biocombustíveis,0.003093801868627153,59.0,14.0,59.0,False
+221,2011,HEM,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.014713717566949456,26.0,12.0,26.0,False
+222,2011,HEM,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.005378929959217218,46.0,10.0,46.0,False
+223,2011,HEM,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.005845878043588338,44.0,44.0,44.0,False
+224,2011,HEM,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.008373001653932136,37.0,48.0,48.0,False
+225,2011,HEM,2200,Fabricação de produtos de borracha e de material plástico,0.010228618388721756,32.0,16.0,32.0,False
+226,2011,HEM,2300,Fabricação de produtos de minerais não metálicos,0.006468306985622778,42.0,18.0,42.0,False
+227,2011,HEM,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.005869247112580373,43.0,23.0,43.0,False
+228,2011,HEM,2492,Metalurgia de metais não ferosos e a fundição de metais,0.004128005938574387,56.0,35.0,56.0,False
+229,2011,HEM,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.006591074035333712,41.0,21.0,41.0,False
+230,2011,HEM,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.014768269466568066,24.0,55.0,55.0,False
+231,2011,HEM,2700,Fabricação de máquinas e equipamentos elétricos,0.007279161684190025,40.0,40.0,40.0,False
+232,2011,HEM,2800,Fabricação de máquinas e equipamentos mecânicos,0.008711983142957505,36.0,47.0,47.0,False
+233,2011,HEM,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.002115146277878537,64.0,62.0,64.0,False
+234,2011,HEM,2992,Fabricação de peças e acessórios para veículos automotores,0.004072804095751423,57.0,24.0,57.0,False
+235,2011,HEM,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.0036840947300019653,58.0,58.0,58.0,False
+236,2011,HEM,3180,Fabricação de móveis e de produtos de indústrias diversas,0.00813416919110625,38.0,49.0,49.0,False
+237,2011,HEM,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.004510605838202935,53.0,7.0,53.0,False
+238,2011,HEM,3500,"Energia elétrica, gás natural e outras utilidades",0.06025764990734192,1.0,37.0,37.0,True
+239,2011,HEM,3680,"Água, esgoto e gestão de resíduos",0.049922498605835704,4.0,22.0,22.0,True
+240,2011,HEM,4180,Construção,0.045662698628601055,6.0,59.0,59.0,False
+241,2011,HEM,4580,Comércio por atacado e varejo,0.04769556209680862,5.0,41.0,41.0,False
+242,2011,HEM,4900,Transporte terrestre,0.004807485450768614,51.0,20.0,51.0,False
+243,2011,HEM,5000,Transporte aquaviário,0.005220343817355328,48.0,11.0,48.0,False
+244,2011,HEM,5100,Transporte aéreo,0.004314236331394715,54.0,19.0,54.0,False
+245,2011,HEM,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.00498913735479384,50.0,13.0,50.0,False
+246,2011,HEM,5500,Alojamento,0.011087742202598878,30.0,28.0,30.0,False
+247,2011,HEM,5600,Alimentação,0.012907929811160155,28.0,53.0,53.0,False
+248,2011,HEM,5800,Edição e edição integrada à impressão,0.010355906154498516,31.0,30.0,31.0,False
+249,2011,HEM,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.016299189019645742,20.0,1.0,20.0,True
+250,2011,HEM,6100,Telecomunicações,0.013955493824752401,27.0,42.0,42.0,False
+251,2011,HEM,6280,Desenvolvimento de sistemas e outros serviços de informação,0.019944691566491517,15.0,31.0,31.0,False
+252,2011,HEM,6480,"Intermediação financeira, seguros e previdência complementar",0.03319684574185881,9.0,39.0,39.0,False
+253,2011,HEM,6800,Atividades imobiliárias,0.03153980832077221,10.0,52.0,52.0,False
+254,2011,HEM,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.021707294207147208,12.0,9.0,12.0,True
+255,2011,HEM,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.01637140493124041,18.0,17.0,18.0,False
+256,2011,HEM,7380,"Outras atividades profissionais, científicas e técnicas",0.01635257102149652,19.0,6.0,19.0,False
+257,2011,HEM,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.021101836004337512,13.0,8.0,13.0,True
+258,2011,HEM,7880,Outras atividades administrativas e serviços complementares,0.021072747435147185,14.0,15.0,15.0,False
+259,2011,HEM,8000,"Atividades de vigilância, segurança e investigação",0.01846647518569563,16.0,4.0,16.0,True
+260,2011,HEM,8400,"Administração pública, defesa e seguridade social",0.04157441144140373,8.0,60.0,60.0,False
+261,2011,HEM,8591,Educação pública,0.008926868809498598,34.0,63.0,63.0,False
+262,2011,HEM,8592,Educação privada,0.008000584197838435,39.0,54.0,54.0,False
+263,2011,HEM,8691,Saúde pública,0.005175136656697066,49.0,66.0,66.0,False
+264,2011,HEM,8692,Saúde privada,0.012864889127849732,29.0,65.0,65.0,False
+265,2011,HEM,9080,"Atividades artísticas, criativas e de espetáculos",0.016005819100383564,23.0,43.0,43.0,False
+266,2011,HEM,9480,Organizações associativas e outros serviços pessoais,0.01471948039669471,25.0,51.0,51.0,False
+267,2011,HEM,9700,Serviços domésticos,0.01611755155880283,22.0,67.0,67.0,False
+268,2015,A,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.015510702229791425,21.0,2.0,21.0,False
+269,2015,A,0192,"Pecuária, inclusive o apoio à pecuária",0.00887520130630147,34.0,20.0,34.0,False
+270,2015,A,0280,Produção florestal; pesca e aquicultura,0.008465280213317182,36.0,38.0,38.0,False
+271,2015,A,0580,Extração de carvão mineral e de minerais não metálicos,0.00218528397045881,64.0,45.0,64.0,False
+272,2015,A,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.0025155038142482484,61.0,27.0,61.0,False
+273,2015,A,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.0015431711404902528,66.0,54.0,66.0,False
+274,2015,A,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0026581089567686727,60.0,49.0,60.0,False
+275,2015,A,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.04372501966616413,5.0,30.0,30.0,False
+276,2015,A,1092,Fabricação e refino de açúcar,0.035955050526431824,9.0,48.0,48.0,False
+277,2015,A,1093,Outros produtos alimentares,0.041271021880945336,6.0,19.0,19.0,False
+278,2015,A,1100,Fabricação de bebidas,0.043925325888710655,4.0,43.0,43.0,False
+279,2015,A,1200,Fabricação de produtos do fumo,0.001229192850024838,67.0,66.0,67.0,False
+280,2015,A,1300,Fabricação de produtos têxteis,0.005141779493660496,49.0,22.0,49.0,False
+281,2015,A,1400,Confecção de artefatos do vestuário e acessórios,0.005892117108707887,46.0,59.0,59.0,False
+282,2015,A,1500,Fabricação de calçados e de artefatos de couro,0.0032784995188411092,59.0,63.0,63.0,False
+283,2015,A,1600,Fabricação de produtos da madeira,0.002333317590470012,63.0,44.0,63.0,False
+284,2015,A,1700,"Fabricação de celulose, papel e produtos de papel",0.0052037472984888195,48.0,17.0,48.0,False
+285,2015,A,1800,Impressão e reprodução de gravações,0.005086063422724553,50.0,40.0,50.0,False
+286,2015,A,1991,Refino de petróleo e coquerias,0.01326181021015084,26.0,6.0,26.0,False
+287,2015,A,1992,Fabricação de biocombustíveis,0.002416919904897838,62.0,47.0,62.0,False
+288,2015,A,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.012467639415426187,27.0,7.0,27.0,False
+289,2015,A,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.004824625188650824,52.0,15.0,52.0,False
+290,2015,A,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.004905166410113296,51.0,56.0,56.0,False
+291,2015,A,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.007025628341620457,41.0,55.0,55.0,False
+292,2015,A,2200,Fabricação de produtos de borracha e de material plástico,0.009512779957611446,31.0,13.0,31.0,False
+293,2015,A,2300,Fabricação de produtos de minerais não metálicos,0.007298964093335636,40.0,33.0,40.0,False
+294,2015,A,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.005943693913320031,45.0,14.0,45.0,False
+295,2015,A,2492,Metalurgia de metais não ferosos e a fundição de metais,0.0037026102925951667,58.0,29.0,58.0,False
+296,2015,A,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.0066746766449967245,42.0,16.0,42.0,False
+297,2015,A,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.014243422279034528,25.0,53.0,53.0,False
+298,2015,A,2700,Fabricação de máquinas e equipamentos elétricos,0.0073714921465236165,39.0,39.0,39.0,False
+299,2015,A,2800,Fabricação de máquinas e equipamentos mecânicos,0.009830772145405491,30.0,31.0,31.0,False
+300,2015,A,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.0021419752510780012,65.0,61.0,65.0,False
+301,2015,A,2992,Fabricação de peças e acessórios para veículos automotores,0.0041244644244361976,55.0,32.0,55.0,False
+302,2015,A,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.004157204537524339,54.0,60.0,60.0,False
+303,2015,A,3180,Fabricação de móveis e de produtos de indústrias diversas,0.00764896298559609,38.0,46.0,46.0,False
+304,2015,A,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.0040457828430687185,57.0,12.0,57.0,False
+305,2015,A,3500,"Energia elétrica, gás natural e outras utilidades",0.08281553204588331,1.0,9.0,9.0,True
+306,2015,A,3680,"Água, esgoto e gestão de resíduos",0.07576793278785966,2.0,34.0,34.0,False
+307,2015,A,4180,Construção,0.05681146999432365,3.0,25.0,25.0,False
+308,2015,A,4580,Comércio por atacado e varejo,0.039100439514653224,7.0,1.0,7.0,True
+309,2015,A,4900,Transporte terrestre,0.007650444429222326,37.0,3.0,37.0,False
+310,2015,A,5000,Transporte aquaviário,0.004447423313922151,53.0,51.0,53.0,False
+311,2015,A,5100,Transporte aéreo,0.004056890536040609,56.0,41.0,56.0,False
+312,2015,A,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.0060147864915133355,44.0,10.0,44.0,False
+313,2015,A,5500,Alojamento,0.010626861085756216,29.0,52.0,52.0,False
+314,2015,A,5600,Alimentação,0.011204277245768293,28.0,36.0,36.0,False
+315,2015,A,5800,Edição e edição integrada à impressão,0.008603835937293676,35.0,58.0,58.0,False
+316,2015,A,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.017957002358706897,17.0,21.0,21.0,False
+317,2015,A,6100,Telecomunicações,0.016824414677392065,20.0,26.0,26.0,False
+318,2015,A,6280,Desenvolvimento de sistemas e outros serviços de informação,0.017049984841948213,19.0,28.0,28.0,False
+319,2015,A,6480,"Intermediação financeira, seguros e previdência complementar",0.024012801227506216,11.0,4.0,11.0,False
+320,2015,A,6800,Atividades imobiliárias,0.02737702806524325,10.0,18.0,18.0,False
+321,2015,A,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.01884225790738766,14.0,5.0,14.0,False
+322,2015,A,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.018355391593618972,15.0,24.0,24.0,False
+323,2015,A,7380,"Outras atividades profissionais, científicas e técnicas",0.017348561551357233,18.0,11.0,18.0,False
+324,2015,A,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.018316711079643118,16.0,23.0,23.0,False
+325,2015,A,7880,Outras atividades administrativas e serviços complementares,0.01959799474716029,12.0,8.0,12.0,False
+326,2015,A,8000,"Atividades de vigilância, segurança e investigação",0.019368590380835257,13.0,35.0,35.0,False
+327,2015,A,8400,"Administração pública, defesa e seguridade social",0.036087214521138,8.0,37.0,37.0,False
+328,2015,A,8591,Educação pública,0.009040099145646026,33.0,62.0,62.0,False
+329,2015,A,8592,Educação privada,0.006250164690458131,43.0,57.0,57.0,False
+330,2015,A,8691,Saúde pública,0.005240779210178213,47.0,64.0,64.0,False
+331,2015,A,8692,Saúde privada,0.009305764404340175,32.0,65.0,65.0,False
+332,2015,A,9080,"Atividades artísticas, criativas e de espetáculos",0.015340509639884266,22.0,50.0,50.0,False
+333,2015,A,9480,Organizações associativas e outros serviços pessoais,0.014906185471990518,24.0,42.0,42.0,False
+334,2015,A,9700,Serviços domésticos,0.015285673241397754,23.0,67.0,67.0,False
+335,2015,L,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.015510702229791425,21.0,5.0,21.0,False
+336,2015,L,0192,"Pecuária, inclusive o apoio à pecuária",0.00887520130630147,34.0,25.0,34.0,False
+337,2015,L,0280,Produção florestal; pesca e aquicultura,0.008465280213317182,36.0,40.0,40.0,False
+338,2015,L,0580,Extração de carvão mineral e de minerais não metálicos,0.00218528397045881,64.0,45.0,64.0,False
+339,2015,L,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.0025155038142482484,61.0,10.0,61.0,False
+340,2015,L,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.0015431711404902528,66.0,53.0,66.0,False
+341,2015,L,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0026581089567686727,60.0,50.0,60.0,False
+342,2015,L,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.04372501966616413,5.0,35.0,35.0,False
+343,2015,L,1092,Fabricação e refino de açúcar,0.035955050526431824,9.0,44.0,44.0,False
+344,2015,L,1093,Outros produtos alimentares,0.041271021880945336,6.0,21.0,21.0,False
+345,2015,L,1100,Fabricação de bebidas,0.043925325888710655,4.0,46.0,46.0,False
+346,2015,L,1200,Fabricação de produtos do fumo,0.001229192850024838,67.0,66.0,67.0,False
+347,2015,L,1300,Fabricação de produtos têxteis,0.005141779493660496,49.0,28.0,49.0,False
+348,2015,L,1400,Confecção de artefatos do vestuário e acessórios,0.005892117108707887,46.0,59.0,59.0,False
+349,2015,L,1500,Fabricação de calçados e de artefatos de couro,0.0032784995188411092,59.0,63.0,63.0,False
+350,2015,L,1600,Fabricação de produtos da madeira,0.002333317590470012,63.0,47.0,63.0,False
+351,2015,L,1700,"Fabricação de celulose, papel e produtos de papel",0.0052037472984888195,48.0,20.0,48.0,False
+352,2015,L,1800,Impressão e reprodução de gravações,0.005086063422724553,50.0,41.0,50.0,False
+353,2015,L,1991,Refino de petróleo e coquerias,0.01326181021015084,26.0,2.0,26.0,False
+354,2015,L,1992,Fabricação de biocombustíveis,0.002416919904897838,62.0,39.0,62.0,False
+355,2015,L,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.012467639415426187,27.0,8.0,27.0,False
+356,2015,L,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.004824625188650824,52.0,15.0,52.0,False
+357,2015,L,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.004905166410113296,51.0,55.0,55.0,False
+358,2015,L,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.007025628341620457,41.0,57.0,57.0,False
+359,2015,L,2200,Fabricação de produtos de borracha e de material plástico,0.009512779957611446,31.0,13.0,31.0,False
+360,2015,L,2300,Fabricação de produtos de minerais não metálicos,0.007298964093335636,40.0,31.0,40.0,False
+361,2015,L,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.005943693913320031,45.0,17.0,45.0,False
+362,2015,L,2492,Metalurgia de metais não ferosos e a fundição de metais,0.0037026102925951667,58.0,29.0,58.0,False
+363,2015,L,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.0066746766449967245,42.0,19.0,42.0,False
+364,2015,L,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.014243422279034528,25.0,54.0,54.0,False
+365,2015,L,2700,Fabricação de máquinas e equipamentos elétricos,0.0073714921465236165,39.0,36.0,39.0,False
+366,2015,L,2800,Fabricação de máquinas e equipamentos mecânicos,0.009830772145405491,30.0,30.0,30.0,False
+367,2015,L,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.0021419752510780012,65.0,61.0,65.0,False
+368,2015,L,2992,Fabricação de peças e acessórios para veículos automotores,0.0041244644244361976,55.0,32.0,55.0,False
+369,2015,L,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.004157204537524339,54.0,60.0,60.0,False
+370,2015,L,3180,Fabricação de móveis e de produtos de indústrias diversas,0.00764896298559609,38.0,51.0,51.0,False
+371,2015,L,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.0040457828430687185,57.0,14.0,57.0,False
+372,2015,L,3500,"Energia elétrica, gás natural e outras utilidades",0.08281553204588331,1.0,7.0,7.0,True
+373,2015,L,3680,"Água, esgoto e gestão de resíduos",0.07576793278785966,2.0,33.0,33.0,False
+374,2015,L,4180,Construção,0.05681146999432365,3.0,27.0,27.0,False
+375,2015,L,4580,Comércio por atacado e varejo,0.039100439514653224,7.0,1.0,7.0,True
+376,2015,L,4900,Transporte terrestre,0.007650444429222326,37.0,3.0,37.0,False
+377,2015,L,5000,Transporte aquaviário,0.004447423313922151,53.0,48.0,53.0,False
+378,2015,L,5100,Transporte aéreo,0.004056890536040609,56.0,43.0,56.0,False
+379,2015,L,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.0060147864915133355,44.0,11.0,44.0,False
+380,2015,L,5500,Alojamento,0.010626861085756216,29.0,56.0,56.0,False
+381,2015,L,5600,Alimentação,0.011204277245768293,28.0,38.0,38.0,False
+382,2015,L,5800,Edição e edição integrada à impressão,0.008603835937293676,35.0,58.0,58.0,False
+383,2015,L,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.017957002358706897,17.0,16.0,17.0,False
+384,2015,L,6100,Telecomunicações,0.016824414677392065,20.0,22.0,22.0,False
+385,2015,L,6280,Desenvolvimento de sistemas e outros serviços de informação,0.017049984841948213,19.0,23.0,23.0,False
+386,2015,L,6480,"Intermediação financeira, seguros e previdência complementar",0.024012801227506216,11.0,4.0,11.0,False
+387,2015,L,6800,Atividades imobiliárias,0.02737702806524325,10.0,18.0,18.0,False
+388,2015,L,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.01884225790738766,14.0,6.0,14.0,False
+389,2015,L,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.018355391593618972,15.0,24.0,24.0,False
+390,2015,L,7380,"Outras atividades profissionais, científicas e técnicas",0.017348561551357233,18.0,12.0,18.0,False
+391,2015,L,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.018316711079643118,16.0,26.0,26.0,False
+392,2015,L,7880,Outras atividades administrativas e serviços complementares,0.01959799474716029,12.0,9.0,12.0,False
+393,2015,L,8000,"Atividades de vigilância, segurança e investigação",0.019368590380835257,13.0,34.0,34.0,False
+394,2015,L,8400,"Administração pública, defesa e seguridade social",0.036087214521138,8.0,37.0,37.0,False
+395,2015,L,8591,Educação pública,0.009040099145646026,33.0,62.0,62.0,False
+396,2015,L,8592,Educação privada,0.006250164690458131,43.0,52.0,52.0,False
+397,2015,L,8691,Saúde pública,0.005240779210178213,47.0,65.0,65.0,False
+398,2015,L,8692,Saúde privada,0.009305764404340175,32.0,64.0,64.0,False
+399,2015,L,9080,"Atividades artísticas, criativas e de espetáculos",0.015340509639884266,22.0,49.0,49.0,False
+400,2015,L,9480,Organizações associativas e outros serviços pessoais,0.014906185471990518,24.0,42.0,42.0,False
+401,2015,L,9700,Serviços domésticos,0.015285673241397754,23.0,67.0,67.0,False
+402,2015,S,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.015510702229791425,21.0,7.0,21.0,False
+403,2015,S,0192,"Pecuária, inclusive o apoio à pecuária",0.00887520130630147,34.0,28.0,34.0,False
+404,2015,S,0280,Produção florestal; pesca e aquicultura,0.008465280213317182,36.0,42.0,42.0,False
+405,2015,S,0580,Extração de carvão mineral e de minerais não metálicos,0.00218528397045881,64.0,45.0,64.0,False
+406,2015,S,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.0025155038142482484,61.0,10.0,61.0,False
+407,2015,S,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.0015431711404902528,66.0,56.0,66.0,False
+408,2015,S,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0026581089567686727,60.0,53.0,60.0,False
+409,2015,S,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.04372501966616413,5.0,36.0,36.0,False
+410,2015,S,1092,Fabricação e refino de açúcar,0.035955050526431824,9.0,46.0,46.0,False
+411,2015,S,1093,Outros produtos alimentares,0.041271021880945336,6.0,22.0,22.0,False
+412,2015,S,1100,Fabricação de bebidas,0.043925325888710655,4.0,44.0,44.0,False
+413,2015,S,1200,Fabricação de produtos do fumo,0.001229192850024838,67.0,66.0,67.0,False
+414,2015,S,1300,Fabricação de produtos têxteis,0.005141779493660496,49.0,27.0,49.0,False
+415,2015,S,1400,Confecção de artefatos do vestuário e acessórios,0.005892117108707887,46.0,59.0,59.0,False
+416,2015,S,1500,Fabricação de calçados e de artefatos de couro,0.0032784995188411092,59.0,63.0,63.0,False
+417,2015,S,1600,Fabricação de produtos da madeira,0.002333317590470012,63.0,47.0,63.0,False
+418,2015,S,1700,"Fabricação de celulose, papel e produtos de papel",0.0052037472984888195,48.0,20.0,48.0,False
+419,2015,S,1800,Impressão e reprodução de gravações,0.005086063422724553,50.0,39.0,50.0,False
+420,2015,S,1991,Refino de petróleo e coquerias,0.01326181021015084,26.0,2.0,26.0,False
+421,2015,S,1992,Fabricação de biocombustíveis,0.002416919904897838,62.0,43.0,62.0,False
+422,2015,S,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.012467639415426187,27.0,8.0,27.0,False
+423,2015,S,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.004824625188650824,52.0,15.0,52.0,False
+424,2015,S,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.004905166410113296,51.0,54.0,54.0,False
+425,2015,S,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.007025628341620457,41.0,57.0,57.0,False
+426,2015,S,2200,Fabricação de produtos de borracha e de material plástico,0.009512779957611446,31.0,13.0,31.0,False
+427,2015,S,2300,Fabricação de produtos de minerais não metálicos,0.007298964093335636,40.0,31.0,40.0,False
+428,2015,S,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.005943693913320031,45.0,18.0,45.0,False
+429,2015,S,2492,Metalurgia de metais não ferosos e a fundição de metais,0.0037026102925951667,58.0,29.0,58.0,False
+430,2015,S,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.0066746766449967245,42.0,19.0,42.0,False
+431,2015,S,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.014243422279034528,25.0,52.0,52.0,False
+432,2015,S,2700,Fabricação de máquinas e equipamentos elétricos,0.0073714921465236165,39.0,35.0,39.0,False
+433,2015,S,2800,Fabricação de máquinas e equipamentos mecânicos,0.009830772145405491,30.0,30.0,30.0,False
+434,2015,S,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.0021419752510780012,65.0,61.0,65.0,False
+435,2015,S,2992,Fabricação de peças e acessórios para veículos automotores,0.0041244644244361976,55.0,34.0,55.0,False
+436,2015,S,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.004157204537524339,54.0,60.0,60.0,False
+437,2015,S,3180,Fabricação de móveis e de produtos de indústrias diversas,0.00764896298559609,38.0,51.0,51.0,False
+438,2015,S,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.0040457828430687185,57.0,14.0,57.0,False
+439,2015,S,3500,"Energia elétrica, gás natural e outras utilidades",0.08281553204588331,1.0,6.0,6.0,True
+440,2015,S,3680,"Água, esgoto e gestão de resíduos",0.07576793278785966,2.0,32.0,32.0,False
+441,2015,S,4180,Construção,0.05681146999432365,3.0,25.0,25.0,False
+442,2015,S,4580,Comércio por atacado e varejo,0.039100439514653224,7.0,1.0,7.0,True
+443,2015,S,4900,Transporte terrestre,0.007650444429222326,37.0,3.0,37.0,False
+444,2015,S,5000,Transporte aquaviário,0.004447423313922151,53.0,48.0,53.0,False
+445,2015,S,5100,Transporte aéreo,0.004056890536040609,56.0,40.0,56.0,False
+446,2015,S,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.0060147864915133355,44.0,11.0,44.0,False
+447,2015,S,5500,Alojamento,0.010626861085756216,29.0,55.0,55.0,False
+448,2015,S,5600,Alimentação,0.011204277245768293,28.0,38.0,38.0,False
+449,2015,S,5800,Edição e edição integrada à impressão,0.008603835937293676,35.0,58.0,58.0,False
+450,2015,S,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.017957002358706897,17.0,17.0,17.0,False
+451,2015,S,6100,Telecomunicações,0.016824414677392065,20.0,21.0,21.0,False
+452,2015,S,6280,Desenvolvimento de sistemas e outros serviços de informação,0.017049984841948213,19.0,23.0,23.0,False
+453,2015,S,6480,"Intermediação financeira, seguros e previdência complementar",0.024012801227506216,11.0,4.0,11.0,False
+454,2015,S,6800,Atividades imobiliárias,0.02737702806524325,10.0,16.0,16.0,False
+455,2015,S,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.01884225790738766,14.0,5.0,14.0,False
+456,2015,S,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.018355391593618972,15.0,24.0,24.0,False
+457,2015,S,7380,"Outras atividades profissionais, científicas e técnicas",0.017348561551357233,18.0,12.0,18.0,False
+458,2015,S,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.018316711079643118,16.0,26.0,26.0,False
+459,2015,S,7880,Outras atividades administrativas e serviços complementares,0.01959799474716029,12.0,9.0,12.0,False
+460,2015,S,8000,"Atividades de vigilância, segurança e investigação",0.019368590380835257,13.0,33.0,33.0,False
+461,2015,S,8400,"Administração pública, defesa e seguridade social",0.036087214521138,8.0,37.0,37.0,False
+462,2015,S,8591,Educação pública,0.009040099145646026,33.0,62.0,62.0,False
+463,2015,S,8592,Educação privada,0.006250164690458131,43.0,49.0,49.0,False
+464,2015,S,8691,Saúde pública,0.005240779210178213,47.0,65.0,65.0,False
+465,2015,S,8692,Saúde privada,0.009305764404340175,32.0,64.0,64.0,False
+466,2015,S,9080,"Atividades artísticas, criativas e de espetáculos",0.015340509639884266,22.0,50.0,50.0,False
+467,2015,S,9480,Organizações associativas e outros serviços pessoais,0.014906185471990518,24.0,41.0,41.0,False
+468,2015,S,9700,Serviços domésticos,0.015285673241397754,23.0,67.0,67.0,False
+469,2015,HEM,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.015510702229791425,21.0,36.0,36.0,False
+470,2015,HEM,0192,"Pecuária, inclusive o apoio à pecuária",0.00887520130630147,34.0,27.0,34.0,False
+471,2015,HEM,0280,Produção florestal; pesca e aquicultura,0.008465280213317182,36.0,34.0,36.0,False
+472,2015,HEM,0580,Extração de carvão mineral e de minerais não metálicos,0.00218528397045881,64.0,3.0,64.0,False
+473,2015,HEM,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.0025155038142482484,61.0,5.0,61.0,False
+474,2015,HEM,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.0015431711404902528,66.0,50.0,66.0,False
+475,2015,HEM,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0026581089567686727,60.0,32.0,60.0,False
+476,2015,HEM,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.04372501966616413,5.0,57.0,57.0,False
+477,2015,HEM,1092,Fabricação e refino de açúcar,0.035955050526431824,9.0,33.0,33.0,False
+478,2015,HEM,1093,Outros produtos alimentares,0.041271021880945336,6.0,46.0,46.0,False
+479,2015,HEM,1100,Fabricação de bebidas,0.043925325888710655,4.0,45.0,45.0,False
+480,2015,HEM,1200,Fabricação de produtos do fumo,0.001229192850024838,67.0,64.0,67.0,False
+481,2015,HEM,1300,Fabricação de produtos têxteis,0.005141779493660496,49.0,38.0,49.0,False
+482,2015,HEM,1400,Confecção de artefatos do vestuário e acessórios,0.005892117108707887,46.0,56.0,56.0,False
+483,2015,HEM,1500,Fabricação de calçados e de artefatos de couro,0.0032784995188411092,59.0,61.0,61.0,False
+484,2015,HEM,1600,Fabricação de produtos da madeira,0.002333317590470012,63.0,25.0,63.0,False
+485,2015,HEM,1700,"Fabricação de celulose, papel e produtos de papel",0.0052037472984888195,48.0,29.0,48.0,False
+486,2015,HEM,1800,Impressão e reprodução de gravações,0.005086063422724553,50.0,2.0,50.0,False
+487,2015,HEM,1991,Refino de petróleo e coquerias,0.01326181021015084,26.0,26.0,26.0,False
+488,2015,HEM,1992,Fabricação de biocombustíveis,0.002416919904897838,62.0,14.0,62.0,False
+489,2015,HEM,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.012467639415426187,27.0,12.0,27.0,False
+490,2015,HEM,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.004824625188650824,52.0,10.0,52.0,False
+491,2015,HEM,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.004905166410113296,51.0,44.0,51.0,False
+492,2015,HEM,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.007025628341620457,41.0,48.0,48.0,False
+493,2015,HEM,2200,Fabricação de produtos de borracha e de material plástico,0.009512779957611446,31.0,16.0,31.0,False
+494,2015,HEM,2300,Fabricação de produtos de minerais não metálicos,0.007298964093335636,40.0,18.0,40.0,False
+495,2015,HEM,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.005943693913320031,45.0,23.0,45.0,False
+496,2015,HEM,2492,Metalurgia de metais não ferosos e a fundição de metais,0.0037026102925951667,58.0,35.0,58.0,False
+497,2015,HEM,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.0066746766449967245,42.0,21.0,42.0,False
+498,2015,HEM,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.014243422279034528,25.0,55.0,55.0,False
+499,2015,HEM,2700,Fabricação de máquinas e equipamentos elétricos,0.0073714921465236165,39.0,40.0,40.0,False
+500,2015,HEM,2800,Fabricação de máquinas e equipamentos mecânicos,0.009830772145405491,30.0,47.0,47.0,False
+501,2015,HEM,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.0021419752510780012,65.0,62.0,65.0,False
+502,2015,HEM,2992,Fabricação de peças e acessórios para veículos automotores,0.0041244644244361976,55.0,24.0,55.0,False
+503,2015,HEM,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.004157204537524339,54.0,58.0,58.0,False
+504,2015,HEM,3180,Fabricação de móveis e de produtos de indústrias diversas,0.00764896298559609,38.0,49.0,49.0,False
+505,2015,HEM,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.0040457828430687185,57.0,7.0,57.0,False
+506,2015,HEM,3500,"Energia elétrica, gás natural e outras utilidades",0.08281553204588331,1.0,37.0,37.0,True
+507,2015,HEM,3680,"Água, esgoto e gestão de resíduos",0.07576793278785966,2.0,22.0,22.0,True
+508,2015,HEM,4180,Construção,0.05681146999432365,3.0,59.0,59.0,False
+509,2015,HEM,4580,Comércio por atacado e varejo,0.039100439514653224,7.0,41.0,41.0,False
+510,2015,HEM,4900,Transporte terrestre,0.007650444429222326,37.0,20.0,37.0,False
+511,2015,HEM,5000,Transporte aquaviário,0.004447423313922151,53.0,11.0,53.0,False
+512,2015,HEM,5100,Transporte aéreo,0.004056890536040609,56.0,19.0,56.0,False
+513,2015,HEM,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.0060147864915133355,44.0,13.0,44.0,False
+514,2015,HEM,5500,Alojamento,0.010626861085756216,29.0,28.0,29.0,False
+515,2015,HEM,5600,Alimentação,0.011204277245768293,28.0,53.0,53.0,False
+516,2015,HEM,5800,Edição e edição integrada à impressão,0.008603835937293676,35.0,30.0,35.0,False
+517,2015,HEM,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.017957002358706897,17.0,1.0,17.0,True
+518,2015,HEM,6100,Telecomunicações,0.016824414677392065,20.0,42.0,42.0,False
+519,2015,HEM,6280,Desenvolvimento de sistemas e outros serviços de informação,0.017049984841948213,19.0,31.0,31.0,False
+520,2015,HEM,6480,"Intermediação financeira, seguros e previdência complementar",0.024012801227506216,11.0,39.0,39.0,False
+521,2015,HEM,6800,Atividades imobiliárias,0.02737702806524325,10.0,52.0,52.0,False
+522,2015,HEM,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.01884225790738766,14.0,9.0,14.0,False
+523,2015,HEM,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.018355391593618972,15.0,17.0,17.0,False
+524,2015,HEM,7380,"Outras atividades profissionais, científicas e técnicas",0.017348561551357233,18.0,6.0,18.0,False
+525,2015,HEM,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.018316711079643118,16.0,8.0,16.0,False
+526,2015,HEM,7880,Outras atividades administrativas e serviços complementares,0.01959799474716029,12.0,15.0,15.0,True
+527,2015,HEM,8000,"Atividades de vigilância, segurança e investigação",0.019368590380835257,13.0,4.0,13.0,True
+528,2015,HEM,8400,"Administração pública, defesa e seguridade social",0.036087214521138,8.0,60.0,60.0,False
+529,2015,HEM,8591,Educação pública,0.009040099145646026,33.0,63.0,63.0,False
+530,2015,HEM,8592,Educação privada,0.006250164690458131,43.0,54.0,54.0,False
+531,2015,HEM,8691,Saúde pública,0.005240779210178213,47.0,66.0,66.0,False
+532,2015,HEM,8692,Saúde privada,0.009305764404340175,32.0,65.0,65.0,False
+533,2015,HEM,9080,"Atividades artísticas, criativas e de espetáculos",0.015340509639884266,22.0,43.0,43.0,False
+534,2015,HEM,9480,Organizações associativas e outros serviços pessoais,0.014906185471990518,24.0,51.0,51.0,False
+535,2015,HEM,9700,Serviços domésticos,0.015285673241397754,23.0,67.0,67.0,False
+536,2018,A,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.013702215854816815,25.0,2.0,25.0,False
+537,2018,A,0192,"Pecuária, inclusive o apoio à pecuária",0.00809330376987806,35.0,20.0,35.0,False
+538,2018,A,0280,Produção florestal; pesca e aquicultura,0.008136349173564428,34.0,38.0,38.0,False
+539,2018,A,0580,Extração de carvão mineral e de minerais não metálicos,0.00233115595456077,63.0,45.0,63.0,False
+540,2018,A,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.0025396640506333266,60.0,27.0,60.0,False
+541,2018,A,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.0015579925767869086,66.0,54.0,66.0,False
+542,2018,A,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0023779078406914863,61.0,49.0,61.0,False
+543,2018,A,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.037684737324025705,6.0,30.0,30.0,False
+544,2018,A,1092,Fabricação e refino de açúcar,0.041167472270379826,5.0,48.0,48.0,False
+545,2018,A,1093,Outros produtos alimentares,0.033654447122546186,7.0,19.0,19.0,False
+546,2018,A,1100,Fabricação de bebidas,0.04289584490470818,4.0,43.0,43.0,False
+547,2018,A,1200,Fabricação de produtos do fumo,0.0013364601081409814,67.0,66.0,67.0,False
+548,2018,A,1300,Fabricação de produtos têxteis,0.005485003343143797,47.0,22.0,47.0,False
+549,2018,A,1400,Confecção de artefatos do vestuário e acessórios,0.006336667361053756,43.0,59.0,59.0,False
+550,2018,A,1500,Fabricação de calçados e de artefatos de couro,0.003564602431101032,58.0,63.0,63.0,False
+551,2018,A,1600,Fabricação de produtos da madeira,0.0023557280134747028,62.0,44.0,62.0,False
+552,2018,A,1700,"Fabricação de celulose, papel e produtos de papel",0.004745301675405375,50.0,17.0,50.0,False
+553,2018,A,1800,Impressão e reprodução de gravações,0.005751102202295884,46.0,40.0,46.0,False
+554,2018,A,1991,Refino de petróleo e coquerias,0.011026386566656221,26.0,6.0,26.0,False
+555,2018,A,1992,Fabricação de biocombustíveis,0.0018978814469924352,65.0,47.0,65.0,False
+556,2018,A,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.010745328875965784,27.0,7.0,27.0,False
+557,2018,A,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.004399579894580256,52.0,15.0,52.0,False
+558,2018,A,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.00418382126910461,53.0,56.0,56.0,False
+559,2018,A,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.005992451800186101,45.0,55.0,55.0,False
+560,2018,A,2200,Fabricação de produtos de borracha e de material plástico,0.008963869371567968,33.0,13.0,33.0,False
+561,2018,A,2300,Fabricação de produtos de minerais não metálicos,0.007935918551185332,36.0,33.0,36.0,False
+562,2018,A,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.00600078031053914,44.0,14.0,44.0,False
+563,2018,A,2492,Metalurgia de metais não ferosos e a fundição de metais,0.00337641353759192,59.0,29.0,59.0,False
+564,2018,A,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.006738783789109831,41.0,16.0,41.0,False
+565,2018,A,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.0138409652932515,24.0,53.0,53.0,False
+566,2018,A,2700,Fabricação de máquinas e equipamentos elétricos,0.007442291877282117,37.0,39.0,39.0,False
+567,2018,A,2800,Fabricação de máquinas e equipamentos mecânicos,0.010688668425212922,28.0,31.0,31.0,False
+568,2018,A,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.002162547920498698,64.0,61.0,64.0,False
+569,2018,A,2992,Fabricação de peças e acessórios para veículos automotores,0.0041640779741719605,54.0,32.0,54.0,False
+570,2018,A,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.004519988890003459,51.0,60.0,60.0,False
+571,2018,A,3180,Fabricação de móveis e de produtos de indústrias diversas,0.007276903019207568,38.0,46.0,46.0,False
+572,2018,A,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.003689352884048692,57.0,12.0,57.0,False
+573,2018,A,3500,"Energia elétrica, gás natural e outras utilidades",0.10011309496851209,1.0,9.0,9.0,True
+574,2018,A,3680,"Água, esgoto e gestão de resíduos",0.09558641668987401,2.0,34.0,34.0,False
+575,2018,A,4180,Construção,0.06536043629462625,3.0,25.0,25.0,False
+576,2018,A,4580,Comércio por atacado e varejo,0.03250963135369909,8.0,1.0,8.0,True
+577,2018,A,4900,Transporte terrestre,0.009830447920429294,31.0,3.0,31.0,False
+578,2018,A,5000,Transporte aquaviário,0.003854741742123241,56.0,51.0,56.0,False
+579,2018,A,5100,Transporte aéreo,0.003859555739242197,55.0,41.0,55.0,False
+580,2018,A,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.0068012623836199585,40.0,10.0,40.0,False
+581,2018,A,5500,Alojamento,0.010273453790271834,29.0,52.0,52.0,False
+582,2018,A,5600,Alimentação,0.009897902947543984,30.0,36.0,36.0,False
+583,2018,A,5800,Edição e edição integrada à impressão,0.007260334599675455,39.0,58.0,58.0,False
+584,2018,A,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.019228226774645703,13.0,21.0,21.0,False
+585,2018,A,6100,Telecomunicações,0.01902432593961951,14.0,26.0,26.0,False
+586,2018,A,6280,Desenvolvimento de sistemas e outros serviços de informação,0.014830300768646195,22.0,28.0,28.0,False
+587,2018,A,6480,"Intermediação financeira, seguros e previdência complementar",0.016970403058406202,17.0,4.0,17.0,False
+588,2018,A,6800,Atividades imobiliárias,0.024184975151726924,10.0,18.0,18.0,False
+589,2018,A,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.016645325351115747,18.0,5.0,18.0,False
+590,2018,A,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.019876728300645873,12.0,24.0,24.0,False
+591,2018,A,7380,"Outras atividades profissionais, científicas e técnicas",0.01811229498851234,16.0,11.0,16.0,False
+592,2018,A,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.01618105519952076,19.0,23.0,23.0,False
+593,2018,A,7880,Outras atividades administrativas e serviços complementares,0.018467142690256216,15.0,8.0,15.0,False
+594,2018,A,8000,"Atividades de vigilância, segurança e investigação",0.02006033946683328,11.0,35.0,35.0,False
+595,2018,A,8400,"Administração pública, defesa e seguridade social",0.031879588405609026,9.0,37.0,37.0,False
+596,2018,A,8591,Educação pública,0.00912692506539468,32.0,62.0,62.0,False
+597,2018,A,8592,Educação privada,0.0049079291302245726,49.0,57.0,57.0,False
+598,2018,A,8691,Saúde pública,0.005291114440776044,48.0,64.0,64.0,False
+599,2018,A,8692,Saúde privada,0.006576599340160477,42.0,65.0,65.0,False
+600,2018,A,9080,"Atividades artísticas, criativas e de espetáculos",0.014830345069233178,21.0,50.0,50.0,False
+601,2018,A,9480,Organizações associativas e outros serviços pessoais,0.015049352404421004,20.0,42.0,42.0,False
+602,2018,A,9700,Serviços domésticos,0.014647782350271067,23.0,67.0,67.0,False
+603,2018,L,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.013702215854816815,25.0,5.0,25.0,False
+604,2018,L,0192,"Pecuária, inclusive o apoio à pecuária",0.00809330376987806,35.0,25.0,35.0,False
+605,2018,L,0280,Produção florestal; pesca e aquicultura,0.008136349173564428,34.0,40.0,40.0,False
+606,2018,L,0580,Extração de carvão mineral e de minerais não metálicos,0.00233115595456077,63.0,45.0,63.0,False
+607,2018,L,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.0025396640506333266,60.0,10.0,60.0,False
+608,2018,L,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.0015579925767869086,66.0,53.0,66.0,False
+609,2018,L,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0023779078406914863,61.0,50.0,61.0,False
+610,2018,L,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.037684737324025705,6.0,35.0,35.0,False
+611,2018,L,1092,Fabricação e refino de açúcar,0.041167472270379826,5.0,44.0,44.0,False
+612,2018,L,1093,Outros produtos alimentares,0.033654447122546186,7.0,21.0,21.0,False
+613,2018,L,1100,Fabricação de bebidas,0.04289584490470818,4.0,46.0,46.0,False
+614,2018,L,1200,Fabricação de produtos do fumo,0.0013364601081409814,67.0,66.0,67.0,False
+615,2018,L,1300,Fabricação de produtos têxteis,0.005485003343143797,47.0,28.0,47.0,False
+616,2018,L,1400,Confecção de artefatos do vestuário e acessórios,0.006336667361053756,43.0,59.0,59.0,False
+617,2018,L,1500,Fabricação de calçados e de artefatos de couro,0.003564602431101032,58.0,63.0,63.0,False
+618,2018,L,1600,Fabricação de produtos da madeira,0.0023557280134747028,62.0,47.0,62.0,False
+619,2018,L,1700,"Fabricação de celulose, papel e produtos de papel",0.004745301675405375,50.0,20.0,50.0,False
+620,2018,L,1800,Impressão e reprodução de gravações,0.005751102202295884,46.0,41.0,46.0,False
+621,2018,L,1991,Refino de petróleo e coquerias,0.011026386566656221,26.0,2.0,26.0,False
+622,2018,L,1992,Fabricação de biocombustíveis,0.0018978814469924352,65.0,39.0,65.0,False
+623,2018,L,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.010745328875965784,27.0,8.0,27.0,False
+624,2018,L,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.004399579894580256,52.0,15.0,52.0,False
+625,2018,L,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.00418382126910461,53.0,55.0,55.0,False
+626,2018,L,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.005992451800186101,45.0,57.0,57.0,False
+627,2018,L,2200,Fabricação de produtos de borracha e de material plástico,0.008963869371567968,33.0,13.0,33.0,False
+628,2018,L,2300,Fabricação de produtos de minerais não metálicos,0.007935918551185332,36.0,31.0,36.0,False
+629,2018,L,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.00600078031053914,44.0,17.0,44.0,False
+630,2018,L,2492,Metalurgia de metais não ferosos e a fundição de metais,0.00337641353759192,59.0,29.0,59.0,False
+631,2018,L,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.006738783789109831,41.0,19.0,41.0,False
+632,2018,L,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.0138409652932515,24.0,54.0,54.0,False
+633,2018,L,2700,Fabricação de máquinas e equipamentos elétricos,0.007442291877282117,37.0,36.0,37.0,False
+634,2018,L,2800,Fabricação de máquinas e equipamentos mecânicos,0.010688668425212922,28.0,30.0,30.0,False
+635,2018,L,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.002162547920498698,64.0,61.0,64.0,False
+636,2018,L,2992,Fabricação de peças e acessórios para veículos automotores,0.0041640779741719605,54.0,32.0,54.0,False
+637,2018,L,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.004519988890003459,51.0,60.0,60.0,False
+638,2018,L,3180,Fabricação de móveis e de produtos de indústrias diversas,0.007276903019207568,38.0,51.0,51.0,False
+639,2018,L,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.003689352884048692,57.0,14.0,57.0,False
+640,2018,L,3500,"Energia elétrica, gás natural e outras utilidades",0.10011309496851209,1.0,7.0,7.0,True
+641,2018,L,3680,"Água, esgoto e gestão de resíduos",0.09558641668987401,2.0,33.0,33.0,False
+642,2018,L,4180,Construção,0.06536043629462625,3.0,27.0,27.0,False
+643,2018,L,4580,Comércio por atacado e varejo,0.03250963135369909,8.0,1.0,8.0,True
+644,2018,L,4900,Transporte terrestre,0.009830447920429294,31.0,3.0,31.0,False
+645,2018,L,5000,Transporte aquaviário,0.003854741742123241,56.0,48.0,56.0,False
+646,2018,L,5100,Transporte aéreo,0.003859555739242197,55.0,43.0,55.0,False
+647,2018,L,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.0068012623836199585,40.0,11.0,40.0,False
+648,2018,L,5500,Alojamento,0.010273453790271834,29.0,56.0,56.0,False
+649,2018,L,5600,Alimentação,0.009897902947543984,30.0,38.0,38.0,False
+650,2018,L,5800,Edição e edição integrada à impressão,0.007260334599675455,39.0,58.0,58.0,False
+651,2018,L,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.019228226774645703,13.0,16.0,16.0,False
+652,2018,L,6100,Telecomunicações,0.01902432593961951,14.0,22.0,22.0,False
+653,2018,L,6280,Desenvolvimento de sistemas e outros serviços de informação,0.014830300768646195,22.0,23.0,23.0,False
+654,2018,L,6480,"Intermediação financeira, seguros e previdência complementar",0.016970403058406202,17.0,4.0,17.0,False
+655,2018,L,6800,Atividades imobiliárias,0.024184975151726924,10.0,18.0,18.0,False
+656,2018,L,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.016645325351115747,18.0,6.0,18.0,False
+657,2018,L,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.019876728300645873,12.0,24.0,24.0,False
+658,2018,L,7380,"Outras atividades profissionais, científicas e técnicas",0.01811229498851234,16.0,12.0,16.0,False
+659,2018,L,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.01618105519952076,19.0,26.0,26.0,False
+660,2018,L,7880,Outras atividades administrativas e serviços complementares,0.018467142690256216,15.0,9.0,15.0,False
+661,2018,L,8000,"Atividades de vigilância, segurança e investigação",0.02006033946683328,11.0,34.0,34.0,False
+662,2018,L,8400,"Administração pública, defesa e seguridade social",0.031879588405609026,9.0,37.0,37.0,False
+663,2018,L,8591,Educação pública,0.00912692506539468,32.0,62.0,62.0,False
+664,2018,L,8592,Educação privada,0.0049079291302245726,49.0,52.0,52.0,False
+665,2018,L,8691,Saúde pública,0.005291114440776044,48.0,65.0,65.0,False
+666,2018,L,8692,Saúde privada,0.006576599340160477,42.0,64.0,64.0,False
+667,2018,L,9080,"Atividades artísticas, criativas e de espetáculos",0.014830345069233178,21.0,49.0,49.0,False
+668,2018,L,9480,Organizações associativas e outros serviços pessoais,0.015049352404421004,20.0,42.0,42.0,False
+669,2018,L,9700,Serviços domésticos,0.014647782350271067,23.0,67.0,67.0,False
+670,2018,S,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.013702215854816815,25.0,7.0,25.0,False
+671,2018,S,0192,"Pecuária, inclusive o apoio à pecuária",0.00809330376987806,35.0,28.0,35.0,False
+672,2018,S,0280,Produção florestal; pesca e aquicultura,0.008136349173564428,34.0,42.0,42.0,False
+673,2018,S,0580,Extração de carvão mineral e de minerais não metálicos,0.00233115595456077,63.0,45.0,63.0,False
+674,2018,S,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.0025396640506333266,60.0,10.0,60.0,False
+675,2018,S,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.0015579925767869086,66.0,56.0,66.0,False
+676,2018,S,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0023779078406914863,61.0,53.0,61.0,False
+677,2018,S,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.037684737324025705,6.0,36.0,36.0,False
+678,2018,S,1092,Fabricação e refino de açúcar,0.041167472270379826,5.0,46.0,46.0,False
+679,2018,S,1093,Outros produtos alimentares,0.033654447122546186,7.0,22.0,22.0,False
+680,2018,S,1100,Fabricação de bebidas,0.04289584490470818,4.0,44.0,44.0,False
+681,2018,S,1200,Fabricação de produtos do fumo,0.0013364601081409814,67.0,66.0,67.0,False
+682,2018,S,1300,Fabricação de produtos têxteis,0.005485003343143797,47.0,27.0,47.0,False
+683,2018,S,1400,Confecção de artefatos do vestuário e acessórios,0.006336667361053756,43.0,59.0,59.0,False
+684,2018,S,1500,Fabricação de calçados e de artefatos de couro,0.003564602431101032,58.0,63.0,63.0,False
+685,2018,S,1600,Fabricação de produtos da madeira,0.0023557280134747028,62.0,47.0,62.0,False
+686,2018,S,1700,"Fabricação de celulose, papel e produtos de papel",0.004745301675405375,50.0,20.0,50.0,False
+687,2018,S,1800,Impressão e reprodução de gravações,0.005751102202295884,46.0,39.0,46.0,False
+688,2018,S,1991,Refino de petróleo e coquerias,0.011026386566656221,26.0,2.0,26.0,False
+689,2018,S,1992,Fabricação de biocombustíveis,0.0018978814469924352,65.0,43.0,65.0,False
+690,2018,S,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.010745328875965784,27.0,8.0,27.0,False
+691,2018,S,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.004399579894580256,52.0,15.0,52.0,False
+692,2018,S,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.00418382126910461,53.0,54.0,54.0,False
+693,2018,S,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.005992451800186101,45.0,57.0,57.0,False
+694,2018,S,2200,Fabricação de produtos de borracha e de material plástico,0.008963869371567968,33.0,13.0,33.0,False
+695,2018,S,2300,Fabricação de produtos de minerais não metálicos,0.007935918551185332,36.0,31.0,36.0,False
+696,2018,S,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.00600078031053914,44.0,18.0,44.0,False
+697,2018,S,2492,Metalurgia de metais não ferosos e a fundição de metais,0.00337641353759192,59.0,29.0,59.0,False
+698,2018,S,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.006738783789109831,41.0,19.0,41.0,False
+699,2018,S,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.0138409652932515,24.0,52.0,52.0,False
+700,2018,S,2700,Fabricação de máquinas e equipamentos elétricos,0.007442291877282117,37.0,35.0,37.0,False
+701,2018,S,2800,Fabricação de máquinas e equipamentos mecânicos,0.010688668425212922,28.0,30.0,30.0,False
+702,2018,S,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.002162547920498698,64.0,61.0,64.0,False
+703,2018,S,2992,Fabricação de peças e acessórios para veículos automotores,0.0041640779741719605,54.0,34.0,54.0,False
+704,2018,S,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.004519988890003459,51.0,60.0,60.0,False
+705,2018,S,3180,Fabricação de móveis e de produtos de indústrias diversas,0.007276903019207568,38.0,51.0,51.0,False
+706,2018,S,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.003689352884048692,57.0,14.0,57.0,False
+707,2018,S,3500,"Energia elétrica, gás natural e outras utilidades",0.10011309496851209,1.0,6.0,6.0,True
+708,2018,S,3680,"Água, esgoto e gestão de resíduos",0.09558641668987401,2.0,32.0,32.0,False
+709,2018,S,4180,Construção,0.06536043629462625,3.0,25.0,25.0,False
+710,2018,S,4580,Comércio por atacado e varejo,0.03250963135369909,8.0,1.0,8.0,True
+711,2018,S,4900,Transporte terrestre,0.009830447920429294,31.0,3.0,31.0,False
+712,2018,S,5000,Transporte aquaviário,0.003854741742123241,56.0,48.0,56.0,False
+713,2018,S,5100,Transporte aéreo,0.003859555739242197,55.0,40.0,55.0,False
+714,2018,S,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.0068012623836199585,40.0,11.0,40.0,False
+715,2018,S,5500,Alojamento,0.010273453790271834,29.0,55.0,55.0,False
+716,2018,S,5600,Alimentação,0.009897902947543984,30.0,38.0,38.0,False
+717,2018,S,5800,Edição e edição integrada à impressão,0.007260334599675455,39.0,58.0,58.0,False
+718,2018,S,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.019228226774645703,13.0,17.0,17.0,False
+719,2018,S,6100,Telecomunicações,0.01902432593961951,14.0,21.0,21.0,False
+720,2018,S,6280,Desenvolvimento de sistemas e outros serviços de informação,0.014830300768646195,22.0,23.0,23.0,False
+721,2018,S,6480,"Intermediação financeira, seguros e previdência complementar",0.016970403058406202,17.0,4.0,17.0,False
+722,2018,S,6800,Atividades imobiliárias,0.024184975151726924,10.0,16.0,16.0,False
+723,2018,S,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.016645325351115747,18.0,5.0,18.0,False
+724,2018,S,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.019876728300645873,12.0,24.0,24.0,False
+725,2018,S,7380,"Outras atividades profissionais, científicas e técnicas",0.01811229498851234,16.0,12.0,16.0,False
+726,2018,S,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.01618105519952076,19.0,26.0,26.0,False
+727,2018,S,7880,Outras atividades administrativas e serviços complementares,0.018467142690256216,15.0,9.0,15.0,False
+728,2018,S,8000,"Atividades de vigilância, segurança e investigação",0.02006033946683328,11.0,33.0,33.0,False
+729,2018,S,8400,"Administração pública, defesa e seguridade social",0.031879588405609026,9.0,37.0,37.0,False
+730,2018,S,8591,Educação pública,0.00912692506539468,32.0,62.0,62.0,False
+731,2018,S,8592,Educação privada,0.0049079291302245726,49.0,49.0,49.0,False
+732,2018,S,8691,Saúde pública,0.005291114440776044,48.0,65.0,65.0,False
+733,2018,S,8692,Saúde privada,0.006576599340160477,42.0,64.0,64.0,False
+734,2018,S,9080,"Atividades artísticas, criativas e de espetáculos",0.014830345069233178,21.0,50.0,50.0,False
+735,2018,S,9480,Organizações associativas e outros serviços pessoais,0.015049352404421004,20.0,41.0,41.0,False
+736,2018,S,9700,Serviços domésticos,0.014647782350271067,23.0,67.0,67.0,False
+737,2018,HEM,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.013702215854816815,25.0,36.0,36.0,False
+738,2018,HEM,0192,"Pecuária, inclusive o apoio à pecuária",0.00809330376987806,35.0,27.0,35.0,False
+739,2018,HEM,0280,Produção florestal; pesca e aquicultura,0.008136349173564428,34.0,34.0,34.0,False
+740,2018,HEM,0580,Extração de carvão mineral e de minerais não metálicos,0.00233115595456077,63.0,3.0,63.0,False
+741,2018,HEM,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.0025396640506333266,60.0,5.0,60.0,False
+742,2018,HEM,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.0015579925767869086,66.0,50.0,66.0,False
+743,2018,HEM,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.0023779078406914863,61.0,32.0,61.0,False
+744,2018,HEM,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.037684737324025705,6.0,57.0,57.0,False
+745,2018,HEM,1092,Fabricação e refino de açúcar,0.041167472270379826,5.0,33.0,33.0,False
+746,2018,HEM,1093,Outros produtos alimentares,0.033654447122546186,7.0,46.0,46.0,False
+747,2018,HEM,1100,Fabricação de bebidas,0.04289584490470818,4.0,45.0,45.0,False
+748,2018,HEM,1200,Fabricação de produtos do fumo,0.0013364601081409814,67.0,64.0,67.0,False
+749,2018,HEM,1300,Fabricação de produtos têxteis,0.005485003343143797,47.0,38.0,47.0,False
+750,2018,HEM,1400,Confecção de artefatos do vestuário e acessórios,0.006336667361053756,43.0,56.0,56.0,False
+751,2018,HEM,1500,Fabricação de calçados e de artefatos de couro,0.003564602431101032,58.0,61.0,61.0,False
+752,2018,HEM,1600,Fabricação de produtos da madeira,0.0023557280134747028,62.0,25.0,62.0,False
+753,2018,HEM,1700,"Fabricação de celulose, papel e produtos de papel",0.004745301675405375,50.0,29.0,50.0,False
+754,2018,HEM,1800,Impressão e reprodução de gravações,0.005751102202295884,46.0,2.0,46.0,False
+755,2018,HEM,1991,Refino de petróleo e coquerias,0.011026386566656221,26.0,26.0,26.0,False
+756,2018,HEM,1992,Fabricação de biocombustíveis,0.0018978814469924352,65.0,14.0,65.0,False
+757,2018,HEM,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.010745328875965784,27.0,12.0,27.0,False
+758,2018,HEM,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.004399579894580256,52.0,10.0,52.0,False
+759,2018,HEM,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.00418382126910461,53.0,44.0,53.0,False
+760,2018,HEM,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.005992451800186101,45.0,48.0,48.0,False
+761,2018,HEM,2200,Fabricação de produtos de borracha e de material plástico,0.008963869371567968,33.0,16.0,33.0,False
+762,2018,HEM,2300,Fabricação de produtos de minerais não metálicos,0.007935918551185332,36.0,18.0,36.0,False
+763,2018,HEM,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.00600078031053914,44.0,23.0,44.0,False
+764,2018,HEM,2492,Metalurgia de metais não ferosos e a fundição de metais,0.00337641353759192,59.0,35.0,59.0,False
+765,2018,HEM,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.006738783789109831,41.0,21.0,41.0,False
+766,2018,HEM,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.0138409652932515,24.0,55.0,55.0,False
+767,2018,HEM,2700,Fabricação de máquinas e equipamentos elétricos,0.007442291877282117,37.0,40.0,40.0,False
+768,2018,HEM,2800,Fabricação de máquinas e equipamentos mecânicos,0.010688668425212922,28.0,47.0,47.0,False
+769,2018,HEM,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.002162547920498698,64.0,62.0,64.0,False
+770,2018,HEM,2992,Fabricação de peças e acessórios para veículos automotores,0.0041640779741719605,54.0,24.0,54.0,False
+771,2018,HEM,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.004519988890003459,51.0,58.0,58.0,False
+772,2018,HEM,3180,Fabricação de móveis e de produtos de indústrias diversas,0.007276903019207568,38.0,49.0,49.0,False
+773,2018,HEM,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.003689352884048692,57.0,7.0,57.0,False
+774,2018,HEM,3500,"Energia elétrica, gás natural e outras utilidades",0.10011309496851209,1.0,37.0,37.0,True
+775,2018,HEM,3680,"Água, esgoto e gestão de resíduos",0.09558641668987401,2.0,22.0,22.0,True
+776,2018,HEM,4180,Construção,0.06536043629462625,3.0,59.0,59.0,False
+777,2018,HEM,4580,Comércio por atacado e varejo,0.03250963135369909,8.0,41.0,41.0,False
+778,2018,HEM,4900,Transporte terrestre,0.009830447920429294,31.0,20.0,31.0,False
+779,2018,HEM,5000,Transporte aquaviário,0.003854741742123241,56.0,11.0,56.0,False
+780,2018,HEM,5100,Transporte aéreo,0.003859555739242197,55.0,19.0,55.0,False
+781,2018,HEM,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.0068012623836199585,40.0,13.0,40.0,False
+782,2018,HEM,5500,Alojamento,0.010273453790271834,29.0,28.0,29.0,False
+783,2018,HEM,5600,Alimentação,0.009897902947543984,30.0,53.0,53.0,False
+784,2018,HEM,5800,Edição e edição integrada à impressão,0.007260334599675455,39.0,30.0,39.0,False
+785,2018,HEM,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.019228226774645703,13.0,1.0,13.0,True
+786,2018,HEM,6100,Telecomunicações,0.01902432593961951,14.0,42.0,42.0,False
+787,2018,HEM,6280,Desenvolvimento de sistemas e outros serviços de informação,0.014830300768646195,22.0,31.0,31.0,False
+788,2018,HEM,6480,"Intermediação financeira, seguros e previdência complementar",0.016970403058406202,17.0,39.0,39.0,False
+789,2018,HEM,6800,Atividades imobiliárias,0.024184975151726924,10.0,52.0,52.0,False
+790,2018,HEM,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.016645325351115747,18.0,9.0,18.0,False
+791,2018,HEM,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.019876728300645873,12.0,17.0,17.0,False
+792,2018,HEM,7380,"Outras atividades profissionais, científicas e técnicas",0.01811229498851234,16.0,6.0,16.0,False
+793,2018,HEM,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.01618105519952076,19.0,8.0,19.0,False
+794,2018,HEM,7880,Outras atividades administrativas e serviços complementares,0.018467142690256216,15.0,15.0,15.0,False
+795,2018,HEM,8000,"Atividades de vigilância, segurança e investigação",0.02006033946683328,11.0,4.0,11.0,True
+796,2018,HEM,8400,"Administração pública, defesa e seguridade social",0.031879588405609026,9.0,60.0,60.0,False
+797,2018,HEM,8591,Educação pública,0.00912692506539468,32.0,63.0,63.0,False
+798,2018,HEM,8592,Educação privada,0.0049079291302245726,49.0,54.0,54.0,False
+799,2018,HEM,8691,Saúde pública,0.005291114440776044,48.0,66.0,66.0,False
+800,2018,HEM,8692,Saúde privada,0.006576599340160477,42.0,65.0,65.0,False
+801,2018,HEM,9080,"Atividades artísticas, criativas e de espetáculos",0.014830345069233178,21.0,43.0,43.0,False
+802,2018,HEM,9480,Organizações associativas e outros serviços pessoais,0.015049352404421004,20.0,51.0,51.0,False
+803,2018,HEM,9700,Serviços domésticos,0.014647782350271067,23.0,67.0,67.0,False
