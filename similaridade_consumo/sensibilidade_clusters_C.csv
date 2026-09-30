@@ -1,0 +1,13 @@
+cenario,limiar,grupos_nao_unitarios,setores_agrupados,sem_grupo
+linhas_completa,0.7,10,26,41
+linhas_completa,0.8,8,19,48
+linhas_completa,0.9,4,9,58
+colunas_completa,0.7,3,6,61
+colunas_completa,0.8,2,4,63
+colunas_completa,0.9,0,0,67
+linhas_sem_diagonal,0.7,14,61,5
+linhas_sem_diagonal,0.8,16,59,7
+linhas_sem_diagonal,0.9,19,42,24
+colunas_sem_diagonal,0.7,12,57,9
+colunas_sem_diagonal,0.8,15,48,18
+colunas_sem_diagonal,0.9,14,32,34

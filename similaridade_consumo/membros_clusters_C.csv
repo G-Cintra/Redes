@@ -1,0 +1,269 @@
+cenario,grupo,atividade,descricao
+linhas_completa,sem_grupo,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita"
+linhas_completa,G01,0192,"Pecuária, inclusive o apoio à pecuária"
+linhas_completa,G01,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca"
+linhas_completa,sem_grupo,0280,Produção florestal; pesca e aquicultura
+linhas_completa,G02,0580,Extração de carvão mineral e de minerais não metálicos
+linhas_completa,G02,2300,Fabricação de produtos de minerais não metálicos
+linhas_completa,G02,4180,Construção
+linhas_completa,G03,0680,"Extração de petróleo e gás, inclusive as atividades de apoio"
+linhas_completa,G03,1991,Refino de petróleo e coquerias
+linhas_completa,sem_grupo,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração"
+linhas_completa,sem_grupo,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos"
+linhas_completa,sem_grupo,1092,Fabricação e refino de açúcar
+linhas_completa,sem_grupo,1093,Outros produtos alimentares
+linhas_completa,sem_grupo,1100,Fabricação de bebidas
+linhas_completa,sem_grupo,1200,Fabricação de produtos do fumo
+linhas_completa,sem_grupo,1300,Fabricação de produtos têxteis
+linhas_completa,sem_grupo,1400,Confecção de artefatos do vestuário e acessórios
+linhas_completa,sem_grupo,1500,Fabricação de calçados e de artefatos de couro
+linhas_completa,sem_grupo,1600,Fabricação de produtos da madeira
+linhas_completa,sem_grupo,1700,"Fabricação de celulose, papel e produtos de papel"
+linhas_completa,G04,1800,Impressão e reprodução de gravações
+linhas_completa,G04,4580,Comércio por atacado e varejo
+linhas_completa,sem_grupo,1992,Fabricação de biocombustíveis
+linhas_completa,G05,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros"
+linhas_completa,G05,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos"
+linhas_completa,sem_grupo,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal"
+linhas_completa,sem_grupo,2100,Fabricação de produtos farmoquímicos e farmacêuticos
+linhas_completa,sem_grupo,2200,Fabricação de produtos de borracha e de material plástico
+linhas_completa,G06,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura"
+linhas_completa,G06,2492,Metalurgia de metais não ferosos e a fundição de metais
+linhas_completa,sem_grupo,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos"
+linhas_completa,sem_grupo,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos"
+linhas_completa,sem_grupo,2700,Fabricação de máquinas e equipamentos elétricos
+linhas_completa,sem_grupo,2800,Fabricação de máquinas e equipamentos mecânicos
+linhas_completa,G07,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças"
+linhas_completa,G07,2992,Fabricação de peças e acessórios para veículos automotores
+linhas_completa,sem_grupo,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores"
+linhas_completa,sem_grupo,3180,Fabricação de móveis e de produtos de indústrias diversas
+linhas_completa,sem_grupo,3300,"Manutenção, reparação e instalação de máquinas e equipamentos"
+linhas_completa,sem_grupo,3500,"Energia elétrica, gás natural e outras utilidades"
+linhas_completa,sem_grupo,3680,"Água, esgoto e gestão de resíduos"
+linhas_completa,sem_grupo,4900,Transporte terrestre
+linhas_completa,sem_grupo,5000,Transporte aquaviário
+linhas_completa,sem_grupo,5100,Transporte aéreo
+linhas_completa,sem_grupo,5280,"Armazenamento, atividades auxiliares dos transportes e correio"
+linhas_completa,sem_grupo,5500,Alojamento
+linhas_completa,sem_grupo,5600,Alimentação
+linhas_completa,sem_grupo,5800,Edição e edição integrada à impressão
+linhas_completa,G08,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem"
+linhas_completa,G08,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas "
+linhas_completa,G08,7380,"Outras atividades profissionais, científicas e técnicas"
+linhas_completa,G08,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual
+linhas_completa,sem_grupo,6100,Telecomunicações
+linhas_completa,sem_grupo,6280,Desenvolvimento de sistemas e outros serviços de informação
+linhas_completa,sem_grupo,6480,"Intermediação financeira, seguros e previdência complementar"
+linhas_completa,sem_grupo,6800,Atividades imobiliárias
+linhas_completa,sem_grupo,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D"
+linhas_completa,sem_grupo,7880,Outras atividades administrativas e serviços complementares
+linhas_completa,sem_grupo,8000,"Atividades de vigilância, segurança e investigação"
+linhas_completa,sem_grupo,8400,"Administração pública, defesa e seguridade social"
+linhas_completa,sem_grupo,8591,Educação pública
+linhas_completa,sem_grupo,8592,Educação privada
+linhas_completa,sem_grupo,8691,Saúde pública
+linhas_completa,sem_grupo,8692,Saúde privada
+linhas_completa,sem_grupo,9080,"Atividades artísticas, criativas e de espetáculos"
+linhas_completa,sem_grupo,9480,Organizações associativas e outros serviços pessoais
+linhas_completa,sem_grupo,9700,Serviços domésticos
+colunas_completa,sem_grupo,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita"
+colunas_completa,sem_grupo,0192,"Pecuária, inclusive o apoio à pecuária"
+colunas_completa,sem_grupo,0280,Produção florestal; pesca e aquicultura
+colunas_completa,sem_grupo,0580,Extração de carvão mineral e de minerais não metálicos
+colunas_completa,G01,0680,"Extração de petróleo e gás, inclusive as atividades de apoio"
+colunas_completa,G01,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual
+colunas_completa,sem_grupo,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração"
+colunas_completa,sem_grupo,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos"
+colunas_completa,sem_grupo,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca"
+colunas_completa,sem_grupo,1092,Fabricação e refino de açúcar
+colunas_completa,sem_grupo,1093,Outros produtos alimentares
+colunas_completa,G02,1100,Fabricação de bebidas
+colunas_completa,G02,5600,Alimentação
+colunas_completa,sem_grupo,1200,Fabricação de produtos do fumo
+colunas_completa,sem_grupo,1300,Fabricação de produtos têxteis
+colunas_completa,sem_grupo,1400,Confecção de artefatos do vestuário e acessórios
+colunas_completa,sem_grupo,1500,Fabricação de calçados e de artefatos de couro
+colunas_completa,sem_grupo,1600,Fabricação de produtos da madeira
+colunas_completa,sem_grupo,1700,"Fabricação de celulose, papel e produtos de papel"
+colunas_completa,sem_grupo,1800,Impressão e reprodução de gravações
+colunas_completa,sem_grupo,1991,Refino de petróleo e coquerias
+colunas_completa,sem_grupo,1992,Fabricação de biocombustíveis
+colunas_completa,sem_grupo,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros"
+colunas_completa,sem_grupo,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos"
+colunas_completa,sem_grupo,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal"
+colunas_completa,sem_grupo,2100,Fabricação de produtos farmoquímicos e farmacêuticos
+colunas_completa,sem_grupo,2200,Fabricação de produtos de borracha e de material plástico
+colunas_completa,sem_grupo,2300,Fabricação de produtos de minerais não metálicos
+colunas_completa,sem_grupo,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura"
+colunas_completa,sem_grupo,2492,Metalurgia de metais não ferosos e a fundição de metais
+colunas_completa,sem_grupo,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos"
+colunas_completa,sem_grupo,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos"
+colunas_completa,sem_grupo,2700,Fabricação de máquinas e equipamentos elétricos
+colunas_completa,sem_grupo,2800,Fabricação de máquinas e equipamentos mecânicos
+colunas_completa,sem_grupo,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças"
+colunas_completa,sem_grupo,2992,Fabricação de peças e acessórios para veículos automotores
+colunas_completa,sem_grupo,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores"
+colunas_completa,sem_grupo,3180,Fabricação de móveis e de produtos de indústrias diversas
+colunas_completa,sem_grupo,3300,"Manutenção, reparação e instalação de máquinas e equipamentos"
+colunas_completa,sem_grupo,3500,"Energia elétrica, gás natural e outras utilidades"
+colunas_completa,sem_grupo,3680,"Água, esgoto e gestão de resíduos"
+colunas_completa,sem_grupo,4180,Construção
+colunas_completa,sem_grupo,4580,Comércio por atacado e varejo
+colunas_completa,sem_grupo,4900,Transporte terrestre
+colunas_completa,sem_grupo,5000,Transporte aquaviário
+colunas_completa,sem_grupo,5100,Transporte aéreo
+colunas_completa,sem_grupo,5280,"Armazenamento, atividades auxiliares dos transportes e correio"
+colunas_completa,sem_grupo,5500,Alojamento
+colunas_completa,sem_grupo,5800,Edição e edição integrada à impressão
+colunas_completa,sem_grupo,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem"
+colunas_completa,sem_grupo,6100,Telecomunicações
+colunas_completa,sem_grupo,6280,Desenvolvimento de sistemas e outros serviços de informação
+colunas_completa,sem_grupo,6480,"Intermediação financeira, seguros e previdência complementar"
+colunas_completa,sem_grupo,6800,Atividades imobiliárias
+colunas_completa,sem_grupo,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas "
+colunas_completa,sem_grupo,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D"
+colunas_completa,sem_grupo,7380,"Outras atividades profissionais, científicas e técnicas"
+colunas_completa,sem_grupo,7880,Outras atividades administrativas e serviços complementares
+colunas_completa,sem_grupo,8000,"Atividades de vigilância, segurança e investigação"
+colunas_completa,sem_grupo,8400,"Administração pública, defesa e seguridade social"
+colunas_completa,sem_grupo,8591,Educação pública
+colunas_completa,sem_grupo,8592,Educação privada
+colunas_completa,sem_grupo,8691,Saúde pública
+colunas_completa,sem_grupo,8692,Saúde privada
+colunas_completa,sem_grupo,9080,"Atividades artísticas, criativas e de espetáculos"
+colunas_completa,sem_grupo,9480,Organizações associativas e outros serviços pessoais
+colunas_completa,sem_grupo,9700,Serviços domésticos
+linhas_sem_diagonal,sem_grupo,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita"
+linhas_sem_diagonal,G01,0192,"Pecuária, inclusive o apoio à pecuária"
+linhas_sem_diagonal,G01,1093,Outros produtos alimentares
+linhas_sem_diagonal,G02,0280,Produção florestal; pesca e aquicultura
+linhas_sem_diagonal,G02,4580,Comércio por atacado e varejo
+linhas_sem_diagonal,G03,0580,Extração de carvão mineral e de minerais não metálicos
+linhas_sem_diagonal,G03,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração"
+linhas_sem_diagonal,G03,2300,Fabricação de produtos de minerais não metálicos
+linhas_sem_diagonal,G03,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura"
+linhas_sem_diagonal,G03,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos"
+linhas_sem_diagonal,G03,2700,Fabricação de máquinas e equipamentos elétricos
+linhas_sem_diagonal,G04,0680,"Extração de petróleo e gás, inclusive as atividades de apoio"
+linhas_sem_diagonal,G04,1092,Fabricação e refino de açúcar
+linhas_sem_diagonal,G04,1992,Fabricação de biocombustíveis
+linhas_sem_diagonal,G04,5000,Transporte aquaviário
+linhas_sem_diagonal,G05,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos"
+linhas_sem_diagonal,G05,2200,Fabricação de produtos de borracha e de material plástico
+linhas_sem_diagonal,G05,2492,Metalurgia de metais não ferosos e a fundição de metais
+linhas_sem_diagonal,G05,2800,Fabricação de máquinas e equipamentos mecânicos
+linhas_sem_diagonal,G06,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca"
+linhas_sem_diagonal,G06,1100,Fabricação de bebidas
+linhas_sem_diagonal,G07,1200,Fabricação de produtos do fumo
+linhas_sem_diagonal,G07,1500,Fabricação de calçados e de artefatos de couro
+linhas_sem_diagonal,G07,3300,"Manutenção, reparação e instalação de máquinas e equipamentos"
+linhas_sem_diagonal,G07,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D"
+linhas_sem_diagonal,G07,8591,Educação pública
+linhas_sem_diagonal,sem_grupo,1300,Fabricação de produtos têxteis
+linhas_sem_diagonal,G08,1400,Confecção de artefatos do vestuário e acessórios
+linhas_sem_diagonal,G08,5100,Transporte aéreo
+linhas_sem_diagonal,G08,5500,Alojamento
+linhas_sem_diagonal,G08,9080,"Atividades artísticas, criativas e de espetáculos"
+linhas_sem_diagonal,sem_grupo,1600,Fabricação de produtos da madeira
+linhas_sem_diagonal,G09,1700,"Fabricação de celulose, papel e produtos de papel"
+linhas_sem_diagonal,G09,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal"
+linhas_sem_diagonal,G09,3500,"Energia elétrica, gás natural e outras utilidades"
+linhas_sem_diagonal,G09,4900,Transporte terrestre
+linhas_sem_diagonal,G09,5280,"Armazenamento, atividades auxiliares dos transportes e correio"
+linhas_sem_diagonal,G09,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas "
+linhas_sem_diagonal,G09,7380,"Outras atividades profissionais, científicas e técnicas"
+linhas_sem_diagonal,G09,8400,"Administração pública, defesa e seguridade social"
+linhas_sem_diagonal,G10,1800,Impressão e reprodução de gravações
+linhas_sem_diagonal,G10,6800,Atividades imobiliárias
+linhas_sem_diagonal,G10,8692,Saúde privada
+linhas_sem_diagonal,G11,1991,Refino de petróleo e coquerias
+linhas_sem_diagonal,G11,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças"
+linhas_sem_diagonal,G11,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores"
+linhas_sem_diagonal,G12,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros"
+linhas_sem_diagonal,G12,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos"
+linhas_sem_diagonal,G13,2100,Fabricação de produtos farmoquímicos e farmacêuticos
+linhas_sem_diagonal,G13,3180,Fabricação de móveis e de produtos de indústrias diversas
+linhas_sem_diagonal,G13,8691,Saúde pública
+linhas_sem_diagonal,sem_grupo,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos"
+linhas_sem_diagonal,sem_grupo,2992,Fabricação de peças e acessórios para veículos automotores
+linhas_sem_diagonal,G14,3680,"Água, esgoto e gestão de resíduos"
+linhas_sem_diagonal,G14,4180,Construção
+linhas_sem_diagonal,G14,6480,"Intermediação financeira, seguros e previdência complementar"
+linhas_sem_diagonal,sem_grupo,5600,Alimentação
+linhas_sem_diagonal,sem_grupo,5800,Edição e edição integrada à impressão
+linhas_sem_diagonal,G15,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem"
+linhas_sem_diagonal,G15,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual
+linhas_sem_diagonal,G15,9480,Organizações associativas e outros serviços pessoais
+linhas_sem_diagonal,G16,6100,Telecomunicações
+linhas_sem_diagonal,G16,6280,Desenvolvimento de sistemas e outros serviços de informação
+linhas_sem_diagonal,G16,7880,Outras atividades administrativas e serviços complementares
+linhas_sem_diagonal,G16,8000,"Atividades de vigilância, segurança e investigação"
+linhas_sem_diagonal,G16,8592,Educação privada
+linhas_sem_diagonal,perfil_nulo,9700,Serviços domésticos
+colunas_sem_diagonal,G01,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita"
+colunas_sem_diagonal,G01,1300,Fabricação de produtos têxteis
+colunas_sem_diagonal,G01,2200,Fabricação de produtos de borracha e de material plástico
+colunas_sem_diagonal,G02,0192,"Pecuária, inclusive o apoio à pecuária"
+colunas_sem_diagonal,G02,0280,Produção florestal; pesca e aquicultura
+colunas_sem_diagonal,G03,0580,Extração de carvão mineral e de minerais não metálicos
+colunas_sem_diagonal,G03,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros"
+colunas_sem_diagonal,G03,2300,Fabricação de produtos de minerais não metálicos
+colunas_sem_diagonal,G04,0680,"Extração de petróleo e gás, inclusive as atividades de apoio"
+colunas_sem_diagonal,G04,5000,Transporte aquaviário
+colunas_sem_diagonal,G04,5100,Transporte aéreo
+colunas_sem_diagonal,G05,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração"
+colunas_sem_diagonal,G05,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos"
+colunas_sem_diagonal,G05,3680,"Água, esgoto e gestão de resíduos"
+colunas_sem_diagonal,sem_grupo,1091,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca"
+colunas_sem_diagonal,G06,1092,Fabricação e refino de açúcar
+colunas_sem_diagonal,G06,1093,Outros produtos alimentares
+colunas_sem_diagonal,G06,1200,Fabricação de produtos do fumo
+colunas_sem_diagonal,G06,1992,Fabricação de biocombustíveis
+colunas_sem_diagonal,G07,1100,Fabricação de bebidas
+colunas_sem_diagonal,G07,2100,Fabricação de produtos farmoquímicos e farmacêuticos
+colunas_sem_diagonal,G07,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos"
+colunas_sem_diagonal,G07,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual
+colunas_sem_diagonal,sem_grupo,1400,Confecção de artefatos do vestuário e acessórios
+colunas_sem_diagonal,sem_grupo,1500,Fabricação de calçados e de artefatos de couro
+colunas_sem_diagonal,G08,1600,Fabricação de produtos da madeira
+colunas_sem_diagonal,G08,1700,"Fabricação de celulose, papel e produtos de papel"
+colunas_sem_diagonal,G09,1800,Impressão e reprodução de gravações
+colunas_sem_diagonal,G09,3180,Fabricação de móveis e de produtos de indústrias diversas
+colunas_sem_diagonal,sem_grupo,1991,Refino de petróleo e coquerias
+colunas_sem_diagonal,G10,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos"
+colunas_sem_diagonal,G10,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal"
+colunas_sem_diagonal,G11,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura"
+colunas_sem_diagonal,G11,2492,Metalurgia de metais não ferosos e a fundição de metais
+colunas_sem_diagonal,G11,7880,Outras atividades administrativas e serviços complementares
+colunas_sem_diagonal,G11,8692,Saúde privada
+colunas_sem_diagonal,G12,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos"
+colunas_sem_diagonal,G12,2700,Fabricação de máquinas e equipamentos elétricos
+colunas_sem_diagonal,G12,2800,Fabricação de máquinas e equipamentos mecânicos
+colunas_sem_diagonal,G12,2992,Fabricação de peças e acessórios para veículos automotores
+colunas_sem_diagonal,G12,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores"
+colunas_sem_diagonal,sem_grupo,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças"
+colunas_sem_diagonal,sem_grupo,3300,"Manutenção, reparação e instalação de máquinas e equipamentos"
+colunas_sem_diagonal,sem_grupo,3500,"Energia elétrica, gás natural e outras utilidades"
+colunas_sem_diagonal,sem_grupo,4180,Construção
+colunas_sem_diagonal,G13,4580,Comércio por atacado e varejo
+colunas_sem_diagonal,G13,6480,"Intermediação financeira, seguros e previdência complementar"
+colunas_sem_diagonal,G13,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas "
+colunas_sem_diagonal,G13,8592,Educação privada
+colunas_sem_diagonal,G13,9080,"Atividades artísticas, criativas e de espetáculos"
+colunas_sem_diagonal,sem_grupo,4900,Transporte terrestre
+colunas_sem_diagonal,sem_grupo,5280,"Armazenamento, atividades auxiliares dos transportes e correio"
+colunas_sem_diagonal,sem_grupo,5500,Alojamento
+colunas_sem_diagonal,sem_grupo,5600,Alimentação
+colunas_sem_diagonal,sem_grupo,5800,Edição e edição integrada à impressão
+colunas_sem_diagonal,sem_grupo,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem"
+colunas_sem_diagonal,sem_grupo,6100,Telecomunicações
+colunas_sem_diagonal,G14,6280,Desenvolvimento de sistemas e outros serviços de informação
+colunas_sem_diagonal,G14,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D"
+colunas_sem_diagonal,G14,8000,"Atividades de vigilância, segurança e investigação"
+colunas_sem_diagonal,sem_grupo,6800,Atividades imobiliárias
+colunas_sem_diagonal,sem_grupo,7380,"Outras atividades profissionais, científicas e técnicas"
+colunas_sem_diagonal,G15,8400,"Administração pública, defesa e seguridade social"
+colunas_sem_diagonal,G15,8591,Educação pública
+colunas_sem_diagonal,G15,8691,Saúde pública
+colunas_sem_diagonal,sem_grupo,9480,Organizações associativas e outros serviços pessoais
+colunas_sem_diagonal,perfil_nulo,9700,Serviços domésticos

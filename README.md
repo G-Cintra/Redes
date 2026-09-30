@@ -36,6 +36,10 @@ A partir dos resultados, serão discutidas possíveis implicações para políti
 
 [Resultados preliminares e exploratórios.](https://g-cintra.github.io/Redes/)
 
+O [notebook de concentração e dependência](analise_concentracao_dependencia.ipynb) responde se os maiores emissores brasileiros também têm amplo alcance nas cadeias das demais atividades. Execute-o da raiz após exportar P pelo notebook da MIP. Ele compara concentração das emissões próprias, participações por destino e compras diretas nacionais, com sensibilidade aos limiares, e gera `outputs/concentracao_dependencia/concentracao_dependencia.html`.
+
+A [análise de similaridade do consumo](similaridade_consumo/similaridade_consumo.ipynb) carrega a matriz C exportada pelo notebook da MIP e calcula a similaridade de cosseno entre linhas e entre colunas. Execute suas células na ordem após gerar `outputs/matriz_emissoes_consumo_2015.csv`; as duas matrizes de similaridade são salvas na pasta do notebook. As seções finais geram um Sankey de C sem diagonal, mapas de similaridade dos perfis completos e rankings de pares, reunidos em `similaridade_consumo/sankey_similaridade_C.html`. A seção 9 gera `similaridade_consumo/similaridade_3d_C.html`, com projeções 3D dos perfis normalizados e diagnósticos da perda de informação. O [notebook de clusters](similaridade_consumo/analise_clusters_C.ipynb) avalia partições globais, pequenos grupos de alta similaridade e sensibilidade à diagonal e à ponderação, gerando `similaridade_consumo/clusters_C.html`.
+
 ## Nota metodológica
 
 O [notebook da MIP](analise_matriz_insumo_produto.ipynb) constrói a matriz de emissões $P$ a partir da matriz insumo-produto brasileira de 2015. Essa matriz é a entrada da análise de redes.
@@ -170,3 +174,13 @@ Execute integralmente as células de cada notebook, na ordem em que aparecem, se
 2. [**Análise de redes**](analise_redes_emissoes.ipynb): utiliza esses arquivos para construir a rede, calcular os indicadores e gerar as visualizações.
 
 Os arquivos de entrada são verificados por SHA-256 conforme o [manifesto](raw/manifesto.csv), portanto mantenha os arquivos com permissões apenas para leitura. As hipóteses e decisões metodológicas estão documentadas nos notebooks. A execução da análise de redes gera as tabelas em `outputs/redes/` e a página interativa em `docs/index.html`.
+
+## Investigação acadêmica: emissões e posição produtiva (2015)
+
+O novo [notebook exploratório](investigacao_redes_emissoes_2015.ipynb) compara concentração das emissões próprias, centralidade de fornecedor, participação ambiental, diversidade de destinos e alternativas de extração e caminhos. Ele preserva as análises anteriores e documenta também os métodos descartados.
+
+Execute suas células em ordem, a partir da raiz, após preparar as entradas canônicas conforme o manifesto. A execução reconstrói a MIP e gera o [relatório HTML autocontido](outputs/investigacao_redes_2015/relatorio.html), tabelas CSV e figuras PNG/SVG em `outputs/investigacao_redes_2015/`. O relatório gerado não precisa de conexão à internet para exibir figuras ou tabelas.
+
+A conclusão exploratória distingue proeminência emissora de importância como fornecedor. As emissões são estimadas com intensidades interpoladas de 2011/2018; a compatibilidade de preços e a validação ambiental da fonte permanecem limitações para publicação. No novo notebook, `e = gamma * x` é a emissão própria, `H = diag(gamma) @ L` é intensidade e `P = H @ diag(y)` é atribuição por demanda final, evitando a ambiguidade de `C/c` nos notebooks anteriores.
+
+Verificações específicas: `python -m unittest discover -s tests -p test_investigacao_2015.py -v`. A execução do notebook também confere balanços, conservação, as duas versões de extração e derivadas ambientais.

@@ -1,0 +1,1531 @@
+<!doctype html><html lang='pt-BR'><meta charset='utf-8'><title>Clusters de C</title>
+<style>body{font-family:Arial,sans-serif;max-width:1200px;margin:32px auto;padding:0 20px;color:#172033;line-height:1.5}table{border-collapse:collapse;font-size:13px;width:100%;margin:16px 0}td,th{border:1px solid #ddd;padding:8px;text-align:left}article{border:1px solid #ccd6e0;border-radius:8px;padding:16px;margin:18px 0;background:#f8fafc}summary{cursor:pointer;font-weight:bold}.nota{padding:16px;background:#fff2cc}small{overflow-wrap:anywhere}</style>
+<h1>Há grupos de setores com perfis semelhantes?</h1>
+<p class='nota'>A diagonal representa <strong>52.3%</strong> do total de C. As partições globais examinadas devem ser lidas junto com seus tamanhos: não pressupomos uma divisão natural da economia. Os pequenos grupos abaixo exigem cosseno ≥ 0,80 entre todos os pares.</p>
+<small>Entrada: outputs\matriz_emissoes_consumo_2015.csv<br>SHA-256: cbc6a595f72f234caf1bfa4ec84885d5e804540bbfc9ccd4c480273298fa0238</small>
+<h2>Achados para começar a leitura</h2><p>As linhas fornecem exemplos locais interpretáveis. Eles não validam uma partição global nem demonstram fluxos diretos entre os membros. Nos percentuais abaixo, cada perfil tem o mesmo peso.</p>
+<p><strong>Construção e minerais:</strong> cosseno mínimo 0.978; retenção dos pares 100.0%. 4180 — Construção: 68.4%; 8400 — Administração pública, defesa e seguridade social: 2.7%; 2991 — Fabricação de automóveis, caminhões e ônibus, exceto peças: 2.2%</p>
+<p><strong>Automóveis e autopeças:</strong> cosseno mínimo 0.953; retenção dos pares 100.0%. 2991 — Fabricação de automóveis, caminhões e ônibus, exceto peças: 75.2%; 4580 — Comércio por atacado e varejo: 7.5%; 2992 — Fabricação de peças e acessórios para veículos automotores: 2.9%</p>
+<p><strong>Petróleo e refino:</strong> cosseno mínimo 0.910; retenção dos pares 100.0%. 1991 — Refino de petróleo e coquerias: 30.8%; 4580 — Comércio por atacado e varejo: 7.7%; 4900 — Transporte terrestre: 7.7%</p>
+<p>Esses grupos usam C completa. Remover a diagonal altera seus perfis e pode desfazer as associações: a estabilidade acima vale apenas para as pequenas reponderações dentro desse cenário.</p>
+<h2>1. Diagnóstico global: ligação média, 2 a 12 grupos</h2>
+<p>Melhor silhueta dentro da faixa testada, sem impor tamanhos mínimos. Grupos unitários recebem silhueta zero. Um grupo enorme acompanhado de isolados não é uma segmentação equilibrada, mesmo com silhueta positiva.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>cenario</th>
+      <th>k</th>
+      <th>silhueta</th>
+      <th>maior_grupo</th>
+      <th>unitarios</th>
+      <th>tamanhos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>colunas_completa</td>
+      <td>2</td>
+      <td>0.082</td>
+      <td>66</td>
+      <td>1</td>
+      <td>66, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>2</td>
+      <td>0.477</td>
+      <td>65</td>
+      <td>1</td>
+      <td>65, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>12</td>
+      <td>0.161</td>
+      <td>52</td>
+      <td>8</td>
+      <td>52, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>4</td>
+      <td>0.463</td>
+      <td>58</td>
+      <td>1</td>
+      <td>58, 4, 3, 1</td>
+    </tr>
+  </tbody>
+</table>
+<details><summary>Todos os cortes avaliados</summary>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>cenario</th>
+      <th>k</th>
+      <th>silhueta</th>
+      <th>maior_grupo</th>
+      <th>unitarios</th>
+      <th>tamanhos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>linhas_completa</td>
+      <td>2</td>
+      <td>0.158</td>
+      <td>66</td>
+      <td>1</td>
+      <td>66, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>3</td>
+      <td>0.156</td>
+      <td>65</td>
+      <td>2</td>
+      <td>65, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>4</td>
+      <td>0.138</td>
+      <td>64</td>
+      <td>3</td>
+      <td>64, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>5</td>
+      <td>0.149</td>
+      <td>61</td>
+      <td>3</td>
+      <td>61, 3, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>6</td>
+      <td>0.147</td>
+      <td>60</td>
+      <td>4</td>
+      <td>60, 3, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>7</td>
+      <td>0.146</td>
+      <td>59</td>
+      <td>5</td>
+      <td>59, 3, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>8</td>
+      <td>0.151</td>
+      <td>56</td>
+      <td>5</td>
+      <td>56, 3, 3, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>9</td>
+      <td>0.147</td>
+      <td>56</td>
+      <td>6</td>
+      <td>56, 3, 2, 1, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>10</td>
+      <td>0.154</td>
+      <td>53</td>
+      <td>6</td>
+      <td>53, 3, 3, 2, 1, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>11</td>
+      <td>0.153</td>
+      <td>52</td>
+      <td>7</td>
+      <td>52, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>12</td>
+      <td>0.161</td>
+      <td>52</td>
+      <td>8</td>
+      <td>52, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>2</td>
+      <td>0.082</td>
+      <td>66</td>
+      <td>1</td>
+      <td>66, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>3</td>
+      <td>0.065</td>
+      <td>65</td>
+      <td>2</td>
+      <td>65, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>4</td>
+      <td>0.063</td>
+      <td>64</td>
+      <td>3</td>
+      <td>64, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>5</td>
+      <td>0.059</td>
+      <td>62</td>
+      <td>3</td>
+      <td>62, 2, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>6</td>
+      <td>0.053</td>
+      <td>60</td>
+      <td>3</td>
+      <td>60, 2, 2, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>7</td>
+      <td>0.043</td>
+      <td>59</td>
+      <td>4</td>
+      <td>59, 2, 2, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>8</td>
+      <td>0.034</td>
+      <td>58</td>
+      <td>5</td>
+      <td>58, 2, 2, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>9</td>
+      <td>0.038</td>
+      <td>54</td>
+      <td>5</td>
+      <td>54, 4, 2, 2, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>10</td>
+      <td>0.037</td>
+      <td>54</td>
+      <td>7</td>
+      <td>54, 4, 2, 1, 1, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>11</td>
+      <td>0.035</td>
+      <td>54</td>
+      <td>9</td>
+      <td>54, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>12</td>
+      <td>0.036</td>
+      <td>51</td>
+      <td>9</td>
+      <td>51, 4, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>2</td>
+      <td>0.452</td>
+      <td>65</td>
+      <td>1</td>
+      <td>65, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>3</td>
+      <td>0.443</td>
+      <td>62</td>
+      <td>1</td>
+      <td>62, 3, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>4</td>
+      <td>0.463</td>
+      <td>58</td>
+      <td>1</td>
+      <td>58, 4, 3, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>5</td>
+      <td>0.392</td>
+      <td>57</td>
+      <td>2</td>
+      <td>57, 4, 3, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>6</td>
+      <td>0.404</td>
+      <td>57</td>
+      <td>2</td>
+      <td>57, 3, 2, 2, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>7</td>
+      <td>0.293</td>
+      <td>56</td>
+      <td>3</td>
+      <td>56, 3, 2, 2, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>8</td>
+      <td>0.301</td>
+      <td>51</td>
+      <td>3</td>
+      <td>51, 5, 3, 2, 2, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>9</td>
+      <td>0.290</td>
+      <td>51</td>
+      <td>4</td>
+      <td>51, 4, 3, 2, 2, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>10</td>
+      <td>0.401</td>
+      <td>36</td>
+      <td>4</td>
+      <td>36, 15, 4, 3, 2, 2, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>11</td>
+      <td>0.410</td>
+      <td>31</td>
+      <td>4</td>
+      <td>31, 15, 5, 4, 3, 2, 2, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>12</td>
+      <td>0.368</td>
+      <td>31</td>
+      <td>5</td>
+      <td>31, 14, 5, 4, 3, 2, 2, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>2</td>
+      <td>0.477</td>
+      <td>65</td>
+      <td>1</td>
+      <td>65, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>3</td>
+      <td>0.439</td>
+      <td>64</td>
+      <td>2</td>
+      <td>64, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>4</td>
+      <td>0.320</td>
+      <td>62</td>
+      <td>2</td>
+      <td>62, 2, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>5</td>
+      <td>0.236</td>
+      <td>61</td>
+      <td>3</td>
+      <td>61, 2, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>6</td>
+      <td>0.190</td>
+      <td>60</td>
+      <td>4</td>
+      <td>60, 2, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>7</td>
+      <td>0.178</td>
+      <td>56</td>
+      <td>4</td>
+      <td>56, 4, 2, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>8</td>
+      <td>0.206</td>
+      <td>35</td>
+      <td>4</td>
+      <td>35, 21, 4, 2, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>9</td>
+      <td>0.176</td>
+      <td>34</td>
+      <td>5</td>
+      <td>34, 21, 4, 2, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>10</td>
+      <td>0.219</td>
+      <td>25</td>
+      <td>5</td>
+      <td>25, 21, 9, 4, 2, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>11</td>
+      <td>0.248</td>
+      <td>25</td>
+      <td>5</td>
+      <td>25, 13, 9, 8, 4, 2, 1, 1, 1, 1, 1</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>12</td>
+      <td>0.266</td>
+      <td>22</td>
+      <td>5</td>
+      <td>22, 13, 9, 8, 4, 3, 2, 1, 1, 1, 1, 1</td>
+    </tr>
+  </tbody>
+</table>
+</details>
+<h2>2. Grupos locais e sua interpretação</h2>
+<p>Ligação completa, cosseno mínimo 0,80. Retenção: frequência média de permanência dos pares internos em 100 reponderações de ±10% das dimensões, semente 42. É sensibilidade local, não confiança estatística. As participações são médias dos perfis de cada membro normalizados para somar 1, com pesos iguais.</p>
+<h3>linhas completa</h3>
+<p>Comparação por destinos da demanda final. C completa: cenário de referência.</p>
+<article><strong>G01 · 2 setores</strong><ul>
+<li>0192 — Pecuária, inclusive o apoio à pecuária</li>
+<li>1091 — Abate e produtos de carne, inclusive os produtos do laticínio e da pesca</li>
+</ul><p>Cosseno mínimo: <strong>0.838</strong> · Média: 0.838 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>1091 — Abate e produtos de carne, inclusive os produtos do laticínio e da pesca: 66.9%; 0192 — Pecuária, inclusive o apoio à pecuária: 16.6%; 5600 — Alimentação: 6.5%</p></article>
+<article><strong>G02 · 3 setores</strong><ul>
+<li>0580 — Extração de carvão mineral e de minerais não metálicos</li>
+<li>2300 — Fabricação de produtos de minerais não metálicos</li>
+<li>4180 — Construção</li>
+</ul><p>Cosseno mínimo: <strong>0.978</strong> · Média: 0.987 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4180 — Construção: 68.4%; 8400 — Administração pública, defesa e seguridade social: 2.7%; 2991 — Fabricação de automóveis, caminhões e ônibus, exceto peças: 2.2%</p></article>
+<article><strong>G03 · 2 setores</strong><ul>
+<li>0680 — Extração de petróleo e gás, inclusive as atividades de apoio</li>
+<li>1991 — Refino de petróleo e coquerias</li>
+</ul><p>Cosseno mínimo: <strong>0.910</strong> · Média: 0.910 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>1991 — Refino de petróleo e coquerias: 30.8%; 4580 — Comércio por atacado e varejo: 7.7%; 4900 — Transporte terrestre: 7.7%</p></article>
+<article><strong>G04 · 2 setores</strong><ul>
+<li>1800 — Impressão e reprodução de gravações</li>
+<li>4580 — Comércio por atacado e varejo</li>
+</ul><p>Cosseno mínimo: <strong>0.856</strong> · Média: 0.856 · Retenção dos pares: <strong>40.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4580 — Comércio por atacado e varejo: 43.7%; 8400 — Administração pública, defesa e seguridade social: 5.3%; 4180 — Construção: 4.7%</p></article>
+<article><strong>G05 · 2 setores</strong><ul>
+<li>2091 — Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros</li>
+<li>2092 — Fabricação de defensivos, desinfestantes, tintas e químicos diversos</li>
+</ul><p>Cosseno mínimo: <strong>0.886</strong> · Média: 0.886 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4180 — Construção: 13.9%; 0191 — Agricultura, inclusive o apoio à agricultura e a pós-colheita: 8.8%; 1093 — Outros produtos alimentares: 8.5%</p></article>
+<article><strong>G06 · 2 setores</strong><ul>
+<li>2491 — Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura</li>
+<li>2492 — Metalurgia de metais não ferosos e a fundição de metais</li>
+</ul><p>Cosseno mínimo: <strong>0.836</strong> · Média: 0.836 · Retenção dos pares: <strong>87.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4180 — Construção: 24.3%; 2991 — Fabricação de automóveis, caminhões e ônibus, exceto peças: 12.4%; 2800 — Fabricação de máquinas e equipamentos mecânicos: 9.1%</p></article>
+<article><strong>G07 · 2 setores</strong><ul>
+<li>2991 — Fabricação de automóveis, caminhões e ônibus, exceto peças</li>
+<li>2992 — Fabricação de peças e acessórios para veículos automotores</li>
+</ul><p>Cosseno mínimo: <strong>0.953</strong> · Média: 0.953 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>2991 — Fabricação de automóveis, caminhões e ônibus, exceto peças: 75.2%; 4580 — Comércio por atacado e varejo: 7.5%; 2992 — Fabricação de peças e acessórios para veículos automotores: 2.9%</p></article>
+<article><strong>G08 · 4 setores</strong><ul>
+<li>5980 — Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem</li>
+<li>6980 — Atividades jurídicas, contábeis, consultoria e sedes de empresas </li>
+<li>7380 — Outras atividades profissionais, científicas e técnicas</li>
+<li>7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual</li>
+</ul><p>Cosseno mínimo: <strong>0.818</strong> · Média: 0.864 · Retenção dos pares: <strong>98.7%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4580 — Comércio por atacado e varejo: 14.2%; 4180 — Construção: 7.2%; 8400 — Administração pública, defesa e seguridade social: 7.0%</p></article>
+<details><summary>Setores sem grupo neste limiar ou com perfil nulo (48)</summary>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>atividade</th>
+      <th>descricao</th>
+      <th>grupo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0191</td>
+      <td>Agricultura, inclusive o apoio à agricultura e a pós-colheita</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>0280</td>
+      <td>Produção florestal; pesca e aquicultura</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>0791</td>
+      <td>Extração de minério de ferro, inclusive beneficiamentos e a aglomeração</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>0792</td>
+      <td>Extração de minerais metálicos não ferrosos, inclusive beneficiamentos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1092</td>
+      <td>Fabricação e refino de açúcar</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1093</td>
+      <td>Outros produtos alimentares</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1100</td>
+      <td>Fabricação de bebidas</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1200</td>
+      <td>Fabricação de produtos do fumo</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1300</td>
+      <td>Fabricação de produtos têxteis</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1400</td>
+      <td>Confecção de artefatos do vestuário e acessórios</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1500</td>
+      <td>Fabricação de calçados e de artefatos de couro</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1600</td>
+      <td>Fabricação de produtos da madeira</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1700</td>
+      <td>Fabricação de celulose, papel e produtos de papel</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1992</td>
+      <td>Fabricação de biocombustíveis</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2093</td>
+      <td>Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2100</td>
+      <td>Fabricação de produtos farmoquímicos e farmacêuticos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2200</td>
+      <td>Fabricação de produtos de borracha e de material plástico</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2500</td>
+      <td>Fabricação de produtos de metal, exceto máquinas e equipamentos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2600</td>
+      <td>Fabricação de equipamentos de informática, produtos eletrônicos e ópticos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2700</td>
+      <td>Fabricação de máquinas e equipamentos elétricos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2800</td>
+      <td>Fabricação de máquinas e equipamentos mecânicos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3000</td>
+      <td>Fabricação de outros equipamentos de transporte, exceto veículos automotores</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3180</td>
+      <td>Fabricação de móveis e de produtos de indústrias diversas</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3300</td>
+      <td>Manutenção, reparação e instalação de máquinas e equipamentos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3500</td>
+      <td>Energia elétrica, gás natural e outras utilidades</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3680</td>
+      <td>Água, esgoto e gestão de resíduos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>4900</td>
+      <td>Transporte terrestre</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5000</td>
+      <td>Transporte aquaviário</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5100</td>
+      <td>Transporte aéreo</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5280</td>
+      <td>Armazenamento, atividades auxiliares dos transportes e correio</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5500</td>
+      <td>Alojamento</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5600</td>
+      <td>Alimentação</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5800</td>
+      <td>Edição e edição integrada à impressão</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6100</td>
+      <td>Telecomunicações</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6280</td>
+      <td>Desenvolvimento de sistemas e outros serviços de informação</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6480</td>
+      <td>Intermediação financeira, seguros e previdência complementar</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6800</td>
+      <td>Atividades imobiliárias</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>7180</td>
+      <td>Serviços de arquitetura, engenharia, testes/análises técnicas e P &amp; D</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>7880</td>
+      <td>Outras atividades administrativas e serviços complementares</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8000</td>
+      <td>Atividades de vigilância, segurança e investigação</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8400</td>
+      <td>Administração pública, defesa e seguridade social</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8591</td>
+      <td>Educação pública</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8592</td>
+      <td>Educação privada</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8691</td>
+      <td>Saúde pública</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8692</td>
+      <td>Saúde privada</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>9080</td>
+      <td>Atividades artísticas, criativas e de espetáculos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>9480</td>
+      <td>Organizações associativas e outros serviços pessoais</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>9700</td>
+      <td>Serviços domésticos</td>
+      <td>sem_grupo</td>
+    </tr>
+  </tbody>
+</table>
+</details>
+<h3>colunas completa</h3>
+<p>Comparação por origens emissoras. C completa: cenário de referência.</p>
+<article><strong>G01 · 2 setores</strong><ul>
+<li>0680 — Extração de petróleo e gás, inclusive as atividades de apoio</li>
+<li>7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual</li>
+</ul><p>Cosseno mínimo: <strong>0.856</strong> · Média: 0.856 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual: 58.7%; 0680 — Extração de petróleo e gás, inclusive as atividades de apoio: 5.9%; 6980 — Atividades jurídicas, contábeis, consultoria e sedes de empresas : 3.3%</p></article>
+<article><strong>G02 · 2 setores</strong><ul>
+<li>1100 — Fabricação de bebidas</li>
+<li>5600 — Alimentação</li>
+</ul><p>Cosseno mínimo: <strong>0.828</strong> · Média: 0.828 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>1100 — Fabricação de bebidas: 57.8%; 5600 — Alimentação: 10.9%; 1091 — Abate e produtos de carne, inclusive os produtos do laticínio e da pesca: 2.9%</p></article>
+<details><summary>Setores sem grupo neste limiar ou com perfil nulo (63)</summary>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>atividade</th>
+      <th>descricao</th>
+      <th>grupo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0191</td>
+      <td>Agricultura, inclusive o apoio à agricultura e a pós-colheita</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>0192</td>
+      <td>Pecuária, inclusive o apoio à pecuária</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>0280</td>
+      <td>Produção florestal; pesca e aquicultura</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>0580</td>
+      <td>Extração de carvão mineral e de minerais não metálicos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>0791</td>
+      <td>Extração de minério de ferro, inclusive beneficiamentos e a aglomeração</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>0792</td>
+      <td>Extração de minerais metálicos não ferrosos, inclusive beneficiamentos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1091</td>
+      <td>Abate e produtos de carne, inclusive os produtos do laticínio e da pesca</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1092</td>
+      <td>Fabricação e refino de açúcar</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1093</td>
+      <td>Outros produtos alimentares</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1200</td>
+      <td>Fabricação de produtos do fumo</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1300</td>
+      <td>Fabricação de produtos têxteis</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1400</td>
+      <td>Confecção de artefatos do vestuário e acessórios</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1500</td>
+      <td>Fabricação de calçados e de artefatos de couro</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1600</td>
+      <td>Fabricação de produtos da madeira</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1700</td>
+      <td>Fabricação de celulose, papel e produtos de papel</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1800</td>
+      <td>Impressão e reprodução de gravações</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1991</td>
+      <td>Refino de petróleo e coquerias</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1992</td>
+      <td>Fabricação de biocombustíveis</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2091</td>
+      <td>Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2092</td>
+      <td>Fabricação de defensivos, desinfestantes, tintas e químicos diversos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2093</td>
+      <td>Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2100</td>
+      <td>Fabricação de produtos farmoquímicos e farmacêuticos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2200</td>
+      <td>Fabricação de produtos de borracha e de material plástico</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2300</td>
+      <td>Fabricação de produtos de minerais não metálicos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2491</td>
+      <td>Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2492</td>
+      <td>Metalurgia de metais não ferosos e a fundição de metais</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2500</td>
+      <td>Fabricação de produtos de metal, exceto máquinas e equipamentos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2600</td>
+      <td>Fabricação de equipamentos de informática, produtos eletrônicos e ópticos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2700</td>
+      <td>Fabricação de máquinas e equipamentos elétricos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2800</td>
+      <td>Fabricação de máquinas e equipamentos mecânicos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2991</td>
+      <td>Fabricação de automóveis, caminhões e ônibus, exceto peças</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2992</td>
+      <td>Fabricação de peças e acessórios para veículos automotores</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3000</td>
+      <td>Fabricação de outros equipamentos de transporte, exceto veículos automotores</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3180</td>
+      <td>Fabricação de móveis e de produtos de indústrias diversas</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3300</td>
+      <td>Manutenção, reparação e instalação de máquinas e equipamentos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3500</td>
+      <td>Energia elétrica, gás natural e outras utilidades</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3680</td>
+      <td>Água, esgoto e gestão de resíduos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>4180</td>
+      <td>Construção</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>4580</td>
+      <td>Comércio por atacado e varejo</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>4900</td>
+      <td>Transporte terrestre</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5000</td>
+      <td>Transporte aquaviário</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5100</td>
+      <td>Transporte aéreo</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5280</td>
+      <td>Armazenamento, atividades auxiliares dos transportes e correio</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5500</td>
+      <td>Alojamento</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5800</td>
+      <td>Edição e edição integrada à impressão</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5980</td>
+      <td>Atividades de televisão, rádio, cinema e&nbsp;&nbsp;gravação/edição de som e imagem</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6100</td>
+      <td>Telecomunicações</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6280</td>
+      <td>Desenvolvimento de sistemas e outros serviços de informação</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6480</td>
+      <td>Intermediação financeira, seguros e previdência complementar</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6800</td>
+      <td>Atividades imobiliárias</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6980</td>
+      <td>Atividades jurídicas, contábeis, consultoria e sedes de empresas</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>7180</td>
+      <td>Serviços de arquitetura, engenharia, testes/análises técnicas e P &amp; D</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>7380</td>
+      <td>Outras atividades profissionais, científicas e técnicas</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>7880</td>
+      <td>Outras atividades administrativas e serviços complementares</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8000</td>
+      <td>Atividades de vigilância, segurança e investigação</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8400</td>
+      <td>Administração pública, defesa e seguridade social</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8591</td>
+      <td>Educação pública</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8592</td>
+      <td>Educação privada</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8691</td>
+      <td>Saúde pública</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>8692</td>
+      <td>Saúde privada</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>9080</td>
+      <td>Atividades artísticas, criativas e de espetáculos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>9480</td>
+      <td>Organizações associativas e outros serviços pessoais</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>9700</td>
+      <td>Serviços domésticos</td>
+      <td>sem_grupo</td>
+    </tr>
+  </tbody>
+</table>
+</details>
+<h3>linhas sem diagonal</h3>
+<p>Comparação por destinos da demanda final. Sensibilidade: exclui a atribuição à própria atividade; muda a pergunta e pode mudar os grupos.</p>
+<article><strong>G01 · 2 setores</strong><ul>
+<li>0192 — Pecuária, inclusive o apoio à pecuária</li>
+<li>1093 — Outros produtos alimentares</li>
+</ul><p>Cosseno mínimo: <strong>0.874</strong> · Média: 0.874 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>1091 — Abate e produtos de carne, inclusive os produtos do laticínio e da pesca: 53.8%; 5600 — Alimentação: 14.5%; 4580 — Comércio por atacado e varejo: 3.2%</p></article>
+<article><strong>G02 · 2 setores</strong><ul>
+<li>0280 — Produção florestal; pesca e aquicultura</li>
+<li>4580 — Comércio por atacado e varejo</li>
+</ul><p>Cosseno mínimo: <strong>0.823</strong> · Média: 0.823 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4180 — Construção: 15.1%; 1091 — Abate e produtos de carne, inclusive os produtos do laticínio e da pesca: 12.9%; 5600 — Alimentação: 6.3%</p></article>
+<article><strong>G03 · 6 setores</strong><ul>
+<li>0580 — Extração de carvão mineral e de minerais não metálicos</li>
+<li>0791 — Extração de minério de ferro, inclusive beneficiamentos e a aglomeração</li>
+<li>2300 — Fabricação de produtos de minerais não metálicos</li>
+<li>2491 — Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura</li>
+<li>2500 — Fabricação de produtos de metal, exceto máquinas e equipamentos</li>
+<li>2700 — Fabricação de máquinas e equipamentos elétricos</li>
+</ul><p>Cosseno mínimo: <strong>0.855</strong> · Média: 0.919 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4180 — Construção: 40.2%; 2991 — Fabricação de automóveis, caminhões e ônibus, exceto peças: 8.2%; 2800 — Fabricação de máquinas e equipamentos mecânicos: 6.9%</p></article>
+<article><strong>G04 · 4 setores</strong><ul>
+<li>0680 — Extração de petróleo e gás, inclusive as atividades de apoio</li>
+<li>1092 — Fabricação e refino de açúcar</li>
+<li>1992 — Fabricação de biocombustíveis</li>
+<li>5000 — Transporte aquaviário</li>
+</ul><p>Cosseno mínimo: <strong>0.811</strong> · Média: 0.857 · Retenção dos pares: <strong>99.3%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>1991 — Refino de petróleo e coquerias: 21.4%; 4580 — Comércio por atacado e varejo: 8.5%; 1093 — Outros produtos alimentares: 7.8%</p></article>
+<article><strong>G05 · 4 setores</strong><ul>
+<li>0792 — Extração de minerais metálicos não ferrosos, inclusive beneficiamentos</li>
+<li>2200 — Fabricação de produtos de borracha e de material plástico</li>
+<li>2492 — Metalurgia de metais não ferosos e a fundição de metais</li>
+<li>2800 — Fabricação de máquinas e equipamentos mecânicos</li>
+</ul><p>Cosseno mínimo: <strong>0.828</strong> · Média: 0.883 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4180 — Construção: 20.6%; 2991 — Fabricação de automóveis, caminhões e ônibus, exceto peças: 11.8%; 4580 — Comércio por atacado e varejo: 7.6%</p></article>
+<article><strong>G06 · 2 setores</strong><ul>
+<li>1091 — Abate e produtos de carne, inclusive os produtos do laticínio e da pesca</li>
+<li>1100 — Fabricação de bebidas</li>
+</ul><p>Cosseno mínimo: <strong>0.961</strong> · Média: 0.961 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>5600 — Alimentação: 60.9%; 8400 — Administração pública, defesa e seguridade social: 6.5%; 1500 — Fabricação de calçados e de artefatos de couro: 3.7%</p></article>
+<article><strong>G07 · 5 setores</strong><ul>
+<li>1200 — Fabricação de produtos do fumo</li>
+<li>1500 — Fabricação de calçados e de artefatos de couro</li>
+<li>3300 — Manutenção, reparação e instalação de máquinas e equipamentos</li>
+<li>7180 — Serviços de arquitetura, engenharia, testes/análises técnicas e P &amp; D</li>
+<li>8591 — Educação pública</li>
+</ul><p>Cosseno mínimo: <strong>0.853</strong> · Média: 0.890 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4180 — Construção: 12.0%; 4580 — Comércio por atacado e varejo: 9.3%; 8400 — Administração pública, defesa e seguridade social: 7.2%</p></article>
+<article><strong>G08 · 4 setores</strong><ul>
+<li>1400 — Confecção de artefatos do vestuário e acessórios</li>
+<li>5100 — Transporte aéreo</li>
+<li>5500 — Alojamento</li>
+<li>9080 — Atividades artísticas, criativas e de espetáculos</li>
+</ul><p>Cosseno mínimo: <strong>0.818</strong> · Média: 0.884 · Retenção dos pares: <strong>95.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>9480 — Organizações associativas e outros serviços pessoais: 21.0%; 8400 — Administração pública, defesa e seguridade social: 11.9%; 4580 — Comércio por atacado e varejo: 10.8%</p></article>
+<article><strong>G09 · 8 setores</strong><ul>
+<li>1700 — Fabricação de celulose, papel e produtos de papel</li>
+<li>2093 — Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal</li>
+<li>3500 — Energia elétrica, gás natural e outras utilidades</li>
+<li>4900 — Transporte terrestre</li>
+<li>5280 — Armazenamento, atividades auxiliares dos transportes e correio</li>
+<li>6980 — Atividades jurídicas, contábeis, consultoria e sedes de empresas </li>
+<li>7380 — Outras atividades profissionais, científicas e técnicas</li>
+<li>8400 — Administração pública, defesa e seguridade social</li>
+</ul><p>Cosseno mínimo: <strong>0.867</strong> · Média: 0.923 · Retenção dos pares: <strong>98.9%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4580 — Comércio por atacado e varejo: 15.4%; 4180 — Construção: 8.0%; 8400 — Administração pública, defesa e seguridade social: 5.7%</p></article>
+<article><strong>G10 · 3 setores</strong><ul>
+<li>1800 — Impressão e reprodução de gravações</li>
+<li>6800 — Atividades imobiliárias</li>
+<li>8692 — Saúde privada</li>
+</ul><p>Cosseno mínimo: <strong>0.886</strong> · Média: 0.915 · Retenção dos pares: <strong>76.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4580 — Comércio por atacado e varejo: 25.8%; 8400 — Administração pública, defesa e seguridade social: 12.6%; 6480 — Intermediação financeira, seguros e previdência complementar: 4.9%</p></article>
+<article><strong>G11 · 3 setores</strong><ul>
+<li>1991 — Refino de petróleo e coquerias</li>
+<li>2991 — Fabricação de automóveis, caminhões e ônibus, exceto peças</li>
+<li>3000 — Fabricação de outros equipamentos de transporte, exceto veículos automotores</li>
+</ul><p>Cosseno mínimo: <strong>0.833</strong> · Média: 0.872 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4580 — Comércio por atacado e varejo: 13.6%; 4180 — Construção: 12.8%; 4900 — Transporte terrestre: 10.8%</p></article>
+<article><strong>G12 · 2 setores</strong><ul>
+<li>2091 — Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros</li>
+<li>2092 — Fabricação de defensivos, desinfestantes, tintas e químicos diversos</li>
+</ul><p>Cosseno mínimo: <strong>0.946</strong> · Média: 0.946 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4180 — Construção: 14.9%; 0191 — Agricultura, inclusive o apoio à agricultura e a pós-colheita: 9.5%; 1093 — Outros produtos alimentares: 9.1%</p></article>
+<article><strong>G13 · 3 setores</strong><ul>
+<li>2100 — Fabricação de produtos farmoquímicos e farmacêuticos</li>
+<li>3180 — Fabricação de móveis e de produtos de indústrias diversas</li>
+<li>8691 — Saúde pública</li>
+</ul><p>Cosseno mínimo: <strong>0.845</strong> · Média: 0.900 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>8692 — Saúde privada: 48.2%; 8691 — Saúde pública: 10.9%; 4180 — Construção: 3.9%</p></article>
+<article><strong>G14 · 3 setores</strong><ul>
+<li>3680 — Água, esgoto e gestão de resíduos</li>
+<li>4180 — Construção</li>
+<li>6480 — Intermediação financeira, seguros e previdência complementar</li>
+</ul><p>Cosseno mínimo: <strong>0.886</strong> · Média: 0.918 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>8400 — Administração pública, defesa e seguridade social: 29.4%; 4580 — Comércio por atacado e varejo: 9.2%; 8691 — Saúde pública: 5.3%</p></article>
+<article><strong>G15 · 3 setores</strong><ul>
+<li>5980 — Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem</li>
+<li>7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual</li>
+<li>9480 — Organizações associativas e outros serviços pessoais</li>
+</ul><p>Cosseno mínimo: <strong>0.842</strong> · Média: 0.867 · Retenção dos pares: <strong>94.7%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>4580 — Comércio por atacado e varejo: 13.3%; 6100 — Telecomunicações: 9.0%; 8400 — Administração pública, defesa e seguridade social: 7.5%</p></article>
+<article><strong>G16 · 5 setores</strong><ul>
+<li>6100 — Telecomunicações</li>
+<li>6280 — Desenvolvimento de sistemas e outros serviços de informação</li>
+<li>7880 — Outras atividades administrativas e serviços complementares</li>
+<li>8000 — Atividades de vigilância, segurança e investigação</li>
+<li>8592 — Educação privada</li>
+</ul><p>Cosseno mínimo: <strong>0.900</strong> · Média: 0.933 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais destinos da demanda final:</strong><br>8400 — Administração pública, defesa e seguridade social: 17.0%; 4580 — Comércio por atacado e varejo: 13.1%; 6480 — Intermediação financeira, seguros e previdência complementar: 10.6%</p></article>
+<details><summary>Setores sem grupo neste limiar ou com perfil nulo (8)</summary>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>atividade</th>
+      <th>descricao</th>
+      <th>grupo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0191</td>
+      <td>Agricultura, inclusive o apoio à agricultura e a pós-colheita</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1300</td>
+      <td>Fabricação de produtos têxteis</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1600</td>
+      <td>Fabricação de produtos da madeira</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2600</td>
+      <td>Fabricação de equipamentos de informática, produtos eletrônicos e ópticos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2992</td>
+      <td>Fabricação de peças e acessórios para veículos automotores</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5600</td>
+      <td>Alimentação</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5800</td>
+      <td>Edição e edição integrada à impressão</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>9700</td>
+      <td>Serviços domésticos</td>
+      <td>perfil_nulo</td>
+    </tr>
+  </tbody>
+</table>
+</details>
+<h3>colunas sem diagonal</h3>
+<p>Comparação por origens emissoras. Sensibilidade: exclui a atribuição à própria atividade; muda a pergunta e pode mudar os grupos.</p>
+<article><strong>G01 · 3 setores</strong><ul>
+<li>0191 — Agricultura, inclusive o apoio à agricultura e a pós-colheita</li>
+<li>1300 — Fabricação de produtos têxteis</li>
+<li>2200 — Fabricação de produtos de borracha e de material plástico</li>
+</ul><p>Cosseno mínimo: <strong>0.931</strong> · Média: 0.943 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>3500 — Energia elétrica, gás natural e outras utilidades: 19.6%; 2091 — Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros: 19.4%; 3680 — Água, esgoto e gestão de resíduos: 5.5%</p></article>
+<article><strong>G02 · 2 setores</strong><ul>
+<li>0192 — Pecuária, inclusive o apoio à pecuária</li>
+<li>0280 — Produção florestal; pesca e aquicultura</li>
+</ul><p>Cosseno mínimo: <strong>0.966</strong> · Média: 0.966 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>3500 — Energia elétrica, gás natural e outras utilidades: 20.5%; 1093 — Outros produtos alimentares: 14.0%; 2091 — Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros: 6.1%</p></article>
+<article><strong>G03 · 3 setores</strong><ul>
+<li>0580 — Extração de carvão mineral e de minerais não metálicos</li>
+<li>2091 — Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros</li>
+<li>2300 — Fabricação de produtos de minerais não metálicos</li>
+</ul><p>Cosseno mínimo: <strong>0.918</strong> · Média: 0.933 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>3500 — Energia elétrica, gás natural e outras utilidades: 21.9%; 3680 — Água, esgoto e gestão de resíduos: 7.6%; 7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual: 6.7%</p></article>
+<article><strong>G04 · 3 setores</strong><ul>
+<li>0680 — Extração de petróleo e gás, inclusive as atividades de apoio</li>
+<li>5000 — Transporte aquaviário</li>
+<li>5100 — Transporte aéreo</li>
+</ul><p>Cosseno mínimo: <strong>0.934</strong> · Média: 0.948 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual: 32.5%; 1991 — Refino de petróleo e coquerias: 5.1%; 5280 — Armazenamento, atividades auxiliares dos transportes e correio: 5.0%</p></article>
+<article><strong>G05 · 3 setores</strong><ul>
+<li>0791 — Extração de minério de ferro, inclusive beneficiamentos e a aglomeração</li>
+<li>0792 — Extração de minerais metálicos não ferrosos, inclusive beneficiamentos</li>
+<li>3680 — Água, esgoto e gestão de resíduos</li>
+</ul><p>Cosseno mínimo: <strong>0.862</strong> · Média: 0.902 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>3500 — Energia elétrica, gás natural e outras utilidades: 18.1%; 7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual: 14.8%; 3680 — Água, esgoto e gestão de resíduos: 4.8%</p></article>
+<article><strong>G06 · 4 setores</strong><ul>
+<li>1092 — Fabricação e refino de açúcar</li>
+<li>1093 — Outros produtos alimentares</li>
+<li>1200 — Fabricação de produtos do fumo</li>
+<li>1992 — Fabricação de biocombustíveis</li>
+</ul><p>Cosseno mínimo: <strong>0.806</strong> · Média: 0.870 · Retenção dos pares: <strong>91.3%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>0191 — Agricultura, inclusive o apoio à agricultura e a pós-colheita: 17.0%; 3500 — Energia elétrica, gás natural e outras utilidades: 10.0%; 2091 — Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros: 7.9%</p></article>
+<article><strong>G07 · 4 setores</strong><ul>
+<li>1100 — Fabricação de bebidas</li>
+<li>2100 — Fabricação de produtos farmoquímicos e farmacêuticos</li>
+<li>2600 — Fabricação de equipamentos de informática, produtos eletrônicos e ópticos</li>
+<li>7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual</li>
+</ul><p>Cosseno mínimo: <strong>0.809</strong> · Média: 0.857 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>7380 — Outras atividades profissionais, científicas e técnicas: 8.6%; 5980 — Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem: 7.8%; 3500 — Energia elétrica, gás natural e outras utilidades: 7.2%</p></article>
+<article><strong>G08 · 2 setores</strong><ul>
+<li>1600 — Fabricação de produtos da madeira</li>
+<li>1700 — Fabricação de celulose, papel e produtos de papel</li>
+</ul><p>Cosseno mínimo: <strong>0.884</strong> · Média: 0.884 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>0280 — Produção florestal; pesca e aquicultura: 16.4%; 3500 — Energia elétrica, gás natural e outras utilidades: 15.9%; 3680 — Água, esgoto e gestão de resíduos: 8.1%</p></article>
+<article><strong>G09 · 2 setores</strong><ul>
+<li>1800 — Impressão e reprodução de gravações</li>
+<li>3180 — Fabricação de móveis e de produtos de indústrias diversas</li>
+</ul><p>Cosseno mínimo: <strong>0.813</strong> · Média: 0.813 · Retenção dos pares: <strong>90.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>3500 — Energia elétrica, gás natural e outras utilidades: 10.3%; 7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual: 7.2%; 3680 — Água, esgoto e gestão de resíduos: 5.9%</p></article>
+<article><strong>G10 · 2 setores</strong><ul>
+<li>2092 — Fabricação de defensivos, desinfestantes, tintas e químicos diversos</li>
+<li>2093 — Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal</li>
+</ul><p>Cosseno mínimo: <strong>0.896</strong> · Média: 0.896 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>2091 — Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros: 16.9%; 3500 — Energia elétrica, gás natural e outras utilidades: 8.9%; 3680 — Água, esgoto e gestão de resíduos: 7.2%</p></article>
+<article><strong>G11 · 4 setores</strong><ul>
+<li>2491 — Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura</li>
+<li>2492 — Metalurgia de metais não ferosos e a fundição de metais</li>
+<li>7880 — Outras atividades administrativas e serviços complementares</li>
+<li>8692 — Saúde privada</li>
+</ul><p>Cosseno mínimo: <strong>0.800</strong> · Média: 0.892 · Retenção dos pares: <strong>64.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>3680 — Água, esgoto e gestão de resíduos: 24.6%; 3500 — Energia elétrica, gás natural e outras utilidades: 15.4%; 7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual: 5.8%</p></article>
+<article><strong>G12 · 5 setores</strong><ul>
+<li>2500 — Fabricação de produtos de metal, exceto máquinas e equipamentos</li>
+<li>2700 — Fabricação de máquinas e equipamentos elétricos</li>
+<li>2800 — Fabricação de máquinas e equipamentos mecânicos</li>
+<li>2992 — Fabricação de peças e acessórios para veículos automotores</li>
+<li>3000 — Fabricação de outros equipamentos de transporte, exceto veículos automotores</li>
+</ul><p>Cosseno mínimo: <strong>0.882</strong> · Média: 0.922 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>3500 — Energia elétrica, gás natural e outras utilidades: 11.9%; 3680 — Água, esgoto e gestão de resíduos: 9.6%; 7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual: 6.6%</p></article>
+<article><strong>G13 · 5 setores</strong><ul>
+<li>4580 — Comércio por atacado e varejo</li>
+<li>6480 — Intermediação financeira, seguros e previdência complementar</li>
+<li>6980 — Atividades jurídicas, contábeis, consultoria e sedes de empresas </li>
+<li>8592 — Educação privada</li>
+<li>9080 — Atividades artísticas, criativas e de espetáculos</li>
+</ul><p>Cosseno mínimo: <strong>0.810</strong> · Média: 0.872 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>3500 — Energia elétrica, gás natural e outras utilidades: 10.8%; 7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual: 10.7%; 7380 — Outras atividades profissionais, científicas e técnicas: 8.1%</p></article>
+<article><strong>G14 · 3 setores</strong><ul>
+<li>6280 — Desenvolvimento de sistemas e outros serviços de informação</li>
+<li>7180 — Serviços de arquitetura, engenharia, testes/análises técnicas e P &amp; D</li>
+<li>8000 — Atividades de vigilância, segurança e investigação</li>
+</ul><p>Cosseno mínimo: <strong>0.879</strong> · Média: 0.914 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>7700 — Aluguéis não imobiliários e gestão de ativos de propriedade intelectual: 18.0%; 6980 — Atividades jurídicas, contábeis, consultoria e sedes de empresas : 9.9%; 2600 — Fabricação de equipamentos de informática, produtos eletrônicos e ópticos: 6.8%</p></article>
+<article><strong>G15 · 3 setores</strong><ul>
+<li>8400 — Administração pública, defesa e seguridade social</li>
+<li>8591 — Educação pública</li>
+<li>8691 — Saúde pública</li>
+</ul><p>Cosseno mínimo: <strong>0.875</strong> · Média: 0.905 · Retenção dos pares: <strong>100.0%</strong></p>
+<p><strong>Principais origens emissoras:</strong><br>3680 — Água, esgoto e gestão de resíduos: 18.5%; 3500 — Energia elétrica, gás natural e outras utilidades: 8.4%; 8000 — Atividades de vigilância, segurança e investigação: 8.3%</p></article>
+<details><summary>Setores sem grupo neste limiar ou com perfil nulo (19)</summary>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>atividade</th>
+      <th>descricao</th>
+      <th>grupo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1091</td>
+      <td>Abate e produtos de carne, inclusive os produtos do laticínio e da pesca</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1400</td>
+      <td>Confecção de artefatos do vestuário e acessórios</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1500</td>
+      <td>Fabricação de calçados e de artefatos de couro</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>1991</td>
+      <td>Refino de petróleo e coquerias</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>2991</td>
+      <td>Fabricação de automóveis, caminhões e ônibus, exceto peças</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3300</td>
+      <td>Manutenção, reparação e instalação de máquinas e equipamentos</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>3500</td>
+      <td>Energia elétrica, gás natural e outras utilidades</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>4180</td>
+      <td>Construção</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>4900</td>
+      <td>Transporte terrestre</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5280</td>
+      <td>Armazenamento, atividades auxiliares dos transportes e correio</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5500</td>
+      <td>Alojamento</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5600</td>
+      <td>Alimentação</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5800</td>
+      <td>Edição e edição integrada à impressão</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>5980</td>
+      <td>Atividades de televisão, rádio, cinema e&nbsp;&nbsp;gravação/edição de som e imagem</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6100</td>
+      <td>Telecomunicações</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>6800</td>
+      <td>Atividades imobiliárias</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>7380</td>
+      <td>Outras atividades profissionais, científicas e técnicas</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>9480</td>
+      <td>Organizações associativas e outros serviços pessoais</td>
+      <td>sem_grupo</td>
+    </tr>
+    <tr>
+      <td>9700</td>
+      <td>Serviços domésticos</td>
+      <td>perfil_nulo</td>
+    </tr>
+  </tbody>
+</table>
+</details>
+<h2>3. Sensibilidade ao limiar de similaridade</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>cenario</th>
+      <th>limiar</th>
+      <th>grupos_nao_unitarios</th>
+      <th>setores_agrupados</th>
+      <th>sem_grupo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>linhas_completa</td>
+      <td>0.7</td>
+      <td>10</td>
+      <td>26</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>0.8</td>
+      <td>8</td>
+      <td>19</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <td>linhas_completa</td>
+      <td>0.9</td>
+      <td>4</td>
+      <td>9</td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>0.7</td>
+      <td>3</td>
+      <td>6</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>0.8</td>
+      <td>2</td>
+      <td>4</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>colunas_completa</td>
+      <td>0.9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>0.7</td>
+      <td>14</td>
+      <td>61</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>0.8</td>
+      <td>16</td>
+      <td>59</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>linhas_sem_diagonal</td>
+      <td>0.9</td>
+      <td>19</td>
+      <td>42</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>0.7</td>
+      <td>12</td>
+      <td>57</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>0.8</td>
+      <td>15</td>
+      <td>48</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>colunas_sem_diagonal</td>
+      <td>0.9</td>
+      <td>14</td>
+      <td>32</td>
+      <td>34</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Limites e reprodução</h2><p>Grupos são exploratórios e dependem de recorte, ligação e limiar. Não representam comunidades de fluxos nem evidência causal. C usa intensidades interpoladas, aproximação monetária e exterior representativo do modelo original. Execute analise_clusters_C.ipynb para reproduzir tabelas e relatório.</p>
+<p><a href='https://docs.scipy.org/doc/scipy/reference/generated/scipy.cluster.hierarchy.linkage.html'>Métodos de ligação</a> · <a href='https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_samples.html'>Silhueta</a></p></html>
