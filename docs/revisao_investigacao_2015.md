@@ -2,6 +2,8 @@
 
 Este roteiro permite avaliar a investigação pelo repositório público, sem acesso ao ambiente local de quem a produziu. A revisão deve testar criticamente os resultados, sem procurar confirmar a hipótese inicial.
 
+**Fechamento posterior:** a [especificação acadêmica final](especificacao_final_pesquisa_2015.md) fixa o argumento para a redação, sem alterar os cálculos anteriores. Mantém S como principal e L como robustez; A contrasta vínculos diretos. HEM absoluta e por unidade de produção passam a complemento com estimandos distintos, preservando a divergência observada. A revisão do texto final deve usar essa delimitação, sem perder o registro das etapas abaixo.
+
 ## Material principal
 
 1. [Notebook executado](../investigacao_redes_emissoes_2015.ipynb): construção das matrizes, definições, cálculos e verificações.

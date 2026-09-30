@@ -1,5 +1,7 @@
 # Rede intersetorial de emissões no Brasil
 
+**Especificação acadêmica atual:** [pergunta, hipóteses, metodologia e narrativa final de 2015](docs/especificacao_final_pesquisa_2015.md). O documento fixa S como medida principal, L como robustez da normalização, A como contraste direto e HEM como análise complementar. As propostas e etapas exploratórias abaixo são preservadas como histórico; suas hipóteses iniciais não substituem a especificação final.
+
 ## Índice
 
 - [Resumo](#resumo)
