@@ -1,0 +1,176 @@
+﻿,top_k,destino,nome,R_grupo,S_grupo
+0,5,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.15346980029668486,0.030064224317856745
+1,5,0192,"Pecuária, inclusive o apoio à pecuária",0.16285315052079594,0.04524662088489309
+2,5,0280,Produção florestal; pesca e aquicultura,0.02859293150661414,0.019931145187904915
+3,5,0580,Extração de carvão mineral e de minerais não metálicos,0.13012979260152813,0.03808869342171797
+4,5,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.08894143700112542,0.016973510309432595
+5,5,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.20520529331846088,0.03989861644812196
+6,5,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.10904599641352386,0.04425143536304792
+7,5,1092,Fabricação e refino de açúcar,0.017202656221398785,0.016416883616744083
+8,5,1093,Outros produtos alimentares,0.07224282770878541,0.026576788603796704
+9,5,1200,Fabricação de produtos do fumo,0.0739155588903388,0.017298554521866592
+10,5,1300,Fabricação de produtos têxteis,0.12875077997546666,0.03861019389141993
+11,5,1400,Confecção de artefatos do vestuário e acessórios,0.0657092496305269,0.017217079587977434
+12,5,1500,Fabricação de calçados e de artefatos de couro,0.15230786430869267,0.060727545217857504
+13,5,1600,Fabricação de produtos da madeira,0.16083132784729837,0.03999595935560165
+14,5,1700,"Fabricação de celulose, papel e produtos de papel",0.14651524437513685,0.03321920582411446
+15,5,1800,Impressão e reprodução de gravações,0.03629194393516464,0.018606567921050626
+16,5,1991,Refino de petróleo e coquerias,0.05834585609625273,0.008695681870308423
+17,5,1992,Fabricação de biocombustíveis,0.10714055126244579,0.026029079070167063
+18,5,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.15767018553084808,0.03749657326964821
+19,5,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.13050917113758195,0.023584949572036475
+20,5,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.09834989553728835,0.03643334740849093
+21,5,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.054458429499398116,0.01546597904135965
+22,5,2200,Fabricação de produtos de borracha e de material plástico,0.12957601528577734,0.03167637890483033
+23,5,2300,Fabricação de produtos de minerais não metálicos,0.2054966092953273,0.05144754546609113
+24,5,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.33517495725694785,0.05444123494218704
+25,5,2492,Metalurgia de metais não ferosos e a fundição de metais,0.34655776285366935,0.08004122312512271
+26,5,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.15700794213263172,0.02979308665515496
+27,5,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.029583120222869057,0.011036091793837223
+28,5,2700,Fabricação de máquinas e equipamentos elétricos,0.10334974274875716,0.024766836284505447
+29,5,2800,Fabricação de máquinas e equipamentos mecânicos,0.09516439586249847,0.01922797977580715
+30,5,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.13890994108827645,0.018873046025736084
+31,5,2992,Fabricação de peças e acessórios para veículos automotores,0.17358179102195154,0.03183354904693866
+32,5,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.09830653434258613,0.021537850478709097
+33,5,3180,Fabricação de móveis e de produtos de indústrias diversas,0.0816337390241144,0.020241465908622032
+34,5,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.0858965030902467,0.015579246790980088
+35,5,4580,Comércio por atacado e varejo,0.16590592123673903,0.02544473709642598
+36,5,4900,Transporte terrestre,0.09066579871264338,0.010587852125362646
+37,5,5000,Transporte aquaviário,0.023019915661553248,0.010100238250523454
+38,5,5100,Transporte aéreo,0.045611626280829425,0.01211511272840355
+39,5,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.12431858471355353,0.02661020807302287
+40,5,5500,Alojamento,0.1123275222504933,0.09158698744360669
+41,5,5600,Alimentação,0.4780062214011587,0.12297598648926364
+42,5,5800,Edição e edição integrada à impressão,0.02137810884395952,0.015685977482309113
+43,5,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.02225287076550604,0.02062355034977448
+44,5,6100,Telecomunicações,0.07861074261808612,0.0397657246575643
+45,5,6280,Desenvolvimento de sistemas e outros serviços de informação,0.03791552988305612,0.016142297511093303
+46,5,6480,"Intermediação financeira, seguros e previdência complementar",0.0770576261269596,0.013986233384661276
+47,5,6800,Atividades imobiliárias,0.03766385825915729,0.006505384405564018
+48,5,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.06261732815422996,0.015356655296994832
+49,5,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.022895896437839874,0.018699824828083914
+50,5,7380,"Outras atividades profissionais, científicas e técnicas",0.020216832717244643,0.0122485181571382
+51,5,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.014536963070478217,0.01308526262815033
+52,5,7880,Outras atividades administrativas e serviços complementares,0.2405779778411005,0.05794257349554549
+53,5,8000,"Atividades de vigilância, segurança e investigação",0.007173757956159731,0.007107965218074989
+54,5,8400,"Administração pública, defesa e seguridade social",0.2345649564280077,0.041684624957222846
+55,5,8591,Educação pública,0.17878373637869063,0.02434744651561402
+56,5,8592,Educação privada,0.12182518169449924,0.029472957076488067
+57,5,8691,Saúde pública,0.2515521455056934,0.04335582761808521
+58,5,8692,Saúde privada,0.20380022516360502,0.023736266850457377
+59,5,9080,"Atividades artísticas, criativas e de espetáculos",0.03729730079029348,0.03374582427094245
+60,5,9480,Organizações associativas e outros serviços pessoais,0.16667441460125085,0.042046460413794465
+61,5,9700,Serviços domésticos,0.0,0.0
+62,10,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.2113651327764507,0.09074127295096752
+63,10,0192,"Pecuária, inclusive o apoio à pecuária",0.30634765138962117,0.16068137090791845
+64,10,0280,Produção florestal; pesca e aquicultura,0.05277718447382531,0.0754943604786723
+65,10,0580,Extração de carvão mineral e de minerais não metálicos,0.16678710407728836,0.09169054747694598
+66,10,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.1428894249891205,0.05520139784661789
+67,10,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.2600873068598817,0.09286991236707583
+68,10,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.13945407577813457,0.10815084769034718
+69,10,1200,Fabricação de produtos do fumo,0.11017854613078372,0.0751421051083835
+70,10,1300,Fabricação de produtos têxteis,0.16446011838783126,0.11957427065633416
+71,10,1400,Confecção de artefatos do vestuário e acessórios,0.10490593910201641,0.1058731199813979
+72,10,1500,Fabricação de calçados e de artefatos de couro,0.20248064147568845,0.14789921830087116
+73,10,1600,Fabricação de produtos da madeira,0.19618903554001166,0.11317980013400614
+74,10,1700,"Fabricação de celulose, papel e produtos de papel",0.1982349221080312,0.11538995515789055
+75,10,1800,Impressão e reprodução de gravações,0.05591923569750274,0.10085451839623329
+76,10,1991,Refino de petróleo e coquerias,0.2648131548085952,0.0518701990743973
+77,10,1992,Fabricação de biocombustíveis,0.26652852302645236,0.10535331413525303
+78,10,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.20369126070585547,0.10018519448649058
+79,10,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.21338011762455544,0.10384063430974547
+80,10,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.19059516019762635,0.13313084188340416
+81,10,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.10621363356703165,0.0933551420051897
+82,10,2200,Fabricação de produtos de borracha e de material plástico,0.16997619105643114,0.11155929000215842
+83,10,2300,Fabricação de produtos de minerais não metálicos,0.24555003545661097,0.12430983345100292
+84,10,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.3729852446472205,0.12214024368614754
+85,10,2492,Metalurgia de metais não ferosos e a fundição de metais,0.3890429755552196,0.17124660220657417
+86,10,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.19610786472397207,0.09918243885592007
+87,10,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.05499275352253437,0.09750063054822725
+88,10,2700,Fabricação de máquinas e equipamentos elétricos,0.14350719913968008,0.11415395144958643
+89,10,2800,Fabricação de máquinas e equipamentos mecânicos,0.14219119489670437,0.11295792637212919
+90,10,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.20685963157938914,0.10576634482695918
+91,10,2992,Fabricação de peças e acessórios para veículos automotores,0.2198058632883379,0.11450566573581823
+92,10,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.1369167404268682,0.09949118164236152
+93,10,3180,Fabricação de móveis e de produtos de indústrias diversas,0.11873570072491452,0.10634950748010571
+94,10,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.13487347141010336,0.10044144143905828
+95,10,4900,Transporte terrestre,0.2029040223543812,0.06816809587480314
+96,10,5000,Transporte aquaviário,0.03833781614041922,0.04893227805778074
+97,10,5100,Transporte aéreo,0.08026672432177517,0.0531639407205715
+98,10,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.1519593217737534,0.06532489264274398
+99,10,5500,Alojamento,0.12727920508953006,0.16397163210310384
+100,10,5600,Alimentação,0.5765559929801432,0.23458263183385109
+101,10,5800,Edição e edição integrada à impressão,0.033626555729205976,0.09911064521242328
+102,10,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.029134205053438073,0.06574030426219467
+103,10,6100,Telecomunicações,0.09663993046256819,0.0858827897275389
+104,10,6280,Desenvolvimento de sistemas e outros serviços de informação,0.0495447308326278,0.04945515799921267
+105,10,6480,"Intermediação financeira, seguros e previdência complementar",0.09640759810111345,0.037943607968613874
+106,10,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.08142702572879347,0.054147668869284224
+107,10,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.03333178519927322,0.05986431090217182
+108,10,7380,"Outras atividades profissionais, científicas e técnicas",0.030486070653154604,0.06046652846292364
+109,10,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.02318578473047716,0.06695837104821709
+110,10,7880,Outras atividades administrativas e serviços complementares,0.25605007569182653,0.09301340442499452
+111,10,8000,"Atividades de vigilância, segurança e investigação",0.010874683314098365,0.02955755144057008
+112,10,8591,Educação pública,0.21714937668838347,0.053456869029524734
+113,10,8592,Educação privada,0.15084898120087642,0.0749319011351814
+114,10,8691,Saúde pública,0.29969767532468605,0.09385929270712424
+115,10,8692,Saúde privada,0.2575168665778347,0.09251427421631711
+116,10,9080,"Atividades artísticas, criativas e de espetáculos",0.05055174724186429,0.11984322353230029
+117,10,9480,Organizações associativas e outros serviços pessoais,0.19583953991340372,0.09412632521547265
+118,10,9700,Serviços domésticos,0.0,0.0
+119,11,0191,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",0.2236744985136404,0.11066741626123539
+120,11,0192,"Pecuária, inclusive o apoio à pecuária",0.3155901864024894,0.17912773036756827
+121,11,0280,Produção florestal; pesca e aquicultura,0.05589951872216657,0.09224170880523314
+122,11,0580,Extração de carvão mineral e de minerais não metálicos,0.17825127573538035,0.12062897260379798
+123,11,0680,"Extração de petróleo e gás, inclusive as atividades de apoio",0.16096116430740842,0.07716505572531719
+124,11,0791,"Extração de minério de ferro, inclusive beneficiamentos e a aglomeração",0.27959076293792917,0.12033304049452533
+125,11,0792,"Extração de minerais metálicos não ferrosos, inclusive beneficiamentos",0.14884865551258566,0.13742477151023874
+126,11,1200,Fabricação de produtos do fumo,0.121468660089834,0.09762598343899608
+127,11,1300,Fabricação de produtos têxteis,0.17260440521197853,0.14004473295389158
+128,11,1400,Confecção de artefatos do vestuário e acessórios,0.11365788770817603,0.12603700257023698
+129,11,1500,Fabricação de calçados e de artefatos de couro,0.21219500555251763,0.169256794712639
+130,11,1600,Fabricação de produtos da madeira,0.2044578056278491,0.13422054540134987
+131,11,1700,"Fabricação de celulose, papel e produtos de papel",0.21037351418008313,0.1407445807032627
+132,11,1800,Impressão e reprodução de gravações,0.060737118779956925,0.1227880780207504
+133,11,1991,Refino de petróleo e coquerias,0.27635623117793295,0.06714779876458023
+134,11,1992,Fabricação de biocombustíveis,0.27986498978100893,0.12886775049365798
+135,11,2091,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.21486273319166205,0.12482306509419816
+136,11,2092,"Fabricação de defensivos, desinfestantes, tintas e químicos diversos",0.22418669155788903,0.1255789003650282
+137,11,2093,"Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal",0.19882512888705967,0.15557389792679893
+138,11,2100,Fabricação de produtos farmoquímicos e farmacêuticos,0.11345909739719914,0.11367407209419764
+139,11,2200,Fabricação de produtos de borracha e de material plástico,0.17897490480486877,0.13262361846785564
+140,11,2300,Fabricação de produtos de minerais não metálicos,0.256162036877999,0.14865038922326368
+141,11,2491,"Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura",0.38429750091405007,0.1470009137153787
+142,11,2492,Metalurgia de metais não ferosos e a fundição de metais,0.3986009777419742,0.19411178427198741
+143,11,2500,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.20688026225500833,0.12095104807322375
+144,11,2600,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",0.061238778109918235,0.118943533369735
+145,11,2700,Fabricação de máquinas e equipamentos elétricos,0.15281187338856994,0.13619725329347335
+146,11,2800,Fabricação de máquinas e equipamentos mecânicos,0.15248331491888922,0.13445556945082812
+147,11,2991,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.22245476963836133,0.12674148510454955
+148,11,2992,Fabricação de peças e acessórios para veículos automotores,0.2303398572028116,0.13431603789447175
+149,11,3000,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.14762089907498466,0.12191211331125593
+150,11,3180,Fabricação de móveis e de produtos de indústrias diversas,0.1265242814617582,0.12554382037383963
+151,11,3300,"Manutenção, reparação e instalação de máquinas e equipamentos",0.14357467294494736,0.11640413715236143
+152,11,4900,Transporte terrestre,0.22405994252284755,0.09138976653817948
+153,11,5000,Transporte aquaviário,0.04489513538046376,0.07574469543394054
+154,11,5100,Transporte aéreo,0.0920896311246246,0.08294595727719639
+155,11,5280,"Armazenamento, atividades auxiliares dos transportes e correio",0.1654233902183826,0.0922298168493486
+156,11,5500,Alojamento,0.13043079974151012,0.18869460317950296
+157,11,5600,Alimentação,0.5835412192231203,0.25287847610771585
+158,11,5800,Edição e edição integrada à impressão,0.03729839024712715,0.12521023262986
+159,11,5980,"Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem",0.03251639822907171,0.09201901551043457
+160,11,6100,Telecomunicações,0.10987872051052247,0.12333414963611188
+161,11,6280,Desenvolvimento de sistemas e outros serviços de informação,0.05617015061055948,0.07080960518109543
+162,11,6980,"Atividades jurídicas, contábeis, consultoria e sedes de empresas ",0.09064464650544893,0.0780612131253757
+163,11,7180,"Serviços de arquitetura, engenharia, testes/análises técnicas e P & D",0.03766885900819971,0.0825888432198486
+164,11,7380,"Outras atividades profissionais, científicas e técnicas",0.033877090928855186,0.07825874239931441
+165,11,7700,Aluguéis não imobiliários e gestão de ativos de propriedade intelectual,0.026817402363528118,0.09459533603023661
+166,11,7880,Outras atividades administrativas e serviços complementares,0.26441499754835146,0.11659517971542034
+167,11,8000,"Atividades de vigilância, segurança e investigação",0.013441135036589266,0.055157014067927314
+168,11,8591,Educação pública,0.22292804775892877,0.061090437899497
+169,11,8592,Educação privada,0.1607816064951933,0.09510712279089666
+170,11,8691,Saúde pública,0.305385475342413,0.10287498831336546
+171,11,8692,Saúde privada,0.2720808313481716,0.11490425169324534
+172,11,9080,"Atividades artísticas, criativas e de espetáculos",0.05397580020346458,0.14721358259709538
+173,11,9480,Organizações associativas e outros serviços pessoais,0.20306347418451642,0.11503182048910414
+174,11,9700,Serviços domésticos,0.0,0.0

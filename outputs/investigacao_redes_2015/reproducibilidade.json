@@ -1,0 +1,54 @@
+{
+  "versoes": {
+    "Python": "3.12.10",
+    "numpy": "2.2.6",
+    "pandas": "3.0.0",
+    "scipy": "1.17.1",
+    "networkx": "3.6.1",
+    "matplotlib": "3.10.3"
+  },
+  "semente": 2015,
+  "entradas": [
+    {
+      "id": "mip_ibge_2015_67",
+      "arquivo": "raw/Matriz_de_Insumo_Produto_2015_Nivel_67.xls.original",
+      "sha256": "230E314FB83504FC5EAEDF5648C91BF6EC4DAC15D0A1ED32D32B90C22E176EF7",
+      "fonte": "IBGE — Matriz de Insumo-Produto 2015",
+      "ano": "2015",
+      "descricao": "MIP brasileira no nível de detalhamento 67."
+    },
+    {
+      "id": "sanguinet_azzoni_2011",
+      "arquivo": "raw/coeficientes_co2_sanguinet_azzoni_2011.csv",
+      "sha256": "F49E8560468B541D6F2E2C60BFABD43A7953634FFBE0618759829C1DEF7D835D",
+      "fonte": "Sanguinet e Azzoni (2024), Tabela 2",
+      "ano": "2011",
+      "descricao": "Coeficientes diretos de CO2 transcritos para 2011."
+    },
+    {
+      "id": "sanguinet_azzoni_2018",
+      "arquivo": "raw/coeficientes_co2_sanguinet_azzoni_2018.csv",
+      "sha256": "99F26B00D2AD794EE5925C7FD5B4A87D975A8117AF8379C31D7C4BE930D027F7",
+      "fonte": "Sanguinet e Azzoni (2024), Tabela 2",
+      "ano": "2018",
+      "descricao": "Coeficientes diretos de CO2 transcritos para 2018."
+    },
+    {
+      "id": "matriz_emissoes_producao_2015",
+      "arquivo": "outputs/matriz_emissoes_producao_2015.csv",
+      "sha256": "99DF37C9CCE571783DB0D54280766F53F4E6FBB577E1EA74AE25AAB218CAE714",
+      "fonte": "analise_matriz_insumo_produto.ipynb",
+      "ano": "2015",
+      "descricao": "Matriz P: emissoes brasileiras por destino da demanda final."
+    },
+    {
+      "id": "setores_mip_2015",
+      "arquivo": "outputs/setores_2015.csv",
+      "sha256": "6E2B4C662EC615249E5C2E8CFCE0D77D18F4B4A14B9E51999394EB3010A3B643",
+      "fonte": "analise_matriz_insumo_produto.ipynb",
+      "ano": "2015",
+      "descricao": "Catalogo de atividades exportado pela etapa MIP."
+    }
+  ],
+  "notebook": "investigacao_redes_emissoes_2015.ipynb"
+}

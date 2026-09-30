@@ -3,7 +3,11 @@ planilhas_de_aula/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
-outputs/
+# Resultados reproduzíveis publicados para revisão da investigação de 2015.
+/outputs/*
+!/outputs/investigacao_redes_2015/
+!/outputs/matriz_emissoes_producao_2015.csv
+!/outputs/setores_2015.csv
 
 # Referências: versionar apenas a documentação em Markdown.
 /references/**

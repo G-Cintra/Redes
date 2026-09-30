@@ -184,3 +184,5 @@ Execute suas células em ordem, a partir da raiz, após preparar as entradas can
 A conclusão exploratória distingue proeminência emissora de importância como fornecedor. As emissões são estimadas com intensidades interpoladas de 2011/2018; a compatibilidade de preços e a validação ambiental da fonte permanecem limitações para publicação. No novo notebook, `e = gamma * x` é a emissão própria, `H = diag(gamma) @ L` é intensidade e `P = H @ diag(y)` é atribuição por demanda final, evitando a ambiguidade de `C/c` nos notebooks anteriores.
 
 Verificações específicas: `python -m unittest discover -s tests -p test_investigacao_2015.py -v`. A execução do notebook também confere balanços, conservação, as duas versões de extração e derivadas ambientais.
+
+Para avaliação pelo repositório público, consulte o [roteiro de revisão independente](docs/revisao_investigacao_2015.md). O relatório, as tabelas e as figuras da investigação de 2015 estão versionados em `outputs/investigacao_redes_2015/`; as demais saídas continuam ignoradas pelo Git.
