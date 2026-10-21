@@ -1,0 +1,60 @@
+{
+  "metodo": "TeXcount: Words in text; soma dos sete fontes ativos",
+  "inclusoes": "Resumo e prosa de introdução, dados/método, resultados, discussão e conclusão",
+  "exclusoes": "Títulos, legendas/notas de figuras (%TC:ignore), fórmulas, comandos de citação, referências e apêndices",
+  "observacao": "Contagem editorial de prosa; fórmulas inline não são palavras. O resumo é incluído por precaução.",
+  "por_secao": {
+    "Resumo": 112,
+    "Introdução": 272,
+    "Dados e método": 374,
+    "Resultados": 762,
+    "Discussão": 374,
+    "Conclusão": 124
+  },
+  "total": 2018,
+  "limite": 2500,
+  "fontes": [
+    {
+      "secao": "Resumo",
+      "arquivo": "resumo.tex",
+      "palavras": 112,
+      "sha256": "a00d0ff569a1c9e023381031ca835bcd2134363d9135821bd16d3b6c5d6da340"
+    },
+    {
+      "secao": "Introdução",
+      "arquivo": "introducao.tex",
+      "palavras": 272,
+      "sha256": "1e0de9cb9dc59acd0910248948bb3d44b57ffed43dc18feb0727ece9c470d75b"
+    },
+    {
+      "secao": "Dados e método",
+      "arquivo": "dados.tex",
+      "palavras": 127,
+      "sha256": "dd96626068753d555dedf61597f6d8d873960e0e5b7df3fcbe70f75e48f0ef04"
+    },
+    {
+      "secao": "Dados e método",
+      "arquivo": "modelo_atribuicao.tex",
+      "palavras": 247,
+      "sha256": "420844c0ba6dc5caebf85693c321207bed5c408a6b4ee438bc81e66e1e4648ee"
+    },
+    {
+      "secao": "Resultados",
+      "arquivo": "resultados.tex",
+      "palavras": 762,
+      "sha256": "b64d370568e57f6c0b4f702eae6dedf85abcb5b7e8b89fb1bb6f2155d2ab1299"
+    },
+    {
+      "secao": "Discussão",
+      "arquivo": "discussao.tex",
+      "palavras": 374,
+      "sha256": "90a40633bd05fd20c64dcd5bab6259948c29277a018d359a6be0077a2fdc505b"
+    },
+    {
+      "secao": "Conclusão",
+      "arquivo": "conclusoes.tex",
+      "palavras": 124,
+      "sha256": "c34ea569296619dbf6b8d47c1b997143ecf195d4d3c0c6e9c7928791c993627e"
+    }
+  ]
+}

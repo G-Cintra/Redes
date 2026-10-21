@@ -5,7 +5,7 @@
 \usepackage[brazilian]{babel}
 \usepackage{graphicx,booktabs,array,amsmath,amssymb,microtype}
 \usepackage{geometry}
-\usepackage{pdflscape,caption}
+\usepackage{pdflscape,caption,float,placeins,longtable,needspace}
 \geometry{a4paper,margin=2.5cm}
 \usepackage{parskip,csquotes}
 \interfootnotelinepenalty=10000
@@ -21,7 +21,7 @@
 \newcommand{\subtitulo}{Estrutura da rede intersetorial de atribuição de CO\textsubscript{2} no Brasil e implicações para a coordenação da mitigação}
 \newcommand{\autor}{Gabriel Pincelli Cintra}
 \newcommand{\local}{Florianópolis}
-\newcommand{\dataentrega}{18 de outubro de 2026}
+\newcommand{\dataentrega}{21 de outubro de 2026}
 \newcommand{\imprimirtitulodois}{
 \begin{center}
   {\Large\bfseries\MakeUppercase{\instituicao}\par}
@@ -38,111 +38,25 @@
   \raggedleft\normalsize \local, \dataentrega
 \end{minipage}
 \vspace{1.0em}\hrule\vspace{1.0em}}
+% Figuras do corpo compartilham páginas com a narrativa.
+\renewcommand{\topfraction}{0.80}
+\renewcommand{\bottomfraction}{0.80}
+\renewcommand{\textfraction}{0.12}
+\setcounter{topnumber}{1}
+\setcounter{bottomnumber}{1}
+\captionsetup{font=small}
 \begin{document}
 \imprimirtitulodois
-% Resumo e palavras-chave serão redigidos após os resultados.
+\input{resumo.tex}
 \input{introducao.tex}
-% Sequência inspirada em Huang et al. (2019).
+\section{Dados e método}
 \input{dados.tex}
-\section{Metodologia}
 \input{modelo_atribuicao.tex}
-\subsection{Construção da rede dirigida e ponderada}
-\label{sec:construcao-rede}
-
-A rede terá 67 nós, um por atividade da MIP, identificados pelos códigos do IBGE. Cada nó representa uma origem emissora nas ligações de saída e o setor de um produto final nas ligações de entrada, seguindo a representação de atribuição de \textcite{huang2019}. Os dois papéis pertencem ao mesmo nó, enquanto o Sankey da Figura~\ref{fig:exemplo-atribuicoes} os apresenta em conjuntos separados.
-
-Para estudar relações entre atividades distintas, define-se
-\begin{equation}
-W_{ij}=\begin{cases}
-F_{ij}, & i\ne j,\\
-0, & i=j.
-\end{cases}
-\label{eq:rede-sem-diagonal}
-\end{equation}
-Haverá uma aresta $i\rightarrow j$ para cada $W_{ij}>0$, com peso igual a esse valor, em Gg de CO\textsubscript{2}. A direção indica a origem emissora e o destino da atribuição, e as duas direções de um par serão tratadas separadamente. Como os pesos já incorporam requisitos diretos e indiretos, concatenar essas arestas não representa uma sequência de etapas produtivas.
-
-A diagonal $F_{ii}$ reúne emissões de $i$ atribuídas à demanda final de seus próprios produtos, incluindo os requisitos indiretos correspondentes. Ela permanece nas contas $c$ e $u$, mas é retirada de $W$ para separar as relações entre atividades da atribuição à própria atividade. Assim, $W$ não terá laços, e seu peso total corresponderá apenas à parcela intersetorial das emissões.
-
-Serão mantidos todos os nós e todas as arestas positivas, sem corte por magnitude nesta etapa. A construção exige alinhamento dos códigos e pesos finitos e não negativos; eventuais valores negativos deverão ser examinados antes da representação, sem conversão automática para zero ou valor absoluto. A seleção de arestas será tratada na seção~\ref{sec:backbone}.
-
-\subsection{Volume e concentração das relações}
-\label{sec:volume-concentracao}
-
-Para relacionar a estrutura da rede às duas contas ambientais, serão examinados o volume das relações externas e sua distribuição entre contrapartes. As medidas serão calculadas em $W$, antes da filtragem, com referência às forças de \textcite{huang2019} e à disparidade dos pesos de \textcite{serrano2009}.
-
-\paragraph{Volume.}
-As forças de saída e entrada são as somas dos pesos em cada direção:
-\begin{equation}
-\begin{aligned}
-s_i^{\mathrm{out}}&=\sum_{j\ne i}W_{ij}=c_i-F_{ii},\\
-s_i^{\mathrm{in}}&=\sum_{j\ne i}W_{ji}=u_i-F_{ii}.
-\end{aligned}
-\label{eq:forcas-externas}
-\end{equation}
-A saída mede as emissões próprias de $i$ atribuídas aos produtos finais de outras atividades; a entrada mede as emissões de outras atividades atribuídas aos produtos finais de $i$. Ambas têm unidade de Gg de CO\textsubscript{2}. Sua diferença é $u_i-c_i$, mas a leitura separada permite identificar grandes volumes que se compensam no saldo. Serão apresentados também $c_i$, $u_i$ e $F_{ii}$, para situar a parcela intersetorial em cada conta completa.
-
-\paragraph{Concentração.}
-Para perfis com força positiva, define-se a participação de cada contraparte:
-\begin{equation}
-p_{ij}^{\mathrm{out}}=\frac{W_{ij}}{s_i^{\mathrm{out}}},\qquad
-p_{ji}^{\mathrm{in}}=\frac{W_{ji}}{s_i^{\mathrm{in}}},\quad j\ne i.
-\label{eq:participacoes-externas}
-\end{equation}
-O perfil de saída distribui as emissões externas da origem entre destinos; o de entrada descreve as origens que compõem a atribuição externa ao destino. Cada perfil soma um. A disparidade e seu inverso serão calculados por
-\begin{equation}
-\begin{aligned}
-Y_i^{\mathrm{out}}&=\sum_{j\ne i}(p_{ij}^{\mathrm{out}})^2,&
-Y_i^{\mathrm{in}}&=\sum_{j\ne i}(p_{ji}^{\mathrm{in}})^2,\\
-D_{2,i}^{\mathrm{out}}&=1/Y_i^{\mathrm{out}},&
-D_{2,i}^{\mathrm{in}}&=1/Y_i^{\mathrm{in}}.
-\end{aligned}
-\label{eq:disparidade}
-\end{equation}
-$Y$ aumenta com a concentração; $D_2$ expressa a mesma informação como número efetivo de contrapartes. Para $k$ pesos iguais, $D_2=k$; quando uma relação domina, aproxima-se de um. Essas medidas são adimensionais e ficam indefinidas quando a força é zero, sem excluir o nó da análise.
-
-A combinação de força e número efetivo permitirá distinguir volumes elevados concentrados em poucas contrapartes de volumes distribuídos entre muitas. As atividades que compõem cada perfil serão identificadas pelos pesos e participações, pois o número efetivo não informa sua identidade. O grau contará as arestas positivas de entrada ou saída; a densidade será o número de arestas dividido por $67\times66$. Grau e densidade descrevem a presença de relações, enquanto a disparidade considera a distribuição de seus pesos.
-
-\subsection{Extração e avaliação do backbone}
-\label{sec:backbone}
-
-O filtro de disparidade de \textcite{serrano2009}, aplicado por \textcite{huang2019}, será utilizado para selecionar ligações destacadas na composição local dos pesos. A seleção depende da participação da aresta na força de cada extremidade, permitindo considerar atividades de diferentes escalas. Seu resultado será o backbone, sem alterar as contas ambientais completas.
-
-\paragraph{Critério de seleção.}
-O modelo nulo divide o intervalo unitário em $k$ parcelas por $k-1$ pontos escolhidos uniformemente, representando uma distribuição aleatória da força entre as ligações. Para $k>1$, a probabilidade de uma parcela atingir ou superar $p$ é $(1-p)^{k-1}$. Para a aresta $i\rightarrow j$, as caudas nas perspectivas de saída e entrada são
-\begin{equation}
-\begin{aligned}
-a_{ij}^{\mathrm{out}}&=\left(1-\frac{W_{ij}}{s_i^{\mathrm{out}}}\right)^{k_i^{\mathrm{out}}-1},\\
-a_{ij}^{\mathrm{in}}&=\left(1-\frac{W_{ij}}{s_j^{\mathrm{in}}}\right)^{k_j^{\mathrm{in}}-1}.
-\end{aligned}
-\label{eq:caudas-filtro}
-\end{equation}
-Os graus $k$ e as forças serão os de $W$. A aresta será selecionada se $a_{ij}^{\mathrm{out}}<\alpha$ \textbf{ou} $a_{ij}^{\mathrm{in}}<\alpha$, registrando-se qual extremidade determina a seleção. A saída destaca um destino nas atribuições da origem; a entrada destaca uma origem na composição do destino.
-
-As caudas só serão calculadas para graus pertinentes maiores que um. Se apenas uma extremidade tiver grau um, valerá o teste da outra; se ambas tiverem grau um, a aresta será preservada por convenção de manutenção da relação exclusiva, inclusive em díades isoladas. Essa extensão dos casos degenerados do suplemento de Serrano et al. será registrada separadamente da seleção estatística. Todos os nós serão mantidos.
-
-Será adotado $\alpha=0{,}05$, com $0{,}01$ e $0{,}10$ para sensibilidade. Para cada valor, o filtro será aplicado uma vez a $W$, sem atualização iterativa dos perfis. A matriz resultante $B_\alpha$ manterá os pesos originais nas arestas selecionadas e zero nas demais, sem renormalização ou corte absoluto adicional.
-
-\paragraph{Avaliação da seleção.}
-Serão comparadas a fração de arestas retidas e a cobertura dos pesos, globalmente e por atividade:
-\begin{equation}
-\begin{aligned}
-r_\alpha&=\frac{\sum_{ij}(B_\alpha)_{ij}}{\sum_{ij}W_{ij}},\\
-r_{\alpha,i}^{\mathrm{out}}&=\frac{\sum_j(B_\alpha)_{ij}}{s_i^{\mathrm{out}}},\qquad
-r_{\alpha,i}^{\mathrm{in}}=\frac{\sum_j(B_\alpha)_{ji}}{s_i^{\mathrm{in}}}.
-\end{aligned}
-\label{eq:cobertura-backbone}
-\end{equation}
-As razões serão definidas apenas para denominadores positivos. A cobertura se refere à parcela intersetorial de $W$; sua leitura por atividade permite identificar perdas ocultas pela retenção agregada. Serão descritos também graus, forças retidas, isolados e componentes fracamente conectados, obtidos ao desconsiderar a direção das arestas para verificar conectividade.
-
-A sensibilidade será examinada pelas mudanças nas arestas, coberturas e posições setoriais entre os três valores de $\alpha$. Com convenções fixas, os conjuntos são aninhados por construção; essa propriedade não constitui evidência independente de robustez. O modelo nulo é uma referência de distribuição dos pesos: suas caudas não medem a incerteza ambiental, e a seleção não estabelece prioridade de mitigação.
-
-A resposta à pergunta combinará as contas e seus saldos em $F$, os volumes e a concentração em $W$ e as contrapartes destacadas em $B_\alpha$. As relações serão interpretadas junto de seus pesos e coberturas: uma ligação pode ser importante localmente e pequena no total, enquanto uma ligação não selecionada continua integrando a contabilidade. Assim, o backbone complementa a análise dos perfis completos, sem substituí-los.
-
 \input{resultados.tex}
-\section{Discussão e implicações para a coordenação da mitigação}
-% Reservado: interpretação conjunta e limites dos dados e métodos.
-\section{Conclusões}
-% Reservado até a conclusão da análise.
+\input{discussao.tex}
+\Needspace{12\baselineskip}
+\input{conclusoes.tex}
+\FloatBarrier
 \printbibliography[title={Referências}]
 \input{anexos.tex}
 \end{document}

@@ -1,71 +1,13 @@
-\subsection{Da MIP à matriz de atribuição de emissões}
-\label{sec:derivacao}
-
-A análise parte da matriz $A$ de coeficientes técnicos de insumos produzidos no Brasil, da produção bruta $x$ e da demanda final por atividade $y$ da MIP do IBGE. Os índices $i$ e $j$ identificam atividades e os vetores são colunas. Cada $A_{ij}$ indica o valor do insumo produzido em $i$ requerido por unidade monetária de produção de $j$. O balanço e a inversa de Leontief são
+O modelo parte dos coeficientes técnicos $A$, da inversa de Leontief $L=(I-A)^{-1}$, da demanda final $y$ e das intensidades $\varphi$. A atribuição de emissões é
 \begin{equation}
-x=Ax+y=Ly,\qquad L=(I-A)^{-1}.
-\label{eq:leontief}
+F=\operatorname{diag}(\varphi)L\operatorname{diag}(y),\qquad c=F\mathbf1,\quad u=F^\top\mathbf1.
+\label{eq:artigo-F}
 \end{equation}
-$L_{ij}$ reúne a produção de $i$ requerida direta e indiretamente por unidade de demanda final de $j$, sob coeficientes técnicos fixos \parencite{millerBlair2009}. Utilizam-se $A$ e $L$ das Tabelas 14 e 15, com conferência de consistência e do balanço $Ly=x$ considerando o arredondamento da fonte.
+Cada $F_{ij}$ representa emissões em $i$ atribuídas ao produto final de $j$, em Gg de CO\textsubscript{2}, incorporando requisitos diretos e indiretos. As contas $c$ e $u$ somam as mesmas emissões por origem e destino. O exemplo do Apêndice~\ref{ap:metodo} ilustra essa conservação. As arestas representam atribuições contábeis; concatená-las não reconstrói etapas produtivas.
 
-Para incorporar a dimensão ambiental, seja $\varphi_i$ a intensidade direta de CO\textsubscript{2} por unidade de produção de $i$, em Gg de CO\textsubscript{2} por milhão de reais, com a origem e as limitações descritas na seção~\ref{sec:dados}. Organizando essas intensidades em $\Phi=\operatorname{diag}(\varphi)$, obtém-se
-\begin{equation}
-C=\Phi L,\qquad C_{ij}=\varphi_iL_{ij}.
-\label{eq:coeficientes-emissoes}
-\end{equation}
-Cada $C_{ij}$ expressa a emissão em $i$ por unidade monetária de demanda final de $j$ e tem unidade de Gg de CO\textsubscript{2} por milhão de reais. Essa extensão ambiental relaciona as intensidades diretas aos requisitos da cadeia, conforme a abordagem utilizada por \textcite{sanguinetAzzoni2024}.
+Para comparar presença como fornecedor e magnitude ambiental, calcula-se $q_i=\sum_{j\ne i}L_{ij}$. Essa soma adimensional dá peso unitário à demanda de cada outro produto final, exclui a diagonal inteira e independe das intensidades ambientais. Não mede quantidade de clientes ou insubstituibilidade. A comparação com as participações em $c$ e $u$ distingue requerimentos padronizados de volumes associados à demanda observada.
 
-Multiplicar cada coluna de $C$ pela demanda final efetiva fornece a matriz de atribuição:
-\begin{equation}
-F=C\widehat y=\Phi L\widehat y,\qquad F_{ij}=\varphi_iL_{ij}y_j,
-\label{eq:matriz-atribuicao}
-\end{equation}
-em que $\widehat y=\operatorname{diag}(y)$. $F$ tem dimensão $67\times67$ e unidade de Gg de CO\textsubscript{2}. O elemento $F_{ij}$ representa a emissão ocorrida em $i$ e atribuída à demanda final dos produtos de $j$, incluindo requisitos diretos e indiretos. Essa é a matriz que conecta as duas atribuições discutidas por \textcite{marques2012} e fundamenta a representação em rede adotada a partir de \textcite{huang2019}. Seus elementos representam atribuição contábil, não transações diretas nem transferências físicas de CO\textsubscript{2}.
+A rede dirigida tem 67 nós e pesos $W_{ij}=F_{ij}$ para $i\ne j$, com diagonal zero. As forças externas de saída e entrada são $s_i^{out}=c_i-F_{ii}$ e $s_i^{in}=u_i-F_{ii}$. Sua diferença corresponde ao saldo $u_i-c_i$. A concentração é medida pelo número efetivo $D_2=1/\sum p^2$, em que $p$ representa as participações das contrapartes em cada força. Valores maiores indicam distribuição mais equilibrada; perfis nulos permanecem indefinidos.
 
-\subsection{Atribuição pela produção e pela demanda}
-\label{sec:atribuicoes}
+O filtro de disparidade \parencite{serrano2009} seleciona relações cuja participação se destaca sob um modelo nulo de repartição aleatória da força. Aplica-se uma vez a $W$, retendo a ligação se o teste na origem ou no destino passa em $\alpha=0{,}05$, com sensibilidade a 0,01 e 0,10. O backbone preserva pesos originais; a cobertura mede a fração de peso retida globalmente e por perfil. As contas e a concentração permanecem calculadas antes do filtro.
 
-A matriz $F$ permite organizar as mesmas emissões segundo a atividade em que ocorrem ou o produto final ao qual são atribuídas. A Figura~\ref{fig:exemplo-atribuicoes} ilustra essa distinção em uma economia de quatro atividades: Eletricidade, Agricultura, Alimentos e Restaurantes.
-
-Na atribuição pela produção, somam-se as linhas de $F$, preservando a origem emissora:
-\begin{equation}
-c_i=\sum_jF_{ij}=\varphi_i x_i,\qquad c=F\mathbf{1}=\Phi x.
-\label{eq:conta-producao}
-\end{equation}
-Aqui, $\mathbf{1}$ é um vetor-coluna de uns. No quadro (a), as emissões da geração elétrica são contabilizadas em Eletricidade, inclusive quando sua produção atende às outras atividades.
-
-Na atribuição pela demanda, somam-se as colunas de $F$, preservando o setor do produto final:
-\begin{equation}
-u_j=\sum_iF_{ij}=y_j\sum_i\varphi_iL_{ij},\qquad u=F^\top\mathbf{1},
-\label{eq:conta-demanda}
-\end{equation}
-em que $\top$ indica transposição. No quadro (b), a atribuição à demanda final de Restaurantes reúne as emissões de sua própria atividade e as de Eletricidade, Agricultura e Alimentos associadas ao atendimento dessa demanda. As transações e a produção são as mesmas do quadro (a); muda o critério de atribuição representado pelas cores.
-
-O Sankey do quadro (c) conecta essas perspectivas: cada faixa representa $F_{ij}$, a barra de origem totaliza $c_i$ e a de destino totaliza $u_j$. Por exemplo, a faixa entre Eletricidade e Restaurantes corresponde à emissão da primeira atribuída à demanda final da segunda. Enquanto as setas superiores representam transações monetárias, as faixas do Sankey representam atribuições de emissões. O total é preservado:
-\begin{equation}
-\mathbf{1}^\top c=\mathbf{1}^\top F\mathbf{1}=\mathbf{1}^\top u.
-\label{eq:conservacao-emissoes}
-\end{equation}
-
-Para uma mesma atividade, a diferença entre as contas é o saldo das atribuições entre atividades distintas:
-\begin{equation}
-u_i-c_i=\sum_{j\ne i}F_{ji}-\sum_{j\ne i}F_{ij}.
-\label{eq:saldo-atribuicao}
-\end{equation}
-A diagonal cancela nesse saldo, mas permanece nas contas completas. A diferença pode resultar de poucas relações de grande peso ou de muitas relações distribuídas, o que motiva examinar sua concentração e conectividade na rede.
-
-% Figura vetorial copiada sem edição de:
-% C:/GitHub/Mestrado/0-Projeto de Dissertação/figura_economia/contabilidade_com_sankey.pdf
-% SHA-256: 861F8B5C1FDEBE3C96B31D8BD96763C2829FA2AE72703160C83949E4ACD6BF29
-\begin{figure}[p]
-\centering
-\includegraphics[width=\textwidth,height=0.76\textheight,keepaspectratio]{figuras/atribuicao_cadeia_alimentos.pdf}
-\caption{Atribuição das emissões pela produção e pela demanda em uma economia ilustrativa.}
-\label{fig:exemplo-atribuicoes}
-\begin{minipage}{\textwidth}\footnotesize
-Fonte: elaboração própria.
-
-Nota: exemplo didático, sem representar estimativas nacionais dos quatro setores. Em (a--b), áreas e espessuras das setas expressam valores monetários; no nó Demanda Final, a área indica o valor recebido, incluindo exportações. As cores representam $c$ em (a) e $u$ em (b). Em (c), as barras à esquerda representam as origens emissoras (I--IV) e as barras à direita, os produtos finais (V--VIII). Suas alturas e as espessuras das faixas expressam emissões em Gg de CO\textsubscript{2}. Os três quadros compartilham a escala de cores.
-\end{minipage}
-\end{figure}
-\clearpage

@@ -1,5 +1,7 @@
 # Planejamento acadêmico do trabalho de redes
 
+**Atualização editorial de 21/10/2026:** o artigo conciso foi redigido conforme o plano aprovado na conversa. A organização e os critérios atuais estão em [revisao_artigo_nikolov.md](revisao_artigo_nikolov.md); o texto ativo é [entrega/main.tex](entrega/main.tex). As propostas e pendências abaixo preservam seus estados históricos e não substituem a versão atual.
+
 Versão revisada após Huang, as cinco fontes complementares e a discussão das implicações de política — 18/10/2026. **Este é o desenho recomendado para discussão antes da implementação.** O [documento de contexto](01_contexto_requisitos_historico.md) registra os requisitos. As [leituras críticas](referencias/README.md) fundamentam a revisão. A pergunta passa a partir explicitamente das diferenças entre produção e demanda; volume, concentração e backbone ajudam a interpretar as relações que compõem essas diferenças. A contribuição de política é um diagnóstico de oportunidades de coordenação, condicionado à validação ambiental. Comunidades continuam complementares; intermediação produtiva não integra o núcleo.
 
 ## Síntese da decisão metodológica

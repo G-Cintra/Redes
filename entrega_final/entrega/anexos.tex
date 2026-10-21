@@ -1,37 +1,175 @@
 \clearpage
 \appendix
-\section{Painéis completos de energia e construção}
-\label{anexo:paineis}
+\section{Preparação, derivação e convenções}
+\label{ap:metodo}
 
-Os painéis apresentam todas as arestas dos recortes em $\alpha=0{,}05$, com pesos originais em Gg de CO\textsubscript{2} e escala linear comum, sem novo filtro. Cobertura: peso retido sobre a força da atividade e direção em $W$, sem diagonal. Azul indica somente o teste de saída na origem; laranja, somente entrada no destino; roxo, ambos. A paginação preserva a seleção e os denominadores.
+A produção bruta vem da Tabela 01; a demanda final por produto, da Tabela 03; a participação das atividades nos produtos, da Tabela 13; $A$ e $L$, das Tabelas 14 e 15 do IBGE. Os 134 coeficientes ambientais de 2011 e 2018 foram transcritos da Tabela 2 de Sanguinet e Azzoni (2024) e interpolados por $\varphi^{2015}=(3\varphi^{2011}+4\varphi^{2018})/7$. As entradas e os SHA-256 constam de \texttt{raw/manifesto.csv}; as correspondências e verificações estão no notebook \texttt{entrega\_final/analise\_redes\_2015.ipynb}.
 
-\begin{figure}[htbp]
+A fonte ambiental relata preços de dezembro de 2018, sem ajuste adicional nesta aplicação. A auditoria não recuperou todos os numeradores físicos e procedimentos de alocação; identificou ambiguidades de cobertura e discrepâncias setoriais. O detalhamento está em \texttt{docs/auditoria\_coeficientes\_emissoes\_2015.md}. Esses limites permanecem documentados, sem impedir o uso declarado da aproximação para o exercício de redes.
+
+\input{metodologia_detalhada.tex}
+
+\clearpage
+\section{Sensibilidade e verificações}
+\label{ap:sensibilidade}
+
+O filtro é aplicado à mesma rede completa, com regra OU e cauda estritamente inferior a $\alpha$. Todos os nós e os pesos das arestas retidas são preservados. As contas em $F$ e as medidas de concentração em $W$ não são recalculadas no backbone. Os conjuntos são aninhados por construção, o que não demonstra estabilidade independente.
+
+\begin{table}[H]\centering
+\caption{Sensibilidade do backbone e cobertura do peso intersetorial.}
+\begin{tabular}{crrr}\toprule
+$\alpha$ & Arestas & Peso (mil Gg) & Cobertura (\%)\\\midrule
+0,01 & 338 & 166,88 & 57,39\\
+0,05 & 575 & 205,55 & 70,69\\
+0,10 & 755 & 224,92 & 77,35\\\bottomrule
+\end{tabular}
+\end{table}
+
+Em todos os casos há 67 nós, um isolado e um componente fracamente conectado com 66 atividades. Em relação a 0,05, reduzir $\alpha$ a 0,01 muda os postos de grau de saída em mediana de 11 posições e de entrada em sete; elevar a 0,10 muda 4,5 e quatro posições, respectivamente, considerando empates. No parâmetro de referência, 232 arestas passam só pela saída, 265 só pela entrada e 78 pelos dois testes. Nenhuma depende da convenção de grau um.
+
+As verificações do notebook conferem alinhamento, balanços $Ly=x$ e $Ax+y=x$, conservação das margens, decomposição do saldo, reconstrução exata de $W$ pelo grafo e correspondência dos backbones à regra. Tolerâncias de cálculo não são intervalos de incerteza ambiental. A agregação das barras da Figura~\ref{fig:relacoes-focais} conserva os quatro perfis e seus volumes retidos; as redes focais mostram todas as arestas incidentes, sem novo teste.
+
+\clearpage
+\begin{landscape}
+\section{Matrizes e vistas globais}
+As figuras abaixo preservam o backbone integral de referência: 67 nós, 575 arestas e 70,69\% do peso intersetorial. As vistas de energia e construção mantêm posições iguais, definidas pelo sinal do saldo $u-c$ e pela ordem IBGE; não são comunidades nem posições de centralidade.
+
+
+\begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figuras/anexo_energia_1.pdf}
-\caption{Energia (3500): todas as sete entradas e as saídas 1--31 de 62.}
-\label{fig:anexo-energia}
-\begin{minipage}{\textwidth}\footnotesize
-Fonte: elaboração própria. Coberturas de 42,1\% nas entradas e 99,2\% no conjunto das saídas. As demais saídas são apresentadas na continuação; não há novo filtro. Pesos exibidos com uma casa decimal. Azul: só saída na origem; laranja: só entrada no destino; roxo: ambos os testes.
+\includegraphics[width=\linewidth,height=0.62\textheight,keepaspectratio]{figuras/matriz_presenca.pdf}
+\caption{Presença das ligações do backbone.}
+\label{fig:matriz-backbone}
+\begin{minipage}{\linewidth}\footnotesize
+Fonte: elaboração própria. Mesma base ambiental aproximada e seleção em $\alpha=0{,}05$. Nas matrizes, linha: origem emissora; coluna: produto final; cinza: ligação não retida, inclusive diagonal. Nas redes, azul: saídas do destaque; laranja: entradas; cinza: demais arestas. Proximidade e cruzamentos não representam distâncias ou etapas produtivas. No quadro, volume e número efetivo usam $W$ completa; graus e cobertura usam o backbone, com sensibilidade a 0,01--0,10.
 \end{minipage}
 \end{figure}
+\end{landscape}
+
 \clearpage
+\begin{landscape}
 \begin{figure}[p]
-\ContinuedFloat
 \centering
-\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figuras/anexo_energia_2.pdf}
-\caption{Energia (3500), continuação: saídas 32--62 de 62.}
-\begin{minipage}{\textwidth}\footnotesize
-Fonte: elaboração própria. Mesma seleção, ordem, escala e cores do painel anterior. A cobertura de 99,2\% se refere às 62 saídas, não apenas a esta página. Azul: só saída na origem; laranja: só entrada no destino; roxo: ambos os testes.
+\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/matriz_peso.pdf}
+\caption{Pesos das mesmas ligações, em escala logarítmica.}
+\label{fig:matriz-peso}
+\begin{minipage}{\linewidth}\footnotesize
+Fonte: elaboração própria. Mesma base ambiental aproximada e seleção em $\alpha=0{,}05$. Nas matrizes, linha: origem emissora; coluna: produto final; cinza: ligação não retida, inclusive diagonal. Nas redes, azul: saídas do destaque; laranja: entradas; cinza: demais arestas. Proximidade e cruzamentos não representam distâncias ou etapas produtivas. No quadro, volume e número efetivo usam $W$ completa; graus e cobertura usam o backbone, com sensibilidade a 0,01--0,10.
 \end{minipage}
 \end{figure}
+\end{landscape}
+
 \clearpage
+\begin{landscape}
 \begin{figure}[p]
 \centering
-\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figuras/anexo_construcao.pdf}
-\caption{Construção (4180): todas as 45 entradas e cinco saídas.}
-\label{fig:anexo-construcao}
-\begin{minipage}{\textwidth}\footnotesize
-Fonte: elaboração própria. Coberturas de 91,4\% nas entradas e 57,0\% nas saídas. Mesma escala de pesos dos painéis de energia. Azul: só saída na origem; laranja: só entrada no destino; roxo: ambos os testes. Arestas compartilhadas não são duplicadas na rede.
+\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/rede_foco_3500.pdf}
+\caption{Backbone integral com destaque para energia.}
+\label{fig:rede-focos}
+\begin{minipage}{\linewidth}\footnotesize
+Fonte: elaboração própria. Mesma base ambiental aproximada e seleção em $\alpha=0{,}05$. Nas matrizes, linha: origem emissora; coluna: produto final; cinza: ligação não retida, inclusive diagonal. Nas redes, azul: saídas do destaque; laranja: entradas; cinza: demais arestas. Proximidade e cruzamentos não representam distâncias ou etapas produtivas. No quadro, volume e número efetivo usam $W$ completa; graus e cobertura usam o backbone, com sensibilidade a 0,01--0,10.
 \end{minipage}
 \end{figure}
+\end{landscape}
+
 \clearpage
+\begin{landscape}
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/rede_foco_4180.pdf}
+\caption{Backbone integral com destaque para construção.}
+\label{fig:rede-construcao}
+\begin{minipage}{\linewidth}\footnotesize
+Fonte: elaboração própria. Mesma base ambiental aproximada e seleção em $\alpha=0{,}05$. Nas matrizes, linha: origem emissora; coluna: produto final; cinza: ligação não retida, inclusive diagonal. Nas redes, azul: saídas do destaque; laranja: entradas; cinza: demais arestas. Proximidade e cruzamentos não representam distâncias ou etapas produtivas. No quadro, volume e número efetivo usam $W$ completa; graus e cobertura usam o backbone, com sensibilidade a 0,01--0,10.
+\end{minipage}
+\end{figure}
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/indicadores.pdf}
+\caption{Quadro detalhado de volume, concentração, graus e cobertura.}
+\label{fig:quadro-completo}
+\begin{minipage}{\linewidth}\footnotesize
+Fonte: elaboração própria. Mesma base ambiental aproximada e seleção em $\alpha=0{,}05$. Nas matrizes, linha: origem emissora; coluna: produto final; cinza: ligação não retida, inclusive diagonal. Nas redes, azul: saídas do destaque; laranja: entradas; cinza: demais arestas. Proximidade e cruzamentos não representam distâncias ou etapas produtivas. No quadro, volume e número efetivo usam $W$ completa; graus e cobertura usam o backbone, com sensibilidade a 0,01--0,10.
+\end{minipage}
+\end{figure}
+\end{landscape}
+
+\input{paineis_completos.tex}
+\clearpage
+\section{Códigos das atividades}
+A classificação é a mesma em todas as figuras. Os grafos focais usam os códigos abaixo para preservar todos os vizinhos com rótulos legíveis.
+\small
+\begin{longtable}{@{}lp{0.83\textwidth}@{}}
+\toprule Código & Atividade\\\midrule\endhead
+0191 & Agricultura, inclusive o apoio à agricultura e a pós-colheita \\
+0192 & Pecuária, inclusive o apoio à pecuária \\
+0280 & Produção florestal; pesca e aquicultura \\
+0580 & Extração de carvão mineral e de minerais não metálicos \\
+0680 & Extração de petróleo e gás, inclusive as atividades de apoio \\
+0791 & Extração de minério de ferro, inclusive beneficiamentos e a aglomeração \\
+0792 & Extração de minerais metálicos não ferrosos, inclusive beneficiamentos \\
+1091 & Abate e produtos de carne, inclusive os produtos do laticínio e da pesca \\
+1092 & Fabricação e refino de açúcar \\
+1093 & Outros produtos alimentares \\
+1100 & Fabricação de bebidas \\
+1200 & Fabricação de produtos do fumo \\
+1300 & Fabricação de produtos têxteis \\
+1400 & Confecção de artefatos do vestuário e acessórios \\
+1500 & Fabricação de calçados e de artefatos de couro \\
+1600 & Fabricação de produtos da madeira \\
+1700 & Fabricação de celulose, papel e produtos de papel \\
+1800 & Impressão e reprodução de gravações \\
+1991 & Refino de petróleo e coquerias \\
+1992 & Fabricação de biocombustíveis \\
+2091 & Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros \\
+2092 & Fabricação de defensivos, desinfestantes, tintas e químicos diversos \\
+2093 & Fabricação de produtos de limpeza, cosméticos/perfumaria e higiene pessoal \\
+2100 & Fabricação de produtos farmoquímicos e farmacêuticos \\
+2200 & Fabricação de produtos de borracha e de material plástico \\
+2300 & Fabricação de produtos de minerais não metálicos \\
+2491 & Produção de ferro gusa/ferroligas, siderurgia e tubos de aço sem costura \\
+2492 & Metalurgia de metais não ferosos e a fundição de metais \\
+2500 & Fabricação de produtos de metal, exceto máquinas e equipamentos \\
+2600 & Fabricação de equipamentos de informática, produtos eletrônicos e ópticos \\
+2700 & Fabricação de máquinas e equipamentos elétricos \\
+2800 & Fabricação de máquinas e equipamentos mecânicos \\
+2991 & Fabricação de automóveis, caminhões e ônibus, exceto peças \\
+2992 & Fabricação de peças e acessórios para veículos automotores \\
+3000 & Fabricação de outros equipamentos de transporte, exceto veículos automotores \\
+3180 & Fabricação de móveis e de produtos de indústrias diversas \\
+3300 & Manutenção, reparação e instalação de máquinas e equipamentos \\
+3500 & Energia elétrica, gás natural e outras utilidades \\
+3680 & Água, esgoto e gestão de resíduos \\
+4180 & Construção \\
+4580 & Comércio por atacado e varejo \\
+4900 & Transporte terrestre \\
+5000 & Transporte aquaviário \\
+5100 & Transporte aéreo \\
+5280 & Armazenamento, atividades auxiliares dos transportes e correio \\
+5500 & Alojamento \\
+5600 & Alimentação \\
+5800 & Edição e edição integrada à impressão \\
+5980 & Atividades de televisão, rádio, cinema e  gravação/edição de som e imagem \\
+6100 & Telecomunicações \\
+6280 & Desenvolvimento de sistemas e outros serviços de informação \\
+6480 & Intermediação financeira, seguros e previdência complementar \\
+6800 & Atividades imobiliárias \\
+6980 & Atividades jurídicas, contábeis, consultoria e sedes de empresas  \\
+7180 & Serviços de arquitetura, engenharia, testes/análises técnicas e P \& D \\
+7380 & Outras atividades profissionais, científicas e técnicas \\
+7700 & Aluguéis não imobiliários e gestão de ativos de propriedade intelectual \\
+7880 & Outras atividades administrativas e serviços complementares \\
+8000 & Atividades de vigilância, segurança e investigação \\
+8400 & Administração pública, defesa e seguridade social \\
+8591 & Educação pública \\
+8592 & Educação privada \\
+8691 & Saúde pública \\
+8692 & Saúde privada \\
+9080 & Atividades artísticas, criativas e de espetáculos \\
+9480 & Organizações associativas e outros serviços pessoais \\
+9700 & Serviços domésticos \\
+\bottomrule\end{longtable}\normalsize
