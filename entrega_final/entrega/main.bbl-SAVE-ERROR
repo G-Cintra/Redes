@@ -1,0 +1,341 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{huang2019}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=caed37e5312ee6b23b46854d6510cfc6}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=245b97d6393aeebdbe487c9499c7a448}{%
+           family={Kelly},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=583118bcdce8bd887283e311b95ef384}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4f804559c5625dbb5b82f510edb22d98}{%
+           family={Lv},
+           familyi={L\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=05f7e0c820360d2ead95928afd606a67}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2a82d3b9fe4906a4382c20e22808756b}{%
+           family={Giurco},
+           familyi={G\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d522cef3c27884924dc4abfad6165f65}
+      \strng{fullhash}{bcd4c67bb0bb0794172b3d8938a617ae}
+      \strng{fullhashraw}{bcd4c67bb0bb0794172b3d8938a617ae}
+      \strng{bibnamehash}{d522cef3c27884924dc4abfad6165f65}
+      \strng{authorbibnamehash}{d522cef3c27884924dc4abfad6165f65}
+      \strng{authornamehash}{d522cef3c27884924dc4abfad6165f65}
+      \strng{authorfullhash}{bcd4c67bb0bb0794172b3d8938a617ae}
+      \strng{authorfullhashraw}{bcd4c67bb0bb0794172b3d8938a617ae}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{5508}
+      \field{journaltitle}{Sustainability}
+      \field{number}{19}
+      \field{title}{Carbon Communities and Hotspots for Carbon Emissions Reduction in China}
+      \field{volume}{11}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.3390/su11195508
+      \endverb
+    \endentry
+    \entry{ibge2015mip}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=638eed94c97a4776d2d0e13ee4adbf12}{%
+           family={{Instituto Brasileiro de Geografia e Estatística}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \name{shortauthor}{1}{}{%
+        {{un=0,uniquepart=base,hash=3898f1ceb6fdd56f963db7f9326130e4}{%
+           family={IBGE},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{3898f1ceb6fdd56f963db7f9326130e4}
+      \strng{fullhash}{638eed94c97a4776d2d0e13ee4adbf12}
+      \strng{fullhashraw}{638eed94c97a4776d2d0e13ee4adbf12}
+      \strng{bibnamehash}{3898f1ceb6fdd56f963db7f9326130e4}
+      \strng{authorbibnamehash}{638eed94c97a4776d2d0e13ee4adbf12}
+      \strng{authornamehash}{638eed94c97a4776d2d0e13ee4adbf12}
+      \strng{authorfullhash}{638eed94c97a4776d2d0e13ee4adbf12}
+      \strng{authorfullhashraw}{638eed94c97a4776d2d0e13ee4adbf12}
+      \strng{shortauthorbibnamehash}{3898f1ceb6fdd56f963db7f9326130e4}
+      \strng{shortauthornamehash}{3898f1ceb6fdd56f963db7f9326130e4}
+      \strng{shortauthorfullhash}{3898f1ceb6fdd56f963db7f9326130e4}
+      \strng{shortauthorfullhashraw}{3898f1ceb6fdd56f963db7f9326130e4}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{shortauthor}
+      \field{labeltitlesource}{title}
+      \field{title}{Matriz de Insumo-Produto: Brasil, 2015}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9085-matriz-de-insumo-produto.html
+      \endverb
+      \verb{url}
+      \verb https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9085-matriz-de-insumo-produto.html
+      \endverb
+    \endentry
+    \entry{marques2012}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=ef5ba171da6f62ccd98de70b8fb236b3}{%
+           family={Marques},
+           familyi={M\bibinitperiod},
+           given={Alexandra},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=60ebe5837c97aa9c72d385cb1f5e295f}{%
+           family={Rodrigues},
+           familyi={R\bibinitperiod},
+           given={João},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf7d8b08908c775c6a3146b4f1a9a757}{%
+           family={Lenzen},
+           familyi={L\bibinitperiod},
+           given={Manfred},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=50ef229b90ec21685d19c5bd8b76d707}{%
+           family={Domingos},
+           familyi={D\bibinitperiod},
+           given={Tiago},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{79a44cc722cbe77211ce11b33587d985}
+      \strng{fullhash}{218ba020e74d473bef06aaa7ba97aee3}
+      \strng{fullhashraw}{218ba020e74d473bef06aaa7ba97aee3}
+      \strng{bibnamehash}{79a44cc722cbe77211ce11b33587d985}
+      \strng{authorbibnamehash}{79a44cc722cbe77211ce11b33587d985}
+      \strng{authornamehash}{79a44cc722cbe77211ce11b33587d985}
+      \strng{authorfullhash}{218ba020e74d473bef06aaa7ba97aee3}
+      \strng{authorfullhashraw}{218ba020e74d473bef06aaa7ba97aee3}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ecological Economics}
+      \field{title}{Income-based Environmental Responsibility}
+      \field{volume}{84}
+      \field{year}{2012}
+      \field{pages}{57\bibrangedash 65}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/j.ecolecon.2012.09.010
+      \endverb
+    \endentry
+    \entry{millerBlair2009}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=608c448f286576678bafd9b83d12626a}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Ronald\bibnamedelima E.},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=07fb3345bb389928eec8d837aeff4645}{%
+           family={Blair},
+           familyi={B\bibinitperiod},
+           given={Peter\bibnamedelima D.},
+           giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{a0c9a18295a05fbf7662daef53ee0db7}
+      \strng{fullhash}{a0c9a18295a05fbf7662daef53ee0db7}
+      \strng{fullhashraw}{a0c9a18295a05fbf7662daef53ee0db7}
+      \strng{bibnamehash}{a0c9a18295a05fbf7662daef53ee0db7}
+      \strng{authorbibnamehash}{a0c9a18295a05fbf7662daef53ee0db7}
+      \strng{authornamehash}{a0c9a18295a05fbf7662daef53ee0db7}
+      \strng{authorfullhash}{a0c9a18295a05fbf7662daef53ee0db7}
+      \strng{authorfullhashraw}{a0c9a18295a05fbf7662daef53ee0db7}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Input--Output Analysis: Foundations and Extensions}
+      \field{year}{2009}
+      \verb{doi}
+      \verb 10.1017/CBO9780511626982
+      \endverb
+    \endentry
+    \entry{rissman2020}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5b0fa5c41c81e30de588f2d35878b876}{%
+           family={Rissman},
+           familyi={R\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1a9b5bacdcb7056dadbd7e1b50b0c411}
+      \strng{fullhash}{1a9b5bacdcb7056dadbd7e1b50b0c411}
+      \strng{fullhashraw}{1a9b5bacdcb7056dadbd7e1b50b0c411}
+      \strng{bibnamehash}{1a9b5bacdcb7056dadbd7e1b50b0c411}
+      \strng{authorbibnamehash}{1a9b5bacdcb7056dadbd7e1b50b0c411}
+      \strng{authornamehash}{1a9b5bacdcb7056dadbd7e1b50b0c411}
+      \strng{authorfullhash}{1a9b5bacdcb7056dadbd7e1b50b0c411}
+      \strng{authorfullhashraw}{1a9b5bacdcb7056dadbd7e1b50b0c411}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{114848}
+      \field{journaltitle}{Applied Energy}
+      \field{title}{Technologies and policies to decarbonize global industry: Review and assessment of mitigation drivers through 2070}
+      \field{volume}{266}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1016/j.apenergy.2020.114848
+      \endverb
+    \endentry
+    \entry{sanguinetAzzoni2024}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=abd38fa733a0bb94690b65d5354c3fee}{%
+           family={Sanguinet},
+           familyi={S\bibinitperiod},
+           given={E.\bibnamedelimi R.},
+           giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b969ece2d7d96c8fe6c8b8fa80ff5215}{%
+           family={Azzoni},
+           familyi={A\bibinitperiod},
+           given={C.\bibnamedelimi R.},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c19d7902922d1face853247520504776}
+      \strng{fullhash}{c19d7902922d1face853247520504776}
+      \strng{fullhashraw}{c19d7902922d1face853247520504776}
+      \strng{bibnamehash}{c19d7902922d1face853247520504776}
+      \strng{authorbibnamehash}{c19d7902922d1face853247520504776}
+      \strng{authornamehash}{c19d7902922d1face853247520504776}
+      \strng{authorfullhash}{c19d7902922d1face853247520504776}
+      \strng{authorfullhashraw}{c19d7902922d1face853247520504776}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{100015}
+      \field{journaltitle}{Regional Science Policy \& Practice}
+      \field{title}{Carbon emissions drivers in Brazilian regional production chains: Value-added and consumption-based approaches}
+      \field{volume}{16}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1016/j.rspp.2024.100015
+      \endverb
+    \endentry
+    \entry{serrano2009}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b65cfc5cd9ce56eef43112eb45d6d89c}{%
+           family={Serrano},
+           familyi={S\bibinitperiod},
+           given={M.\bibnamedelimi Ángeles},
+           giveni={M\bibinitperiod\bibinitdelim Á\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=231da10d37ae0e48ed118009b17a01ee}{%
+           family={Boguñá},
+           familyi={B\bibinitperiod},
+           given={Marián},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8f9932ed1839be02bb53a62b258449a8}{%
+           family={Vespignani},
+           familyi={V\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ec79929c2cc6e5a0cdb9e710c9331695}
+      \strng{fullhash}{ec79929c2cc6e5a0cdb9e710c9331695}
+      \strng{fullhashraw}{ec79929c2cc6e5a0cdb9e710c9331695}
+      \strng{bibnamehash}{ec79929c2cc6e5a0cdb9e710c9331695}
+      \strng{authorbibnamehash}{ec79929c2cc6e5a0cdb9e710c9331695}
+      \strng{authornamehash}{ec79929c2cc6e5a0cdb9e710c9331695}
+      \strng{authorfullhash}{ec79929c2cc6e5a0cdb9e710c9331695}
+      \strng{authorfullhashraw}{ec79929c2cc6e5a0cdb9e710c9331695}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{number}{16}
+      \field{title}{Extracting the multiscale backbone of complex weighted networks}
+      \field{volume}{106}
+      \field{year}{2009}
+      \field{pages}{6483\bibrangedash 6488}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1073/pnas.0808904106
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

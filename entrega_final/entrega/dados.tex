@@ -1,0 +1,49 @@
+\section{Dados e recorte da análise}
+\label{sec:dados}
+
+\subsection{Fontes, unidades e preparação}
+
+A base econômica é a MIP brasileira de 2015, disponibilizada pelo IBGE no detalhamento de 67 atividades \parencite{ibge2015mip}. A unidade da análise de redes é a atividade produtiva. O recorte nacional de um único ano não distingue unidades da Federação nem permite examinar mudanças temporais. Os valores monetários são expressos em milhões de reais, a preços básicos de 2015.
+
+A Tabela~\ref{tab:fontes} reúne os insumos econômicos e ambientais. As intensidades são expressas em gigagramas de CO\textsubscript{2} por milhão de reais (Gg CO\textsubscript{2}/R\$ milhão). A demanda final por produtos nacionais agrega consumo das famílias, governo e instituições sem fins de lucro, formação bruta de capital fixo, variação de estoques e exportações. O vetor por atividade é obtido distribuindo a demanda dos 127 produtos entre suas atividades produtoras, conforme as participações da Tabela 13 do IBGE. As categorias de uso final não serão representadas por nós separados.
+
+\begin{table}[htbp]
+\centering
+\caption{Fontes e objetos de entrada da análise.}
+\label{tab:fontes}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.26\textwidth}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
+\toprule
+Objeto & Dimensão & Fonte e unidade \\
+\midrule
+Produção bruta ($x$) & $67\times1$ & IBGE, Tabela 01; R\$ milhões \\
+Demanda final por atividade ($y$) & $67\times1$ & IBGE, Tabela 03, convertida com a Tabela 13; R\$ milhões \\
+Coeficientes técnicos ($A$) & $67\times67$ & IBGE, Tabela 14; adimensional \\
+Inversa de Leontief ($L$) & $67\times67$ & IBGE, Tabela 15; adimensional \\
+Intensidades diretas ($\varphi^{2011}$, $\varphi^{2018}$) & $67\times1$ por ano & Sanguinet e Azzoni (2024), Tabela 2; Gg CO\textsubscript{2}/R\$ milhão \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\textwidth}\footnotesize
+Fonte: IBGE (2018) e Sanguinet e Azzoni (2024). Os anos ambientais são 2011 e 2018; a base econômica refere-se a 2015. As dimensões descrevem a organização das entradas, não observações estatisticamente independentes.
+\end{minipage}
+\end{table}
+
+A Tabela 2 de \textcite{sanguinetAzzoni2024} define a intensidade como emissão direta de CO\textsubscript{2} por unidade de produção bruta. Os 134 valores dos dois anos foram transcritos e conferidos com a fonte. A correspondência nominal com as 67 atividades da MIP é direta, sem agregação ou desagregação local; isso não valida a alocação ambiental anterior realizada pelos autores. A tabela fornece um vetor por ano, sem intensidades observadas separadamente para cada estado.
+
+Para o cenário de 2015, utiliza-se interpolação linear:
+\begin{equation}
+\varphi_i^{\mathrm{cen},2015}=\frac{3}{7}\varphi_i^{2011}+\frac{4}{7}\varphi_i^{2018}.
+\label{eq:coeficiente-cenario}
+\end{equation}
+Os pesos decorrem da posição de 2015 no intervalo. A interpolação pressupõe evolução linear da intensidade e não incorpora observação física de emissões em 2015. Como a fonte publica duas casas decimais, casas adicionais do cálculo não representam precisão ambiental adicional.
+
+\subsection{Fronteira e validade ambiental}
+
+A fronteira pretendida abrange emissões de CO\textsubscript{2} das atividades produtivas brasileiras representadas na MIP, para demanda doméstica e exportações. Exclui emissões estrangeiras na produção de importações e nas etapas posteriores de processamento ou uso dos produtos exportados. O destino da atribuição identifica o setor do produto final na fronteira nacional, não seu país comprador ou a residência do consumidor. A conta pela demanda não constitui uma pegada mundial do consumo dos residentes.
+
+Os resultados são expressos em Gg de CO\textsubscript{2}, com eventual conversão por $1\,000$ Gg $=1$ Mt. Não se contabiliza o conjunto dos gases de efeito estufa em CO\textsubscript{2} equivalente. A cobertura de combustão, processos industriais, biomassa e mudanças de uso da terra depende das categorias da fonte. A auditoria documental encontrou descrições divergentes sobre uso da terra e não recuperou os numeradores físicos nem os procedimentos completos de alocação necessários para reconstruir as intensidades.
+
+A compatibilidade monetária também permanece pendente. A fonte relata atualização de sua matriz inter-regional para preços de dezembro de 2018, enquanto a aplicação exploratória utiliza os coeficientes interpolados com valores de 2015, sem ajuste adicional. A igualdade das unidades não resolve a diferença de preços; um fator comum não substitui a verificação dos denominadores setoriais. Comparações preliminares com informações de processos industriais apontaram discrepâncias de magnitude, documentadas na auditoria do repositório\footnote{Documentação: \texttt{docs/auditoria\_coeficientes\_emissoes\_2015.md}. As entradas e seus identificadores SHA-256 constam de \texttt{raw/manifesto.csv}.}.
+
+A base ambiental atual é, portanto, um \textbf{cenário exploratório}. Sua utilização em conclusões empíricas definitivas depende de reconstrução e validação ou de substituição por uma extensão compatível com 2015. As verificações de balanço e das identidades contábeis asseguram consistência dos cálculos, mas não certificam a validade das emissões estimadas.\footnote{A documentação computacional reúne notebooks exploratórios e versões de trabalho. As definições desta análise são as apresentadas neste texto; resultados dos notebooks não são incorporados automaticamente ao trabalho.}

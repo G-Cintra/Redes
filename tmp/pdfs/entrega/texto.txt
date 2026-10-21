@@ -1,0 +1,457 @@
+UNIVERSIDADE FEDERAL DE SANTA CATARINA
+                   Programa de Pós-Graduação em Economia
+                  Desigualdade, Diversidade e Redes (Mestrado)
+
+
+
+                     Da produção à demanda
+Estrutura da rede intersetorial de atribuição de CO2 no Brasil e implicações
+                      para a coordenação da mitigação
+
+Gabriel Pincelli Cintra                            Florianópolis, 18 de outubro de 2026
+
+
+
+1    Introdução
+As emissões de dióxido de carbono (CO2 ) associadas à produção de bens e serviços
+relacionam atividades econômicas que participam de uma mesma cadeia produtiva. Embora
+a emissão ocorra em uma atividade específica, sua produção pode atender, direta ou
+indiretamente, à demanda por produtos de outros setores. Examinar essas relações é
+relevante para compreender como diferentes atividades participam da geração das emissões
+e para discutir ações coordenadas de mitigação. A literatura sobre descarbonização
+industrial contempla intervenções tanto nos processos produtivos quanto no uso de energia
+e materiais ao longo das cadeias (Rissman et al., 2020).
+A distribuição setorial das emissões depende do critério utilizado para atribuí-las. Na
+atribuição pelo lado da produção (production-based ), as emissões são contabilizadas no
+setor em que ocorrem. Na atribuição pelo lado da demanda (demand-side), são associadas
+ao setor produtor do produto final, considerando as emissões geradas na produção desse
+produto e dos insumos requeridos ao longo de sua cadeia. Assim, as emissões da geração
+de eletricidade podem ser contabilizadas no setor elétrico ou atribuídas aos produtos
+finais cuja produção requer essa eletricidade. Trata-se de duas perspectivas sobre as
+mesmas emissões dentro da fronteira adotada, e não de uma alteração de seu volume físico.
+A discussão dos critérios de atribuição encontra fundamento em Marques et al. (2012),
+enquanto a análise insumo-produto permite explicitar os requisitos diretos e indiretos que
+conectam produção e demanda final (Miller; Blair, 2009).
+No Brasil, Sanguinet e Azzoni (2024) examinam as emissões nas cadeias produtivas
+regionais sob diferentes perspectivas de atribuição. A comparação entre contas ambientais
+permite identificar mudanças na participação dos setores conforme o critério adotado.
+Entretanto, a apresentação dos totais setoriais, isoladamente, não revela quais relações
+entre origens emissoras e produtos finais compõem essas diferenças. Uma pegada elevada
+pode concentrar-se em poucas origens emissoras ou distribuir-se entre muitas; da mesma
+forma, as emissões de uma atividade podem estar associadas a poucos ou a muitos produtos
+finais. Além disso, uma diferença pequena entre as duas contas pode coexistir com grandes
+volumes de emissões atribuídos a outras atividades e provenientes delas.
+
+
+                                            1
+A análise de redes oferece instrumentos para caracterizar essa estrutura relacional. Em
+uma rede dirigida e ponderada de atribuição de emissões, as atividades são os nós e cada
+ligação associa uma origem emissora à demanda final de produtos de outra atividade, com
+peso expresso em volume de CO2 . Essa representação permite examinar conjuntamente o
+volume das relações, a concentração dos pesos e a conectividade. Como precedente, Huang
+et al. (2019) constroem uma rede de emissões para a China e utilizam filtragem de ligações,
+indicadores de posição e identificação de comunidades. Sua abordagem motiva o uso de
+uma rede de atribuição e de um procedimento explícito de redução de arestas, adaptados
+ao objeto deste trabalho. As ligações aqui analisadas incorporam os requisitos diretos e
+indiretos de produção; portanto, não representam transações diretas entre compradores e
+fornecedores, e a concatenação dessas ligações não será interpretada como sequência de
+etapas produtivas.
+Nesse contexto, este trabalho pergunta: quais relações intersetoriais compõem as
+diferenças entre as emissões atribuídas pela produção e pela demanda na
+economia brasileira de 2015, e como essas relações se organizam em termos de
+volume, concentração e conectividade? O objetivo geral é caracterizar a estrutura
+dessas relações e discutir suas implicações para identificar oportunidades de coordenação
+da mitigação. A análise tem caráter descritivo e exploratório. Investiga-se em que medida
+o volume das emissões é suficiente para caracterizar os perfis setoriais ou se atividades com
+volumes semelhantes apresentam distribuições distintas de origens e destinos de atribuição.
+O recorte empírico proposto utiliza a Matriz de Insumo-Produto brasileira de 2015,
+com 67 atividades (IBGE, 2018), combinada com coeficientes setoriais de emissão. Os
+coeficientes empregados por Sanguinet e Azzoni (2024) constituem uma referência inicial,
+cuja adequação ao recorte exige validação. A análise abrange as emissões da produção
+nacional representada no modelo, associadas tanto à demanda final doméstica quanto às
+exportações, e exclui emissões ocorridas no exterior. Assim, a atribuição pela demanda não
+corresponde a uma pegada completa do consumo doméstico. As estimativas ficam limitadas
+às fontes contempladas pelos coeficientes ambientais e não constituem um inventário de
+todos os gases de efeito estufa.
+Metodologicamente, serão distinguidas a matriz completa de atribuição, utilizada na
+comparação das duas contas, e a rede de relações entre atividades distintas, na qual a
+diagonal será tratada separadamente. As forças de entrada e saída caracterizarão os
+volumes; a disparidade dos pesos e seu número efetivo correspondente caracterizarão a
+concentração dos perfis. Para examinar ligações localmente destacadas em uma rede
+inicialmente densa, será avaliado o filtro de disparidade de Serrano, Boguñá e Vespignani
+(2009). O grau da rede reduzida será interpretado em conjunto com a cobertura dos pesos
+retidos, pois o número de ligações selecionadas não equivale à diversidade do perfil original.
+A implementação será realizada em Python, com NetworkX para a representação e análise
+da rede, mantendo explícitas as decisões de construção e filtragem.
+A contribuição esperada para a discussão de políticas é identificar conjuntos de setores
+emissores e demandas finais que mereçam investigação conjunta. Por exemplo, uma pegada
+concentrada em poucas origens pode orientar o exame de intervenções nos processos
+dessas origens e no uso dos materiais pelos produtos finais associados. Esse diagnóstico
+complementa os rankings setoriais, mas não estima o custo ou a eficácia de instrumentos de
+política, nem demonstra que uma ligação selecionada seja uma prioridade de abatimento.
+Recomendações substantivas dependerão da validade dos dados ambientais e de análises
+
+
+                                              2
+adicionais sobre as intervenções consideradas.
+O trabalho também se articula ao projeto de dissertação do autor, dedicado à comparação
+das emissões atribuídas pela produção e pela demanda em Santa Catarina em 2018. A
+aplicação nacional desenvolve um procedimento para passar dos totais setoriais às relações
+que os compõem, cujo aproveitamento na dissertação dependerá da adequação à base
+regional. Essa articulação é metodológica: os resultados brasileiros de 2015 não serão
+transferidos automaticamente para a economia catarinense.
+Além desta introdução, o artigo apresenta os dados e o recorte da análise, descreve a
+metodologia de construção e caracterização da rede, expõe os resultados e discute suas
+implicações e limitações, encerrando com as conclusões.
+
+
+2     Dados e recorte da análise
+2.1    Base econômica e unidade de análise
+A base econômica é a Matriz de Insumo-Produto (MIP) brasileira de 2015, disponibilizada
+pelo Instituto Brasileiro de Geografia e Estatística (IBGE, 2018). Utiliza-se o nível de
+detalhamento de 67 atividades e 127 produtos, preservando as 67 atividades como unidades
+da análise de redes. O recorte é nacional e referente a um único ano; não distingue unidades
+da Federação nem permite examinar mudanças temporais da estrutura da rede.
+As informações econômicas necessárias compreendem a produção bruta por atividade,
+as relações de produção nacional e a demanda final por produtos nacionais. Os valores
+monetários são expressos em milhões de reais, a preços básicos de 2015. A demanda
+final reúne consumo, investimento, variação de estoques e exportações, excluindo os usos
+intermediários. As informações por produto são compatibilizadas com a classificação
+por atividade da MIP, de modo que cada destino da atribuição ambiental corresponda à
+atividade produtora do produto final. A transformação e as verificações de balanço serão
+explicitadas na metodologia.
+As exportações integram a demanda final atendida pela produção brasileira. Portanto,
+o destino de uma ligação na rede identifica o setor do produto entregue à demanda
+final na fronteira nacional, e não o país comprador, a residência do consumidor ou um
+estabelecimento que adquiriu diretamente o insumo. A demanda final será considerada de
+forma agregada por atividade, sem uma camada adicional de nós para famílias, governo
+ou outras categorias de uso final.
+
+2.2    Fonte ambiental e preparação dos coeficientes
+A referência ambiental inicial é a Tabela 2 de Sanguinet e Azzoni (2024), que apresenta
+intensidades setoriais de CO2 para 2011 e 2018. A intensidade é definida na fonte como
+emissão direta por unidade de produção bruta e expressa em gigagramas de CO2 por
+milhão de reais (Gg CO2 /R$ milhão). Não se trata de emissão por unidade de valor
+adicionado nem de um coeficiente que já incorpore as emissões indiretas da cadeia. A tabela
+apresenta um vetor de 67 atividades para cada ano; não fornece intensidades observadas
+separadamente para cada estado.
+Os 134 valores publicados foram transcritos para arquivos separados por ano e conferidos
+
+
+                                             3
+com a tabela original. A correspondência nominal entre as atividades da fonte e as
+67 atividades da MIP é direta, sem agregação ou desagregação local dos coeficientes.
+Essa correspondência não valida, por si só, a alocação dos dados ambientais originais às
+atividades econômicas realizada na fonte.
+Como a tabela não fornece um vetor observado para 2015, os notebooks exploratórios
+utilizam interpolação linear entre os dois anos disponíveis. Para a atividade i, o coeficiente
+do cenário é:
+                                            3        4
+                                φcen,2015 = φ2011
+                                               i   + φ2018   .                             (1)
+                                  i
+                                            7        7 i
+Os pesos decorrem da posição de 2015 no intervalo de 2011 a 2018. A interpolação constitui
+uma hipótese de evolução da intensidade, sem incorporar uma observação física de emissões
+em 2015. As duas casas decimais publicadas na fonte também limitam a precisão: as casas
+adicionais produzidas pelo cálculo não representam informação ambiental adicional.
+
+2.3    Fronteira contábil e ambiental
+O objeto pretendido são as emissões de CO2 geradas pelas atividades produtivas brasileiras
+representadas na MIP, tanto para atender à demanda doméstica quanto às exportações.
+As emissões da produção estrangeira de insumos e produtos importados ficam fora da
+fronteira. Também não são acompanhadas as emissões de processamento ou uso dos
+produtos brasileiros no exterior. A atribuição pela demanda corresponde, assim, às
+emissões nacionais associadas aos produtos finais, e não à pegada mundial do consumo
+dos residentes brasileiros.
+O recorte se limita ao CO2 , conforme a unidade declarada dos coeficientes. Os valores
+não serão apresentados como total de gases de efeito estufa em CO2 equivalente. Em
+particular, uma baixa intensidade de CO2 não permite concluir que uma atividade tenha
+baixas emissões de metano ou óxido nitroso. A cobertura efetiva de combustão, processos
+industriais, biomassa e mudanças de uso da terra depende das categorias incorporadas à
+fonte ambiental e ainda não está suficientemente documentada para certificar um inventário
+completo.
+As quantidades calculadas serão expressas em Gg de CO2 ; quando conveniente à apresen-
+tação, poderão ser convertidas em milhões de toneladas, utilizando 1 000 Gg = 1 Mt. A
+mesma fronteira será mantida na atribuição pela produção e pela demanda, para que as
+duas distribuições correspondam ao mesmo total. Os conceitos de matriz completa de
+atribuição e de rede sem diagonal serão definidos na seção metodológica, sem excluir da
+contabilidade as emissões atribuídas aos produtos da própria atividade.
+
+2.4    Qualidade dos dados e condição de uso
+A conferência documental já realizada no projeto distingue a exatidão da transcrição e
+do alinhamento setorial da validade ambiental dos coeficientes. Embora a transcrição
+tenha sido confirmada, não foram recuperados os numeradores físicos e os procedimentos
+completos de alocação que permitiriam reconstruir as intensidades publicadas. Há também
+descrições divergentes na fonte sobre a incorporação das emissões de uso da terra, de modo
+que sua inclusão não será presumida.
+Outra pendência é a compatibilidade monetária. A fonte relata atualização dos valores
+de sua matriz inter-regional para preços de dezembro de 2018, enquanto a MIP utilizada
+
+                                              4
+neste trabalho está a preços de 2015. A aplicação exploratória dos coeficientes interpolados
+não incluiu ajuste adicional de preços. A igualdade das unidades monetárias não resolve
+essa diferença de valoração, e uma correção por fator comum não substitui a verificação
+dos denominadores e dos preços setoriais. Comparações preliminares com informações
+de processos industriais também apontaram discrepâncias de magnitude que exigem
+esclarecimento.
+Por essas razões, a base ambiental atual será tratada como cenário exploratório,
+adequado à demonstração do procedimento, mas ainda insuficiente para sustentar rankings
+empíricos definitivos de emissores brasileiros ou recomendações setoriais de mitigação.
+Seu uso na análise final depende de reconstrução e validação ou de substituição por uma
+extensão ambiental compatível com 2015. A verificação das identidades da MIP e das
+contas ambientais será necessária, mas não será tomada como prova da validade das
+emissões estimadas.
+Para assegurar a rastreabilidade, o repositório preserva a planilha original da MIP, as
+transcrições anuais dos coeficientes, um manifesto com fontes e identificadores SHA-256
+e a documentação da auditoria ambiental. A versão final da análise deverá identificar
+os insumos efetivamente adotados e registrar qualquer alteração em relação ao cenário
+exploratório. Nesta etapa de redação, não foram modificadas as bases nem recalculados os
+resultados dos notebooks.
+
+
+3     Metodologia
+3.1    Da matriz insumo-produto à matriz de atribuição de emissões
+A derivação parte das relações entre produção, uso intermediário e demanda final, seguindo
+a análise insumo-produto e sua extensão ambiental apresentadas por Miller e Blair (2009).
+Os vetores são colunas; vb = diag(v) indica a matriz diagonal formada por um vetor v, e 1
+representa um vetor de uns de dimensão compatível. Os índices i e j identificam atividades
+e p identifica produtos. A ordem das atividades deve ser a mesma em todos os objetos.
+
+De produtos para atividades. A base distingue m = 127 produtos e n = 67 atividades.
+Seja V ∈ Rm×n a matriz de produção, em que Vpi registra o valor do produto p produzido
+pela atividade i, e seja U n ∈ Rm×n a matriz de usos intermediários de produtos nacionais.
+Os vetores de produção por produto e por atividade são, respectivamente, q = V 1 e
+x = V ⊤ 1. A matriz de participação das atividades na produção de cada produto é
+                                                            Vpi
+                               D = V ⊤ qb−1 ,       Dip =       .                        (2)
+                                                            qp
+
+Cada coluna de D distribui a produção de um produto entre suas atividades produtoras.
+As inversas diagonais pressupõem produção positiva nos elementos considerados; eventuais
+zeros exigem tratamento explícito, sem divisão automática. Se f é a demanda final por
+produtos nacionais, incluindo exportações, sua representação por atividade é
+
+                                          y = Df.                                        (3)
+
+Essa conversão mantém as participações de produção publicadas pelo IBGE ao distribuir os
+usos por produto entre atividades; não identifica estabelecimentos fornecedores individuais.
+
+                                                5
+Os coeficientes de uso de produtos nacionais por unidade de produção da atividade
+compradora são B n = U n x b−1 . A conversão para uma matriz quadrada de atividades
+fornece
+                                                                  Zij
+                     A = DB n ,       Z = DU n = Ab x,     Aij =      .              (4)
+                                                                  xj
+Assim, Zij é o valor monetário do insumo nacional atribuído à atividade fornecedora i
+e utilizado pela atividade j; Aij expressa esse requisito por unidade de produção de j.
+Na planilha do IBGE, V , U n , B n , D e A correspondem, respectivamente, às Tabelas 01,
+03, 11, 13 e 14. A derivação torna explícita a relação entre as tabelas, mesmo quando se
+utiliza diretamente uma matriz já disponibilizada.
+
+Requisitos diretos e indiretos. O balanço de vendas da produção nacional é x = Z1+y.
+                  x, obtém-se
+Substituindo Z = Ab
+              x = Ax + y,      (I − A)x = y,          x = Ly,      L = (I − A)−1 .      (5)
+A inversa de Leontief L existe quando I − A é não singular. Para uma matriz não negativa
+com raio espectral ρ(A) < 1, sua expansão convergente é
+                  L = I + A + A2 + · · · ,        x = y + Ay + A2 y + · · · .           (6)
+O termo y é a produção entregue à demanda final; Ay corresponde aos insumos nacionais
+diretamente requeridos por essa produção; A2 y corresponde aos insumos de seus fornecedo-
+res, e assim sucessivamente. Lij mede a produção de i requerida direta e indiretamente por
+unidade de demanda final dos produtos de j. O modelo mantém os coeficientes técnicos
+fixos e não descreve substituição de insumos ou ajustes de preços. A implementação
+existente utiliza L da Tabela 15 do IBGE; a concordância com (I − A)−1 e o balanço
+Ly = x devem ser conferidos considerando o arredondamento das tabelas.
+
+Extensão ambiental. Seja φi a intensidade direta de CO2 por unidade de produção da
+atividade i e Φ = diag(φ). No cenário da seção 2, φ corresponde ao vetor interpolado, com
+as limitações ambientais e monetárias já descritas. Para uma demanda final y, a emissão
+em cada origem é Φx = ΦLy. Define-se então a matriz de coeficientes de emissões
+                                C = ΦL,           Cij = φi Lij .                        (7)
+Cada Cij mede a emissão ocorrida em i por unidade monetária de demanda final de
+j, considerando todos os requisitos produtivos nacionais. A e L são razões monetárias
+adimensionais; C é expresso em Gg de CO2 por milhão de reais de demanda final. Assim,
+C não é uma matriz de coeficientes técnicos: ela combina esses requisitos com a intensidade
+ambiental da origem.
+Para obter as quantidades associadas à demanda final efetiva de cada atividade, multiplica-
+se cada coluna de C pelo respectivo yj :
+                                         y,
+                            F = C yb = ΦLb           Fij = φi Lij yj .                  (8)
+F tem dimensão 67 × 67 e unidade de Gg de CO2 . Suas linhas identificam as origens
+emissoras e suas colunas os setores dos produtos destinados à demanda final. É essa matriz
+que conecta as duas formas de atribuição e fundamenta o objeto de rede. Cada elemento
+já incorpora os requisitos diretos e indiretos: não é uma transação intermediária monetária
+nem uma transferência física de CO2 . A forma de F corresponde à matriz de atribuição
+utilizada por Huang et al. (2019), aqui com a notação dos notebooks do projeto.
+
+                                              6
+3.2    Atribuição pela produção e pela demanda: interpretação e
+       exemplo
+Atribuição pela produção. A conta pela produção preserva o local setorial em que a
+emissão ocorre. Somando a linha i de F , obtém-se
+                    X          X
+               ci =   Fij = φi    Lij yj = φi xi , c = F 1 = Cy = Φx.          (9)
+                      j           j
+
+São emissões próprias de cada atividade, independentemente de sua produção atender
+a usos intermediários ou finais. A igualdade decorre do balanço Ly = x; não é uma
+associação empírica a ser testada.
+
+Atribuição pela demanda. A conta pela demanda preserva o setor do produto final e
+soma as emissões das diferentes origens que atendem a essa demanda:
+                        X            X
+                  uj =      Fij = yj    φi Lij ,  u = F ⊤ 1 = ybL⊤ φ.        (10)
+                           i             i
+
+Essa atribuição reúne as emissões nacionais da cadeia associadas ao produto final de j,
+incluindo a parcela ocorrida na própria atividade. Não representa a soma das emissões de
+todos os fornecedores integralmente atribuída a cada comprador: apenas a fração associada
+à demanda final considerada integra cada coluna.
+As duas contas particionam o mesmo total:
+
+                                      1⊤ c = 1⊤ F 1 = 1⊤ u.                             (11)
+
+Portanto, diferenças setoriais entre c e u resultam de uma mudança do critério de atribuição,
+sem alteração das emissões físicas. Na fronteira deste trabalho, u inclui a produção nacional
+destinada às exportações e exclui as emissões estrangeiras, conforme a seção 2.
+
+Exemplo de uma cadeia de alimentos. A Figura 1 retoma a economia ilustrativa
+desenvolvida no projeto de dissertação, com Eletricidade, Agricultura, Alimentos e Res-
+taurantes. Trata-se de um exemplo didático de quatro atividades, não de uma agregação
+que preserve integralmente a MIP brasileira, nem de resultados definitivos sobre essas
+atividades. Os dois quadros superiores mantêm as mesmas transações e a mesma produção;
+o que muda é a atribuição ambiental representada pelas cores.
+No quadro (a), a emissão da eletricidade é contabilizada em Eletricidade, mesmo quando
+essa produção atende às demais atividades. No quadro (b), parte dessa emissão integra
+a atribuição aos produtos finais de Agricultura, Alimentos e Restaurantes. A demanda
+final de restaurantes, por exemplo, requer sua própria produção e, direta ou indiretamente,
+produção de alimentos, produtos agrícolas e eletricidade. As emissões dessas origens
+compõem uRestaurantes , sem deixar de pertencer a suas origens na conta c.
+O Sankey no quadro (c) explicita essa relação. Cada faixa entre a origem i e o destino j
+corresponde a Fij ; a soma das faixas que deixam uma barra à esquerda é ci e a soma das
+faixas que chegam a uma barra à direita é uj . Por exemplo, a faixa I–VIII representa a
+emissão em Eletricidade atribuída à demanda final de Restaurantes. Já I–V representa a
+atribuição da emissão de Eletricidade à demanda final do próprio produto elétrico, isto
+é, um elemento diagonal de F . Essa diagonal incorpora também requisitos indiretos que
+
+                                               7
+                      (a) Lado da Produção                                                     (b) Lado da Demanda
+
+
+
+                                                                                                                            V
+         I                     IV                                             Eletricidade         Restaurantes
+   Eletricidade           Restaurantes                                                                               VIII
+
+
+                                                 Demanda                                                                    Demanda
+                                                   Final                                                                      Final
+
+
+        II                     III                                            Agricultura           Alimentos        VII
+   Agricultura             Alimentos
+                                                                                                                            VI
+
+
+
+                                                     (c) Atribuição à demanda final
+                          Setor emissor                                                           Demanda Final
+
+                                                                                                             V Eletricidade
+                  I Eletricidade
+                                                                                                             VI Agricultura
+
+                  II Agricultura                                                                             VII Alimentos
+
+                  III Alimentos
+                                                                                                             VIII Restaurantes
+             IV Restaurantes
+
+                                              Menores                                  Maiores
+                                                           Emissões de CO₂ (Gg)
+                                   (a-b) Área: valor da produção (R$ milhões)
+                                   (a-b) Setas: fornecedor → destino; espessura: valor das transações (R$ milhões)
+                                   (c) Altura das barras e espessura das faixas: emissões de CO₂ (Gg)
+
+
+Figura 1: Duas atribuições das mesmas emissões em uma cadeia ilustrativa de alimentos.
+Fonte: elaboração própria, exemplo desenvolvido no projeto de dissertação.
+Nota: em (a–b), as áreas representam valores monetários de produção e as setas representam vendas do
+fornecedor ao destino, com espessura monetária. No nó Demanda Final, a área representa o valor recebido,
+incluindo exportações. As cores expressam c em (a) e u em (b). Em (c), alturas das barras e espessuras
+das faixas expressam emissões: I–IV correspondem às origens e V–VIII aos produtos finais. As faixas
+representam atribuição contábil, não circulação física de CO2 . Os quadros compartilham a escala de cores;
+posições e distâncias dos nós não têm interpretação econômica.
+
+
+
+
+                                                                      8
+retornem à mesma atividade, quando presentes no modelo, e não deve ser confundida com
+uma transação intermediária interna isolada.
+As setas monetárias dos quadros (a–b) e as faixas ambientais de (c) representam, portanto,
+objetos diferentes: as primeiras descrevem vendas intermediárias ou finais; as segundas
+sintetizam a atribuição entre origem emissora e produto final, depois de incorporados os
+encadeamentos. O Sankey permite visualizar conjuntamente as duas margens da mesma
+matriz, sem exigir que a análise posterior adote uma rede bipartida.
+
+Diferenças entre as contas e relações intersetoriais. Para a mesma atividade i, a
+diagonal cancela na diferença entre as atribuições:
+                                          X         X
+                               ui − c i =    Fji −    Fij .                 (12)
+                                         j̸=i       j̸=i
+
+
+O primeiro termo reúne emissões de outras atividades atribuídas à demanda final dos
+produtos de i; o segundo reúne emissões próprias de i atribuídas à demanda final dos
+demais produtos. O saldo permite interpretar a mudança de participação setorial, mas
+não revela sozinho seu volume bruto ou sua concentração. Duas atividades podem ter
+saldos semelhantes com contrapartes e distribuições de pesos distintas. É essa estrutura
+de relações, preservando F integral nas contas e distinguindo suas relações externas, que
+motiva a construção da rede nas seções seguintes.
+
+3.3    Construção da rede dirigida e ponderada
+3.4    Volume e concentração das relações
+3.5    Extração e avaliação do backbone
+
+4     Resultados
+5     Discussão e implicações para a coordenação da miti-
+      gação
+6     Conclusões
+Referências
+HUANG, L. et al. Carbon Communities and Hotspots for Carbon Emissions Reduction in
+China. Sustainability, v. 11, n. 19, 5508, 2019. DOI: 10.3390/su11195508.
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Matriz de
+Insumo-Produto: Brasil, 2015. 2018. Disponível em:
+https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9085-
+matriz-de-insumo-produto.html. Acesso em: 18 out. 2026.
+
+MARQUES, Alexandra et al. Income-based Environmental Responsibility. Ecological
+Economics, v. 84, p. 57–65, 2012. DOI: 10.1016/j.ecolecon.2012.09.010.
+
+                                                9
+MILLER, Ronald E.; BLAIR, Peter D. Input–Output Analysis: Foundations and
+Extensions. 2. ed. Cambridge: Cambridge University Press, 2009. DOI:
+10.1017/CBO9780511626982.
+
+RISSMAN, Jeffrey et al. Technologies and policies to decarbonize global industry: Review
+and assessment of mitigation drivers through 2070. Applied Energy, v. 266, 114848,
+2020. DOI: 10.1016/j.apenergy.2020.114848.
+
+SANGUINET, E. R.; AZZONI, C. R. Carbon emissions drivers in Brazilian regional
+production chains: Value-added and consumption-based approaches. Regional Science
+Policy & Practice, v. 16, 100015, 2024. DOI: 10.1016/j.rspp.2024.100015.
+
+SERRANO, M. Ángeles; BOGUÑÁ, Marián; VESPIGNANI, Alessandro. Extracting the
+multiscale backbone of complex weighted networks. Proceedings of the National
+Academy of Sciences, v. 106, n. 16, p. 6483–6488, 2009. DOI:
+10.1073/pnas.0808904106.
+
+
+
+
+                                          10
+

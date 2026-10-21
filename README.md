@@ -1,6 +1,14 @@
 # Rede intersetorial de emissões no Brasil
 
-**Especificação acadêmica atual:** [pergunta, hipóteses, metodologia e narrativa final de 2015](docs/especificacao_final_pesquisa_2015.md). O documento fixa S como medida principal, L como robustez da normalização, A como contraste direto e HEM como análise complementar. As propostas e etapas exploratórias abaixo são preservadas como histórico; suas hipóteses iniciais não substituem a especificação final.
+**Trabalho atual da disciplina:** [planejamento acadêmico](entrega_final/02_planejamento_academico.md) e [texto da entrega](entrega_final/entrega/main.tex). A entrega está em elaboração: a seção de resultados e os painéis do anexo estão redigidos; resumo, discussão e conclusões permanecem pendentes.
+
+**Notebook da implementação em etapas:** [analise_redes_2015.ipynb](entrega_final/analise_redes_2015.ipynb). As etapas implementadas leem as entradas canônicas, constroem e validam F com a diagonal preservada e representam suas relações intersetoriais em W e em um grafo dirigido ponderado. Os 67 nós, as arestas positivas, os pesos e a ausência de laços são conferidos, inclusive pela reconstrução exata de W a partir do grafo. Abra com o kernel Python do ambiente do projeto (`.venv`) e execute as células em ordem, a partir da raiz ou de `entrega_final/`. As verificações e seus resíduos ficam visíveis no notebook; a execução inclui forças, graus, densidade, disparidade e número efetivo da rede completa, com validações e leitura dos resultados, e aplica o filtro de disparidade para alfa 0,01, 0,05 e 0,10, com validação, cobertura por atividade e sensibilidade. O notebook inclui o desenho completo do backbone de alfa 0,05 e um quadro comparativo de volume, concentração, graus com sensibilidade e cobertura; as figuras PNG/SVG ficam em `entrega_final/figuras/`. Não há exportação sobre resultados históricos. É uma versão de trabalho, e a base ambiental permanece um cenário exploratório.
+
+**Reprodução do relatório:** execute o notebook acima até a seção 24 para exportar as oito figuras vetoriais usadas no texto, preservando as mesmas arestas e pesos. Em `entrega_final/entrega/`, compile `main.tex` com `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex` (LaTeX e Biber). O texto dos resultados está em `resultados.tex`, e os painéis completos, em `anexos.tex`. As figuras globais de matriz e rede são repartidas em painéis para leitura em A4; as 62 saídas de energia continuam em duas páginas, sem outro filtro.
+
+**Status dos notebooks:** os notebooks deste repositório são exploratórios e versões de trabalho. Registram etapas, exemplos didáticos, alternativas metodológicas e resultados preliminares; podem usar notações e escolhas diferentes entre versões. Sua existência ou execução não significa que seus métodos, figuras e conclusões tenham sido incorporados à entrega. Para o escopo atual, consultar o planejamento acima e as definições do texto da entrega. Os coeficientes ambientais atuais permanecem sujeitos às limitações da [auditoria](docs/auditoria_coeficientes_emissoes_2015.md).
+
+A [especificação da investigação anterior de 2015](docs/especificacao_final_pesquisa_2015.md) e as seções abaixo são preservadas como histórico de trabalho e não substituem o planejamento atual.
 
 ## Índice
 
@@ -35,6 +43,12 @@ A rede será construída a partir da MIP 2015, nível 67 ([IBGE](https://www.ibg
 A partir dos resultados, serão discutidas possíveis implicações para políticas públicas e tecnologias de mitigação, considerando as propostas apresentadas por [Rissman et al. (2020)](https://doi.org/10.1016/j.apenergy.2020.114848).
 
 ## Exploração inicial
+
+[Notebook exploratório v4 — matriz F](analise_exploratoria_v4.ipynb): cópia inicial da v3 para continuarmos a exploração da matriz F. Execute as células em ordem, na raiz do repositório.
+
+[Diagrama da MIP brasileira de 12 setores](diagrama_mip12.ipynb): análise independente com os fluxos oficiais de 2015, sem calibração, incluindo todas as conexões e a diagonal. Execute da raiz; as duas redes, o Sankey, as matrizes e a proveniência são exportados para `outputs/mip12_real/`. As emissões são estimadas com os coeficientes do projeto, agregados de 67 para 12 atividades; o notebook explicita o mapeamento e valida os balanços.
+
+[Sankeys completos das MIPs de 20 e 67 atividades](sankeys_mip20_67.ipynb): execute da raiz para gerar os dois diagramas e as matrizes em `outputs/sankeys_mip20_67/`. Todas as parcelas positivas de F são preservadas, inclusive a diagonal, com escala de cores comum e nomes completos. A agregação dos coeficientes para 20 atividades e as limitações das estimativas são documentadas no notebook.
 
 [Resultados preliminares e exploratórios.](https://g-cintra.github.io/Redes/)
 
