@@ -17,8 +17,7 @@
 \newcommand{\departamento}{Programa de Pós-Graduação em Economia}
 \newcommand{\curso}{Mestrado}
 \newcommand{\disciplina}{Desigualdade, Diversidade e Redes}
-\newcommand{\titulo}{Da produção à demanda}
-\newcommand{\subtitulo}{Estrutura da rede intersetorial de atribuição de CO\textsubscript{2} no Brasil e implicações para a coordenação da mitigação}
+\newcommand{\titulo}{Rede de emissões de CO\textsubscript{2} no Brasil}
 \newcommand{\autor}{Gabriel Pincelli Cintra}
 \newcommand{\local}{Florianópolis}
 \newcommand{\dataentrega}{18 de outubro de 2026}
@@ -28,7 +27,6 @@
   \vspace{0.2em}{\large \departamento\par}
   \vspace{0.2em}{\normalsize\textbf{\disciplina}\ (\curso)\par}
   \vspace{1.4em}{\LARGE\bfseries \titulo\par}
-  \vspace{0.25em}{\large\itshape \subtitulo\par}
   \vspace{1.5em}
 \end{center}
 \noindent\begin{minipage}{0.48\textwidth}
@@ -41,16 +39,19 @@
 \begin{document}
 \imprimirtitulodois
 \begin{abstract}
-Este ensaio examina as relações intersetoriais que compõem as diferenças entre as emissões atribuídas pela produção e pela demanda no Brasil. Combina a Matriz de Insumo-Produto de 2015, com 67 atividades, e intensidades de CO\textsubscript{2} em uma rede dirigida e ponderada. As forças e o número efetivo de contrapartes caracterizam volume e concentração; o filtro de disparidade seleciona relações conforme sua importância local. A rede quase completa apresenta perfis distintos de distribuição dos pesos. Energia e construção ilustram os papéis de origem emissora e destino da atribuição. O backbone retém 13,40\% das ligações e 70,69\% do peso intersetorial, com coberturas locais desiguais. A análise informa relações a investigar para a coordenação da mitigação, mas as limitações dos coeficientes restringem as conclusões ao cenário exploratório.
+Este ensaio examina as relações intersetoriais que compõem as diferenças entre as emissões atribuídas pela produção e pela demanda no Brasil. Combina a Matriz de Insumo-Produto de 2015, com 67 atividades, e intensidades de CO\textsubscript{2} em uma rede dirigida e ponderada. As forças e o número efetivo de contrapartes caracterizam volume e concentração; o filtro de disparidade seleciona relações conforme sua importância local. Apesar da conectividade quase uniforme, energia e água/resíduos distribuem volumes externos próximos com concentrações distintas, enquanto construção reúne emissões de diversas origens. As contrapartes esclarecem esses perfis e a importância assimétrica de uma mesma relação para origem e destino. O backbone retém 13,40\% das ligações e 70,69\% do peso intersetorial, com coberturas locais desiguais. A análise complementa a comparação das contas e informa relações a investigar para a coordenação da mitigação, com conclusões restritas ao cenário exploratório pelas limitações dos coeficientes.
 \end{abstract}
 \noindent\textbf{Palavras-chave:} atribuição de emissões; insumo-produto; redes dirigidas e ponderadas; mitigação.
 
+\clearpage
 \input{introducao.tex}
 \widowpenalty=10000
 \clubpenalty=10000
 \displaywidowpenalty=10000
 % Sequência inspirada em Huang et al. (2019).
+\clearpage
 \input{dados.tex}
+\clearpage
 \section{Metodologia}
 \input{modelo_atribuicao.tex}
 \subsection{Construção da rede dirigida e ponderada}
@@ -141,23 +142,33 @@ As razões são definidas apenas para denominadores positivos. A cobertura refer
 
 A sensibilidade é examinada pelas mudanças nas arestas, coberturas e posições setoriais entre os três valores de $\alpha$. O aninhamento dos conjuntos decorre da regra e não constitui evidência independente de robustez. As caudas do modelo nulo não medem incerteza ambiental, e a seleção não estabelece prioridade de mitigação.
 
+Para interpretar os perfis, as contrapartes são ordenadas por peso em $W$ completa. Destacam-se as cinco maiores e a participação conjunta das demais, sem modificar a rede. A leitura dos casos combina essas participações, as contas completas e os motivos de retenção; a sensibilidade verifica também a permanência das principais relações nos três parâmetros.
+
+\clearpage
 \input{resultados.tex}
+\clearpage
 \section{Discussão e implicações para a coordenação da mitigação}
 
-A identificação das contrapartes esclarece o conteúdo econômico das diferenças entre produção e demanda. No cenário analisado, energia distribui emissões para muitos produtos finais, enquanto construção reúne emissões de diversas origens. O contraste mostra por que o saldo de uma atividade precisa ser interpretado junto dos volumes e das contrapartes que o compõem. Essa leitura relacional complementa as comparações de atribuição entre setores, regiões e cadeias produtivas presentes na literatura brasileira \parencite{imori2015,sanguinetAzzoni2024,montoyaEtAl2026}.
+A rede permite examinar a composição das atribuições que as contas pela produção e pela demanda apresentam como totais setoriais. Na rede completa, os graus praticamente não diferenciam as atividades; as forças situam os volumes e o número efetivo distingue a concentração dos pesos. A identificação das contrapartes dá conteúdo econômico a essas medidas. Essa combinação de perspectivas, apoiada na representação dirigida de \textcite{huang2019} e na análise dos pesos de \textcite{serrano2009}, permite interpretar diferenças entre contas sem reduzir cada atividade a uma única posição em um ranking.
 
-Para a coordenação da mitigação, origens compartilhadas por várias demandas e demandas associadas a várias origens indicam conjuntos de atividades a investigar conjuntamente. A geração de energia pode ser examinada junto das atividades cuja demanda final está associada às suas emissões; a construção, junto das origens que compõem sua atribuição pela demanda. Intervenções nos processos produtivos e no uso de energia e materiais ao longo das cadeias constituem frentes complementares \parencite{rissman2020}. A atribuição contábil, contudo, não determina quem deve arcar com os esforços nem identifica quais instrumentos seriam eficazes ou menos custosos.
+Os casos mostram por que volume, concentração e direção precisam ser lidos conjuntamente. Energia e água/resíduos têm saídas externas próximas, mas o segundo perfil é mais concentrado, com maior participação da administração pública. Construção combina elevada atribuição própria com um volume adicional proveniente de diversas origens, entre elas minerais não metálicos, energia e produtos de metal. As saídas externas dessa mesma atividade são menores e mais concentradas. Assim, o papel de origem emissora e o papel de destino da atribuição podem ter escalas e composições diferentes mesmo quando se referem ao mesmo nó.
 
-A importância local de uma ligação também não equivale à sua contribuição para o total de emissões. O filtro permite identificar relações destacadas para uma origem ou um destino, mas as coberturas desiguais impedem tratar o backbone como uma representação igualmente completa de todas as atividades. A interpretação de oportunidades de coordenação precisa considerar os pesos e as relações omitidas, além das ligações selecionadas. A sensibilidade dos graus reforça que a presença de muitas ligações no desenho não estabelece uma hierarquia de prioridades.
+Esse diagnóstico complementa as comparações de atribuição entre setores, regiões e cadeias produtivas presentes na literatura brasileira \parencite{imori2015,sanguinetAzzoni2024,montoyaEtAl2026}. Como o total contabilizado é preservado, a mudança de participação de uma atividade entre produção e demanda acompanha o saldo de suas atribuições externas. A rede permite examinar quais origens e destinos compõem esse saldo e como os pesos se distribuem entre eles. Essa é a contribuição aproveitável no projeto de dissertação sobre Santa Catarina em 2018: complementar a comparação das participações setoriais com a interpretação das relações que as conectam. A aplicação catarinense exigirá dados harmonizados e o recálculo das contas e dos perfis na fronteira estadual; as contrapartes e os contrastes encontrados no cenário nacional não podem ser transportados para o estado.
 
-As interpretações ambientais permanecem condicionadas à base utilizada. A interpolação, a cobertura não reconciliada e a diferença de preços limitam a aplicação dos contrastes setoriais à economia brasileira observada. A consistência contábil e a avaliação do filtro verificam aspectos distintos da validade das emissões físicas. Antes de sustentar conclusões ambientais definitivas, é necessário reconciliar a fronteira, a alocação setorial e os denominadores monetários dos coeficientes ou substituí-los por uma extensão compatível com 2015.
+A importância local acrescenta outra distinção. A relação produtos de metal $\rightarrow$ construção concentra parte expressiva das saídas da origem, embora represente uma parcela menor das entradas do destino. A perspectiva escolhida altera, portanto, o significado da relação destacada: para a origem, identifica um produto final associado a suas emissões; para o destino, identifica uma das origens que compõem sua atribuição. O filtro explicita essas duas leituras, mas suas coberturas desiguais exigem consulta aos perfis completos. A sensibilidade sustenta os papéis ilustrados de energia e construção na faixa examinada, ao mesmo tempo que revela mudanças em relações individuais. A interpretação depende dessa verificação, além do número de arestas desenhadas.
 
+Para a coordenação da mitigação, origens compartilhadas por várias demandas e demandas associadas a várias origens indicam conjuntos de atividades a investigar conjuntamente. No primeiro caso, cabe examinar como mudanças em uma origem emissora se relacionariam com os produtos finais aos quais suas emissões são atribuídas. No segundo, cabe investigar o uso de energia e materiais associado a um produto final considerando suas diferentes origens emissoras. Intervenções nos processos produtivos e no uso de energia e materiais ao longo das cadeias constituem frentes complementares \parencite{rissman2020}. Os resultados ajudam a formular essas questões, mas não estimam o efeito de mudanças tecnológicas ou de demanda, a capacidade de intervenção dos agentes, os custos ou a eficácia de instrumentos. A distribuição normativa dos esforços de mitigação requer critérios adicionais à atribuição contábil.
+
+As interpretações ambientais permanecem condicionadas à base utilizada. A interpolação, a cobertura não reconciliada e a diferença de preços limitam a aplicação dos contrastes setoriais à economia brasileira observada. Essas restrições alcançam os volumes e as comparações entre atividades, podendo também afetar os perfis ponderados e a seleção de relações. A consistência contábil e a sensibilidade a $\alpha$ verificam aspectos distintos da validade das emissões físicas. Antes de sustentar conclusões ambientais definitivas, é necessário reconciliar a fronteira, a alocação setorial e os denominadores monetários dos coeficientes ou substituí-los por uma extensão compatível com 2015.
+
+\clearpage
 \section{Conclusões}
 
-No cenário analisado, as diferenças entre as contas pela produção e pela demanda são compostas por relações de atribuição com volumes e concentrações distintos. Energia e construção ilustram, respectivamente, uma origem associada a muitos produtos finais e um destino que reúne emissões de diversas origens. Identificar essas contrapartes permite compreender a composição das contas além dos totais e saldos setoriais.
+No cenário analisado, as diferenças entre as contas pela produção e pela demanda são compostas por relações de atribuição cujos pesos distinguem atividades com conectividade semelhante. Energia e água/resíduos ilustram volumes externos próximos distribuídos com concentrações diferentes; construção combina elevada atribuição própria com emissões recebidas de diversas origens. A leitura das forças, da concentração e das contrapartes permite compreender a composição das contas e os dois papéis de cada atividade na rede.
 
-O backbone destaca contrapartes, mas suas perdas de cobertura e a sensibilidade dos graus exigem leitura conjunta com a rede completa. Os resultados informam questões de coordenação da mitigação no cenário, sem determinar responsabilidades ou prioridades de política. Conclusões empíricas definitivas sobre o Brasil dependem da validação ou substituição da extensão ambiental e da reaplicação da mesma especificação.
+O backbone distingue relações destacadas para a origem, para o destino ou para ambos. Os casos mostram que essa importância pode ser assimétrica e que a estabilidade dos papéis examinados convive com mudanças na seleção e na cobertura. A análise de redes oferece, assim, um procedimento para aprofundar a comparação das participações setoriais e formular questões de coordenação da mitigação. Seu aproveitamento em Santa Catarina requer uma aplicação própria, e conclusões empíricas definitivas sobre o Brasil dependem da validação ou substituição da extensão ambiental.
 
+\clearpage
 {\renewcommand*{\bibfont}{\small}
 \printbibliography[title={Referências}]
 }

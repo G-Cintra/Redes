@@ -1,5 +1,8 @@
 \clearpage
 \appendix
+% Identificar os apêndices também no cabeçalho e nas referências cruzadas.
+\renewcommand{\thesection}{\appendixname~\Alph{section}}
+\renewcommand{\thesubsection}{\Alph{section}.\arabic{subsection}}
 \section{Painéis completos de energia e construção}
 \label{anexo:paineis}
 
@@ -61,3 +64,43 @@ Fonte: elaboração própria. Valores em posições; as diferenças são calcula
 Dos 575 vínculos retidos em $\alpha=0{,}05$, 232 passam somente pelo teste de saída na origem, 265 somente pelo de entrada no destino e 78 pelos dois. Nenhum depende da convenção de grau um. A seleção por apenas uma extremidade mostra que uma relação pode destacar-se em um perfil sem ter a mesma importância relativa no outro.
 
 Nos recortes da Tabela~\ref{tab:motivos-casos}, o backbone omite 57,9\% das entradas externas de energia e 43,0\% das saídas externas de construção. Esses complementos das coberturas evidenciam o volume omitido nas direções com menos ligações selecionadas.
+
+
+\subsection{Sensibilidade dos perfis focais}
+
+A Tabela~\ref{tab:sensibilidade-casos} acompanha os mesmos cinco perfis completos nos três parâmetros. A última coluna conta quantas das cinco maiores contrapartes de $W$ permanecem em cada backbone; a cobertura usa o volume completo da atividade e direção. A verificação da permanência é distinta da estabilidade dos pesos: as contas, os pesos e os números efetivos de $W$ são os mesmos em todos os parâmetros.
+
+\begin{table}[htbp]
+\centering
+\caption{Sensibilidade das ligações e da cobertura nos perfis focais.}
+\label{tab:sensibilidade-casos}
+\small
+\begin{tabular}{@{}lcrrr@{}}
+\toprule
+Perfil & $\alpha$ & Arestas & Cobertura (\%) & Das cinco maiores \\
+\midrule
+Energia: saídas & 0,01 & 54 & 92,12 & 5 \\
+ & 0,05 & 62 & 99,23 & 5 \\
+ & 0,10 & 64 & 99,96 & 5 \\
+\addlinespace
+Água/resíduos: saídas & 0,01 & 29 & 74,85 & 4 \\
+ & 0,05 & 49 & 92,98 & 5 \\
+ & 0,10 & 57 & 97,24 & 5 \\
+\addlinespace
+Construção: entradas & 0,01 & 32 & 74,31 & 4 \\
+ & 0,05 & 45 & 91,38 & 5 \\
+ & 0,10 & 55 & 97,76 & 5 \\
+\addlinespace
+Energia: entradas & 0,01 & 4 & 25,77 & 3 \\
+ & 0,05 & 7 & 42,14 & 5 \\
+ & 0,10 & 12 & 61,94 & 5 \\
+\addlinespace
+Construção: saídas & 0,01 & 4 & 51,61 & 4 \\
+ & 0,05 & 5 & 56,96 & 5 \\
+ & 0,10 & 7 & 64,29 & 5 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize
+Fonte: elaboração própria. Cada perfil tem 65 ligações em $W$. A última coluna varia de zero a cinco e registra a presença das principais contrapartes, independentemente da extremidade responsável pela seleção. Água/resíduos $\rightarrow$ construção, terceira maior origem externa da construção e quinto maior destino de água/resíduos, não é retida em $\alpha=0{,}01$. Energia $\rightarrow$ construção permanece pelos dois testes nos três parâmetros. A sensibilidade não mede a incerteza dos coeficientes ambientais.
+\end{minipage}
+\end{table}

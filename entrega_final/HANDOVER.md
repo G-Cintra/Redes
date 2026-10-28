@@ -1,6 +1,69 @@
 # Handover da entrega e avaliação de mérito
 
-Registro de 28/10/2026 para continuar o trabalho em outro computador. O usuário solicitou registrar a avaliação acadêmica, preparar este handover e fazer commit e push. A avaliação abaixo não foi implementada no artigo. A versão local revisada em 28/10 permanece a versão de referência.
+Registro de 28/10/2026 para continuar o trabalho em outro computador ou com outro agente. A versão de referência é o artigo atual, desenvolvido a partir da revisão local de 28/10, com o aprofundamento descrito abaixo. A avaliação inicial e o histórico de conciliação de versões permanecem documentados nas seções posteriores; não confundir recomendações históricas com o estado atual.
+
+## Próxima tarefa pendente: leitura crítica da versão revisada
+
+Pedido expresso do usuário para o próximo agente:
+
+> Faça uma leitura crítica da versão revisada, seguindo Booth e Nikolov. A análise de redes e o diálogo com a dissertação ficaram integrados de forma orgânica? Preserve a introdução.
+
+**Essa leitura crítica ainda não foi realizada.** A revisão já executada e suas verificações não substituem uma avaliação posterior da qualidade do argumento. O usuário aprovou pessoalmente a introdução, que deve continuar integralmente preservada. Antes de qualquer reescrita posterior, criar backup identificável, conforme o AGENTS da entrega.
+
+O objetivo principal é um bom artigo acadêmico para a disciplina de redes. Avaliar se pergunta, método, evidência e interpretação formam uma exposição contínua; se os métodos de redes acrescentam compreensão econômica; e se o diálogo com a dissertação decorre dos resultados, em vez de aparecer apenas como uma declaração isolada. Examinar também a progressão conceitual, a função dos parágrafos, a ligação entre afirmações e evidências, a contribuição das figuras e a proporcionalidade das conclusões. Usar as diretrizes de Booth e Nikolov registradas em `entrega/AGENTS.md`, consultando as obras quando necessário. Apresentar problemas localizados, sua consequência para o leitor e sugestões de melhoria fundamentadas, sem presumir aprovação humana da redação revista.
+
+O foco do diálogo com a dissertação permanece na explicação das diferenças entre as contas pela produção e pela demanda. Não foi solicitado acrescentar um teste de sua hipótese sobre intensidade de emissão e orientação das vendas.
+
+## Últimas decisões de apresentação e extensão
+
+- **Título definido pelo usuário:** “Rede de emissões de CO₂ no Brasil”. Usar título único, sem o subtítulo anterior. A fronteira das emissões é explicada no texto.
+- **Paginação:** cada seção principal, de 1 a 6, e as referências devem começar em nova página. A quebra anterior à introdução está em `main.tex`, sem editar `introducao.tex`.
+- **Apêndices:** identificar os cabeçalhos e as referências como “Apêndice A” e “Apêndice B”; a versão atual possui dois apêndices. A subseção B.1 mantém sua numeração. Não criar um terceiro apêndice apenas pela menção genérica a “A B C” na conversa.
+- **Extensão desejável:** 2.500–3.000 palavras de corpo, como preferência flexível. O usuário aceita um texto maior. A clareza, a correção e a preservação das explicações necessárias continuam prioritárias; esta passagem não realizou cortes para atingir uma meta.
+- **Localização neste computador:** repositório em `C:/Users/acarm/GitHub/Redes`; dissertação em `C:/Users/acarm/GitHub/Mestrado/0-Projeto de Dissertação`. O diretório inicial do chat, `Mestrado/Redes`, contém materiais da disciplina e não é a raiz da entrega. Em outro computador, localizar os repositórios pela estrutura.
+- **PDF atual:** `entrega/main.pdf`, com 30 páginas após as quebras de seção. LaTeX/Biber compilados e as 30 páginas inspecionadas visualmente; título único, inícios das seções e identificação dos apêndices conferidos. O log final não apresenta referências indefinidas nem caixas excedentes. A introdução mantém o SHA-256 registrado abaixo.
+- **Backup anterior ao título e à paginação:** `entrega/backup/titulo_handover_20261028_145242175/`, com os fontes afetados, PDF, handover e README anteriores, além do script e do registro de contagem daquela etapa.
+- **Sincronização:** o usuário autorizou commit e push das alterações desta retomada. A leitura crítica permanece pendente para o próximo agente; sincronizar o trabalho não equivale à aprovação pessoal do conteúdo revisado.
+- **Temporários locais:** scripts de diagnóstico, logs adicionais e imagens de conferência foram preservados em `outputs/entrega_redes_2015/revisao_editorial_20261028/`, pasta ignorada pelo Git. A remoção havia sido bloqueada pela revisão automática; os arquivos foram organizados sem exclusão. As evidências necessárias à retomada estão no artigo, nas saídas do notebook e nos backups versionados, sem depender dessa pasta local.
+
+### Contagem atual de palavras do corpo
+
+**4.224 palavras**, segundo TeXcount, com peso apenas para `Words in text`. Excluídos títulos e subtítulos, abstract, palavras-chave, referências bibliográficas, apêndices, figuras e tabelas completas (incluindo legendas, fontes e notas), notas de rodapé e fórmulas. Com as 74 palavras das notas de rodapé, seriam **4.298 palavras**. A contagem de 3.026 registrada mais abaixo pertence à versão anterior ao aprofundamento e não deve ser apresentada como atual.
+
+| Parte | Palavras do corpo |
+| --- | ---: |
+| Introdução preservada | 510 |
+| Dados e recorte | 385 |
+| Metodologia | 1.144 |
+| Resultados | 1.393 |
+| Discussão | 635 |
+| Conclusões | 157 |
+| **Total** | **4.224** |
+
+Procedimento: expandir os quatro arquivos incluídos no corpo de `main.tex`, da introdução até as conclusões; excluir o material anterior à introdução e posterior às conclusões, além dos ambientes completos de figura e tabela; preservar o preâmbulo para reconhecer as regras de biblatex; executar `texcount -utf8 -sub=section -sum=1,0,0,0,0,0,0` sobre esse fonte temporário. A convenção de contagem é a do TeXcount; não se convertem manualmente citações e referências cruzadas em palavras. Uma cópia do script de reprodução está no backup `entrega/backup/titulo_handover_20261028_145242175/contar_corpo_revisado.py` e deve ser executada a partir da raiz do repositório. A contagem de 4.226 anterior aos ajustes de referências para os apêndices difere em duas palavras pela forma como o TeXcount trata essas referências, sem mudança substantiva do conteúdo.
+
+## Esclarecimento sobre a validação ambiental pendente
+
+Essa limitação já constava na seção 2.2 do artigo e na auditoria ambiental anterior; não é uma nova falha identificada pela última revisão. Os cálculos verificam a aplicação das fórmulas e a consistência das contas para os dados utilizados. Validar a base ambiental exige conferir se as intensidades de emissão correspondem às emissões e aos denominadores necessários à aplicação:
+
+1. **Ano físico:** os coeficientes publicados são de 2011 e 2018; o vetor de 2015 é uma interpolação, sem observação física de 2015 incorporada ao cálculo.
+2. **Preços e denominadores:** a fonte relata atualização monetária para dezembro de 2018, enquanto a MIP utilizada está a preços de 2015. Falta reconciliar os denominadores dos coeficientes com esses valores monetários.
+3. **Cobertura e alocação:** não foram recuperados os numeradores físicos e os procedimentos completos de atribuição aos setores; a documentação da fonte também apresenta descrições divergentes sobre uso da terra.
+
+O fechamento das contas e os testes do filtro não resolvem essas questões. Os resultados continuam sendo um cenário exploratório, condição já declarada na introdução aprovada e na seção de dados. Isso permite avaliar a aplicação metodológica e a interpretação do cenário, mas não certifica os volumes e as posições como um inventário observado e validado do Brasil de 2015. A força das conclusões empíricas deve ser avaliada na leitura crítica. Reconstruir ou substituir a extensão ambiental não foi solicitado nesta passagem. A [auditoria](../docs/auditoria_coeficientes_emissoes_2015.md) documenta a investigação anterior; seus outros objetos e notações não substituem os da entrega atual.
+
+## Atualização após a retomada em 28/10/2026
+
+Na primeira etapa da retomada, o usuário autorizou aprofundar as análises existentes e revisar resultados e discussão, preservando a introdução e criando backup antes da reescrita. O objetivo acordado é um bom artigo acadêmico para a disciplina de redes, seguindo as diretrizes qualitativas do AGENTS, com valor metodológico para a dissertação. O diálogo se concentra na explicação das diferenças entre as contas, sem acrescentar um teste da hipótese da dissertação.
+
+- **Base preservada:** revisão local de 28/10; não foi restaurada a versão antiga. A introdução mantém o SHA-256 registrado neste documento. Entradas, células de código anteriores, matrizes e especificação do filtro permanecem intactas, assim como as nove figuras existentes.
+- **Aprofundamento implementado:** seção 25 do notebook, com cinco perfis completos (saídas de energia e água/resíduos, entradas de construção e as direções inversas de energia e construção), posição dos casos no conjunto, composição das contrapartes e sensibilidade das interpretações nos três parâmetros. As cinco novas células foram executadas. As saídas estão no notebook; cinco tabelas CSV sem arredondamento são reproduzíveis em `outputs/entrega_redes_2015/aprofundamento/`, pasta ignorada pelo Git.
+- **Texto revisado:** resultados desenvolvem volume, concentração, composição e importância local nas duas extremidades. Foram acrescentadas a tabela das contrapartes completas e a sensibilidade dos casos no anexo. A discussão explicita o ganho da análise de redes para interpretar as contas e seu aproveitamento em SC/2018. Resumo e conclusão foram alinhados; a metodologia recebeu apenas a descrição do detalhamento dos perfis.
+- **Evidências centrais:** cinco maiores destinos reúnem 40,45% das saídas de energia e 52,35% das de água/resíduos; administração pública representa 27,22% do segundo perfil. As cinco maiores origens somam 38,71% das entradas externas da construção. Produtos de metal → construção representa 32,57% das saídas externas da origem e 4,42% das entradas externas do destino. Energia → construção permanece pelos dois testes nos três parâmetros; água/resíduos → construção é omitida em alfa 0,01.
+- **Verificações:** executadas as células do núcleo numérico até a avaliação do filtro e as cinco células novas, com verificações de conservação e preservação das matrizes; passaram os 12 testes de `test_indicadores_entrega.py`. Conferidas as 325 relações dos perfis, sua concentração e fechamento, a transcrição da tabela de contrapartes, as chaves bibliográficas e as referências internas. LaTeX/Biber compilados com sucesso; PDF de 27 páginas inspecionado visualmente, sem alertas de referências ou caixas excedentes no log final. As células de desenho e exportação das figuras anteriores não foram reexecutadas.
+- **Backup anterior à reescrita:** `entrega/backup/aprofundamento_redes_20261028_142940142/`, contendo os fontes afetados, notebook, PDF anterior, este handover anterior à atualização e hash da introdução.
+
+As recomendações e o estado descritos nas seções seguintes são históricos e devem ser lidos à luz desta atualização. A comparação com fornecedores e a recuperação da figura completa de F não foram incorporadas. A validade ambiental permanece pendente conforme a seção de dados; a revisão não resolveu essa limitação. As alterações desta retomada ainda dependem da leitura pessoal do usuário; não equivalem à aprovação da redação revista.
 
 ## Retomada
 
@@ -8,7 +71,7 @@ Registro de 28/10/2026 para continuar o trabalho em outro computador. O usuário
 2. Usar como ponto de partida o [artigo atual](entrega/main.tex), o [notebook da entrega](analise_redes_2015.ipynb) e este registro. O [planejamento anterior](02_planejamento_academico.md) contém decisões e questões históricas; conferir seu estado contra a implementação e o texto atuais.
 3. Preservar a introdução. O último escopo de revisão do artigo excluía alterações nela. Sua integridade está registrada abaixo.
 4. Distinguir as recomendações desta avaliação das mudanças já autorizadas e executadas. Não recuperar automaticamente a versão antiga nem acrescentar indicadores só porque existem no histórico.
-5. Na próxima revisão substantiva, priorizar o que a análise das relações permite compreender além da comparação das distribuições pela produção e pela demanda.
+5. Começar pela leitura crítica pendente registrada no início deste handover, avaliando a integração orgânica dos métodos, dos resultados e do diálogo com a dissertação.
 
 ## Contexto acadêmico e fontes
 
@@ -22,7 +85,7 @@ A introdução atual da dissertação foi conferida em `Mestrado/0-Projeto de Di
 
 O plano de ensino, a dissertação e os livros indicados no AGENTS estão no repositório irmão. O push de `Redes` não transfere eventuais alterações não sincronizadas de `Mestrado`. Localizar esses documentos pela estrutura relativa e pelos títulos se a raiz dos repositórios for diferente no outro computador.
 
-## Avaliação de mérito da versão atual
+## Avaliação de mérito anterior ao aprofundamento (histórico)
 
 **Julgamento:** a aplicação é pertinente à disciplina, tem contribuição descritiva identificável e liga-se de forma consistente à dissertação. A interpretação econômica pode ser fortalecida. A validade ambiental é a principal limitação para sustentar conclusões empíricas sobre o Brasil. Esse julgamento não equivale a uma previsão de nota ou a uma validação dos coeficientes.
 
@@ -74,7 +137,7 @@ A comparação pode distinguir requerimentos produtivos padronizados de particip
 
 Essas propostas devem ser conciliadas com o escopo anterior, que preservava todas as figuras existentes. A avaliação não autoriza, por si só, eliminar figuras ou substituir a organização atual. O próximo ganho de qualidade depende da clareza da contribuição, não da quantidade de indicadores.
 
-## Estado do artigo e verificação anterior
+## Estado do artigo antes do aprofundamento e verificação anterior (histórico)
 
 O arquivo principal é `entrega/main.tex`. A introdução, os dados, a derivação das contas, os resultados e os anexos têm arquivos próprios; os métodos de rede, a discussão e a conclusão também incluem texto no arquivo principal. O artigo já contém resumo e palavras-chave.
 
@@ -101,9 +164,9 @@ O conflito de sincronização foi resolvido conforme a escolha explícita do usu
 | `f1cc714838e0e7e071781c6b6f6b1b467900c33e` | Versão local revisada em 28/10. |
 | `d183a680d28f22b294159cd87f92416769b4f574` | Merge que preservou integralmente a árvore local e manteve os dois históricos. Foi enviado a `origin/main`. |
 
-Este registro e seu link no README serão acrescentados em um novo commit. O merge acima não incorporou as análises adicionais da versão antiga à árvore atual.
+O registro inicial e seu link no README foram incluídos no commit `0ed1045`. O merge acima não incorporou as análises adicionais da versão antiga à árvore atual. As mudanças posteriores à retomada estão descritas no início deste handover.
 
-A cópia integral da versão antiga ficou **fora do repositório**, neste computador:
+A cópia integral da versão antiga ficou **fora do repositório**, no computador de origem da passagem inicial:
 
 ```text
 C:/GitHub/Redes-1_backup_GitHub_00972ea/repositorio/
@@ -127,6 +190,6 @@ Arquivos de interesse nesse commit, todos com caminhos relativos à raiz:
 
 Consultar essa versão como material de comparação. Suas instruções históricas não substituem o AGENTS atual nem as decisões posteriores do usuário.
 
-## Escopo desta passagem de trabalho
+## Escopo da passagem inicial (histórico, anterior à retomada)
 
-Foram solicitados o registro da análise, o handover e sua sincronização. Não foi solicitada a implementação das recomendações acadêmicas. Nesta passagem, o artigo, a introdução, os cálculos, os dados e as figuras devem permanecer inalterados. A documentação concentra o estado necessário à retomada, sem criar novas instruções ou duplicar as regras do AGENTS.
+Na passagem inicial, foram solicitados o registro da análise, o handover e sua sincronização, sem implementação das recomendações acadêmicas. Naquela etapa, o artigo, a introdução, os cálculos, os dados e as figuras permaneceram inalterados. O aprofundamento e a revisão foram posteriormente autorizados e executados conforme o registro no início deste documento; a introdução continua preservada. Esta seção registra o escopo antigo e não impede as mudanças já solicitadas pelo usuário na retomada.

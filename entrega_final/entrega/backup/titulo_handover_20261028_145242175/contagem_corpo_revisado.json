@@ -1,0 +1,29 @@
+{
+  "palavras_corpo": 4226,
+  "metodo": "TeXcount; peso apenas Words in text",
+  "exclusoes": [
+    "títulos e subtítulos",
+    "abstract",
+    "palavras-chave",
+    "figuras e tabelas completas, incluindo legendas, fontes e notas",
+    "notas de rodapé",
+    "referências bibliográficas",
+    "anexos/apêndices",
+    "fórmulas"
+  ],
+  "comando": [
+    "texcount",
+    "-utf8",
+    "-sub=section",
+    "-sum=1,0,0,0,0,0,0",
+    "C:\\Users\\acarm\\GitHub\\Redes\\tmp\\corpo_revisado_para_texcount.tex"
+  ],
+  "saida": "File: C:/Users/acarm/GitHub/Redes/tmp/corpo_revisado_para_texcount.tex\nSum count: 4226\nWords in text: 4226\nWords in headers: 87\nWords outside text (captions, etc.): 74\nNumber of headers: 21\nNumber of floats/tables/figures: 0\nNumber of math inlines: 90\nNumber of math displayed: 14\nSubcounts:\n  text+headers+captions (#headers/#floats/#inlines/#displayed)\n  510+1+0 (1/0/0/0) Section: Introdução\n  385+13+15 (3/0/0/1) Section: Dados e recorte da análise\n  1144+39+59 (10/0/72/13) Section: Metodologia\n  1395+25+0 (5/0/16/0) Section: Resultados\n  635+8+0 (1/0/2/0) Section: Discussão e implicações para a coordenação da mitigação\n  157+1+0 (1/0/0/0) Section: Conclusões\n\n",
+  "sha256_fontes": {
+    "main.tex": "df9c75b18d8ad9d28752337ac6cd321b5e8e78d2569278d0e3786903c4d72245",
+    "introducao.tex": "dcf33337277add90448a90d7590f1f76be3b279415401f891cc6e25fefe8c082",
+    "dados.tex": "5abb282cd7c92a7c6400cd4f14309ee3b99974e42b5e4469258a76c6e6dac55e",
+    "modelo_atribuicao.tex": "0dfa23d8f68fdfc4a5ef5c9c52ce5fb523b921e6eeb1a9ae4f1fbefc64c9a0b9",
+    "resultados.tex": "1165df8c79bae75669d47b0eb062d570df07d48dd2d9dddde90428ab67a2c196"
+  }
+}
