@@ -40,8 +40,15 @@
 \vspace{1.0em}\hrule\vspace{1.0em}}
 \begin{document}
 \imprimirtitulodois
-% Resumo e palavras-chave serão redigidos após os resultados.
+\begin{abstract}
+Este ensaio examina as relações intersetoriais que compõem as diferenças entre as emissões atribuídas pela produção e pela demanda no Brasil. Combina a Matriz de Insumo-Produto de 2015, com 67 atividades, e intensidades de CO\textsubscript{2} em uma rede dirigida e ponderada. As forças e o número efetivo de contrapartes caracterizam volume e concentração; o filtro de disparidade seleciona relações conforme sua importância local. A rede quase completa apresenta perfis distintos de distribuição dos pesos. Energia e construção ilustram os papéis de origem emissora e destino da atribuição. O backbone retém 13,40\% das ligações e 70,69\% do peso intersetorial, com coberturas locais desiguais. A análise informa relações a investigar para a coordenação da mitigação, mas as limitações dos coeficientes restringem as conclusões ao cenário exploratório.
+\end{abstract}
+\noindent\textbf{Palavras-chave:} atribuição de emissões; insumo-produto; redes dirigidas e ponderadas; mitigação.
+
 \input{introducao.tex}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
 % Sequência inspirada em Huang et al. (2019).
 \input{dados.tex}
 \section{Metodologia}
@@ -49,7 +56,7 @@
 \subsection{Construção da rede dirigida e ponderada}
 \label{sec:construcao-rede}
 
-A rede terá 67 nós, um por atividade da MIP, identificados pelos códigos do IBGE. Cada nó representa uma origem emissora nas ligações de saída e o setor de um produto final nas ligações de entrada, seguindo a representação de atribuição de \textcite{huang2019}. Os dois papéis pertencem ao mesmo nó, enquanto o Sankey da Figura~\ref{fig:exemplo-atribuicoes} os apresenta em conjuntos separados.
+A rede tem 67 nós, um por atividade da MIP, identificados pelos códigos do IBGE. Cada nó representa uma origem emissora nas ligações de saída e o setor de um produto final nas ligações de entrada, conforme a representação de \textcite{huang2019}. As categorias de uso final não constituem nós separados.
 
 Para estudar relações entre atividades distintas, define-se
 \begin{equation}
@@ -59,16 +66,16 @@ F_{ij}, & i\ne j,\\
 \end{cases}
 \label{eq:rede-sem-diagonal}
 \end{equation}
-Haverá uma aresta $i\rightarrow j$ para cada $W_{ij}>0$, com peso igual a esse valor, em Gg de CO\textsubscript{2}. A direção indica a origem emissora e o destino da atribuição, e as duas direções de um par serão tratadas separadamente. Como os pesos já incorporam requisitos diretos e indiretos, concatenar essas arestas não representa uma sequência de etapas produtivas.
+Cada $W_{ij}>0$ define uma aresta $i\rightarrow j$, cujo peso, em Gg de CO\textsubscript{2}, indica a emissão em $i$ atribuída ao produto final de $j$. As duas direções de um par são distintas. Como os pesos incorporam requisitos diretos e indiretos, concatenar arestas não representa uma sequência de etapas produtivas.
 
-A diagonal $F_{ii}$ reúne emissões de $i$ atribuídas à demanda final de seus próprios produtos, incluindo os requisitos indiretos correspondentes. Ela permanece nas contas $c$ e $u$, mas é retirada de $W$ para separar as relações entre atividades da atribuição à própria atividade. Assim, $W$ não terá laços, e seu peso total corresponderá apenas à parcela intersetorial das emissões.
+A diagonal $F_{ii}$ reúne emissões de $i$ atribuídas à demanda final de seus próprios produtos, incluindo requisitos indiretos. Ela permanece em $F$ e nas contas $c$ e $u$, mas é retirada de $W$, cujo peso total corresponde apenas às atribuições entre atividades distintas.
 
-Serão mantidos todos os nós e todas as arestas positivas, sem corte por magnitude nesta etapa. A construção exige alinhamento dos códigos e pesos finitos e não negativos; eventuais valores negativos deverão ser examinados antes da representação, sem conversão automática para zero ou valor absoluto. A seleção de arestas será tratada na seção~\ref{sec:backbone}.
+A construção preserva todos os nós e as arestas positivas, sem corte por magnitude. São conferidos o alinhamento dos códigos e a existência de pesos finitos e não negativos. A seleção de arestas é tratada na seção~\ref{sec:backbone}.
 
 \subsection{Volume e concentração das relações}
 \label{sec:volume-concentracao}
 
-Para relacionar a estrutura da rede às duas contas ambientais, serão examinados o volume das relações externas e sua distribuição entre contrapartes. As medidas serão calculadas em $W$, antes da filtragem, com referência às forças de \textcite{huang2019} e à disparidade dos pesos de \textcite{serrano2009}.
+O volume e a concentração são calculados em $W$, antes da filtragem, por meio das forças e da disparidade dos pesos \parencite{huang2019,serrano2009}.
 
 \paragraph{Volume.}
 As forças de saída e entrada são as somas dos pesos em cada direção:
@@ -79,7 +86,7 @@ s_i^{\mathrm{in}}&=\sum_{j\ne i}W_{ji}=u_i-F_{ii}.
 \end{aligned}
 \label{eq:forcas-externas}
 \end{equation}
-A saída mede as emissões próprias de $i$ atribuídas aos produtos finais de outras atividades; a entrada mede as emissões de outras atividades atribuídas aos produtos finais de $i$. Ambas têm unidade de Gg de CO\textsubscript{2}. Sua diferença é $u_i-c_i$, mas a leitura separada permite identificar grandes volumes que se compensam no saldo. Serão apresentados também $c_i$, $u_i$ e $F_{ii}$, para situar a parcela intersetorial em cada conta completa.
+A força de saída mede as emissões próprias de $i$ atribuídas aos produtos finais de outras atividades; a de entrada mede as emissões de outras atividades atribuídas aos produtos finais de $i$. A diferença entre força de entrada e força de saída é $s_i^{\mathrm{in}}-s_i^{\mathrm{out}}=u_i-c_i$. A leitura separada dos volumes revela atribuições que se compensam no saldo; as contas completas e a diagonal situam sua participação no total.
 
 \paragraph{Concentração.}
 Para perfis com força positiva, define-se a participação de cada contraparte:
@@ -88,7 +95,7 @@ p_{ij}^{\mathrm{out}}=\frac{W_{ij}}{s_i^{\mathrm{out}}},\qquad
 p_{ji}^{\mathrm{in}}=\frac{W_{ji}}{s_i^{\mathrm{in}}},\quad j\ne i.
 \label{eq:participacoes-externas}
 \end{equation}
-O perfil de saída distribui as emissões externas da origem entre destinos; o de entrada descreve as origens que compõem a atribuição externa ao destino. Cada perfil soma um. A disparidade e seu inverso serão calculados por
+O perfil de saída distribui o volume intersetorial da origem entre destinos; o de entrada descreve as origens que compõem a atribuição intersetorial ao destino. Cada perfil soma um. A disparidade e seu inverso são
 \begin{equation}
 \begin{aligned}
 Y_i^{\mathrm{out}}&=\sum_{j\ne i}(p_{ij}^{\mathrm{out}})^2,&
@@ -98,17 +105,17 @@ D_{2,i}^{\mathrm{in}}&=1/Y_i^{\mathrm{in}}.
 \end{aligned}
 \label{eq:disparidade}
 \end{equation}
-$Y$ aumenta com a concentração; $D_2$ expressa a mesma informação como número efetivo de contrapartes. Para $k$ pesos iguais, $D_2=k$; quando uma relação domina, aproxima-se de um. Essas medidas são adimensionais e ficam indefinidas quando a força é zero, sem excluir o nó da análise.
+$Y$ aumenta com a concentração; $D_2$ expressa a mesma informação como número efetivo de contrapartes. Para $k$ pesos iguais, $D_2=k$; quando uma relação domina, aproxima-se de um. As medidas são adimensionais e ficam indefinidas quando a força é zero, sem excluir o nó.
 
-A combinação de força e número efetivo permitirá distinguir volumes elevados concentrados em poucas contrapartes de volumes distribuídos entre muitas. As atividades que compõem cada perfil serão identificadas pelos pesos e participações, pois o número efetivo não informa sua identidade. O grau contará as arestas positivas de entrada ou saída; a densidade será o número de arestas dividido por $67\times66$. Grau e densidade descrevem a presença de relações, enquanto a disparidade considera a distribuição de seus pesos.
+Os pesos e as participações identificam as contrapartes, cuja identidade não é informada por $D_2$. O grau conta as arestas positivas de entrada ou saída; a densidade é o número de arestas dividido por $67\times66$. Esses indicadores descrevem a presença de relações, enquanto a disparidade considera a distribuição dos pesos.
 
 \subsection{Extração e avaliação do backbone}
 \label{sec:backbone}
 
-O filtro de disparidade de \textcite{serrano2009}, aplicado por \textcite{huang2019}, será utilizado para selecionar ligações destacadas na composição local dos pesos. A seleção depende da participação da aresta na força de cada extremidade, permitindo considerar atividades de diferentes escalas. Seu resultado será o backbone, sem alterar as contas ambientais completas.
+O filtro de disparidade de \textcite{serrano2009}, aplicado por \textcite{huang2019}, seleciona ligações destacadas na composição local dos pesos, considerando atividades de diferentes escalas. O backbone resultante não altera as contas ambientais completas.
 
 \paragraph{Critério de seleção.}
-O modelo nulo divide o intervalo unitário em $k$ parcelas por $k-1$ pontos escolhidos uniformemente, representando uma distribuição aleatória da força entre as ligações. Para $k>1$, a probabilidade de uma parcela atingir ou superar $p$ é $(1-p)^{k-1}$. Para a aresta $i\rightarrow j$, as caudas nas perspectivas de saída e entrada são
+O modelo nulo distribui a força entre $k$ ligações dividindo o intervalo unitário por $k-1$ pontos uniformemente escolhidos. Para $k>1$, a probabilidade de uma parcela atingir ou superar $p$ é $(1-p)^{k-1}$. Para a aresta $i\rightarrow j$, as caudas nas perspectivas de saída e entrada são
 \begin{equation}
 \begin{aligned}
 a_{ij}^{\mathrm{out}}&=\left(1-\frac{W_{ij}}{s_i^{\mathrm{out}}}\right)^{k_i^{\mathrm{out}}-1},\\
@@ -116,14 +123,12 @@ a_{ij}^{\mathrm{in}}&=\left(1-\frac{W_{ij}}{s_j^{\mathrm{in}}}\right)^{k_j^{\mat
 \end{aligned}
 \label{eq:caudas-filtro}
 \end{equation}
-Os graus $k$ e as forças serão os de $W$. A aresta será selecionada se $a_{ij}^{\mathrm{out}}<\alpha$ \textbf{ou} $a_{ij}^{\mathrm{in}}<\alpha$, registrando-se qual extremidade determina a seleção. A saída destaca um destino nas atribuições da origem; a entrada destaca uma origem na composição do destino.
+Os graus $k$ e as forças são os de $W$. A aresta é selecionada se $a_{ij}^{\mathrm{out}}<\alpha$ \textbf{ou} $a_{ij}^{\mathrm{in}}<\alpha$, registrando-se a extremidade responsável pela seleção. A saída destaca um destino nas atribuições da origem; a entrada destaca uma origem na composição do destino.\footnote{As caudas são calculadas apenas para graus pertinentes maiores que um. Se uma extremidade tem grau um, vale o teste da outra; se ambas têm grau um, a aresta é preservada por convenção de manutenção da relação exclusiva, inclusive em díades isoladas. Essa extensão dos casos degenerados do suplemento de Serrano et al. é registrada separadamente da seleção estatística.}
 
-As caudas só serão calculadas para graus pertinentes maiores que um. Se apenas uma extremidade tiver grau um, valerá o teste da outra; se ambas tiverem grau um, a aresta será preservada por convenção de manutenção da relação exclusiva, inclusive em díades isoladas. Essa extensão dos casos degenerados do suplemento de Serrano et al. será registrada separadamente da seleção estatística. Todos os nós serão mantidos.
-
-Será adotado $\alpha=0{,}05$, com $0{,}01$ e $0{,}10$ para sensibilidade. Para cada valor, o filtro será aplicado uma vez a $W$, sem atualização iterativa dos perfis. A matriz resultante $B_\alpha$ manterá os pesos originais nas arestas selecionadas e zero nas demais, sem renormalização ou corte absoluto adicional.
+Adota-se $\alpha=0{,}05$, com $0{,}01$ e $0{,}10$ para sensibilidade. O filtro é aplicado uma vez a $W$ para cada valor, sem atualização dos perfis. A matriz $B_\alpha$ preserva os pesos originais nas arestas selecionadas e zero nas demais, sem renormalização ou corte absoluto adicional.
 
 \paragraph{Avaliação da seleção.}
-Serão comparadas a fração de arestas retidas e a cobertura dos pesos, globalmente e por atividade:
+Comparam-se a fração de arestas retidas e a cobertura dos pesos, globalmente e por atividade:
 \begin{equation}
 \begin{aligned}
 r_\alpha&=\frac{\sum_{ij}(B_\alpha)_{ij}}{\sum_{ij}W_{ij}},\\
@@ -132,17 +137,29 @@ r_{\alpha,i}^{\mathrm{in}}=\frac{\sum_j(B_\alpha)_{ji}}{s_i^{\mathrm{in}}}.
 \end{aligned}
 \label{eq:cobertura-backbone}
 \end{equation}
-As razões serão definidas apenas para denominadores positivos. A cobertura se refere à parcela intersetorial de $W$; sua leitura por atividade permite identificar perdas ocultas pela retenção agregada. Serão descritos também graus, forças retidas, isolados e componentes fracamente conectados, obtidos ao desconsiderar a direção das arestas para verificar conectividade.
+As razões são definidas apenas para denominadores positivos. A cobertura refere-se à parcela intersetorial de $W$ e permite distinguir retenção agregada de perdas por atividade e direção. A conectividade é descrita pelos graus, isolados e componentes fracamente conectados, obtidos ao desconsiderar a direção das arestas.
 
-A sensibilidade será examinada pelas mudanças nas arestas, coberturas e posições setoriais entre os três valores de $\alpha$. Com convenções fixas, os conjuntos são aninhados por construção; essa propriedade não constitui evidência independente de robustez. O modelo nulo é uma referência de distribuição dos pesos: suas caudas não medem a incerteza ambiental, e a seleção não estabelece prioridade de mitigação.
-
-A resposta à pergunta combinará as contas e seus saldos em $F$, os volumes e a concentração em $W$ e as contrapartes destacadas em $B_\alpha$. As relações serão interpretadas junto de seus pesos e coberturas: uma ligação pode ser importante localmente e pequena no total, enquanto uma ligação não selecionada continua integrando a contabilidade. Assim, o backbone complementa a análise dos perfis completos, sem substituí-los.
+A sensibilidade é examinada pelas mudanças nas arestas, coberturas e posições setoriais entre os três valores de $\alpha$. O aninhamento dos conjuntos decorre da regra e não constitui evidência independente de robustez. As caudas do modelo nulo não medem incerteza ambiental, e a seleção não estabelece prioridade de mitigação.
 
 \input{resultados.tex}
 \section{Discussão e implicações para a coordenação da mitigação}
-% Reservado: interpretação conjunta e limites dos dados e métodos.
+
+A identificação das contrapartes esclarece o conteúdo econômico das diferenças entre produção e demanda. No cenário analisado, energia distribui emissões para muitos produtos finais, enquanto construção reúne emissões de diversas origens. O contraste mostra por que o saldo de uma atividade precisa ser interpretado junto dos volumes e das contrapartes que o compõem. Essa leitura relacional complementa as comparações de atribuição entre setores, regiões e cadeias produtivas presentes na literatura brasileira \parencite{imori2015,sanguinetAzzoni2024,montoyaEtAl2026}.
+
+Para a coordenação da mitigação, origens compartilhadas por várias demandas e demandas associadas a várias origens indicam conjuntos de atividades a investigar conjuntamente. A geração de energia pode ser examinada junto das atividades cuja demanda final está associada às suas emissões; a construção, junto das origens que compõem sua atribuição pela demanda. Intervenções nos processos produtivos e no uso de energia e materiais ao longo das cadeias constituem frentes complementares \parencite{rissman2020}. A atribuição contábil, contudo, não determina quem deve arcar com os esforços nem identifica quais instrumentos seriam eficazes ou menos custosos.
+
+A importância local de uma ligação também não equivale à sua contribuição para o total de emissões. O filtro permite identificar relações destacadas para uma origem ou um destino, mas as coberturas desiguais impedem tratar o backbone como uma representação igualmente completa de todas as atividades. A interpretação de oportunidades de coordenação precisa considerar os pesos e as relações omitidas, além das ligações selecionadas. A sensibilidade dos graus reforça que a presença de muitas ligações no desenho não estabelece uma hierarquia de prioridades.
+
+As interpretações ambientais permanecem condicionadas à base utilizada. A interpolação, a cobertura não reconciliada e a diferença de preços limitam a aplicação dos contrastes setoriais à economia brasileira observada. A consistência contábil e a avaliação do filtro verificam aspectos distintos da validade das emissões físicas. Antes de sustentar conclusões ambientais definitivas, é necessário reconciliar a fronteira, a alocação setorial e os denominadores monetários dos coeficientes ou substituí-los por uma extensão compatível com 2015.
+
 \section{Conclusões}
-% Reservado até a conclusão da análise.
+
+No cenário analisado, as diferenças entre as contas pela produção e pela demanda são compostas por relações de atribuição com volumes e concentrações distintos. Energia e construção ilustram, respectivamente, uma origem associada a muitos produtos finais e um destino que reúne emissões de diversas origens. Identificar essas contrapartes permite compreender a composição das contas além dos totais e saldos setoriais.
+
+O backbone destaca contrapartes, mas suas perdas de cobertura e a sensibilidade dos graus exigem leitura conjunta com a rede completa. Os resultados informam questões de coordenação da mitigação no cenário, sem determinar responsabilidades ou prioridades de política. Conclusões empíricas definitivas sobre o Brasil dependem da validação ou substituição da extensão ambiental e da reaplicação da mesma especificação.
+
+{\renewcommand*{\bibfont}{\small}
 \printbibliography[title={Referências}]
+}
 \input{anexos.tex}
 \end{document}

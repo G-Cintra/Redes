@@ -1,26 +1,26 @@
 \subsection{Da MIP à matriz de atribuição de emissões}
 \label{sec:derivacao}
 
-A análise parte da matriz $A$ de coeficientes técnicos de insumos produzidos no Brasil, da produção bruta $x$ e da demanda final por atividade $y$ da MIP do IBGE. Os índices $i$ e $j$ identificam atividades e os vetores são colunas. Cada $A_{ij}$ indica o valor do insumo produzido em $i$ requerido por unidade monetária de produção de $j$. O balanço e a inversa de Leontief são
+A análise utiliza a matriz $A$ de coeficientes técnicos de insumos nacionais, a produção bruta $x$ e a demanda final por atividade $y$. Os índices $i$ e $j$ identificam atividades, e os vetores são colunas. Cada $A_{ij}$ indica o insumo de $i$ requerido por unidade monetária de produção de $j$. O balanço e a inversa de Leontief são
 \begin{equation}
 x=Ax+y=Ly,\qquad L=(I-A)^{-1}.
 \label{eq:leontief}
 \end{equation}
-$L_{ij}$ reúne a produção de $i$ requerida direta e indiretamente por unidade de demanda final de $j$, sob coeficientes técnicos fixos \parencite{millerBlair2009}. Utilizam-se $A$ e $L$ das Tabelas 14 e 15, com conferência de consistência e do balanço $Ly=x$ considerando o arredondamento da fonte.
+$L_{ij}$ reúne a produção de $i$ requerida direta e indiretamente por unidade de demanda final de $j$, sob coeficientes técnicos fixos \parencite{millerBlair2009}. A consistência de $A$ e $L$ e o balanço $Ly=x$ são conferidos considerando o arredondamento da fonte.
 
-Para incorporar a dimensão ambiental, seja $\varphi_i$ a intensidade direta de CO\textsubscript{2} por unidade de produção de $i$, em Gg de CO\textsubscript{2} por milhão de reais, com a origem e as limitações descritas na seção~\ref{sec:dados}. Organizando essas intensidades em $\Phi=\operatorname{diag}(\varphi)$, obtém-se
+Seja $\varphi_i$ a intensidade direta de CO\textsubscript{2} por unidade de produção bruta de $i$, descrita na seção~\ref{sec:dados}. Organizando as intensidades em $\Phi=\operatorname{diag}(\varphi)$, obtém-se
 \begin{equation}
 C=\Phi L,\qquad C_{ij}=\varphi_iL_{ij}.
 \label{eq:coeficientes-emissoes}
 \end{equation}
-Cada $C_{ij}$ expressa a emissão em $i$ por unidade monetária de demanda final de $j$ e tem unidade de Gg de CO\textsubscript{2} por milhão de reais. Essa extensão ambiental relaciona as intensidades diretas aos requisitos da cadeia, conforme a abordagem utilizada por \textcite{sanguinetAzzoni2024}.
+Cada $C_{ij}$ expressa a emissão em $i$ por unidade monetária de demanda final de $j$, em Gg de CO\textsubscript{2} por milhão de reais \parencite{sanguinetAzzoni2024}.
 
 Multiplicar cada coluna de $C$ pela demanda final efetiva fornece a matriz de atribuição:
 \begin{equation}
 F=C\widehat y=\Phi L\widehat y,\qquad F_{ij}=\varphi_iL_{ij}y_j,
 \label{eq:matriz-atribuicao}
 \end{equation}
-em que $\widehat y=\operatorname{diag}(y)$. $F$ tem dimensão $67\times67$ e unidade de Gg de CO\textsubscript{2}. O elemento $F_{ij}$ representa a emissão ocorrida em $i$ e atribuída à demanda final dos produtos de $j$, incluindo requisitos diretos e indiretos. Essa é a matriz que conecta as duas atribuições discutidas por \textcite{marques2012} e fundamenta a representação em rede adotada a partir de \textcite{huang2019}. Seus elementos representam atribuição contábil, não transações diretas nem transferências físicas de CO\textsubscript{2}.
+em que $\widehat y=\operatorname{diag}(y)$. O elemento $F_{ij}$ representa a emissão ocorrida em $i$ e atribuída à demanda final dos produtos de $j$, incluindo requisitos diretos e indiretos. A matriz tem dimensão $67\times67$, em Gg de CO\textsubscript{2}, e conecta as contas pela produção e pela demanda \parencite{marques2012}. Seus elementos representam atribuições contábeis, não transações diretas nem transferências físicas de CO\textsubscript{2}.
 
 \subsection{Atribuição pela produção e pela demanda}
 \label{sec:atribuicoes}
@@ -39,9 +39,9 @@ Na atribuição pela demanda, somam-se as colunas de $F$, preservando o setor do
 u_j=\sum_iF_{ij}=y_j\sum_i\varphi_iL_{ij},\qquad u=F^\top\mathbf{1},
 \label{eq:conta-demanda}
 \end{equation}
-em que $\top$ indica transposição. No quadro (b), a atribuição à demanda final de Restaurantes reúne as emissões de sua própria atividade e as de Eletricidade, Agricultura e Alimentos associadas ao atendimento dessa demanda. As transações e a produção são as mesmas do quadro (a); muda o critério de atribuição representado pelas cores.
+em que $\top$ indica transposição. No quadro (b), a atribuição à demanda final de Restaurantes reúne suas emissões próprias e as de Eletricidade, Agricultura e Alimentos associadas ao atendimento dessa demanda. A produção é a mesma do quadro (a); muda sua atribuição.
 
-O Sankey do quadro (c) conecta essas perspectivas: cada faixa representa $F_{ij}$, a barra de origem totaliza $c_i$ e a de destino totaliza $u_j$. Por exemplo, a faixa entre Eletricidade e Restaurantes corresponde à emissão da primeira atribuída à demanda final da segunda. Enquanto as setas superiores representam transações monetárias, as faixas do Sankey representam atribuições de emissões. O total é preservado:
+O Sankey do quadro (c) conecta as duas contas: cada faixa representa $F_{ij}$, e as barras de origem e destino totalizam $c_i$ e $u_j$. A faixa entre Eletricidade e Restaurantes, por exemplo, corresponde à emissão da primeira atividade atribuída à demanda final da segunda. As setas superiores representam transações monetárias; as faixas representam atribuições de emissões. O total é preservado:
 \begin{equation}
 \mathbf{1}^\top c=\mathbf{1}^\top F\mathbf{1}=\mathbf{1}^\top u.
 \label{eq:conservacao-emissoes}
@@ -52,7 +52,7 @@ Para uma mesma atividade, a diferença entre as contas é o saldo das atribuiç�
 u_i-c_i=\sum_{j\ne i}F_{ji}-\sum_{j\ne i}F_{ij}.
 \label{eq:saldo-atribuicao}
 \end{equation}
-A diagonal cancela nesse saldo, mas permanece nas contas completas. A diferença pode resultar de poucas relações de grande peso ou de muitas relações distribuídas, o que motiva examinar sua concentração e conectividade na rede.
+A diagonal cancela no saldo, mas permanece nas contas completas. Um saldo pequeno pode resultar de grandes volumes atribuídos em sentidos opostos; por isso, é necessário examinar as relações que o compõem.
 
 % Figura vetorial copiada sem edição de:
 % C:/GitHub/Mestrado/0-Projeto de Dissertação/figura_economia/contabilidade_com_sankey.pdf

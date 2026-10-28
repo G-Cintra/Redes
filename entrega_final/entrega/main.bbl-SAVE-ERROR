@@ -82,6 +82,49 @@
       \verb 10.3390/su11195508
       \endverb
     \endentry
+    \entry{imori2015}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=90c1d1b789e5fb6ded3f2412d0c82de7}{%
+           family={Imori},
+           familyi={I\bibinitperiod},
+           given={Denise},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidade de São Paulo}%
+      }
+      \list{location}{1}{%
+        {São Paulo}%
+      }
+      \strng{namehash}{90c1d1b789e5fb6ded3f2412d0c82de7}
+      \strng{fullhash}{90c1d1b789e5fb6ded3f2412d0c82de7}
+      \strng{fullhashraw}{90c1d1b789e5fb6ded3f2412d0c82de7}
+      \strng{bibnamehash}{90c1d1b789e5fb6ded3f2412d0c82de7}
+      \strng{authorbibnamehash}{90c1d1b789e5fb6ded3f2412d0c82de7}
+      \strng{authornamehash}{90c1d1b789e5fb6ded3f2412d0c82de7}
+      \strng{authorfullhash}{90c1d1b789e5fb6ded3f2412d0c82de7}
+      \strng{authorfullhashraw}{90c1d1b789e5fb6ded3f2412d0c82de7}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{title}{Regiões brasileiras nas cadeias de valor globais: comércio e meio ambiente}
+      \field{type}{Tese de doutorado}
+      \field{year}{2015}
+      \verb{doi}
+      \verb 10.11606/T.12.2016.tde-05022016-153553
+      \endverb
+      \verb{urlraw}
+      \verb https://teses.usp.br/teses/disponiveis/12/12138/tde-05022016-153553/pt-br.html
+      \endverb
+      \verb{url}
+      \verb https://teses.usp.br/teses/disponiveis/12/12138/tde-05022016-153553/pt-br.html
+      \endverb
+    \endentry
     \entry{ibge2015mip}{online}{}{}
       \name{author}{1}{}{%
         {{hash=638eed94c97a4776d2d0e13ee4adbf12}{%
@@ -122,6 +165,61 @@
       \endverb
       \verb{url}
       \verb https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9085-matriz-de-insumo-produto.html
+      \endverb
+    \endentry
+    \entry{ipcc2023spm}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=676f7b9b8e5bb30500c01e2385e59174}{%
+           family={{IPCC}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=1be1a25b9314335621e5d0808727c3c8}{%
+           family={{Core Writing Team}},
+           familyi={C\bibinitperiod}}}%
+        {{hash=14bd5bacfec2818b7404cf0fcb4ed61e}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Hoesung},
+           giveni={H\bibinitperiod}}}%
+        {{hash=44fea44855c3faa16ced74e69f734588}{%
+           family={Romero},
+           familyi={R\bibinitperiod},
+           given={José},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Geneva}%
+      }
+      \list{publisher}{1}{%
+        {IPCC}%
+      }
+      \strng{namehash}{676f7b9b8e5bb30500c01e2385e59174}
+      \strng{fullhash}{676f7b9b8e5bb30500c01e2385e59174}
+      \strng{fullhashraw}{676f7b9b8e5bb30500c01e2385e59174}
+      \strng{bibnamehash}{676f7b9b8e5bb30500c01e2385e59174}
+      \strng{authorbibnamehash}{676f7b9b8e5bb30500c01e2385e59174}
+      \strng{authornamehash}{676f7b9b8e5bb30500c01e2385e59174}
+      \strng{authorfullhash}{676f7b9b8e5bb30500c01e2385e59174}
+      \strng{authorfullhashraw}{676f7b9b8e5bb30500c01e2385e59174}
+      \strng{editorbibnamehash}{dcdfe675ddcaee7c0f8df64c98332c8f}
+      \strng{editornamehash}{dcdfe675ddcaee7c0f8df64c98332c8f}
+      \strng{editorfullhash}{dcdfe675ddcaee7c0f8df64c98332c8f}
+      \strng{editorfullhashraw}{dcdfe675ddcaee7c0f8df64c98332c8f}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booksubtitle}{Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change}
+      \field{booktitle}{Climate Change 2023: Synthesis Report}
+      \field{title}{Summary for Policymakers}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 34}
+      \range{pages}{34}
+      \verb{doi}
+      \verb 10.59327/IPCC/AR6-9789291691647.001
       \endverb
     \endentry
     \entry{marques2012}{article}{}{}
@@ -217,6 +315,57 @@
       \verb 10.1017/CBO9780511626982
       \endverb
     \endentry
+    \entry{montoyaEtAl2026}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=7234475331f0c8e92aaaebcd76d731d4}{%
+           family={Montoya},
+           familyi={M\bibinitperiod},
+           given={Marco\bibnamedelima Antonio},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0df73d9dbe874a5a6f2c4fe0058f0d2d}{%
+           family={Bertussi},
+           familyi={B\bibinitperiod},
+           given={Luís\bibnamedelimb Antônio\bibnamedelima Sleimann},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fb291c06a219cc6e92fc907bf5ecffb2}{%
+           family={Allegretti},
+           familyi={A\bibinitperiod},
+           given={Gabriela},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2098d2bc1bfb066b9d17487cf2f703f0}{%
+           family={Talamini},
+           familyi={T\bibinitperiod},
+           given={Edson},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7997268b84cb7bbb445b5224206be5d4}
+      \strng{fullhash}{39f2ffe64d0ecc753b41f37222c8660e}
+      \strng{fullhashraw}{39f2ffe64d0ecc753b41f37222c8660e}
+      \strng{bibnamehash}{7997268b84cb7bbb445b5224206be5d4}
+      \strng{authorbibnamehash}{7997268b84cb7bbb445b5224206be5d4}
+      \strng{authornamehash}{7997268b84cb7bbb445b5224206be5d4}
+      \strng{authorfullhash}{39f2ffe64d0ecc753b41f37222c8660e}
+      \strng{authorfullhashraw}{39f2ffe64d0ecc753b41f37222c8660e}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environment, Development and Sustainability}
+      \field{title}{Brazilian Energy and Carbon Footprints: Structural Changes and Sectoral Contributions to Climate Change}
+      \field{volume}{28}
+      \field{year}{2026}
+      \field{pages}{6725\bibrangedash 6755}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1007/s10668-024-05251-8
+      \endverb
+    \endentry
     \entry{rissman2020}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -250,6 +399,57 @@
       \verb{doi}
       \verb 10.1016/j.apenergy.2020.114848
       \endverb
+    \endentry
+    \entry{sandel2015justica}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fdf1c698030d55e4f99fbe10740a0f4d}{%
+           family={Sandel},
+           familyi={S\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{translator}{2}{}{%
+        {{hash=05124d5f4dc0727638acd2fbd87c5605}{%
+           family={Matias},
+           familyi={M\bibinitperiod},
+           given={Heloísa},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4d2e5b6d89dffde0aaa0c2321bade38f}{%
+           family={Máximo},
+           familyi={M\bibinitperiod},
+           given={Maria\bibnamedelima Alice},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Rio de Janeiro}%
+      }
+      \list{publisher}{1}{%
+        {Civilização Brasileira}%
+      }
+      \strng{namehash}{fdf1c698030d55e4f99fbe10740a0f4d}
+      \strng{fullhash}{fdf1c698030d55e4f99fbe10740a0f4d}
+      \strng{fullhashraw}{fdf1c698030d55e4f99fbe10740a0f4d}
+      \strng{bibnamehash}{fdf1c698030d55e4f99fbe10740a0f4d}
+      \strng{authorbibnamehash}{fdf1c698030d55e4f99fbe10740a0f4d}
+      \strng{authornamehash}{fdf1c698030d55e4f99fbe10740a0f4d}
+      \strng{authorfullhash}{fdf1c698030d55e4f99fbe10740a0f4d}
+      \strng{authorfullhashraw}{fdf1c698030d55e4f99fbe10740a0f4d}
+      \strng{translatorbibnamehash}{9db065442b7b9751f5dbbfec4fa82263}
+      \strng{translatornamehash}{9db065442b7b9751f5dbbfec4fa82263}
+      \strng{translatorfullhash}{9db065442b7b9751f5dbbfec4fa82263}
+      \strng{translatorfullhashraw}{9db065442b7b9751f5dbbfec4fa82263}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9788520010976}
+      \field{note}{Edição eletrônica}
+      \field{subtitle}{O que é fazer a coisa certa}
+      \field{title}{Justiça}
+      \field{year}{2015}
     \endentry
     \entry{sanguinetAzzoni2024}{article}{}{}
       \name{author}{2}{}{%
@@ -333,6 +533,41 @@
       \range{pages}{6}
       \verb{doi}
       \verb 10.1073/pnas.0808904106
+      \endverb
+    \endentry
+    \entry{unfccc2008kyotoManual}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=91ff466d63ae03c88217fe9e35014c83}{%
+           family={{UNFCCC}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {United Nations Framework Convention on Climate Change}%
+      }
+      \list{location}{1}{%
+        {Bonn}%
+      }
+      \strng{namehash}{91ff466d63ae03c88217fe9e35014c83}
+      \strng{fullhash}{91ff466d63ae03c88217fe9e35014c83}
+      \strng{fullhashraw}{91ff466d63ae03c88217fe9e35014c83}
+      \strng{bibnamehash}{91ff466d63ae03c88217fe9e35014c83}
+      \strng{authorbibnamehash}{91ff466d63ae03c88217fe9e35014c83}
+      \strng{authornamehash}{91ff466d63ae03c88217fe9e35014c83}
+      \strng{authorfullhash}{91ff466d63ae03c88217fe9e35014c83}
+      \strng{authorfullhashraw}{91ff466d63ae03c88217fe9e35014c83}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Kyoto Protocol Reference Manual on Accounting of Emissions and Assigned Amount}
+      \field{year}{2008}
+      \verb{urlraw}
+      \verb https://unfccc.int/resource/docs/publications/08_unfccc_kp_ref_manual.pdf
+      \endverb
+      \verb{url}
+      \verb https://unfccc.int/resource/docs/publications/08_unfccc_kp_ref_manual.pdf
       \endverb
     \endentry
   \enddatalist

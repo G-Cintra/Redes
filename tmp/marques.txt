@@ -1,0 +1,600 @@
+                                                                      Ecological Economics 84 (2012) 57–65
+
+
+
+                                                           Contents lists available at SciVerse ScienceDirect
+
+
+                                                                   Ecological Economics
+                                               journal homepage: www.elsevier.com/locate/ecolecon
+
+
+
+
+Income-based environmental responsibility
+Alexandra Marques a,⁎, João Rodrigues a, Manfred Lenzen b, Tiago Domingos a
+a
+  IN+, Center for Innovation, Technology and Policy Research, Energy and Environment Scientiﬁc Area, Mechanical Engineering Department, Instituto Superior Técnico,
+Technical University of Lisbon, Av. Rovisco Pais n°1, 1049–001 Lisbon, Portugal
+b
+  Integrated Sustainability Analysis, School of Physics A28, University of Sydney, NSW 2006, Australia
+
+
+
+
+a r t i c l e         i n f o                            a b s t r a c t
+
+Article history:                                         A strong mitigation effort is underway to reduce the levels of anthropogenic greenhouse gas emissions. An alloca-
+Received 23 March 2012                                   tion of the mitigation effort among multiple agents requires understanding which agent is responsible for what
+Received in revised form 19 September 2012               emissions, according to a deﬁned measure of carbon responsibility. The metric adopted by current international
+Accepted 23 September 2012
+                                                         climate policy is production-based (or territorial) responsibility. However, other types of responsibility have
+Available online 23 October 2012
+                                                         been discussed in the literature, namely consumption-based (or upstream) responsibility and downstream re-
+Keywords:
+                                                         sponsibility. In this paper we study the latter, which is little explored in the literature. We clarify the term through
+Carbon responsibility                                    a novel nomenclature, income-based responsibility and present a case-study, with the quantiﬁcation of income-based
+Downstream responsibility                                responsibility for 112 world regions, and the comparison of the results with production and consumption-based
+Income responsibility                                    responsibilities.
+Multi-regional input–output analysis                                                                                                  © 2012 Elsevier B.V. All rights reserved.
+
+
+
+
+1. Introduction                                                                              the current climate debate is to design fair and equitable climate policies
+                                                                                             that are globally accepted.
+    In the economic process primary factors of production, such as                               In this work, we explore a principle of responsibility seldom
+natural resources, labor or capital are applied in production processes                      addressed in the literature, downstream responsibility. First, Section 2
+to deliver consumption goods and services. Typically these processes                         describes production-based responsibility, the metric adopted by current
+generate adverse environmental pressures. There is a widespread                              climate policy. Section 3 describes consumption-based responsibility,
+perception that the current levels of consumption and the consequent                         a frequently proposed alternative to production-based responsibility.
+environmental pressures are unsustainable, leading to environmental                          Section 4 describes downstream responsibility and presents the rationale
+problems, such as changes in climate patterns, scarcity of drinking                          for a novel nomenclature. Section 5 compares the three approaches. In
+water or degradation of arable land. In order to control and minimize                        Section 6 a case study is presented. Finally, Section 7 concludes.
+the negative externalities that result from the economic process it is
+necessary to quantify environmental pressures and to allocate re-                            2. Production-based Responsibility
+sponsibility for them to the economic agents involved.
+    Climate change is currently a priority area of environmental policy                          Since 1992, in the Earth Summit, international negotiations are in
+(EEA, 2010; OECD, 2008; UNEP, 2007), with a lot of attention focused                         place seeking a global agreement for the attribution of GHG emissions
+on anthropogenic greenhouse gas (GHG) emissions. Many scientists                             responsibility and reduction. But only in 1997 signiﬁcant results were
+believe that in order to reduce these risks a substantial reduction of                       achieved with the Kyoto Protocol. Under the Protocol each country
+GHG emissions is needed (mitigation).                                                        should report, through a national GHG inventory, the ‘emissions and
+    The global nature of climate change requires global action; for exam-                    removals taking place within national (including administered) terri-
+ple, if one large emitter does not commit to its responsibility and mitiga-                  tories and offshore areas over which the country has jurisdiction.’ For
+tion target, it is unlikely that the rest of the world can compensate for it.                the Annex I countries who ratiﬁed it, a binding target of GHG emissions'
+Moreover any emitter that stays out of any agreement will beneﬁt from                        reduction was also established: 5% (on average), during the 2008–2012
+the action taken by others; mitigation efforts to cope with climate change                   period against 1990 levels (UNFCCC, 1998).
+can be considered public goods which allow for free-riding phenomena                             Under the Kyoto Protocol, a country holds responsibility for all the
+(Stern, 2007), potentially impairing or delaying climate policy. The extent                  emissions that are directly generated by the production processes that
+of global participation is critical because the higher the participation rate                take place within its borders. This type of responsibility is often called
+in any action taken, the lower the cost (OECD, 2003). One of the goals of                    producer-based responsibility, and accounts for the direct emissions of a
+                                                                                             country (Fig. 1).
+ ⁎ Corresponding author. Tel.: +351 218419441.                                                   The geographic boundary established for GHG inventories does not
+   E-mail address: alexandra.marques@ist.utl.pt (A. Marques).                                consider the transfer of emissions through international trade, enabling
+
+0921-8009/$ – see front matter © 2012 Elsevier B.V. All rights reserved.
+http://dx.doi.org/10.1016/j.ecolecon.2012.09.010
+58                                                         A. Marques et al. / Ecological Economics 84 (2012) 57–65
+
+
+     A                          DIRECT EMISSIONS
+                                                                                         (Alexeeva-Talebi et al., 2008; Ismer and Neuhoff, 2004). In an inte-
+                                                                                         grated emissions trading system ﬁrms exporting to participating
+                                                                                         countries are included, and requested to obtain emissions certiﬁ-
+                                                                                         cates for the CO2 content of their exports (Alexeeva-Talebi et al.,
+                                                                                         2008). Carbon-motivated border tax adjustments consist in tariffs
+                                 COUNTRY A                                               imposed on imports from foreign producers that should reﬂect the
+                                                                                         cost of carbon as if the goods imported were to be produced in the
+                                                                                         participating country (Ismer and Neuhoff, 2004; Whalley, 2009).
+                                                                                         This mechanism also allows rebates for the domestic carbon tax on
+                       PRODUCTION-BASED RESPONSIBILITY
+                                                                                         exported goods (Alexeeva-Talebi et al., 2008; Ismer and Neuhoff,
+                                                                                         2004). Thus, participating countries would be partially refunded from
+     B                                                                                   their carbon abatement costs, whereas non-participating countries
+                                DIRECT EMISSIONS                                         exporting to participating countries would face a penalty (Ismer and
+                                                                                         Neuhoff, 2004) and thus have an incentive to join the scheme. The effec-
+              UPSTREAM
+                                                                                         tiveness of these measures as well as their compatibility with the World
+                                                             UPSTREAM
+         EMISSIONS EMBODIED                              EMISSIONS EMBODIED              Trade Organization are issues still under debate (Alexeeva-Talebi et al.,
+             IN IMPORTS                                      IN EXPORTS                  2008; de Cendra, 2006; Ismer and Neuhoff, 2004; Whalley, 2009).
+                                  COUNTRY A
+                                                                                             Another option to overcome production-based responsibility limita-
+                                                                                         tions is to consider a measure that includes indirectly generated emis-
+                                                                                         sions (Eder and Narodoslawsky, 1999; Peters and Hertwich, 2008b).
+                                                                                         Indirect emissions can be generated due to two distinct and opposite
+                       CONSUMPTION-BASED RESPONSIBILITY
+                                                                                         driving forces: supply and demand (Eder and Narodoslawsky, 1999).
+                                                                                         The responsibility principles that result from this are describe in the
+                                                                                         next Sections.
+     C
+                                   DIRECT EMISSIONS
+                                                                                         3. Consumption-based Responsibility
+
+           DOWNSTREAM                                       DOWNSTREAM                       Consumption-based responsibility has been discussed by several
+          EMISSIONS ENABLED                               EMISSIONS ENABLED
+            BY IMPORTS                                       BY EXPORTS
+                                                                                         authors, as an alternative to production-based responsibility that could
+                                  COUNTRY A                                              address its main limitations, namely carbon leakage (for example,
+                                                                                         Ahmad and Wyckoff, 2003; Andrew and Forgie, 2008; Bastianoni et al.,
+                                                                                         2004; Davis and Caldeira, 2010; Eder and Narodoslawsky, 1999;
+                                                                                         Munksgaard and Pedersen, 2001; Peters and Hertwich, 2008a; Peters
+                           INCOME-BASED RESPONSIBILITY                                   et al., 2011b).
+                                                                                             This metric measures the emissions generated to produce a country's
+Fig. 1. Schematic representation of a country's (A) production-based responsibility,     ﬁnal demand for goods and services. These equal the emissions stemming
+(B) consumption-based responsibility and (C) income-based responsibility. Arrows
+                                                                                         from within the national territory minus the domestic emissions required
+represent the ﬂow of emissions.
+                                                                                         to generate exports plus the foreign emissions required to generate im-
+                                                                                         ports (Fig. 1). So in fact, consumer-based responsibility is a carbon trade
+carbon leakage (Pedersen and de Haan, 2006; Peters et al., 2011b), and                   balance, as was pointed out by Rodrigues et al. (2010), Serrano and
+creates difﬁculties for the assignment of emissions generated through in-                Dietzenbacher (2010) and Kanemoto et al. (2012).
+ternational activities, like aviation and maritime transportation (currently                 For a certain product, this metric takes into account all the emissions
+not included in national inventories) (IPCC, 1997).                                      generated along its supply chain prior to the delivery to ﬁnal demand;
+    The limitations of this approach became evident when big emitters,                   for that reason these are often called upstream embodied emissions.
+like the USA and China, refused to ratify the protocol or to commit to                       The adoption of this type of responsibility is supported by China.
+binding targets. Underlying these decisions were issues of fairness and                  Around 20% of China's emissions are generated in the production of ex-
+fear of impaired competitiveness among countries (Whalley and Walsh,                     ports, therefore China has claimed that a fair agreement should take
+2009). Developing economies that are highly dependent on exports,                        into consideration that those emissions take place to produce goods
+like China and India, claim that they should not bear the responsibility                 that are not consumed by the Chinese people: ‘We produce products
+for production from which they do not beneﬁt in terms of consumption                     and these products are consumed by other countries, especially the de-
+(BBC, 2009). On the other hand, the USA and other developed economies,                   veloped countries. This share of emissions should be taken by the con-
+fear that their economies' competitiveness will be impaired if they have                 sumers but not the producers’ (BBC, 2009).
+to cope with any binding target that is not also applied to developing                       Unlike production-based inventories, consumption-based responsi-
+economies. Environmental regulations can draw away investors, pro-                       bility accounts for the emissions generated through international trade,
+moting the relocation of industries to environmentally unregulated                       minimizing the effects of carbon leakage by holding countries responsi-
+economies (the pollution haven hypothesis) and enhancing any poten-                      ble for the emissions embodied in their trade balance (Andrew and
+tial carbon leakage (Stern, 2007). These positions have not changed, as                  Forgie, 2008; Bruckner et al., 2009; Marques et al.; Peters, 2008).
+could be seen in the COP17 meeting, held in Durban in 2011. In these                         A measure of responsibility based on consumption takes into con-
+negotiations, USA, China and India acknowledged and committed to                         sideration international trade. In the context of climate policy the appli-
+the need of curbing carbon emissions, however they did not establish                     cation of this responsibility principle would work as a type of “border
+any target. On the other hand Canada withdrew from the Kyoto Protocol                    adjustment,” but not interfering with WTO regulations, since it is
+while Japan and Russia refused to sign for a second commitment period                    not formally a trade-measure (Peters, 2008). However, consumption-
+(UNFCCC, 2012).                                                                          based GHG inventories can be used to measure the carbon content of
+    To address the issues of competitiveness and carbon leakage, there                   imported goods and services and aid in the implementation of border
+are two often suggested mechanisms: they are, an integrated emis-                        tax adjustments that would reﬂect the costs of a certain product in
+sions trading system and carbon-motivated border tax adjustments                         terms of carbon (Peters, 2008).
+                                                       A. Marques et al. / Ecological Economics 84 (2012) 57–65                                                 59
+
+
+4. Income-based Responsibility                                                       the Equator Principles (EP, 2006), then we are also following a down-
+                                                                                     stream responsibility principle.
+    Another metric of environmental pressure is downstream responsibil-                   However, the size of the literature and research on this topic is mod-
+ity (Gallego and Lenzen, 2005; Lenzen and Murray, 2010; Lenzen et al.,               est. We believe that this situation results from lack of clear intuition on
+2007; Rodrigues and Domingos, 2008; Rodrigues et al., 2006, 2010).                   the concept due to a naturally oriented market-based thinking. Here we
+This metric measures the emissions enabled by primary suppliers and                  aim to clarify and illustrate the potential applications of the concept of
+that are required to generate a country's income through wages, proﬁts               downstream responsibility, continuing the work of Lenzen and Murray
+and rents (payments to primary factors of production). These equal the               (2010).
+emissions generated within national boundaries minus the domestic                         Will the general public recognize the term ‘upstream responsibility’
+emissions generated downstream of imported products plus the foreign                 as meaning ‘consumption-based responsibility’? The term upstream,
+emissions generated downstream of exported products (Fig. 1).                        per se, indicates the direction from where carbon responsibility arrives
+    From a technical point of view, the accounting of downstream respon-             to an agent, but it says nothing about the economic process that caused
+sibility has the same characteristics as consumption-based responsibility;           the emissions. Thus this term was replaced in the literature by a more
+it also accounts for the emissions generated through international trade             intuitive one: consumer-based responsibility. Downstream responsibil-
+and thus can be used to minimize the effects of carbon leakage.                      ity also describes from where carbon responsibility arrives to an agent,
+    Downstream responsibility also works as a carbon trade balance                   but it also says nothing about the economic process that caused the
+(Rodrigues et al., 2010). For a certain product, this measure accounts               emissions. In this case the process in question is the supply of primary
+for all the emissions generated downstream in its supply chain until de-             inputs to production processes that enable emissions to occur. There-
+livery to ﬁnal demand; for that reason (Lenzen and Murray, 2010)                     fore the term downstream responsibility could be replaced by supply-
+named these types of emissions downstream enabled emissions.                         based responsibility. However if we agree that responsibility should be
+    There are applications of the concept at the country level (Lenzen and           placed on those that take some beneﬁt from carbon emissions, supply-
+Murray, 2010; Marques et al.; Rodrigues et al., 2010), and at the corporate          based responsibility is not informative regarding that beneﬁt, whereas
+level (Lenzen and Murray, 2010; WBCSD and WRI, 2010). For example, at                consumption-based responsibility is. The supply of primary inputs, to a
+the country level Rodrigues et al. (2010) analyzed the downstream re-                production process involves the provision of labor (or any other primary
+sponsibility for six world regions, and showed that developed economies              factor of production) in return of a salary, or, in a broader view, an income.
+and fossil fuel exporters are the regions who enabled more emissions to              Therefore we propose the term income-based responsibility to address
+generate their income, which indicates that these regions are receiving              downstream responsibility.
+an economic beneﬁt from emissions that did not occur within their bor-                    Whereas the use of consumption-based responsibility as a metric to
+ders. Lenzen and Murray (2010) studied the downstream responsibility                 levy a carbon tax would be a tax on consumption, the equivalent use of
+associated with the provision of inputs to a certain number of Australian            income-based responsibility would function as an income tax. For ex-
+industries; this study was the ﬁrst quantiﬁcation of downstream respon-              ample, such a tax would reduce more strongly the income earned by a
+sibility at the industry level. Moreover Lenzen and Murray (2010) also               shareholder of a coal-ﬁred power plant than the income earned by an
+provided a substantial clariﬁcation of the term, by providing a match                investor in renewable energy. This assuming that producers are not fac-
+between the less known downstream-based vocabulary and the well-                     ing perfectly inelastic demand and that therefore the amount of the tax
+known consumption-based vocabulary. At a corporate level a recent                    is not completely passed on to consumers. The same logic applies to
+study (Schücking et al., 2011) showed how the supply of capital by                   countries. The way the income is generated, in a country whose main
+banks, through investment decisions, enabled the emissions of GHG.                   activity is oil extraction, would enable more emissions, thus resulting
+The results showed that the self-proclaimed greener banks are actually               in a higher responsibility (and thus a higher tax rate), than if that
+those who enable more GHG emissions through investments in the                       country's main activity was fruit production.
+coal industry (Petherick, 2012; Schücking et al., 2011).                                  A recent report by IDE-JETRO and WTO (2011) draws attention to
+    Downstream responsibility has never received the same discussion                 the drastic changes that occurred in the structure of international
+as its consumption-based cognate. The current market-based economy                   trade in the last decades. Many products are no longer made in a single
+puts emphasis on the consumption process since its main driving forces               country, but instead production chains have become fragmented, with
+are consumers' needs (Lenzen et al., 2007). Therefore, accepting that                different countries specializing in speciﬁc stages of the supply chain,
+who beneﬁts from emissions are the consumers is a natural choice. Con-               leading to a move from trade in goods to a trade in tasks (Hummels et
+sumers can opt for products whose production causes less environmen-                 al., 2001; IDE-JETRO and WTO, 2011). This shift increases the trade vol-
+tal impacts, pushing companies to adopt cleaner production processes.                ume of intermediate goods, which are re-exported several times during
+But the price of such products is likely to differ from the price of the dirt-       the processing stage, before reaching the country of assembly into a
+ier alternative (Laroche et al., 2001). Thus, the expression of environ-             ﬁnal good, which can itself be exported.
+mental preferences through purchases cannot be dissociated from the                       The emergence of global production chains changed the paradigm
+budget constraint allocated to consumption and, ultimately, to the                   of international trade, from a situation in which the last step in a sup-
+consumer's source of income.                                                         ply chain accounted for the most added value to a situation in which
+    What if more environmentally efﬁcient products are the most ex-                  it only represents a small fraction (IDE-JETRO and WTO, 2011). Under
+pensive ones? The truth is that most of the time the cost of a product               this current paradigm new statistical metrics, complementary to the
+inﬂuences the consumer choice because it will reduce its real in-                    traditional ones, need to be implemented in order to provide a clear
+come. People want to consume more and for that need to generate                      view of international trade. IDE-JETRO and WTO (2011) propose the
+more income. This is done through the supply of primary factors of                   use of international trade of value added. This measure enables the
+production.                                                                          correct determination of the relative importance of each region that
+    In a downstream approach the emphasis is put on how this money                   takes part in a global supply chain. This report and the new framework
+is earned. The beneﬁt from the generation of the emissions is passed to              it presents opens the door for wider applications of income-based
+suppliers in the form of income. Actual examples of applications of this             responsibility.
+type of responsibility are easy to ﬁnd. For example, if we accept that
+cigarette companies should compensate their customers for any                        5. Comparison of Responsibility Principles
+health problem they might incur due to cigarette consumption, we
+are following a downstream responsibility principle. Or, for example,                    The extent to which an agent is responsible for a certain environmen-
+if we believe that banks and other ﬁnancial institutions should follow               tal pressure depends on the responsibility principle chosen. Different
+60                                                        A. Marques et al. / Ecological Economics 84 (2012) 57–65
+
+
+principles will yield different results, mainly due to differences in the               and Caldeira, 2010; Peters and Hertwich, 2008a; Rodrigues et al., 2010).
+boundaries adopted (Eder and Narodoslawsky, 1999).                                      This metric is seen as fairer by developing economies than production-
+    In production-based responsibility the agent is only responsible for                based responsibility, as it would force developed economies to change
+the direct pressures it generates. In consumption and income-based re-                  their lifestyle patterns in order to meet their GHG goals (Zhou et al.,
+sponsibility the boundary is expanded to include all the pressures,                     2010). To date and up to our knowledge, there is no concrete policy rec-
+direct and indirect, that occur respectively upstream of the activity                   ommendation based on consumption-based responsibility. However, we
+under consideration (consumption-based), or downstream of the activ-                    believe that if such a policy would be implemented it would raise issues of
+ity under consideration (income-based) (Eder and Narodoslawsky,                         fairness as production-based responsibility raised. For example, consum-
+1999; Lenzen and Murray, 2010; Rodrigues et al., 2006; Zhou et al.,                     ing countries provide an economic beneﬁt to producing countries that is
+2010).                                                                                  not accounted for if a strictly consumption approach is followed.
+    Production-based responsibility accounts for emissions generated                        Through an income-based approach, it would be primary sup-
+through production processes. The agent who directly emits should                       pliers, instead of producers or consumers who would assume total re-
+hold responsibility for its emissions. In the consumption-based re-                     sponsibility for the emissions generated. Countries exporting goods
+sponsibility all the emissions that were generated upstream along                       who will enable emissions in other regions will be worse off than
+the supply chain to deliver goods and services to ﬁnal demand are                       countries whose exports do not enable emissions. This metric would
+accounted. The agent holding the responsibility is the consumer,                        push countries to analyze how they generate their income. It is con-
+who is viewed as the agent who beneﬁts from emissions; had con-                         tradictory that a country that domestically promotes clean technolo-
+sumers not demanded goods and services the emissions would not                          gies generates the majority of its income through the exports of fossil
+have occurred. The income-based perspective accounts for all the                        fuels. It is reasonable to accept that it is fair that those beneﬁting
+emissions that where generated downstream along the supply chain                        more, in terms of income, from emissions should bear the responsibil-
+due to the supply of primary factors of production. The agent holding                   ity. However, in terms of climate policy, any measure placing full re-
+the responsibility is the supplier of primary factors of production,                    sponsibility on one actor is unlikely to be accepted, since it will
+who beneﬁts from emissions because it receives a payment from                           never be perceived as fair for all the agents involved in negotiations.
+the inputs supplied. Both producer and income-based approaches                              One option to overcome this issue is the adoption of a shared respon-
+see income as the beneﬁt taken from emissions. However the bound-                       sibility approach. With this type of approach responsibility is distributed,
+aries differ; for the former only the production process is analyzed,                   according to a pre-deﬁned criteria, amongst the different agents. Several
+accounting for direct effects; whereas in the latter the whole supply                   combinations of producer, consumer and income-based responsibility
+chain is taken into consideration and both direct and indirect effects                  are possible. Rodrigues et al. (2010) provide an extensive review of this
+are accounted for. Consumption and income-based accounting work                         topic. For example, Bastianoni et al. (2004) developed a shared responsi-
+as a carbon trade balance. For an agent consumption-based responsi-                     bility indicator, the Carbon Emissions Added (CEA). For a country this
+bility considers the emissions embodied in the goods it imported, and                   would equal their producer responsibility, plus total upstream embodied
+leaves out the emission embodied in the goods exported (Kanemoto                        emission, normalized by the total of emissions worldwide. Ferng (2003)
+et al., 2012; Rodrigues et al., 2010; Serrano and Dietzenbacher,                        proposed a shared responsibility indicator, according to which a country
+2010). For income-based responsibility, the emissions enabled by                        would be responsible for a share of its production-based responsibility
+the goods it exported are considered whereas the emissions enabled                      plus a share of its consumption-based responsibility. Ferng (2003) states
+by the goods imported are left out (Rodrigues et al., 2010). As a result,               that for each country a fair share should be established but no alloca-
+agents who embark on international exchanges typically exhibit                          tion rule was determined. Gallego and Lenzen (2005) and Lenzen et al.
+more different results depending on the responsibility principle ana-                   (2007) developed a shared responsibility framework that assigns
+lyzed. In Table 1 a succinct comparison between these responsibility                    responsibility either to producers and consumers (production-based
+principles is presented.                                                                and consumption-based responsibilities) or producers and workers-
+    As mentioned, the adoption of a responsibility principle will yield                 investors (production-based and income-based responsibility). The
+different outcomes for different agents, making them better or worse                    share of responsibility allocated to each agent should be proportional
+off depending on the principle chosen. If the production-based respon-                  to its value added (Lenzen et al., 2007). Rodrigues et al. (2006) axiom-
+sibility principle is applied exporting countries will display higher re-               atically derived a shared responsibility indicator that is the average be-
+sponsibilities than importing countries. This means, for example, that                  tween an agent's consumption-based responsibility and income-based
+rapidly developing economies would hold responsibility for more emis-                   responsibility.
+sions than developed economies (see, for example, Davis and Caldeira,                       There are some empirical results on shared responsibility (for exam-
+2010; Peters and Hertwich, 2008a; Rodrigues et al., 2010). As men-                      ple, Andrew and Forgie, 2008; Cadarso et al., 2012; Ferng, 2003; Lenzen,
+tioned in Section 2 the fairness of this measure has been questioned                    2007), focusing on producers and consumers. We believe that the lack
+(Whalley and Walsh, 2009; Zhou et al., 2010).                                           of results on shared responsibility including suppliers is due to the
+    Shifting to a consumption-based approach would mean that ﬁnal                       lack of understanding of this approach, as referred in Section 4.
+consumers, instead of producers, assume total responsibility for the                        The construction of a GHG inventory based on the production-based
+emissions generated. Highly importing countries would hold more                         responsibility principle, or on the consumption or income-based princi-
+responsibility than highly exporting countries. Generally speaking,                     ples, requires different types of data. Production-based inventories use
+developed countries, with higher levels of consumption, would have                      data that are already available through statistical ofﬁces (IPCC, 1997),
+higher responsibility than developing countries (see, for example, Davis                and therefore present less uncertainty (Peters, 2008). Consumption-
+                                                                                        based and income-based inventories need more data, that is not usually
+                                                                                        available through statistical ofﬁces, namely bilateral trade data, and
+Table 1                                                                                 thus have more uncertainty associated (Peters, 2008; Peters et al.,
+Comparison between different types of approaches to GHG emissions responsibility.
+                                                                                        2011b). As a consequence, a production-based responsibility measure
+ Responsibility        Production        Consumption           Income                   is probably seen as more transparent and straightforward than a mea-
+ Effects               Direct            Indirect              Indirect                 sure based on consumption or income-based responsibility. To over-
+ Emissions             Direct            Embodied              Enabled                  come this, the scientiﬁc community has been committed to provide
+ Direction             -                 Upstream              Downstream               reliable data that can be used to compute the latter types of responsibil-
+ Scope                 Production        Demand                Supply                   ity. Examples of this are the recently launched global databases: EORA
+ Agent                 Producer          Final consumer        Primary suppliers
+                                                                                        from the University of Sydney (Lenzen et al., 2012), EXIOPOL and
+                                                          A. Marques et al. / Ecological Economics 84 (2012) 57–65                                                      61
+
+
+Table 2                                                                                 Table 2 (continued)
+Producer, consumer, and income-based responsibilities, population and GDP of GTAP         GTAP Region's name            Producer   Consumer Income      Pop.      GDP
+regions (year 2004) (Mt CO2, million, thousand million USD2004).                          code
+ GTAP Region's name          Producer   Consumer Income      Pop.       GDP               CHE     Switzerland              26.69     72.40      59.52      7.24    357.54
+ code                                                                                     NOR     Norway                   52.45     46.51     143.27      4.60    250.05
+ AUS    Australia              315.27    305.47     376.61   19.94        637.79          XEF     Rest of EFTA              4.62      5.64       4.68      0.32     15.71
+ NZL    New Zealand             28.34     34.30      29.45    3.99         96.44          ALB     Albania                   4.24      5.77       3.82      3.11      8.99
+ XOC    Rest of Oceania         17.22     17.75      15.56    8.71         21.28          BGR     Bulgaria                 41.83     31.29      32.12      7.78     24.57
+ CHN    China                 4071.13   3147.11    3450.95 1307.99       1674.13          BLR     Belarus                  50.59     43.54      48.50      9.81     21.96
+                                                                                          HRV     Croatia                  15.20     20.30      11.58      4.54     33.93
+ HKG    Hong Kong               54.70     97.23      92.20    6.96        163.01
+                                                                                          ROU     Romania                  76.53     69.01      58.11     21.79     74.42
+ JPN    Japan                  924.98   1214.09    1058.83  127.92       4658.74
+ KOR    South Korea            344.35    335.40     316.03   47.64        676.50          RUS     Russian                1332.95   1016.77    1464.48    143.90    569.84
+ TWN    Taiwan                 220.70    167.41     199.11   22.76        305.29                  Federation
+ XEA    Rest of East Asia       75.80     57.27      65.68   25.36         25.59          UKR     Ukraine                 217.62    126.61     159.47     46.99     60.98
+ KHM    Cambodia                 2.81      3.71       2.19   13.80          4.88          XEE     Rest of Eastern           5.89      8.15       3.05      4.22      2.60
+ IDN    Indonesia              295.57    261.55     307.17  220.08        254.70                  Europe
+ LAO    Lao PDR                  1.40      2.00       1.11    5.79          2.45          XER     Rest of Europe           70.96     68.06      56.35     14.29     44.98
+                                                                                          KAZ     Kazakhstan              161.61    134.85     157.05     14.84     44.35
+ MYS    Malaysia               125.32     68.91     145.18   24.89        114.90
+                                                                                          KGZ     Kyrgyzstan                5.18      5.71       4.66      5.20      2.21
+ PHL    Philippines             67.38     72.68      52.22   81.62         84.48
+ SGP    Singapore               38.20     58.33      46.76    4.27        106.81          XSU     Rest of former          132.88     94.27     128.90     37.40     20.20
+ THA    Thainland              192.72    144.05     148.13   63.69        161.70                  Soviet Union
+ VNM    Vietname                72.93     67.97      55.31   83.12         43.03          ARM     Armenia                   3.38      4.29       2.47      3.03      3.34
+ XSE    Rest of Southeast        7.44      9.08      18.02   51.30          5.59          AZE     Azerbaijan               24.18     26.86      21.59      8.35      8.73
+        Asia                                                                              GEO     Georgia                   2.43      4.67       2.36      4.52      4.47
+ BGD    Bangladesh              28.78     41.11      25.00  139.21    55.91               IRN     Iran                    299.80    301.86     340.16     68.80    157.86
+                                                                                          TUR     Turkey                  163.34    192.71     153.30     72.22    295.83
+ IND    India                  919.76    860.79     760.23 1087.12   641.26
+ PAK    Pakistan               111.19    126.67      88.15  154.79    94.73               XWS     Rest of West Asia       909.16    707.86    1235.51    118.40    691.10
+ LKA    Sri Lanka               10.86     15.63       9.25   20.57    20.08               EGY     Egypt                   120.29    101.71     113.73     72.64     76.81
+ XSA    Rest of South Asia       8.35     13.97       7.77   56.32    13.90               MAR     Morocco                  31.86     38.01      27.92     31.02     50.25
+ CAN    Canada                 460.01    424.99     512.81   31.96   979.13               TUN     Tunisia                  18.38     18.61      14.76     10.00     27.99
+ USA    United States of      4879.14   5511.71    4650.48  295.41 11673.38               XNF     Rest of Norh Africa     127.64    110.65     191.62     38.10    112.39
+        America                                                                           NGA     Nigeria                  39.92     38.16     101.83    128.71     68.57
+                                                                                          SEN     Senegal                   4.15      5.91       2.24     11.39      7.20
+ MEX    Mexico                 327.08    353.65     189.41    105.70      683.24
+                                                                                          XWF     Rest of West             19.85     34.51      20.36    117.42     50.73
+ XNA    Rest of North            3.15      4.95       1.49      0.13        5.89
+        America                                                                                   Africa
+ ARG    Argentina              118.20     88.41     124.44     38.37      150.40          XCF     Rest of Central           7.80     11.54      27.42     35.36     38.01
+ BOL    Bolivia                  8.96      8.52       9.39      9.01        8.78                  Africa
+ BRA    Brazil                 234.81    215.53     241.66    183.91      616.54          XAC     Rest of South C.          9.09     14.40      37.72     71.34     23.89
+ CHL    Chile                   54.98     44.07      52.67     16.12       89.64                  Africa
+ COL    Colombia                45.19     48.14      62.14     44.92       97.46          ETH     Ethiopia                  3.70      6.74       2.34     75.60      7.28
+                                                                                          MDG     Madagascar                1.36      2.03       1.84     18.11      4.35
+ ECU    Ecuador                 17.31     21.09      26.82     13.04       29.97
+                                                                                          MWI     Malawi                    0.55      1.57       0.63     12.61      1.79
+ PRY    Paraguay                 2.87      4.55       4.79      6.02        8.42
+ PER    Peru                    25.09     30.06      27.98     27.56       68.63          MUS     Mauritius                 1.83      3.80       2.43      1.23      5.92
+ URY    Uruguay                  4.02      6.30       3.39      3.44       13.69          MOZ     Mozambique                1.60      3.40       2.04     19.42      6.09
+ VEN    Venezuela              123.52     88.30     179.07     26.28      108.23          TZA     Tanzania                  3.06      6.51       2.99     37.63     11.47
+ XSM    Rest of South            1.86      2.37       1.23      1.39        3.52          UGA     Uganda                    2.26      3.51       2.90     27.82      7.27
+        America                                                                           ZMB     Zambia                    1.77      3.09       2.14     11.48      5.40
+ CRI    Costa Rica               4.14      6.39       5.11       4.25      19.47          ZWE     Zimbabwe                  8.78      6.89       7.81     12.94      4.08
+                                                                                          XEC     Rest of Eastern          21.04     34.27      25.33     99.73     50.19
+ GTM    Guatemala                8.47     13.49       6.47      12.29      27.45
+ NIC    Nicaragua                3.51      4.56       1.85       5.38       4.39                  Africa
+ PAN    Panama                   4.87      7.86       5.24       3.18      12.60          BWA     Botswana                  3.76     6.38        4.53    1.77     8.72
+ XCA    Rest of Central         11.00     16.51       8.51      14.07      24.15          ZAF     South Africa            329.12   213.38      312.64   47.21   213.93
+        America                                                                           XSC     Rest of SACU              3.44     6.33        4.86    4.84     9.06
+ XCB    Caribbean              142.85    139.65      89.92      38.45     193.12                                        21731    21731       21731    6405    40962
+ AUT    Austria                 52.27     82.86      68.14       8.17     292.31        Producer, consumer, and income-based responsibilities, population and GDP of GTAP
+ BEL    Belgium                 72.39    124.15      85.20      10.42     352.31        regions (year 2004) (Mt CO2, million, thousand million USD2004).
+ CYP    Cyprus                   7.05      9.24       5.45       0.83      15.42
+ CZE    Czech Republic          99.41     81.15      81.68      10.23     108.03
+ DNK    Denmark                 44.27     62.00      65.20       5.41     243.73
+ EST    Estonia                 15.03     13.55      10.68       1.34      10.22        WIOD databases from European consortiums (Timmer, 2011; Tukker
+ FIN    Finland                 57.67     69.19      64.69       5.24     185.92        et al., 2009) and the Asian IDE-JETRO (IDE, 2006).
+ FRA    France                 255.58    410.46     302.32      60.26    2046.47
+ DEU    Germany                599.25    804.45     733.92      82.65    2740.50        6. Case Study
+ GRC    Greece                  74.78     94.89      77.69      11.10     205.20
+ HUN    Hungary                 42.71     52.20      37.33      10.12      99.65
+ IRL    Ireland                 33.97     46.59      52.95       4.08     182.24           In this Section we present the results of the quantiﬁcation of
+ ITA    Italy                  332.60    476.05     340.80      58.03    1677.82        income-based responsibility, for 112 world regions (either countries or
+ LVA    Latvia                   6.45     11.84       5.85       2.32      13.47        groups of countries), using the Global Trade Analysis Project (GTAP) data-
+ LTU    Lithuania                9.42     14.51       9.15       3.44      21.20
+                                                                                        base. We compare the results with production and consumption-based
+ LUX    Luxembourg               9.73     11.25       9.83       0.45      31.86
+ MLT    Malta                    2.73      3.43       1.56       0.40       5.32        responsibilities.
+ NLD    Netherlands            165.81    172.01     155.14      16.23     578.98
+ POL    Poland                 240.70    212.64     202.00      38.56     233.62        6.1. Data and Methodology
+ PRT    Portugal                50.19     64.34      45.92      10.44     167.72
+ SVK    Slovakia                24.67     25.91      20.51       5.40      41.55
+ SVN    Slovenia                12.62     13.93      12.97       1.97      32.52
+                                                                                           We used the GTAP 7.1 database (Narayanan and Walmsley, 2008) to
+ ESP    Spain                  266.76    324.69     258.40      42.65    1039.90        build a full Multi-Regional Input–Output (MRIO) model (Peters et al.,
+ SWE    Sweden                  37.41     69.97      64.65       9.01     346.41        2011a) covering the whole world, for the year 2004. An input–output
+ GBR    United Kingdom         438.29    657.35     541.88      59.48    2123.60        (IO) model provides a description of an economy, for a given year
+62                                                         A. Marques et al. / Ecological Economics 84 (2012) 57–65
+
+
+based on monetary ﬂows between industrial sectors (Miller and Blair,                     Latvia, Lithuania, Malta, Poland, Slovakia and Slovenia). The latter
+2009). The distinctive feature of a MRIO model is that it allows the anal-               is the group of countries that joined the European Union in 2004.
+ysis of the interactions and interdependencies between different sectors                      Fig. 2 presents the difference between consumption and production-
+in different countries.                                                                  based responsibility and the difference between income and production-
+    If e is the vector of direct GHG emissions of every sector in the world              based responsibility, as a percentage of production-based responsibility,
+economy, the vectors of upstream emissions embodied in ﬁnal demand,                      for the selected regions. This ﬁgure illustrates the effect of the choice of
+u, and of downstream emissions embodied in primary inputs, d, are cal-                   the responsibility metric in the apparent contribution of a country to
+culated as:                                                                              global emissions. The income-based responsibility of Norway
+                                                                                         (NOR) is 2.7 times higher than its production-based responsibility
+                   
+ ′   ′ −1           −1 −1                                                                while its consumption-based responsibility is slightly smaller
+u ¼ e x^    I  Zx^       y^ ;                                                  ð1Þ
+                                                                                         than its production-based responsibility. Venezuela (VEN), Australia
+                −1                                                                   (AUS), Russia (RUS) and Brazil (BRA) display the same pattern. The
+  ^ I−1  x^ −1 Z
+d¼v
+                        −1
+                      x^ e ;                                                    ð2Þ      consumption-based and income-based responsibilities of Switzerland
+                                                                                         (CHE) are 2.7 and 2.2 times higher than its production-based responsibil-
+                                                                                         ity, respectively. For Singapore (SGP), EU-15 and Japan (JPN) the rela-
+where lowercase are vectors, uppercase are matrices, vectors are in col-
+                                                                                         tion between consumption and income-based responsibilities and
+umn format, ' is transpose and ˆ is diagonal matrix. The source data for
+                                                                                         production-based responsibility is the same as for Switzerland.
+the calculations are: Z, the matrix of inter-sectoral transactions; y, the
+                                                                                         South Africa (ZAF), China (CHN), EU-10 and India (IND) have lower
+ﬁnal demand vector; v, the vector of added value; and x, the vector of
+                                                                                         values of consumption and income-based responsibility than
+total output.
+                                                                                         production-based responsibility.
+    The derivation of Eqs. (1) and (2) can be found in Rodrigues et al.
+                                                                                              Fig. 3 displays the per capita producer, consumer and income-based
+(2010), under an attributional interpretation, and in Oosterhaven
+                                                                                       responsibility of the selected regions. Per capita production-based
+                                                                   −1 −1
+(1996), under a consequential interpretation. The term I−Zx^                             values tell us how many tons of CO2 are generated inside the country's
+                                                                  −1                   border per inhabitant. Per capita consumption-based values indicate
+                                                               −1
+is the Leontief inverse (Leontief, 1936) and the term I−x^ Z             is              the emissions that are required to satisfy the ﬁnal demand of goods
+the Ghosh inverse (Ghosh, 1958).                                                         and services of a citizen of that country. Finally, income-based values
+    In an MRIO a country is deﬁned as a set of sectors. So the production/               represent the emissions that are required to generate the average in-
+consumption/income-based responsibility of a country is, respectively,                   come of that country.
+the sum of eis, uis and dis over the appropriate set of sectors i. Both up-                   We see that citizens of wealthier economies are, on average, re-
+stream and downstream emissions are conserved quantities, which                          sponsible for more CO2 emissions than citizens from least developed
+means that the consumption-based and the income-based responsibil-                       economies. We also see that in wealthier regions per capita consumer
+ity of the world are both equal to the production-based responsibility of                responsibility is typically higher than producer responsibility. This ob-
+                         ′
+the world, ∑i u′i ¼ ∑i di ¼ ∑i e′i . This implies that the choice of the re-             servation indicates that, in these regions, the (upstream) carbon em-
+sponsibility principle can be interpreted as an allocation problem in                    bodied in imports exceed the (upstream) carbon embodied in exports.
+which a pie (the world total emissions) can be cut into different slices                 This phenomenon is particularly striking in small open economies,
+(the responsibility of each region).                                                     such as Singapore (SGP) or Switzerland (CHE), who rely strongly on in-
+                                                                                         ternational trade. On the other hand, for bigger economies, like United
+6.2. Results                                                                             States or China (CHN), the indirect measures of responsibility are closer
+                                                                                         to the direct measure due to the predominance of the domestic effects.
+    The responsibility of each region according to each principle is                     This occurs because consumer and income-based responsibilities are
+reported in Table 2. In order to facilitate the subsequent discussion we se-             carbon trade balances (Kanemoto et al., 2012; Rodrigues et al., 2010;
+lected 15 representative regions for which we present ﬁgures. These re-                  Serrano and Dietzenbacher, 2010), and in larger economies domestic
+gions are individual countries and two aggregate EU regions: EUR-15                      trade outweighs international trade.
+(Austria, Belgium, Denmark, Finland, France, Germany, Greece, Ireland,                        Fig. 4 shows the different responsibility metrics per unit of GDP.
+Italy, Luxembourg, Netherlands, Portugal, Spain, Sweden, United                          We ﬁnd that developing economies have higher carbon intensities
+Kingdom) and EUR-10 (Cyprus, Czech Republic, Estonia, Hungary,                           than more developed economies. The relations between producer,
+
+
+
+
+        Fig. 2. Difference between consumer and income-based responsibilities and production-based responsibility (in % of production-based responsibility, in 2004).
+                                                       A. Marques et al. / Ecological Economics 84 (2012) 57–65                                             63
+
+
+
+
+                                    Fig. 3. Per capita producer, consumer and income-based responsibilities (in ton CO2, in 2004).
+
+
+
+
+consumer and income responsibilities are maintained. In the case of                  Yamakawa and Peters, 2011), has the highest per-capita income-
+rich countries the differences are smoothed (for example, NOR). In                   based GHG responsibility in the world.
+the case of not so wealthy countries differences are sharpened (for
+example, VEN). Brazil (BRA) appears amongst more developed econ-
+omies, an exception to this pattern. This may be explained by the fact               7. Discussion and Conclusion
+that this country relies heavily on hydro power and ethanol. In 2004,
+the fraction of domestic electricity generated from hydro power was                      The aim of this work was to clarify and illustrate the information
+82.8%, only surpassed by Norway (NOR) with 98.8% (IEA, 2006).                        provided by the concept of income-based responsibility, i.e., the emis-
+These results show that developed economies are more carbon efﬁ-                     sions enabled downstream by primary factors of production.
+cient, generating per each dollar GDP less emissions than developing                     We suggest the use of income-based responsibility as a novel no-
+economies.                                                                           menclature to replace downstream responsibility, as a more intuitive
+    With these results we see that whether the analysis is done for abso-            term which also has a clear symmetry with the more popular metric
+lute, per capita or per GDP values, there is a group of countries that con-          of consumption-based responsibility. Thus, while consumption-based
+sistently displays higher income-based responsibility. These are Norway              responsibility provides information on how GHG emissions are re-
+(NOR), Venezuela (VEN), Australia (AUS) and Russia (RUS). A similarity               quired to generate ﬁnal demand, income-based responsibility provides
+between all these countries is the fact that they are all fossil fuel ex-            information on how GHG emissions are enabled to generate income.
+porters. Thus, under the income-based perspective, we see that countries                 To illustrate this metric we present empirical values of income-
+which earn income from the export of fossil fuels (or other goods that en-           based responsibility and compare them to direct emissions (the metric
+able emissions to occur downstream along the supply chain) are held re-              used in the Kyoto protocol and normally referred to as producer respon-
+sponsible for the emissions generated abroad when the fossil fuel is burnt.          sibility) and the alternative metric of consumer-based responsibility.
+    Interestingly, using this indicator we ﬁnd that Norway, a country                    We ﬁnd that, for some countries, different metrics yield very differ-
+whose electricity is obtained mostly from hydropower and which                       ent responsibility values, while for other countries the responsibility is
+has an otherwise very ‘clean’ economy (Peters and Hertwich, 2006;                    very similar, irrespective of the principle chosen. Unsurprisingly, the
+
+
+
+
+                               Fig. 4. Per 2004 dollar GDP producer, consumer and income-based responsibilities (in ton CO2, in 2004).
+64                                                                 A. Marques et al. / Ecological Economics 84 (2012) 57–65
+
+
+choice of metric is more important for smaller and more open econo-                               IDE-JETRO, WTO, 2011. Trade patterns and global value chains in East Asia: from trade
+                                                                                                      in goods to trade in tasks. Technical Report. IDE-JETRO, World Trade Organization,
+mies than for bigger economies.                                                                       Geneva, Switzerland.
+    The most emblematic case is that of Norway. This is a rich nation that                        IEA, 2006. Key world energy statistics 2006. Technical Report. International Energy
+is considered one of the ‘cleanest’ countries in the world, with low pro-                             Agency, Paris, France.
+                                                                                                  IPCC, 1997. Revised 1996 IPCC guidelines for national greenhouse gas inventories.
+ducer and consumer responsibilities. However, its income is generated                                 Technical Report. Intergovernmental Panel on Climate Change, London, UK.
+at the expense of enabling large CO2 emissions abroad through the export                          Ismer, R., Neuhoff, K., 2004. Border tax adjustments: a feasible way to address
+of fossil fuels. We have shown that income-based responsibility is able                               nonparticipation in emissions trading. Cambridge Working Papers in Economics
+                                                                                                      CWPE, 0409. Department of Applied Economics, University of Cambridge, Cam-
+to quantify this type of situation, while the alternative production or                               bridge, UK.
+consumption-based indicators cannot.                                                              Kanemoto, K., Lenzen, M., Peters, G., Moran, D., Geschke, A., 2012. Frameworks for com-
+    In climate policy, the analysis of a country's performance from the                               paring emissions associated with production, consumption, and international
+                                                                                                      trade. Environmental Science and Technology 46, 172–179.
+point of view of all responsibility principles provides a more integrat-
+                                                                                                  Laroche, M., Bergeron, J., Barbaro-Forleo, G., 2001. Targeting consumers who are willing to
+ed understanding on how carbon emissions can be mitigated. Under a                                    pay more for environmentally friendly products. Journal of Consumer Marketing 18,
+production-based perspective, mitigation options are circumscribed                                    503–520.
+by domestic borders. Under a consumer-based perspective, importing                                Lenzen, M., 2007. Aggregation (in-)variance of shared responsibility: a case study of
+                                                                                                      Australia. Ecological Economics 64, 19–24.
+countries can improve their environmental performance through the                                 Lenzen, M., Murray, J., 2010. Conceptualising environmental responsibility. Ecological
+selection of clean suppliers from abroad. Under an income-based per-                                  Economics 70, 261–270.
+spective, the symmetric possibility is open to exporting countries. For                           Lenzen, M., Murray, J., Sack, F., Wiedmann, T., 2007. Shared producer and consumer
+                                                                                                      responsibility — theory and practice. Ecological Economics 61, 27–42.
+example, under the income-based perspective Norway can increase                                   Lenzen, M., Kanemoto, K., Moran, D., Geschke, A., 2012. Mapping the structure of the
+its environmental performance by deciding to sell fossil fuels only                                   world economy. Environmental Science and Technology 45, 8374–8381.
+to countries with carbon efﬁcient production chains.                                              Leontief, W., 1936. Quantitative input and output relations in the economic systems of
+                                                                                                      the United States. The Review of Economics and Statistics 18, 105–125.
+    Another application for income-based responsibility could be its                              Marques, A., Rodrigues, J., Domingos, T., 2011. Embodied emissions and the carbon
+combination with consumption-based responsibility in a single met-                                    trade balance between world regions. 19th International Input–output Conference.
+ric of shared responsibility (Gallego and Lenzen, 2005; Lenzen et al.,                            Miller, R., Blair, P., 2009. Input–Output Analysis — Foundations and Extensions. Cambridge
+                                                                                                      University Press, Cambridge, MA, USA.
+2007; Rodrigues et al., 2006).                                                                    Munksgaard, J., Pedersen, K., 2001. CO2 accounts for open economies: producer or con-
+                                                                                                      sumer responsibility. Energy Policy 3, 327–334.
+                                                                                                  Narayanan, B., Walmsley, T., 2008. Global trade, assistance and production: the GTAP 7
+                                                                                                      Database. Technical Report. Center for global trade analysis - Purdue University,
+Acknowledgements
+                                                                                                      West Lafayette, IN, USA.
+                                                                                                  OECD, 2003. OECD environmental indicators: development, measurement and use.
+    We would like to thank the ﬁnancial support of FCT through grant                                  Technical Report. Organization for Economic Development and Cooperation, Envi-
+PTDC/AMB/64762/2006 and funding Pest-OE/EEI/LA0009/2011, FCT and                                      ronment Directorate, Paris, France.
+                                                                                                  OECD, 2008. OECD key environmental indicators 2008. Technical Report. Organization for
+the MIT Portugal Program through scholarship SFRH/BD/42491/2007                                       Economic Development and Cooperation, Environment Directorate, Paris, France.
+(to AM).                                                                                          Oosterhaven, J., 1996. Leontief versus Ghoshian price and quantity models. Southern
+                                                                                                      Economic Journal 3, 750–759.
+                                                                                                  Pedersen, O., de Haan, M., 2006. The system of environmental and economic accounts
+                                                                                                      2003 and the economic relevance of physical ﬂow accounting. Journal of Industrial
+References                                                                                            Ecology 1–2, 19–42.
+                                                                                                  Peters, G., 2008. From production-based to consumption-based national emissions invento-
+Ahmad, N., Wyckoff, A., 2003. Carbon dioxide emissions embodied in international                      ries. Ecological Economics 65, 13–23.
+    trade of goods. Technical Report DSTI/DOC(2003)15. Organization for Economic                  Peters, G., Hertwich, E., 2006. Structural analysis of international trade: environmental
+    Co-operation and Development, Paris, France.                                                      impacts of Norway. Economic Systems Research 18, 155–181.
+Alexeeva-Talebi, V., Löschel, A., Mennel, T., 2008. Climate policy and the problem of             Peters, G., Hertwich, E., 2008a. CO2 embodied in international trade with implications
+    competitiveness: border tax adjustments or integrated emissions trading? Centre                   for global climate policy. Environmental Science and Technology 42, 1401–1407.
+    For European Economic Research (ZEW) Discussion Paper, 08–061.                                Peters, G., Hertwich, E., 2008b. Post-Kyoto greenhouse gas inventories: production versus
+Andrew, R., Forgie, V., 2008. A three-perspective view of greenhouse gas emission                     consumption. Climate Change 86, 51–66.
+    responsibilities in New Zealand. Ecological Economics 68, 194–204.                            Peters, G., Andrew, R., Lennox, J., 2011a. Constructing an environmentally extended
+Bastianoni, S., Pulselli, F., Tiezzi, E., 2004. The problem of assigning responsibility for           multi-regional input–output table using the GTAP database. Economic Systems
+    greenhouse emissions. Ecological Economics 49, 253–257.                                           Research 2, 131–152.
+BBC, 2009. China Seeks Exports Carbon Relief. http://-news.bbc.co.uk-/2/hi-/7947438.stm.          Peters, G., Minx, J., Weber, C., Edenhofer, O., 2011b. Growth in emission transfers via interna-
+Bruckner, M., Polzin, C., Giljum, S., 2009. Counting CO2 emissions in a globalised world. Tech-       tional trade from 1990 to 2008. Proceedings of the National Academy of Sciences 21,
+    nical Report. World Trade Organization-United Nations Environment Programme,                      8903–8908.
+    Geneva, Switzerland.                                                                          Petherick, A., 2012. Market watch: dirty money. Nature Climate Change 2, 72–73.
+Cadarso, M.A., López, L.A., Gómez, N., Tobarra, M.A., 2012. International trade and               Rodrigues, J., Domingos, T., 2008. Consumer and producer environmental responsibility:
+    shared environmental responsibility by sector. An application to the Spanish econ-                comparing two approaches. Ecological Economics 66, 533–546.
+    omy. Ecological Economics. http://dx.doi.org/10.1016/j.ecolecon.2012.05.009.                  Rodrigues, J., Domingos, T., Giljum, S., Schneider, F., 2006. Designing an indicator of en-
+Davis, S., Caldeira, K., 2010. Consumption-based accounting of CO2 emissions. Proceed-                vironmental responsibility. Ecological Economics 59, 256–266.
+    ings of the National Academy of Sciences 12, 5687–5692.                                       Rodrigues, J., Marques, A., Domingos, T., 2010. Carbon Responsibility and Embodied
+de Cendra, J., 2006. Can emissions trading schemes be coupled with border tax adjust-                 Emissions: Theory and Measurement. Routledge, London, UK.
+    ments? An analysis vis-à-vis WTO law. Review of European Community and Inter-                 Schücking, H., Kroll, L., Louvel, Y., Richter, R., 2011. Bankrolling climate change — a look into
+    national Environmental Law 2, 131–145.                                                            the portfolios of the world's largest banks. Technical Report. urgewald, GroundWork,
+Eder, P., Narodoslawsky, M., 1999. What environmental pressures are a region's indus-                 Earthlife Africa Johannesburg, BankTrack, Nijmegen, The Netherlands.
+    tries responsible for? A method of analysis with descriptive indices and input–output         Serrano, M., Dietzenbacher, E., 2010. Responsibility and trade emissions balances: an
+    model. Ecological Economics 3, 359–374.                                                           evaluation of approaches. Ecological Economics 69, 2224–2232.
+EEA, 2010. The European environment — state and outlook 2010 synthesis. Technical                 Stern, N., 2007. The Economics of Climate Change — The Stern Review. Cambridge University
+    Report. Copenhagen, Denmark.                                                                      Press, Cambridge, UK.
+EP, 2006. The Equator principles. Technical Report. U.K.                                          Timmer, M., 2011. The World Input–Output Database (WIOD): contents, sources and
+Ferng, J.J., 2003. Allocating the responsibility of CO2 over-emissions from the perspec-              methods. Technical Report 0.9. The WIOD Project, Nijmegen, The Netherlands.
+    tives of the beneﬁt principle and ecological deﬁcit. Ecological Economics 46,                 Tukker, A., Poliakov, E., Heijungs, R., Hawkins, T., Neuwahl, F., Rueda-Cantuche, J.,
+    121–141.                                                                                          Giljum, S., Moll, S., Oosterhaven, J., Bouwmeester, M., 2009. Towards a global
+Gallego, B., Lenzen, M., 2005. A consistent input–output formulation of shared produc-                multi-regional environmentally extended input–output database. Ecological
+    er and consumer responsibility. Environmental Systems Research 17, 365–391.                       Economics 69, 1928–1937.
+Ghosh, A., 1958. Input–output approach in an allocation system. Economica 25, 58–64.              UNEP, 2007. Global environmental outlook — GEO4 environment for development.
+Hummels, D., Ishii, J., Yi, K., 2001. The nature and growth of vertical specialization in             Technical Report. Valletta, Malta.
+    world trade. Journal of International Economics 1, 75–96.                                     UNFCCC, 1998. Kyoto Protocol to the United Nations Framework Convention on Climate
+IDE, 2006. Asian international input–output tables 2000 volume 1. Explanatory notes.                  Change. Technical Report. Bonn, Germany.
+    Technical Report. Institute of Developing Economies, Japan External Trade Organi-             UNFCCC, 2012. Report of the conference of the parties on its seventh session, held
+    zation, Japan.                                                                                    in Durban from 28 November to 11 December 2011. Technical Report FCCC/KP/
+                                                          A. Marques et al. / Ecological Economics 84 (2012) 57–65                                                            65
+
+  CMP/2011/10/Add.1. United Nations Framework Convention on Climate Change,             Whalley, J., Walsh, S., 2009. Bringing the Copenhagen global climate change negotiations
+  Geneva, Switzerland.                                                                     to conclusion. CESifo Economic Studies 55, 255–285.
+WBCSD, WRI, 2010. The greenhouse gas protocol — corporate value chain (Scope 3)         Yamakawa, A., Peters, G., 2011. Structural decomposition analysis of greenhouse gas
+  accounting and reporting standard draft for stakeholder review. Technical Report.        emissions in Norway 1990–2002. Economic Systems Research 23, 303–318.
+  World Business Council for Sustainable Development and World Resources Institute,     Zhou, X., Liu, X., Kojima, S., 2010. Carbon emissions embodied in international trade: an
+  Geneva, Switzerland.                                                                     assessment from the Asian perspective. Technical Report. IGES, Kanagawa, Japan.
+Whalley, J., 2009. On the effectiveness of carbon-motivated border tax adjustments.
+  Technical Report: Asia-Paciﬁc Research and Training Network on Trade - Working
+  Paper Series, 63. Bangkok, Thailand.
+

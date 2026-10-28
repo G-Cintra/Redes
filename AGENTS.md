@@ -2,6 +2,8 @@
 
 ## Purpose of this repository
 
+Before editing or reviewing academic text in `entrega_final/entrega/`, read `entrega_final/entrega/AGENTS.md`, including when working from the repository root.
+
 This is an academic Python project intended to support master's-level research.
 
 The repository will be made public and shared with academic reviewers. The primary goal is therefore not production-grade software architecture, but a correct, reproducible, transparent, and easy-to-audit implementation of the analysis.
