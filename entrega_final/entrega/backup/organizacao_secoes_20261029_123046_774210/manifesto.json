@@ -1,0 +1,42 @@
+{
+  "before_sha256": {
+    "entrega_final\\entrega\\anexos.tex": "8b827800604136962455a5f22e52e546a4aaeee6220c0d67f5e5489786cb1e85",
+    "entrega_final\\entrega\\dados.tex": "8c044affcd1350e7199ea687f86a37ee167cbeb371de426f8ebe0b15944dd8d2",
+    "entrega_final\\entrega\\introducao.tex": "cc4945d3c37ae7317d45639e7dd88b77777d13d5dc3688d44b2db0266149ae35",
+    "entrega_final\\entrega\\main.tex": "bd33d84cb287557ed3805f39f40591a1aa879ec11c9931a23197a71da362f8a4",
+    "entrega_final\\entrega\\modelo_atribuicao.tex": "1137e7ebac8702c3e889ba8f39fff572297e2bf9e660b4298a3ca417a3028231",
+    "entrega_final\\entrega\\resultados.tex": "3f23083e206c93f750c79a2e8fa601d7fb87d64ff77555c239b43116a9dfb21a",
+    "entrega_final\\entrega\\main.pdf": "119756c43e7035c26f0bba8592426a1aebd8cc1f2f522ebc3a375242668646a9",
+    "README.md": "f9adbd2801a08e1e1e1d2a9193b7443fdfe97449da809b68b24018efd7770df6",
+    "entrega_final\\HANDOVER.md": "7d09ec2e5ec5dcd75eeecd4068b4002a3b94356dd15b39db938d2ed06d391e2c"
+  },
+  "expanded_main_sha256": "4923d6267202bfd52498c90b213eb749afd71efd9953a0b37f261e2abae7af88",
+  "protected_sha256": {
+    "entrega_final\\entrega\\references.bib": "e8ef28509efd6d6c68b6e16648a0f905b10e956ab371a4973b3570415159ac5e",
+    "entrega_final\\entrega\\AGENTS.md": "3f19c410c262677b0a67b1c6c4a1b45c7961a69c4c5754af08fbf3fcee24acc2",
+    "entrega_final\\entrega\\figuras\\anexo_construcao.pdf": "2764b52c44776f92b149a1e52688cd1fb8e9ebeb67b954f452fbe93e154e8a0a",
+    "entrega_final\\entrega\\figuras\\anexo_energia_1.pdf": "8e05006bcead21f4196ff43bddc1104e2c1a5e89ac9e49fa87bb093ca18f0b84",
+    "entrega_final\\entrega\\figuras\\anexo_energia_2.pdf": "cb8f4a70f3d0883540b7b0ad889c568795dbbeacf16b4cbce373f3091a8ba625",
+    "entrega_final\\entrega\\figuras\\atribuicao_cadeia_alimentos.pdf": "861f8b5c1fdebe3c96b31d8bd96763c2829fa2ae72703160c83949e4acd6bf29",
+    "entrega_final\\entrega\\figuras\\indicadores.pdf": "34aa38e99a936ecf1863afd952849adc1fc671a409c0ac4ebb6538d4da63fa10",
+    "entrega_final\\entrega\\figuras\\matriz_peso.pdf": "af8270e5d166ba6709447bc5c5b7a6755b13d25c6379565330c7c7431ee80c4a",
+    "entrega_final\\entrega\\figuras\\matriz_presenca.pdf": "0e00a600a7b5f3bd1190c62229cb8790847fc241e490e65a85878b580c95ac4c",
+    "entrega_final\\entrega\\figuras\\rede_foco_3500.pdf": "0b02a35cc840cbde9e05933ceec7b4e79d8a20420be7ffd4be016bd9a2311d3d",
+    "entrega_final\\entrega\\figuras\\rede_foco_4180.pdf": "026a01751b19d0a7cc3c103e9739bffe2077e2d693a05a6324748803b6a4e9cd"
+  },
+  "moved_files": {
+    "introducao.tex": "secoes/introducao.tex",
+    "dados.tex": "secoes/metodologia_dados.tex",
+    "modelo_atribuicao.tex": "secoes/metodologia_modelo.tex",
+    "resultados.tex": "secoes/resultados.tex",
+    "anexos.tex": "secoes/apendices.tex"
+  },
+  "extracted_file": "secoes/metodologia_rede.tex",
+  "expanded_source_identical": true,
+  "verification": {
+    "pdf_pages": 27,
+    "pdf_text_and_pagination_identical": true,
+    "rendered_pages_identical": 27,
+    "protected_files_identical": true
+  }
+}

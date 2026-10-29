@@ -1,0 +1,29 @@
+{
+  "preservacao_confirmada": [
+    "entrega_final/entrega/introducao.tex",
+    "entrega_final/analise_redes_2015.ipynb",
+    "entrega_final/entrega/dados.tex",
+    "entrega_final/entrega/references.bib",
+    "entrega_final/entrega/figuras/anexo_construcao.pdf",
+    "entrega_final/entrega/figuras/anexo_energia_1.pdf",
+    "entrega_final/entrega/figuras/anexo_energia_2.pdf",
+    "entrega_final/entrega/figuras/atribuicao_cadeia_alimentos.pdf",
+    "entrega_final/entrega/figuras/indicadores.pdf",
+    "entrega_final/entrega/figuras/matriz_peso.pdf",
+    "entrega_final/entrega/figuras/matriz_presenca.pdf",
+    "entrega_final/entrega/figuras/rede_foco_3500.pdf",
+    "entrega_final/entrega/figuras/rede_foco_4180.pdf"
+  ],
+  "tabelas_resultados": 5,
+  "figuras": 9,
+  "numeros_resultados_preservados": true,
+  "equacoes_rede_preservadas": true,
+  "compilacao": "LaTeX/Biber concluídos; 30 páginas",
+  "alertas_log": [],
+  "inspecao_visual": "30 páginas em visão geral; equações, tabelas, discussão e conclusão em detalhe",
+  "testes_analiticos": "não reexecutados; código, dados e método inalterados",
+  "contagem_corpo": 4245,
+  "texto_MIP_antes": 430,
+  "texto_MIP_depois": 331,
+  "sha256_pdf": "29c5c55a2b9a17038fd28d1a48367abfe6594434d5b7959e9f32d87beb33614c"
+}

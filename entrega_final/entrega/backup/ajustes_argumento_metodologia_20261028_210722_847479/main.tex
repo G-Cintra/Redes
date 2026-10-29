@@ -1,0 +1,176 @@
+\documentclass[12pt]{article}
+% Adaptado de C:/GitHub/Mestrado/Template/Template.tex.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{graphicx,booktabs,array,amsmath,amssymb,microtype}
+\usepackage{geometry}
+\usepackage{pdflscape,caption}
+\geometry{a4paper,margin=2.5cm}
+\usepackage{parskip,csquotes}
+\interfootnotelinepenalty=10000
+\usepackage[backend=biber,style=abnt]{biblatex}
+\addbibresource{references.bib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue}
+\newcommand{\instituicao}{UNIVERSIDADE FEDERAL DE SANTA CATARINA}
+\newcommand{\departamento}{Programa de Pós-Graduação em Economia}
+\newcommand{\curso}{Mestrado}
+\newcommand{\disciplina}{Desigualdade, Diversidade e Redes}
+\newcommand{\titulo}{Rede de emissões de CO\textsubscript{2} no Brasil}
+\newcommand{\autor}{Gabriel Pincelli Cintra}
+\newcommand{\local}{Florianópolis}
+\newcommand{\dataentrega}{18 de outubro de 2026}
+\newcommand{\imprimirtitulodois}{
+\begin{center}
+  {\Large\bfseries\MakeUppercase{\instituicao}\par}
+  \vspace{0.2em}{\large \departamento\par}
+  \vspace{0.2em}{\normalsize\textbf{\disciplina}\ (\curso)\par}
+  \vspace{1.4em}{\LARGE\bfseries \titulo\par}
+  \vspace{1.5em}
+\end{center}
+\noindent\begin{minipage}{0.48\textwidth}
+  \raggedright\normalsize \autor
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}
+  \raggedleft\normalsize \local, \dataentrega
+\end{minipage}
+\vspace{1.0em}\hrule\vspace{1.0em}}
+\begin{document}
+\imprimirtitulodois
+\begin{abstract}
+Este ensaio examina as relações intersetoriais que compõem as diferenças entre as emissões atribuídas pela produção e pela demanda no Brasil. Combina a Matriz de Insumo-Produto de 2015, com 67 atividades, e intensidades de CO\textsubscript{2} em uma rede dirigida e ponderada. As forças e o número efetivo de contrapartes caracterizam volume e concentração; o filtro de disparidade seleciona relações conforme sua importância local. Apesar da conectividade quase uniforme, energia e água/resíduos distribuem volumes externos próximos com concentrações distintas, enquanto construção reúne emissões de diversas origens. As contrapartes esclarecem esses perfis e a importância assimétrica de uma mesma relação para origem e destino. O backbone retém 13,40\% das ligações e 70,69\% do peso intersetorial, com coberturas locais desiguais. A análise complementa a comparação das contas e informa relações a investigar para a coordenação da mitigação, com conclusões restritas ao cenário exploratório pelas limitações dos coeficientes.
+\end{abstract}
+\noindent\textbf{Palavras-chave:} atribuição de emissões; insumo-produto; redes dirigidas e ponderadas; mitigação.
+
+\clearpage
+\input{introducao.tex}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+% Sequência inspirada em Huang et al. (2019).
+\clearpage
+\input{dados.tex}
+\clearpage
+\section{Metodologia}
+\input{modelo_atribuicao.tex}
+\subsection{Construção da rede dirigida e ponderada}
+\label{sec:construcao-rede}
+
+A rede tem 67 nós, um por atividade da MIP, identificados pelos códigos do IBGE. Cada nó representa uma origem emissora nas ligações de saída e o setor de um produto final nas ligações de entrada, conforme a representação de \textcite{huang2019}. As categorias de uso final não constituem nós separados.
+
+Para estudar relações entre atividades distintas, define-se
+\begin{equation}
+W_{ij}=\begin{cases}
+F_{ij}, & i\ne j,\\
+0, & i=j.
+\end{cases}
+\label{eq:rede-sem-diagonal}
+\end{equation}
+Cada $W_{ij}>0$ define uma aresta $i\rightarrow j$, cujo peso, em Gg de CO\textsubscript{2}, indica a emissão em $i$ atribuída ao produto final de $j$. As duas direções de um par são distintas. Como os pesos incorporam requisitos diretos e indiretos, concatenar arestas não representa uma sequência de etapas produtivas.
+
+A diagonal $F_{ii}$ reúne emissões de $i$ atribuídas à demanda final de seus próprios produtos, incluindo requisitos indiretos. Ela permanece em $F$ e nas contas $c$ e $u$, mas é retirada de $W$, cujo peso total corresponde apenas às atribuições entre atividades distintas.
+
+A construção preserva todos os nós e as arestas positivas, sem corte por magnitude. São conferidos o alinhamento dos códigos e a existência de pesos finitos e não negativos. A seleção de arestas é tratada na seção~\ref{sec:backbone}.
+
+\subsection{Volume e concentração das relações}
+\label{sec:volume-concentracao}
+
+O volume e a concentração são calculados em $W$, antes da filtragem, por meio das forças e da disparidade dos pesos \parencite{huang2019,serrano2009}.
+
+\paragraph{Volume.}
+As forças de saída e entrada são as somas dos pesos em cada direção:
+\begin{equation}
+\begin{aligned}
+s_i^{\mathrm{out}}&=\sum_{j\ne i}W_{ij}=c_i-F_{ii},\\
+s_i^{\mathrm{in}}&=\sum_{j\ne i}W_{ji}=u_i-F_{ii}.
+\end{aligned}
+\label{eq:forcas-externas}
+\end{equation}
+A força de saída mede as emissões próprias de $i$ atribuídas aos produtos finais de outras atividades; a de entrada mede as emissões de outras atividades atribuídas aos produtos finais de $i$. A diferença entre força de entrada e força de saída é $s_i^{\mathrm{in}}-s_i^{\mathrm{out}}=u_i-c_i$. A leitura separada dos volumes revela atribuições que se compensam no saldo; as contas completas e a diagonal situam sua participação no total.
+
+\paragraph{Concentração.}
+Para perfis com força positiva, define-se a participação de cada contraparte:
+\begin{equation}
+p_{ij}^{\mathrm{out}}=\frac{W_{ij}}{s_i^{\mathrm{out}}},\qquad
+p_{ji}^{\mathrm{in}}=\frac{W_{ji}}{s_i^{\mathrm{in}}},\quad j\ne i.
+\label{eq:participacoes-externas}
+\end{equation}
+O perfil de saída distribui o volume intersetorial da origem entre destinos; o de entrada descreve as origens que compõem a atribuição intersetorial ao destino. Cada perfil soma um. A disparidade e seu inverso são
+\begin{equation}
+\begin{aligned}
+Y_i^{\mathrm{out}}&=\sum_{j\ne i}(p_{ij}^{\mathrm{out}})^2,&
+Y_i^{\mathrm{in}}&=\sum_{j\ne i}(p_{ji}^{\mathrm{in}})^2,\\
+D_{2,i}^{\mathrm{out}}&=1/Y_i^{\mathrm{out}},&
+D_{2,i}^{\mathrm{in}}&=1/Y_i^{\mathrm{in}}.
+\end{aligned}
+\label{eq:disparidade}
+\end{equation}
+$Y$ aumenta com a concentração; $D_2$ expressa a mesma informação como número efetivo de contrapartes. Para $k$ pesos iguais, $D_2=k$; quando uma relação domina, aproxima-se de um. As medidas são adimensionais e ficam indefinidas quando a força é zero, sem excluir o nó.
+
+Os pesos e as participações identificam as contrapartes, cuja identidade não é informada por $D_2$. O grau conta as arestas positivas de entrada ou saída; a densidade é o número de arestas dividido por $67\times66$. Esses indicadores descrevem a presença de relações, enquanto a disparidade considera a distribuição dos pesos.
+
+\subsection{Extração e avaliação do backbone}
+\label{sec:backbone}
+
+O filtro de disparidade de \textcite{serrano2009}, aplicado por \textcite{huang2019}, seleciona ligações destacadas na composição local dos pesos, considerando atividades de diferentes escalas. O backbone resultante não altera as contas ambientais completas.
+
+\paragraph{Critério de seleção.}
+O modelo nulo distribui a força entre $k$ ligações dividindo o intervalo unitário por $k-1$ pontos uniformemente escolhidos. Para $k>1$, a probabilidade de uma parcela atingir ou superar $p$ é $(1-p)^{k-1}$. Para a aresta $i\rightarrow j$, as caudas nas perspectivas de saída e entrada são
+\begin{equation}
+\begin{aligned}
+a_{ij}^{\mathrm{out}}&=\left(1-\frac{W_{ij}}{s_i^{\mathrm{out}}}\right)^{k_i^{\mathrm{out}}-1},\\
+a_{ij}^{\mathrm{in}}&=\left(1-\frac{W_{ij}}{s_j^{\mathrm{in}}}\right)^{k_j^{\mathrm{in}}-1}.
+\end{aligned}
+\label{eq:caudas-filtro}
+\end{equation}
+Os graus $k$ e as forças são os de $W$. A aresta é selecionada se $a_{ij}^{\mathrm{out}}<\alpha$ \textbf{ou} $a_{ij}^{\mathrm{in}}<\alpha$, registrando-se a extremidade responsável pela seleção. A saída destaca um destino nas atribuições da origem; a entrada destaca uma origem na composição do destino.\footnote{As caudas são calculadas apenas para graus pertinentes maiores que um. Se uma extremidade tem grau um, vale o teste da outra; se ambas têm grau um, a aresta é preservada por convenção de manutenção da relação exclusiva, inclusive em díades isoladas. Essa extensão dos casos degenerados do suplemento de Serrano et al. é registrada separadamente da seleção estatística.}
+
+Adota-se $\alpha=0{,}05$, com $0{,}01$ e $0{,}10$ para sensibilidade. O filtro é aplicado uma vez a $W$ para cada valor, sem atualização dos perfis. A matriz $B_\alpha$ preserva os pesos originais nas arestas selecionadas e zero nas demais, sem renormalização ou corte absoluto adicional.
+
+\paragraph{Avaliação da seleção.}
+Comparam-se a fração de arestas retidas e a cobertura dos pesos, globalmente e por atividade:
+\begin{equation}
+\begin{aligned}
+r_\alpha&=\frac{\sum_{ij}(B_\alpha)_{ij}}{\sum_{ij}W_{ij}},\\
+r_{\alpha,i}^{\mathrm{out}}&=\frac{\sum_j(B_\alpha)_{ij}}{s_i^{\mathrm{out}}},\qquad
+r_{\alpha,i}^{\mathrm{in}}=\frac{\sum_j(B_\alpha)_{ji}}{s_i^{\mathrm{in}}}.
+\end{aligned}
+\label{eq:cobertura-backbone}
+\end{equation}
+As razões são definidas apenas para denominadores positivos. A cobertura refere-se à parcela intersetorial de $W$ e permite distinguir retenção agregada de perdas por atividade e direção. A conectividade é descrita pelos graus, isolados e componentes fracamente conectados, obtidos ao desconsiderar a direção das arestas.
+
+A sensibilidade é examinada pelas mudanças nas arestas, coberturas e posições setoriais entre os três valores de $\alpha$. O aninhamento dos conjuntos decorre da regra e não constitui evidência independente de robustez. As caudas do modelo nulo não medem incerteza ambiental, e a seleção não estabelece prioridade de mitigação.
+
+Para interpretar os perfis, as contrapartes são ordenadas por peso em $W$ completa. Destacam-se as cinco maiores e a participação conjunta das demais, sem modificar a rede. A leitura dos casos combina essas participações, as contas completas e os motivos de retenção; a sensibilidade verifica também a permanência das principais relações nos três parâmetros.
+
+\clearpage
+\input{resultados.tex}
+\clearpage
+\section{Discussão e implicações para a coordenação da mitigação}
+
+A rede permite examinar a composição das atribuições que as contas pela produção e pela demanda apresentam como totais setoriais. Na rede completa, os graus praticamente não diferenciam as atividades; as forças situam os volumes e o número efetivo distingue a concentração dos pesos. A identificação das contrapartes dá conteúdo econômico a essas medidas. Essa combinação de perspectivas, apoiada na representação dirigida de \textcite{huang2019} e na análise dos pesos de \textcite{serrano2009}, permite interpretar diferenças entre contas sem reduzir cada atividade a uma única posição em um ranking.
+
+Os casos mostram por que volume, concentração e direção precisam ser lidos conjuntamente. Energia e água/resíduos têm saídas externas próximas, mas o segundo perfil é mais concentrado, com maior participação da administração pública. Construção combina elevada atribuição própria com um volume adicional proveniente de diversas origens, entre elas minerais não metálicos, energia e produtos de metal. As saídas externas dessa mesma atividade são menores e mais concentradas. Assim, o papel de origem emissora e o papel de destino da atribuição podem ter escalas e composições diferentes mesmo quando se referem ao mesmo nó.
+
+Esse diagnóstico complementa as comparações de atribuição entre setores, regiões e cadeias produtivas presentes na literatura brasileira \parencite{imori2015,sanguinetAzzoni2024,montoyaEtAl2026}. Como o total contabilizado é preservado, a mudança de participação de uma atividade entre produção e demanda acompanha o saldo de suas atribuições externas. A rede permite examinar quais origens e destinos compõem esse saldo e como os pesos se distribuem entre eles. Essa é a contribuição aproveitável no projeto de dissertação sobre Santa Catarina em 2018: complementar a comparação das participações setoriais com a interpretação das relações que as conectam. A aplicação catarinense exigirá dados harmonizados e o recálculo das contas e dos perfis na fronteira estadual; as contrapartes e os contrastes encontrados no cenário nacional não podem ser transportados para o estado.
+
+A importância local acrescenta outra distinção. A relação produtos de metal $\rightarrow$ construção concentra parte expressiva das saídas da origem, embora represente uma parcela menor das entradas do destino. A perspectiva escolhida altera, portanto, o significado da relação destacada: para a origem, identifica um produto final associado a suas emissões; para o destino, identifica uma das origens que compõem sua atribuição. O filtro explicita essas duas leituras, mas suas coberturas desiguais exigem consulta aos perfis completos. A sensibilidade sustenta os papéis ilustrados de energia e construção na faixa examinada, ao mesmo tempo que revela mudanças em relações individuais. A interpretação depende dessa verificação, além do número de arestas desenhadas.
+
+Para a coordenação da mitigação, origens compartilhadas por várias demandas e demandas associadas a várias origens indicam conjuntos de atividades a investigar conjuntamente. No primeiro caso, cabe examinar como mudanças em uma origem emissora se relacionariam com os produtos finais aos quais suas emissões são atribuídas. No segundo, cabe investigar o uso de energia e materiais associado a um produto final considerando suas diferentes origens emissoras. Intervenções nos processos produtivos e no uso de energia e materiais ao longo das cadeias constituem frentes complementares \parencite{rissman2020}. Os resultados ajudam a formular essas questões, mas não estimam o efeito de mudanças tecnológicas ou de demanda, a capacidade de intervenção dos agentes, os custos ou a eficácia de instrumentos. A distribuição normativa dos esforços de mitigação requer critérios adicionais à atribuição contábil.
+
+As interpretações ambientais permanecem condicionadas à base utilizada. A interpolação, a cobertura não reconciliada e a diferença de preços limitam a aplicação dos contrastes setoriais à economia brasileira observada. Essas restrições alcançam os volumes e as comparações entre atividades, podendo também afetar os perfis ponderados e a seleção de relações. A consistência contábil e a sensibilidade a $\alpha$ verificam aspectos distintos da validade das emissões físicas. Antes de sustentar conclusões ambientais definitivas, é necessário reconciliar a fronteira, a alocação setorial e os denominadores monetários dos coeficientes ou substituí-los por uma extensão compatível com 2015.
+
+\clearpage
+\section{Conclusões}
+
+No cenário analisado, as diferenças entre as contas pela produção e pela demanda são compostas por relações de atribuição cujos pesos distinguem atividades com conectividade semelhante. Energia e água/resíduos ilustram volumes externos próximos distribuídos com concentrações diferentes; construção combina elevada atribuição própria com emissões recebidas de diversas origens. A leitura das forças, da concentração e das contrapartes permite compreender a composição das contas e os dois papéis de cada atividade na rede.
+
+O backbone distingue relações destacadas para a origem, para o destino ou para ambos. Os casos mostram que essa importância pode ser assimétrica e que a estabilidade dos papéis examinados convive com mudanças na seleção e na cobertura. A análise de redes oferece, assim, um procedimento para aprofundar a comparação das participações setoriais e formular questões de coordenação da mitigação. Seu aproveitamento em Santa Catarina requer uma aplicação própria, e conclusões empíricas definitivas sobre o Brasil dependem da validação ou substituição da extensão ambiental.
+
+\clearpage
+{\renewcommand*{\bibfont}{\small}
+\printbibliography[title={Referências}]
+}
+\input{anexos.tex}
+\end{document}

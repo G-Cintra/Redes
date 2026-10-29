@@ -1,0 +1,26 @@
+{
+  "arquivos_preservados": [
+    "entrega_final\\entrega\\introducao.tex",
+    "entrega_final\\entrega\\main.tex",
+    "entrega_final\\entrega\\dados.tex",
+    "entrega_final\\entrega\\resultados.tex",
+    "entrega_final\\entrega\\anexos.tex",
+    "entrega_final\\entrega\\references.bib",
+    "entrega_final\\analise_redes_2015.ipynb",
+    "entrega_final\\entrega\\figuras\\anexo_construcao.pdf",
+    "entrega_final\\entrega\\figuras\\anexo_energia_1.pdf",
+    "entrega_final\\entrega\\figuras\\anexo_energia_2.pdf",
+    "entrega_final\\entrega\\figuras\\atribuicao_cadeia_alimentos.pdf",
+    "entrega_final\\entrega\\figuras\\indicadores.pdf",
+    "entrega_final\\entrega\\figuras\\matriz_peso.pdf",
+    "entrega_final\\entrega\\figuras\\matriz_presenca.pdf",
+    "entrega_final\\entrega\\figuras\\rede_foco_3500.pdf",
+    "entrega_final\\entrega\\figuras\\rede_foco_4180.pdf"
+  ],
+  "equacoes_preservadas": true,
+  "mudanca_figura": "somente opção de posicionamento",
+  "paginas_pdf": 29,
+  "palavras_corpo": 4208,
+  "palavras_acrescentadas": 40,
+  "alertas_latex": []
+}

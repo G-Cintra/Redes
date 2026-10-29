@@ -1,18 +1,109 @@
 # Handover da entrega e avaliação de mérito
 
-Registro de 28/10/2026 para continuar o trabalho em outro computador ou com outro agente. A versão de referência é o artigo atual, desenvolvido a partir da revisão local de 28/10, com o aprofundamento descrito abaixo. A avaliação inicial e o histórico de conciliação de versões permanecem documentados nas seções posteriores; não confundir recomendações históricas com o estado atual.
+## Organização atual dos fontes em 29/10/2026
 
-## Próxima tarefa pendente: leitura crítica da versão revisada
+Por solicitação do usuário, os subarquivos do artigo foram reunidos em `entrega/secoes/`. As subseções 2.3–2.5 que estavam em `main.tex` foram extraídas, sem reescrita, para `secoes/metodologia_rede.tex`. O arquivo principal mantém o preâmbulo, a abertura, as chamadas das seções, a discussão, a conclusão e a bibliografia.
+
+| Caminho anterior, relativo a entrega/ | Caminho atual |
+| --- | --- |
+| `introducao.tex` | `secoes/introducao.tex` |
+| `dados.tex` | `secoes/metodologia_dados.tex` |
+| `modelo_atribuicao.tex` | `secoes/metodologia_modelo.tex` |
+| Subseções 2.3–2.5 de `main.tex` | `secoes/metodologia_rede.tex` |
+| `resultados.tex` | `secoes/resultados.tex` |
+| `anexos.tex` | `secoes/apendices.tex` |
+
+Os cinco arquivos movidos preservam seus bytes. A expansão de todas as chamadas `\input` em `main.tex` foi comparada com a versão anterior e é idêntica, incluindo texto, equações, legendas e comandos de apresentação. Não foram alterados a introdução, os resultados, a bibliografia, os arquivos de figuras ou o notebook. A seção 2.2 mantém a definição de F e as somas das linhas e colunas aprovadas pelo usuário, usando varphi e sua matriz diagonal, sem C ou Phi maiúsculo.
+
+A compilação continua a partir de `entrega/main.tex`, com o mesmo comando LaTeX/Biber registrado no README. Caminhos de figuras e bibliografia permanecem relativos à pasta da entrega. O README da raiz foi atualizado com os novos caminhos. As instruções de `entrega/AGENTS.md` continuam aplicáveis a `secoes/`, sem novo arquivo de instruções.
+
+Backup anterior: `entrega/backup/organizacao_secoes_20261029_123046_774210/`, com fontes, PDF, README e handover anteriores e manifesto de integridade. LaTeX/Biber compilados com sucesso, sem avisos de referências indefinidas ou caixas excedentes. O PDF permanece com **27 páginas**: texto extraído e paginação idênticos, e as 27 páginas renderizadas a 900 pixels foram comparadas pixel a pixel com o PDF anterior, sem diferenças. As contagens históricas abaixo antecedem as últimas revisões do autor e não foram recalculadas nesta organização. Sem commit ou push nesta etapa.
+
+
+## Atualização do resumo segundo Nikolov em 29/10/2026
+
+Revisado somente o texto entre `\begin{abstract}` e `\end{abstract}`, após reler o artigo e consultar Nikolov (2023), seções III–IV, sobre clareza da contribuição, seleção dos achados centrais e relação entre resultados e implicações. O resumo tem **181 palavras** pelo TeXcount e apresenta objetivo, base e abordagem, contrastes de volume e concentração, parcela intersetorial de 39,5% da construção, importância assimétrica e implicações para coordenação da mitigação. Foram retirados do resumo os percentuais agregados de retenção do filtro; esses resultados permanecem no artigo. Mantida uma ressalva final sobre a validação dos coeficientes. Palavras-chave preservadas.
+
+Backup anterior: `entrega/backup/resumo_nikolov_20261029_104310_171023/`. A comparação dos fontes confirmou alteração exclusiva do resumo no artigo; introdução, demais seções, bibliografia, figuras e apresentação mantidas. PDF compilado com sucesso, com 28 páginas e sem referências indefinidas ou caixas excedentes; primeira página inspecionada visualmente, e o texto extraído das páginas 2–28 é idêntico ao PDF anterior. A introdução continua em uma página. Corpo com **4.436 palavras**, excluindo o resumo e os demais elementos indicados na contagem abaixo; 4.495 com as notas de rodapé. Sem commit ou push nesta etapa.
+
+
+## Ajuste tipográfico mais recente: fonte original e parágrafos separados
+
+O usuário pediu retornar à família tipográfica anterior às edições de formatação, retirar o recuo e ampliar a separação entre parágrafos, preservando fonte 11, margens simétricas de 2,5 cm e entrelinhas de 1,05. Restaurada a fonte padrão original do LaTeX (Computer Modern com codificação T1), retirado newtxtext/newtxmath e retomado `parskip`, com recuo zero. Subseções em negrito, sem itálico. **Esta decisão substitui a escolha de Times e de parágrafos recuados registrada abaixo.**
+
+Somente o preâmbulo de `main.tex` foi alterado. Corpo, introdução, demais fontes, bibliografia e figuras preservados, verificados por comparação e hashes. A introdução continua inteira em uma página (página 2 do PDF), conforme o benchmark solicitado; os dados começam na página 3. PDF compilado com sucesso, agora com **28 páginas**, sem avisos de referências indefinidas ou caixas excedentes. Todas as páginas conferidas em visão geral; introdução e subseções inspecionadas em detalhe. Contagem de palavras inalterada.
+
+Backup anterior: `entrega/backup/fonte_original_paragrafos_20261029_100521_160612/`, com fonte principal, PDF, handover e manifesto. Sem commit ou push nesta etapa.
+
+
+## Preferência de apresentação atual: artigo para leitura em tela
+
+Após conferir o formato ABNT, o usuário pediu fonte menor, menos espaçamento e margens simétricas, com aparência de artigo de revista. **Esta preferência substitui os parâmetros de apresentação ABNT registrados na etapa anterior.** Não reaplicar automaticamente fonte 12, entrelinhas 1,5 ou margens assimétricas.
+
+- Fonte Times (newtxtext/newtxmath) de 11 pt, entrelinhas com fator 1,05, margens de 2,5 cm em todos os lados e recuo de parágrafo de 0,5 cm. Referências em 10 pt; notas, títulos de figuras/tabelas e paginação em 9 pt. Ajustados os intervalos de títulos, parágrafos e equações para composição mais compacta.
+- Identificação inicial centralizada e discreta, com título, autor e dados institucionais preservados; resumo compacto. Mantidas a coluna única, as figuras completas, os títulos das figuras acima das imagens e as quebras entre seções principais previamente solicitadas.
+- Alterado apenas o preâmbulo de `main.tex`; o corpo a partir de `\begin{document}` foi comparado e permanece idêntico. Todos os demais fontes, incluindo a introdução, a bibliografia e os nove arquivos de figuras, mantêm os hashes anteriores. Não houve mudança textual, metodológica ou numérica.
+- Backup anterior: `entrega/backup/layout_artigo_20261029_093704_507701/`, com PDF, fonte principal, handover e manifesto de integridade.
+- PDF atual com **26 páginas**, compilado com sucesso, sem avisos de referências indefinidas ou caixas excedentes. Todas as páginas foram inspecionadas em visão geral; abertura, introdução, métodos e equações também foram conferidos em detalhe. Sem commit ou push nesta etapa.
+
+
+## Revisão dos conceitos e da apresentação em 29/10/2026
+
+Pedido mais recente: esclarecer a agregação dos usos finais nos nós, introduzir brevemente filtro de disparidade e backbone e aplicar a apresentação ABNT, sem alterar a introdução ou acrescentar capa.
+
+- Na seção 3.2, a frase solta foi substituída pela explicação de que o nó de destino reúne as emissões associadas aos diferentes usos finais dos produtos da atividade, com exemplos de consumo das famílias e exportações.
+- Na seção 3.4, o filtro é definido como método de seleção de participações localmente excepcionais sob modelo nulo; backbone é a sub-rede das ligações selecionadas. O resumo também explica os termos. A regra OU, parâmetros, convenção de grau um, equações e valores não mudaram.
+- Conferidas visualmente as seções 5.1–5.3 e 5.8 da NBR 14724:2024, versão corrigida de 2025, arquivada em `C:/GitHub/Mestrado/0-Projeto de Dissertação/Normas_e_requisitos/documentos/abnt_nbr_14724_2024_corrigida_2025.pdf`. Usados A4, margens superior/esquerda de 3 cm e inferior/direita de 2 cm, corpo 12 e entrelinhas 1,5; espaço simples em objetos, notas e referências. Fonte menor uniforme 10 para títulos de figuras/tabelas, fontes, notas e paginação; referências em 12, alinhadas à esquerda e separadas por uma linha simples. Mantida a família tipográfica; a norma não exige Arial ou Times. Recuo de parágrafo 1,25 cm e ausência de espaço extra entre parágrafos são decisões editoriais coerentes com o projeto de dissertação, não valores impostos pela norma.
+- Paginação superior direita, texto e links pretos, títulos das figuras acima das imagens, fontes e notas abaixo; apêndices com identificação e título centralizados, separados por travessão. Retiradas as exceções de margem de 1,5 cm nas páginas em paisagem. Mantida a abertura com identificação e resumo, sem capa ou novos elementos pré-textuais.
+- A mudança de entrelinhas exigiu ajustes de paginação: o parágrafo de contas passou a acompanhar a Tabela 1 depois da figura de indicadores; foi retirada uma quebra manual anterior à Tabela 2 e a quebra interna da discussão. Não houve alteração da redação dos resultados nesta etapa.
+- Backup anterior: `entrega/backup/conceitos_formatacao_abnt_20261029_092449_872881/`, com os fontes, bibliografia, PDF e handover anteriores e manifesto de integridade. A introdução foi preservada integralmente, comprovada por SHA-256; dados, bibliografia e os nove arquivos de figuras também mantêm seus hashes. Equações, valores das tabelas e textos das legendas foram comparados com o backup e permanecem idênticos.
+- PDF recompilado com LaTeX/Biber, com **31 páginas**, sem avisos de referências indefinidas, caixas excedentes ou avisos do Biber. Todas as páginas foram conferidas em visão geral, com inspeção adicional de definições, tabelas, notas e figuras. Sem reexecução da análise numérica e sem commit/push nesta etapa.
+
+
+Registro atualizado em 29/10/2026 para continuar o trabalho em outro computador ou com outro agente. A versão de referência é o artigo atual, incluindo a introdução revisada pelo usuário e a integração das implicações de mitigação descrita a seguir. Os registros de 28/10 e o histórico de conciliação de versões permanecem documentados nas seções posteriores; não confundir recomendações históricas com o estado atual.
+
+## Integração das implicações de mitigação em 29/10/2026
+
+O usuário aprovou incorporar a discussão baseada em Rissman et al. (2020), com mudanças localizadas e sem desfigurar o trabalho. Na introdução, autorizou alterar **apenas o último parágrafo**. Foi usada como base a introdução que o próprio usuário revisou em 29/10, incluindo a pergunta sobre a distribuição das emissões nas relações entre atividades emissoras e setores de produtos finais. Todo o trecho anterior ao último parágrafo foi preservado byte a byte. Não restaurar a introdução de 28/10 com base no hash histórico registrado adiante.
+
+- **Resultados:** foi explicitado que outras atividades geram cerca de 39,5% das emissões atribuídas aos produtos finais da construção e que 60,5% permanece na diagonal. A proporção foi conferida nas saídas já existentes do notebook: construção tem 59.397,0619 Gg pela demanda, 23.483,7571 Gg de entrada externa e 35.913,3049 Gg na diagonal. Não houve novo indicador ou mudança de cálculo. As cinco tabelas e as nove figuras foram preservadas integralmente.
+- **Discussão:** os quatro primeiros parágrafos foram mantidos. A passagem genérica sobre mitigação foi desenvolvida em três parágrafos, relacionando a composição da conta da construção a eficiência material e critérios de emissões incorporadas nos projetos; informação verificável sobre materiais e compras públicas de produtos de menor emissão; e a distribuição das atribuições associadas a uma redução da intensidade emissora de energia, com estrutura produtiva e demanda fixas. As citações usam as seções 5.1 e 6.4, 6.6 e 6.7, e 4.2 e 7.2 de Rissman, respectivamente.
+- **Alcance:** a revisão fundamenta a pertinência de discutir essas estratégias com o diagnóstico intersetorial, sem atribuir ao estudo uma avaliação de eficácia, custo ou tecnologia ótima. A matriz não identifica contratos, poder de negociação ou participação governamental na demanda da construção. Essa participação não é medida pelo nó de administração pública. Informações de fornecedores e avaliação de ciclo de vida continuam necessárias à especificação de materiais. A limitação dos coeficientes ambientais foi mantida.
+- **Sínteses:** o último parágrafo da introdução passou a apresentar o setor da construção, a parcela de 39,5% e a ligação com as estratégias de mitigação. O resumo e o encerramento da conclusão foram alinhados. A análise de concentração, os casos de energia e água/resíduos e a avaliação do backbone permanecem no trabalho. A metodologia, os dados, as referências e o notebook não foram alterados.
+- **Backup:** `entrega/backup/mitigacao_rissman_20261029_085224_853476/`, com os fontes afetados, o PDF e o handover anteriores, além do manifesto de integridade e da verificação final. O manifesto registra o comprimento e o hash do trecho protegido da introdução.
+- **Verificação:** compilação LaTeX/Biber concluída, com 29 páginas, sem referências indefinidas ou caixas excedentes. As 29 páginas foram inspecionadas em visão geral; resumo, discussão e conclusão foram conferidos em detalhe. Foi ajustada uma quebra de página na discussão para evitar uma linha de abertura de parágrafo isolada. Não foram executados novamente cálculos nem testes analíticos, pois não houve alteração de código, dados ou método. Nesta etapa não foi solicitado novo commit ou push.
+
+No ajuste seguinte do fechamento, a abertura passou a retomar a produção nacional e a frase final afirma diretamente a ligação com as estratégias de mitigação. Foram retiradas desse parágrafo as ressalvas repetidas. A mudança permanece limitada ao último parágrafo. Backup anterior: `entrega/backup/fechamento_introducao_20261029_091042_566505/`.
+
+## Leitura crítica e ajustes de 28/10/2026 (histórico)
 
 Pedido expresso do usuário para o próximo agente:
 
 > Faça uma leitura crítica da versão revisada, seguindo Booth e Nikolov. A análise de redes e o diálogo com a dissertação ficaram integrados de forma orgânica? Preserve a introdução.
 
-**Essa leitura crítica ainda não foi realizada.** A revisão já executada e suas verificações não substituem uma avaliação posterior da qualidade do argumento. O usuário aprovou pessoalmente a introdução, que deve continuar integralmente preservada. Antes de qualquer reescrita posterior, criar backup identificável, conforme o AGENTS da entrega.
+**A leitura crítica foi realizada e o usuário autorizou implementar seus ajustes.** O diagnóstico foi favorável à integração substantiva das redes e ao diálogo com a dissertação, com necessidade de explicitar a síntese das diferenças entre as contas, desenvolver as consequências dos achados na discussão, aproximar figuras e interpretação e distinguir emissões próprias da parcela da diagonal. A introdução aprovada permanece integralmente preservada.
 
-O objetivo principal é um bom artigo acadêmico para a disciplina de redes. Avaliar se pergunta, método, evidência e interpretação formam uma exposição contínua; se os métodos de redes acrescentam compreensão econômica; e se o diálogo com a dissertação decorre dos resultados, em vez de aparecer apenas como uma declaração isolada. Examinar também a progressão conceitual, a função dos parágrafos, a ligação entre afirmações e evidências, a contribuição das figuras e a proporcionalidade das conclusões. Usar as diretrizes de Booth e Nikolov registradas em `entrega/AGENTS.md`, consultando as obras quando necessário. Apresentar problemas localizados, sua consequência para o leitor e sugestões de melhoria fundamentadas, sem presumir aprovação humana da redação revista.
+Foram ajustados os resultados, a discussão e a conclusão para relacionar explicitamente os saldos aos perfis de saída e entrada, explicar as consequências da importância assimétrica e desenvolver a aplicação estadual sem linguagem de relatório de andamento. A figura de indicadores passou a acompanhar a comparação de volume e concentração; os painéis da matriz e do backbone receberam interpretações mais específicas. Todas as nove figuras e seus blocos de inclusão foram preservados. Uma opção de posicionamento de tabela e algumas quebras de página foram ajustadas para aproximar texto e evidência.
+
+Também foi condensada a exposição de MIP após conferir **Marques et al. (2012), seção 6.1, pp. 61–62**, e **Sanguinet e Azzoni (2024), seção 2.1, p. 2**. Marques apresenta as contas em poucas equações e remete as derivações à literatura; Sanguinet explicita o balanço de Leontief, as intensidades e a extensão ambiental antes da decomposição. O texto atual reúne a base de MIP e as contas em uma subseção, mantendo definições, unidades, hipóteses, emissões por unidade de demanda, volumes atribuídos, conservação, saldo e exemplo didático. A exposição não incorpora o modelo de Ghosh, a conta pela renda ou a decomposição estrutural daqueles artigos. Na contagem de texto do arquivo `modelo_atribuicao.tex`, a exposição passou de 430 para 331 palavras; o objetivo foi eliminar repetição, não impor uma meta.
+
+**Backup anterior às alterações:** `entrega/backup/ajustes_argumento_metodologia_20261028_210722_847479/`, com os fontes afetados, PDF anterior, handover anterior, README e manifesto de integridade. A introdução, os dados, a bibliografia, o notebook e os nove arquivos de figuras mantêm seus hashes; os valores, as legendas e as notas das cinco tabelas dos resultados foram preservados. As equações dos métodos de rede permanecem idênticas. Na parte de MIP, foram reunidas apresentações equivalentes das contas e colocadas expressões simples no texto, sem mudar as operações.
+
+**Verificação da revisão argumentativa:** LaTeX/Biber compilados com sucesso, PDF final de 30 páginas, sem referências indefinidas ou caixas excedentes no log. As 30 páginas foram conferidas em visão geral e as equações e tabelas relevantes, em detalhe. Não foram reexecutados cálculos nem testes analíticos, pois não houve alteração de código, dados ou método. A leitura crítica está concluída; a nova redação aguarda a avaliação pessoal do usuário. Esta revisão não foi objeto de um novo pedido de commit ou push.
 
 O foco do diálogo com a dissertação permanece na explicação das diferenças entre as contas pela produção e pela demanda. Não foi solicitado acrescentar um teste de sua hipótese sobre intensidade de emissão e orientação das vendas.
+
+## Simplificação posterior da apresentação dos dados
+
+Por solicitação do usuário, a subseção de fontes foi reduzida aos dois parágrafos sobre a MIP e as intensidades ambientais. Foram retiradas a tabela de fontes e dimensões, a menção ao número da tabela do artigo de Sanguinet e Azzoni e a equação de interpolação. Permanecem a descrição da interpolação linear e sua hipótese, sem observação física de 2015. A subseção de fronteira e validade ambiental foi preservada. Os detalhes operacionais continuam no notebook e na documentação do repositório; não houve mudança de dados ou cálculos.
+
+Backup anterior: `entrega/backup/simplificacao_dados_20261028_212827_147240/`, com dados, PDF e handover anteriores e hashes dos arquivos preservados. Introdução, metodologia, resultados, apêndices, figuras e notebook não foram alterados nesta simplificação. LaTeX/Biber recompilados com sucesso; PDF atual de **29 páginas**, sem referências indefinidas ou caixas excedentes. Conferidas visualmente a seção de dados e a renumeração de equações e tabelas. A antiga tabela de fontes foi excluída; a tabela de contas setoriais passou a ser a Tabela 1. A numeração dos resultados muda automaticamente, sem alterar valores.
+
+## Ajuste da abertura da seção 3.1
+
+A abertura passou a apresentar as relações de fornecimento e demanda final descritas pela MIP antes dos coeficientes técnicos e da matriz A. Em seguida, apresenta produção bruta, usos intermediários, demanda final e requisitos diretos e indiretos, associados a x, y e L. Foi explicitado que I é a matriz identidade. O ajuste acrescentou 40 palavras; as equações e o restante da explicação foram preservados.
+
+Backup anterior: `entrega/backup/abertura_metodologia_20261028_214021_599595/`. A figura didática conserva arquivo, dimensões, conteúdo e legenda; mudou somente sua opção de posicionamento para acompanhar a continuação da explicação na mesma página. Introdução, dados, resultados, demais figuras, apêndices e notebook permanecem intactos. LaTeX/Biber compilados com sucesso: PDF de 29 páginas, sem referências indefinidas ou caixas excedentes; abertura e continuidade com a figura conferidas visualmente.
 
 ## Últimas decisões de apresentação e extensão
 
@@ -20,27 +111,27 @@ O foco do diálogo com a dissertação permanece na explicação das diferenças
 - **Paginação:** cada seção principal, de 1 a 6, e as referências devem começar em nova página. A quebra anterior à introdução está em `main.tex`, sem editar `introducao.tex`.
 - **Apêndices:** identificar os cabeçalhos e as referências como “Apêndice A” e “Apêndice B”; a versão atual possui dois apêndices. A subseção B.1 mantém sua numeração. Não criar um terceiro apêndice apenas pela menção genérica a “A B C” na conversa.
 - **Extensão desejável:** 2.500–3.000 palavras de corpo, como preferência flexível. O usuário aceita um texto maior. A clareza, a correção e a preservação das explicações necessárias continuam prioritárias; esta passagem não realizou cortes para atingir uma meta.
-- **Localização neste computador:** repositório em `C:/Users/acarm/GitHub/Redes`; dissertação em `C:/Users/acarm/GitHub/Mestrado/0-Projeto de Dissertação`. O diretório inicial do chat, `Mestrado/Redes`, contém materiais da disciplina e não é a raiz da entrega. Em outro computador, localizar os repositórios pela estrutura.
-- **PDF atual:** `entrega/main.pdf`, com 30 páginas após as quebras de seção. LaTeX/Biber compilados e as 30 páginas inspecionadas visualmente; título único, inícios das seções e identificação dos apêndices conferidos. O log final não apresenta referências indefinidas nem caixas excedentes. A introdução mantém o SHA-256 registrado abaixo.
+- **Localização nesta revisão:** repositório em `C:/GitHub/Redes-1`; dissertação em `C:/GitHub/Mestrado/0-Projeto de Dissertação`. No computador da retomada anterior, os repositórios estavam em `C:/Users/acarm/GitHub/Redes` e `C:/Users/acarm/GitHub/Mestrado`. Localizar os documentos pela estrutura relativa.
+- **PDF atual:** `entrega/main.pdf`, com 27 páginas; os fontes atuais estão em `entrega/secoes/`, conforme o mapa no início deste handover. As seções principais continuam começando em nova página. A introdução atual é a versão revisada pelo usuário em 29/10, com alteração autorizada apenas no último parágrafo nesta etapa; o hash de 28/10 é histórico.
 - **Backup anterior ao título e à paginação:** `entrega/backup/titulo_handover_20261028_145242175/`, com os fontes afetados, PDF, handover e README anteriores, além do script e do registro de contagem daquela etapa.
-- **Sincronização:** o usuário autorizou commit e push das alterações desta retomada. A leitura crítica permanece pendente para o próximo agente; sincronizar o trabalho não equivale à aprovação pessoal do conteúdo revisado.
+- **Sincronização anterior:** o commit `1eadced` contém o aprofundamento feito no outro computador. A revisão argumentativa e metodológica registrada acima é posterior; sincronização e aprovação pessoal do conteúdo são etapas distintas.
 - **Temporários locais:** scripts de diagnóstico, logs adicionais e imagens de conferência foram preservados em `outputs/entrega_redes_2015/revisao_editorial_20261028/`, pasta ignorada pelo Git. A remoção havia sido bloqueada pela revisão automática; os arquivos foram organizados sem exclusão. As evidências necessárias à retomada estão no artigo, nas saídas do notebook e nos backups versionados, sem depender dessa pasta local.
 
 ### Contagem atual de palavras do corpo
 
-**4.224 palavras**, segundo TeXcount, com peso apenas para `Words in text`. Excluídos títulos e subtítulos, abstract, palavras-chave, referências bibliográficas, apêndices, figuras e tabelas completas (incluindo legendas, fontes e notas), notas de rodapé e fórmulas. Com as 74 palavras das notas de rodapé, seriam **4.298 palavras**. A contagem de 3.026 registrada mais abaixo pertence à versão anterior ao aprofundamento e não deve ser apresentada como atual.
+**4.436 palavras**, segundo TeXcount, com peso apenas para `Words in text`. Excluídos títulos e subtítulos, abstract, palavras-chave, referências bibliográficas, apêndices, figuras e tabelas completas (incluindo legendas, fontes e notas), notas de rodapé e fórmulas. Com as 59 palavras das notas de rodapé, seriam **4.495 palavras**. Essa contagem inclui a introdução revisada pelo usuário, os ajustes de mitigação e as definições de rede esclarecidas em 29/10. As contagens anteriores registradas no histórico não representam a versão atual.
 
 | Parte | Palavras do corpo |
 | --- | ---: |
-| Introdução preservada | 510 |
-| Dados e recorte | 385 |
-| Metodologia | 1.144 |
-| Resultados | 1.393 |
-| Discussão | 635 |
-| Conclusões | 157 |
-| **Total** | **4.224** |
+| Introdução | 517 |
+| Dados e recorte | 308 |
+| Metodologia | 1.122 |
+| Resultados | 1.533 |
+| Discussão | 742 |
+| Conclusões | 214 |
+| **Total** | **4.436** |
 
-Procedimento: expandir os quatro arquivos incluídos no corpo de `main.tex`, da introdução até as conclusões; excluir o material anterior à introdução e posterior às conclusões, além dos ambientes completos de figura e tabela; preservar o preâmbulo para reconhecer as regras de biblatex; executar `texcount -utf8 -sub=section -sum=1,0,0,0,0,0,0` sobre esse fonte temporário. A convenção de contagem é a do TeXcount; não se convertem manualmente citações e referências cruzadas em palavras. Uma cópia do script de reprodução está no backup `entrega/backup/titulo_handover_20261028_145242175/contar_corpo_revisado.py` e deve ser executada a partir da raiz do repositório. A contagem de 4.226 anterior aos ajustes de referências para os apêndices difere em duas palavras pela forma como o TeXcount trata essas referências, sem mudança substantiva do conteúdo.
+Procedimento: expandir os quatro arquivos incluídos no corpo de `main.tex`, da introdução até as conclusões; excluir o material anterior à introdução e posterior às conclusões, além dos ambientes completos de figura e tabela; preservar o preâmbulo para reconhecer as regras de biblatex; executar `texcount -utf8 -sub=section -sum=1,0,0,0,0,0,0` sobre esse fonte temporário. A convenção de contagem é a do TeXcount; não se convertem manualmente citações e referências cruzadas em palavras. Uma cópia histórica do script está em `entrega/backup/titulo_handover_20261028_145242175/contar_corpo_revisado.py`. A contagem atual adapta sua verificação de 11 para 10 ambientes de figuras e tabelas, devido à retirada da tabela de fontes, sem editar o script guardado no backup. Executar a partir da raiz do repositório.
 
 ## Esclarecimento sobre a validação ambiental pendente
 
@@ -52,7 +143,7 @@ Essa limitação já constava na seção 2.2 do artigo e na auditoria ambiental 
 
 O fechamento das contas e os testes do filtro não resolvem essas questões. Os resultados continuam sendo um cenário exploratório, condição já declarada na introdução aprovada e na seção de dados. Isso permite avaliar a aplicação metodológica e a interpretação do cenário, mas não certifica os volumes e as posições como um inventário observado e validado do Brasil de 2015. A força das conclusões empíricas deve ser avaliada na leitura crítica. Reconstruir ou substituir a extensão ambiental não foi solicitado nesta passagem. A [auditoria](../docs/auditoria_coeficientes_emissoes_2015.md) documenta a investigação anterior; seus outros objetos e notações não substituem os da entrega atual.
 
-## Atualização após a retomada em 28/10/2026
+## Aprofundamento anterior em 28/10/2026 (histórico)
 
 Na primeira etapa da retomada, o usuário autorizou aprofundar as análises existentes e revisar resultados e discussão, preservando a introdução e criando backup antes da reescrita. O objetivo acordado é um bom artigo acadêmico para a disciplina de redes, seguindo as diretrizes qualitativas do AGENTS, com valor metodológico para a dissertação. O diálogo se concentra na explicação das diferenças entre as contas, sem acrescentar um teste da hipótese da dissertação.
 
@@ -71,7 +162,7 @@ As recomendações e o estado descritos nas seções seguintes são históricos 
 2. Usar como ponto de partida o [artigo atual](entrega/main.tex), o [notebook da entrega](analise_redes_2015.ipynb) e este registro. O [planejamento anterior](02_planejamento_academico.md) contém decisões e questões históricas; conferir seu estado contra a implementação e o texto atuais.
 3. Preservar a introdução. O último escopo de revisão do artigo excluía alterações nela. Sua integridade está registrada abaixo.
 4. Distinguir as recomendações desta avaliação das mudanças já autorizadas e executadas. Não recuperar automaticamente a versão antiga nem acrescentar indicadores só porque existem no histórico.
-5. Começar pela leitura crítica pendente registrada no início deste handover, avaliando a integração orgânica dos métodos, dos resultados e do diálogo com a dissertação.
+5. A leitura crítica e sua implementação estão registradas no início deste handover. Aguardar a avaliação do usuário sobre a nova redação antes de presumir aprovação ou ampliar o escopo.
 
 ## Contexto acadêmico e fontes
 
@@ -145,7 +236,7 @@ A revisão anterior do restante do documento preservou os dados, os cálculos e 
 
 Última contagem informada por TeXcount, excluindo resumo e anexos: **3.026 palavras de texto**, ou **3.284 incluindo títulos e legendas do corpo**. São convenções de contagem diferentes. A redução não é um critério autônomo de sucesso e não há meta atual de palavras no AGENTS.
 
-SHA-256 da introdução preservada, conferido em 28/10/2026:
+SHA-256 histórico da introdução de 28/10/2026, anterior à revisão feita pelo usuário em 29/10:
 
 ```text
 DCF33337277ADD90448A90D7590F1F76BE3B279415401F891CC6E25FEFE8C082

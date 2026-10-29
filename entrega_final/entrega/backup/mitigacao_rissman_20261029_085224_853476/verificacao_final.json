@@ -1,0 +1,40 @@
+{
+  "introducao_somente_ultimo_paragrafo": true,
+  "prefixo_preservado_bytes": 3497,
+  "arquivos_protegidos": [
+    "entrega_final\\entrega\\dados.tex",
+    "entrega_final\\entrega\\modelo_atribuicao.tex",
+    "entrega_final\\entrega\\anexos.tex",
+    "entrega_final\\entrega\\references.bib",
+    "entrega_final\\analise_redes_2015.ipynb",
+    "entrega_final\\entrega\\figuras\\anexo_construcao.pdf",
+    "entrega_final\\entrega\\figuras\\anexo_energia_1.pdf",
+    "entrega_final\\entrega\\figuras\\anexo_energia_2.pdf",
+    "entrega_final\\entrega\\figuras\\atribuicao_cadeia_alimentos.pdf",
+    "entrega_final\\entrega\\figuras\\indicadores.pdf",
+    "entrega_final\\entrega\\figuras\\matriz_peso.pdf",
+    "entrega_final\\entrega\\figuras\\matriz_presenca.pdf",
+    "entrega_final\\entrega\\figuras\\rede_foco_3500.pdf",
+    "entrega_final\\entrega\\figuras\\rede_foco_4180.pdf"
+  ],
+  "tabelas_resultados_identicas": 5,
+  "figuras_preservadas": 9,
+  "equacoes_e_metodologia_preservadas": true,
+  "primeiros_quatro_paragrafos_discussao_preservados": true,
+  "percentuais_explicitados": [
+    39.5,
+    60.5
+  ],
+  "base_percentual": "saídas existentes do notebook; entrada externa e diagonal sobre a conta pela demanda da construção",
+  "analise_numerica_reexecutada": false,
+  "paginas_pdf": 29,
+  "alertas_latex": [],
+  "inspecao_visual": "29 páginas em visão geral; resumo, discussão e conclusão em detalhe",
+  "contagem_corpo": 4395,
+  "sha256_pdf": "8b10218d0bc898fd7b57018913b894b7eb346bd9268831e5b4dceecc318f1683",
+  "sha256_fontes": {
+    "main.tex": "712371e8140ea12949b515e6856f922fc3d161f43d3987516a42a7fa32f041b7",
+    "introducao.tex": "29139bd8c722e77bca7d1e70b86416d69cbe3e1bc4978810dd70b1c834b95006",
+    "resultados.tex": "80595179735daad4a6bf6126edcee11e2992b8586aba91f80fb7a1b08960fe9d"
+  }
+}
