@@ -1,9 +1,7 @@
 \subsection{Construção da rede dirigida e ponderada}
 \label{sec:construcao-rede}
 
-A rede tem 67 nós, um por atividade da MIP, identificados pelos códigos do IBGE. Cada nó representa uma origem emissora nas ligações de saída e o setor de um produto final nas ligações de entrada, conforme a representação de \textcite{huang2019}. Em cada nó de destino, a atribuição reúne as emissões associadas aos diferentes usos finais dos produtos da atividade, como consumo das famílias e exportações.
-
-Para estudar relações entre atividades distintas, define-se
+A rede tem 67 nós, um por atividade da MIP, identificados pelos códigos do IBGE. Cada nó representa uma origem emissora nas ligações de saída e o setor de um produto final nas ligações de entrada, conforme a representação de \textcite{huang2019}. Em cada nó de destino, a atribuição reúne as emissões associadas aos diferentes usos finais dos produtos da atividade, como consumo das famílias e exportações. A matriz de adjacência ponderada desta rede é definida como:
 \begin{equation}
 W_{ij}=\begin{cases}
 F_{ij}, & i\ne j,\\
@@ -15,15 +13,31 @@ Cada $W_{ij}>0$ define uma aresta $i\rightarrow j$, cujo peso, em Gg de CO\texts
 
 A diagonal $F_{ii}$ reúne emissões de $i$ atribuídas à demanda final de seus próprios produtos, incluindo requisitos indiretos. Ela permanece em $F$ e nas contas $c$ e $u$, mas é retirada de $W$, cujo peso total corresponde apenas às atribuições entre atividades distintas.
 
-A construção preserva todos os nós e as arestas positivas, sem corte por magnitude. São conferidos o alinhamento dos códigos e a existência de pesos finitos e não negativos. A seleção de arestas é tratada na seção~\ref{sec:backbone}.
-
-\subsection{Volume e concentração das relações}
+\subsection{Caracterização da rede}
 \label{sec:volume-concentracao}
 
-O volume e a concentração são calculados na rede completa $W$, por meio das forças e da disparidade dos pesos \parencite{huang2019,serrano2009}.
+Para caracterizar a presença de relações intersetoriais, calculam-se o grau de cada atividade e a densidade da rede.
 
-\paragraph{Volume.}
-As forças de saída e entrada são as somas dos pesos em cada direção:
+O grau de saída $k_i^{\mathrm{out}}$ conta os setores de produtos finais aos quais uma atividade atribui emissões; o grau de entrada $k_i^{\mathrm{in}}$ conta as origens emissoras que compõem a atribuição aos produtos finais dessa atividade:
+\begin{equation}
+\begin{aligned}
+k_i^{\mathrm{out}}&=\left|\{j\ne i:W_{ij}>0\}\right|,\\
+k_i^{\mathrm{in}}&=\left|\{j\ne i:W_{ji}>0\}\right|, 
+\end{aligned}
+\label{eq:graus-rede}
+\end{equation}
+onde as barras denotam a cardinalidade dos conjuntos, isto é, o número de ligações positivas em cada direção.
+
+A densidade é a proporção de ligações possíveis que estão presentes na rede. Como há 67 atividades e as ligações de uma atividade consigo mesma são excluídas, existem $67\times66$ ligações dirigidas possíveis:
+\begin{equation}
+d=\frac{\sum_i k_i^{\mathrm{out}}}{67\times66}.
+\label{eq:densidade-rede}
+\end{equation}
+A densidade varia de zero, quando não há ligações, a um, quando todas as ligações possíveis estão presentes.
+
+Para examinar como as emissões se distribuem entre atividades emissoras e setores de produtos finais, analisam-se as forças de saída e de entrada e a concentração das relações representadas em W. A análise conjunta das forças e concentrações permite distinguir atividades com volumes semelhantes de emissões intersetoriais, mas com diferentes distribuições entre origens e destinos \parencite{huang2019,serrano2009}.
+
+A força é a soma dos pesos das ligações de um nó em uma dada direção. Neste trabalho, corresponde ao volume intersetorial de emissões, em Gg de CO\textsubscript{2}. As forças de saída e de entrada de cada atividade são calculadas pela soma dos pesos das respectivas ligações:
 \begin{equation}
 \begin{aligned}
 s_i^{\mathrm{out}}&=\sum_{j\ne i}W_{ij}=c_i-F_{ii},\\
@@ -31,36 +45,39 @@ s_i^{\mathrm{in}}&=\sum_{j\ne i}W_{ji}=u_i-F_{ii}.
 \end{aligned}
 \label{eq:forcas-externas}
 \end{equation}
-A força de saída mede as emissões próprias de $i$ atribuídas aos produtos finais de outras atividades; a de entrada mede as emissões de outras atividades atribuídas aos produtos finais de $i$. A diferença entre força de entrada e força de saída é $s_i^{\mathrm{in}}-s_i^{\mathrm{out}}=u_i-c_i$. A leitura separada dos volumes revela atribuições que se compensam no saldo; as contas completas e a diagonal situam sua participação no total.
+A força de saída $s_i^{\mathrm{out}}$ mede as emissões próprias de $i$ atribuídas aos produtos finais de outras atividades; a força de entrada $s_i^{\mathrm{in}}$ mede as emissões de outras atividades atribuídas aos produtos finais de $i$. A diferença entre força de entrada e força de saída reproduz o saldo entre as contas: $s_i^{\mathrm{in}}-s_i^{\mathrm{out}}=u_i-c_i$.
 
-\paragraph{Concentração.}
-Para perfis com força positiva, define-se a participação de cada contraparte:
+A participação expressa quanto cada ligação representa na força da atividade:
 \begin{equation}
 p_{ij}^{\mathrm{out}}=\frac{W_{ij}}{s_i^{\mathrm{out}}},\qquad
 p_{ji}^{\mathrm{in}}=\frac{W_{ji}}{s_i^{\mathrm{in}}},\quad j\ne i.
 \label{eq:participacoes-externas}
 \end{equation}
-O perfil de saída distribui o volume intersetorial da origem entre destinos; o de entrada descreve as origens que compõem a atribuição intersetorial ao destino. Cada perfil soma um. A disparidade e seu inverso são
+As participações somam um em cada perfil de saída ou de entrada.
+
+O índice de concentração $Y$ (também denominado disparidade dos pesos) mede em que medida as participações se concentram em poucas relações:
 \begin{equation}
-\begin{aligned}
-Y_i^{\mathrm{out}}&=\sum_{j\ne i}(p_{ij}^{\mathrm{out}})^2,&
-Y_i^{\mathrm{in}}&=\sum_{j\ne i}(p_{ji}^{\mathrm{in}})^2,\\
-D_{2,i}^{\mathrm{out}}&=1/Y_i^{\mathrm{out}},&
-D_{2,i}^{\mathrm{in}}&=1/Y_i^{\mathrm{in}}.
-\end{aligned}
+Y_i^{\mathrm{out}}=\sum_{j\ne i}(p_{ij}^{\mathrm{out}})^2,\qquad
+Y_i^{\mathrm{in}}=\sum_{j\ne i}(p_{ji}^{\mathrm{in}})^2.
 \label{eq:disparidade}
 \end{equation}
-$Y$ aumenta com a concentração; $D_2$ expressa a mesma informação como número efetivo de contrapartes. Para $k$ pesos iguais, $D_2=k$; quando uma relação domina, aproxima-se de um. As medidas são adimensionais e ficam indefinidas quando a força é zero, sem excluir o nó.
+Quanto maior $Y$, maior a concentração. Para $k$ relações de igual peso, $Y=1/k$; quando todo o peso está associado a uma única relação, $Y=1$.
 
-Os pesos e as participações identificam as contrapartes, cuja identidade não é informada por $D_2$. O grau conta as arestas positivas de entrada ou saída; a densidade é o número de arestas dividido por $67\times66$. Esses indicadores descrevem a presença de relações, enquanto a disparidade considera a distribuição dos pesos.
+O número efetivo de contrapartes, $D_2$, expressa quantas atividades com participações iguais produziriam a concentração observada. É calculado pelo inverso do índice de concentração:
+\[
+D_{2,i}^{\mathrm{out}}=1/Y_i^{\mathrm{out}},\qquad
+D_{2,i}^{\mathrm{in}}=1/Y_i^{\mathrm{in}}.
+\]
+Para $k$ pesos iguais, $D_2=k$; quando uma relação domina, $D_2$ aproxima-se de um. Valores menores de $D_2$ indicam maior concentração. 
 
 \subsection{Extração e avaliação do backbone}
 \label{sec:backbone}
 
-O filtro de disparidade é um método que reduz a rede ao selecionar ligações com participações excepcionalmente altas nos pesos de uma origem ou de um destino, segundo um modelo nulo \parencite{serrano2009,huang2019}. A sub-rede formada pelas ligações selecionadas é denominada backbone e preserva seus pesos originais, sem alterar as contas ambientais completas.
+O filtro de disparidade é um método que permite reduzir a densidade da rede ao selecionar ligações com participações excepcionalmente altas nos pesos de uma origem ou de um destino \parencite{serrano2009,huang2019}. A sub-rede formada pelas ligações selecionadas é denominada backbone $B$ e preserva os pesos originais de $W$, sem alterar as contas ambientais completas.
 
-\paragraph{Critério de seleção.}
-O modelo nulo distribui a força entre $k$ ligações dividindo o intervalo unitário por $k-1$ pontos uniformemente escolhidos. Para $k>1$, a probabilidade de uma parcela atingir ou superar $p$ é $(1-p)^{k-1}$. Para a aresta $i\rightarrow j$, as caudas nas perspectivas de saída e entrada são
+O filtro de disparidade compara as participações observadas em $W$ com uma distribuição aleatória de referência, denominada modelo nulo. Essa referência é construída separadamente para a saída e a entrada de cada nó, mantendo a força e o número de ligações $k$ da direção considerada. No modelo nulo, o intervalo de zero a um é dividido por $k-1$ pontos escolhidos uniformemente ao acaso. O comprimento de cada um dos $k$ subintervalos resultantes representa a participação de uma ligação na força do nó.
+
+Para $k>1$, a probabilidade de uma parcela atingir ou superar $p$ é $(1-p)^{k-1}$. Para a aresta $i\rightarrow j$, as caudas nas perspectivas de saída e entrada são
 \begin{equation}
 \begin{aligned}
 a_{ij}^{\mathrm{out}}&=\left(1-\frac{W_{ij}}{s_i^{\mathrm{out}}}\right)^{k_i^{\mathrm{out}}-1},\\
@@ -68,12 +85,15 @@ a_{ij}^{\mathrm{in}}&=\left(1-\frac{W_{ij}}{s_j^{\mathrm{in}}}\right)^{k_j^{\mat
 \end{aligned}
 \label{eq:caudas-filtro}
 \end{equation}
-Os graus $k$ e as forças são os de $W$. A aresta é selecionada se $a_{ij}^{\mathrm{out}}<\alpha$ \textbf{ou} $a_{ij}^{\mathrm{in}}<\alpha$, registrando-se a extremidade responsável pela seleção. A saída destaca um destino nas atribuições da origem; a entrada destaca uma origem na composição do destino.\footnote{As caudas são calculadas apenas para graus pertinentes maiores que um. Se uma extremidade tem grau um, vale o teste da outra; se ambas têm grau um, a aresta é preservada por convenção de manutenção da relação exclusiva, inclusive em díades isoladas. Essa extensão dos casos degenerados do suplemento de Serrano et al. é registrada separadamente da seleção estatística.}
+A aresta é selecionada se $a_{ij}^{\mathrm{out}}<\alpha$ \textbf{ou} $a_{ij}^{\mathrm{in}}<\alpha$, registrando-se a extremidade responsável pela seleção. A saída destaca um destino nas atribuições da origem; a entrada destaca uma origem na composição do destino.\footnote{As caudas são calculadas apenas para graus pertinentes maiores que um. Se uma extremidade tem grau um, vale o teste da outra; se ambas têm grau um, a aresta é preservada por convenção de manutenção da relação exclusiva, inclusive em díades isoladas (par de nós que possui ligação entre si, mas nenhuma ligação com outros nós da rede). Essa extensão dos casos degenerados (grau zero ou um) do suplemento de \textcite{serrano2009} é registrada separadamente da seleção estatística.} Adota-se $\alpha=0{,}05$ como limiar convencional de referência, com $0{,}01$ e $0{,}10$ para sensibilidade \parencite{serrano2009}. 
 
-Adota-se $\alpha=0{,}05$, com $0{,}01$ e $0{,}10$ para sensibilidade. O filtro é aplicado uma vez a $W$ para cada valor, sem atualização dos perfis. A matriz $B_\alpha$ preserva os pesos originais nas arestas selecionadas e zero nas demais, sem renormalização ou corte absoluto adicional.
+Para cada valor de $\alpha$, o filtro é aplicado uma vez a $W$, gerando a matriz filtrada $B_\alpha$. Essa matriz mantém todos os nós e preserva os pesos originais das arestas que satisfazem o critério de seleção, atribuindo zero às demais, sem renormalização ou corte absoluto adicional.
 
-\paragraph{Avaliação da seleção.}
-Comparam-se a fração de arestas retidas e a cobertura dos pesos, globalmente e por atividade:
+Para cada $\alpha$, compara-se $B_\alpha$ com $W$ por meio de dois indicadores: fração das arestas retidas e cobertura.
+
+Fração de arestas retidas é a razão entre o número de ligações presentes em $B_\alpha$ e em $W$, que informa a proporção de ligações preservadas pelo filtro.
+
+Cobertura é a parcela das emissões intersetoriais de $W$ preservada em $B_\alpha$. Calcula-se a cobertura global $r_\alpha$ e, para cada atividade $i$, as coberturas de saída $r_{\alpha,i}^{\mathrm{out}}$ e de entrada $r_{\alpha,i}^{\mathrm{in}}$:
 \begin{equation}
 \begin{aligned}
 r_\alpha&=\frac{\sum_{ij}(B_\alpha)_{ij}}{\sum_{ij}W_{ij}},\\
@@ -82,8 +102,8 @@ r_{\alpha,i}^{\mathrm{in}}=\frac{\sum_j(B_\alpha)_{ji}}{s_i^{\mathrm{in}}}.
 \end{aligned}
 \label{eq:cobertura-backbone}
 \end{equation}
-As razões são definidas apenas para denominadores positivos. A cobertura refere-se à parcela intersetorial de $W$ e permite distinguir retenção agregada de perdas por atividade e direção. A conectividade é descrita pelos graus, isolados e componentes fracamente conectados, obtidos ao desconsiderar a direção das arestas.
+A cobertura global compara as somas de todos os pesos nas duas matrizes. As coberturas por atividade comparam as somas da linha ou da coluna de $B_\alpha$ com as respectivas forças de saída ou de entrada em $W$, para forças positivas. Assim, a cobertura global é examinada junto das coberturas de cada atividade e direção.
 
-A sensibilidade é examinada pelas mudanças nas arestas, coberturas e posições setoriais entre os três valores de $\alpha$. O aninhamento dos conjuntos decorre da regra e não constitui evidência independente de robustez. As caudas do modelo nulo não medem incerteza ambiental, e a seleção não estabelece prioridade de mitigação.
+A conectividade descreve como as atividades estão interligadas na rede. Comparam-se os graus, os nós isolados e os componentes fracamente conectados de $W$ e $B_\alpha$ para verificar se a filtragem reduz o número de contrapartes por atividade, isola atividades ou divide a rede em grupos separados. Os componentes fracamente conectados são os grupos de nós ligados entre si quando se desconsidera a direção das arestas.
 
-Para interpretar os perfis, as contrapartes são ordenadas por peso em $W$ completa. Destacam-se as cinco maiores e a participação conjunta das demais, sem modificar a rede. A leitura dos casos combina essas participações, as contas completas e os motivos de retenção; a sensibilidade verifica também a permanência das principais relações nos três parâmetros.
+A sensibilidade é avaliada repetindo essas comparações para $\alpha=0{,}01$, $0{,}05$ e $0{,}10$ e acompanhando as mudanças nas ligações selecionadas e nas posições das atividades por grau.

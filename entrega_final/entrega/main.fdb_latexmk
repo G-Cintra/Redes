@@ -1,12 +1,13 @@
 # Fdb version 4
-["biber main"] 1793286620.86198 "main.bcf" "main.bbl" "main" 1793287911.67755 0
-  "main.bcf" 1793287911 116761 eb38f3807421c4845c15a02de3706850 "pdflatex"
+["biber main"] 1793365943.27745 "main.bcf" "main.bbl" "main" 1793370213.48571 0
+  "main.bcf" 1793370213 116962 6ffc6e3f263ca2d21fa24b5b243c00bc "pdflatex"
   "references.bib" 1793186128 4384 d0c49761b7b61528e74437d82638cd98 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1793287910.07161 "main.tex" "main.pdf" "main" 1793287911.67807 0
+["pdflatex"] 1793370211.91858 "c:/GitHub/Redes-1/entrega_final/entrega/main.tex" "main.pdf" "main" 1793370213.48621 0
+  "c:/GitHub/Redes-1/entrega_final/entrega/main.tex" 1793287892 12474 490cd491bb75f96c227ad5d3b9a750a8 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1746734381 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1754949852 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx0800.tfm" 1746735252 3584 269b66e921ba58750c12f7f1c8ea3ebd ""
@@ -192,17 +193,17 @@
   "figuras/matriz_presenca.pdf" 1792369118 32496 7d3d28a8534c2378488865567bfe8a2c ""
   "figuras/rede_foco_3500.pdf" 1792369120 69108 308b7f2c4dcd26f0def68e1394c1b025 ""
   "figuras/rede_foco_4180.pdf" 1792369120 69179 72a36b4003487d46130272cf495ed2fb ""
-  "main.aux" 1793287911 13876 d1e8c543e6e8d33041d21483a1e4661c "pdflatex"
-  "main.bbl" 1793286624 24107 f004ea901757a1757911b78f6e3e5fe0 "biber main"
-  "main.out" 1793287911 3979 5a89fb59916b13011e706e4095b72225 "pdflatex"
-  "main.run.xml" 1793287911 2443 a49a189cf1ea4291a154e0230aad86b8 "pdflatex"
+  "main.aux" 1793370213 13874 60a2cdbe33f3061e924ef7f7aef28ba5 "pdflatex"
+  "main.bbl" 1793365944 24107 f004ea901757a1757911b78f6e3e5fe0 "biber main"
+  "main.out" 1793370213 3907 54ac8f513d89560b7fcd585ce5e7e0b8 "pdflatex"
+  "main.run.xml" 1793370213 2443 a49a189cf1ea4291a154e0230aad86b8 "pdflatex"
   "main.tex" 1793287892 12474 490cd491bb75f96c227ad5d3b9a750a8 ""
   "secoes/apendices.tex" 1793277004 6140 8f0dc3d16eb61f41a5e39e048bff5870 ""
   "secoes/introducao.tex" 1793275842 4001 abea29b1bf5abcb58f933c399d2d8089 ""
   "secoes/metodologia_dados.tex" 1793285425 826 1ef05dff39b0d7dbc05ac88290c910bf ""
   "secoes/metodologia_modelo.tex" 1793287449 3648 7cbb78d1a4c9ba1d8a418e4028bdbfe8 ""
-  "secoes/metodologia_rede.tex" 1793287892 7626 d74213aa8d9ff8f878aaea2fd39ef7f0 ""
-  "secoes/resultados.tex" 1793276929 19980 b336a142fcdee47d9359671747cfd326 ""
+  "secoes/metodologia_rede.tex" 1793368416 9647 81c9c0dbe0e801760375f23e922ff8f7 ""
+  "secoes/resultados.tex" 1793370211 20367 682129991f2f0bd436547e3e10c51f7f ""
   (generated)
   "main.aux"
   "main.bcf"

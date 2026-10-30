@@ -1,0 +1,21 @@
+{
+  "original_sha256": "3e1ffde1cf3713e71fdc931e1bc3fe1756bc4f3ce57422311c26681000a95fcf",
+  "protected_sha256": {
+    "entrega_final\\entrega\\main.tex": "6d92e8b7d1c2f4c697abab9990480d7dc159931d52f07c9fa5889a76566cba56",
+    "entrega_final\\entrega\\secoes\\apendices.tex": "8b827800604136962455a5f22e52e546a4aaeee6220c0d67f5e5489786cb1e85",
+    "entrega_final\\entrega\\secoes\\introducao.tex": "cc4945d3c37ae7317d45639e7dd88b77777d13d5dc3688d44b2db0266149ae35",
+    "entrega_final\\entrega\\secoes\\metodologia_dados.tex": "8c044affcd1350e7199ea687f86a37ee167cbeb371de426f8ebe0b15944dd8d2",
+    "entrega_final\\entrega\\secoes\\metodologia_modelo.tex": "1137e7ebac8702c3e889ba8f39fff572297e2bf9e660b4298a3ca417a3028231",
+    "entrega_final\\entrega\\secoes\\resultados.tex": "3f23083e206c93f750c79a2e8fa601d7fb87d64ff77555c239b43116a9dfb21a",
+    "entrega_final\\entrega\\references.bib": "e8ef28509efd6d6c68b6e16648a0f905b10e956ab371a4973b3570415159ac5e",
+    "entrega_final\\entrega\\figuras\\anexo_construcao.pdf": "2764b52c44776f92b149a1e52688cd1fb8e9ebeb67b954f452fbe93e154e8a0a",
+    "entrega_final\\entrega\\figuras\\anexo_energia_1.pdf": "8e05006bcead21f4196ff43bddc1104e2c1a5e89ac9e49fa87bb093ca18f0b84",
+    "entrega_final\\entrega\\figuras\\anexo_energia_2.pdf": "cb8f4a70f3d0883540b7b0ad889c568795dbbeacf16b4cbce373f3091a8ba625",
+    "entrega_final\\entrega\\figuras\\atribuicao_cadeia_alimentos.pdf": "861f8b5c1fdebe3c96b31d8bd96763c2829fa2ae72703160c83949e4acd6bf29",
+    "entrega_final\\entrega\\figuras\\indicadores.pdf": "34aa38e99a936ecf1863afd952849adc1fc671a409c0ac4ebb6538d4da63fa10",
+    "entrega_final\\entrega\\figuras\\matriz_peso.pdf": "af8270e5d166ba6709447bc5c5b7a6755b13d25c6379565330c7c7431ee80c4a",
+    "entrega_final\\entrega\\figuras\\matriz_presenca.pdf": "0e00a600a7b5f3bd1190c62229cb8790847fc241e490e65a85878b580c95ac4c",
+    "entrega_final\\entrega\\figuras\\rede_foco_3500.pdf": "0b02a35cc840cbde9e05933ceec7b4e79d8a20420be7ffd4be016bd9a2311d3d",
+    "entrega_final\\entrega\\figuras\\rede_foco_4180.pdf": "026a01751b19d0a7cc3c103e9739bffe2077e2d693a05a6324748803b6a4e9cd"
+  }
+}
