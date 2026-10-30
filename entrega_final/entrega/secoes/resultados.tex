@@ -5,51 +5,60 @@ Os resultados correspondem ao cenário ambiental descrito na seção~\ref{sec:da
 
 \subsection{Contas ambientais, volume e concentração}
 
-As duas contas pela ótica da produção $u$ e da demanda $c$ totalizam 683,70 mil Gg de CO\textsubscript{2}, dos quais 392,92 mil Gg estão na diagonal de $F$ e 290,78 mil Gg nas relações entre atividades distintas em $W$. A igualdade entre os totais pela produção e pela demanda decorre da identidade contábil. A parcela intersetorial permite examinar como as mesmas emissões conectam origens e produtos finais, enquanto a diagonal situa o volume atribuído aos produtos finais da própria atividade emissora.
+As duas contas pela ótica da produção $c$ e da demanda $u$ totalizam 683,70 mil Gg de CO\textsubscript{2}, dos quais 392,92 mil Gg estão na diagonal de $F$ e 290,78 mil Gg nas relações entre atividades distintas em $W$. A igualdade entre os totais pela produção e pela demanda decorre da identidade contábil. A parcela intersetorial permite examinar como as mesmas emissões conectam origens e produtos finais, enquanto a diagonal situa o volume atribuído aos produtos finais da própria atividade emissora.
 
 A rede completa tem 67 nós e 4\,290 arestas, com densidade de 97,01\%. Serviços domésticos (9700) é o único nó isolado: sua conta permanece na diagonal de $F$. As outras 66 atividades estão ligadas entre si nas duas direções, com graus iguais a 65. A presença de relações é compatível com a incorporação dos requisitos indiretos em $F$ e pouco distingue os perfis setoriais. O conteúdo desses perfis precisa ser examinado pela distribuição dos pesos.
 
-Entre as 66 atividades conectadas, o número efetivo de contrapartes, $D_2$, varia de 1,58 a 25,04 destinos nas saídas e de 2,13 a 22,10 origens nas entradas; as medianas são 11,50 e 13,93, respectivamente. Embora todas tenham 65 ligações em cada direção, as emissões se concentram de maneira distinta entre as contrapartes. Para compreender sua distribuição entre atividades emissoras e setores de produtos finais, é necessário considerar tanto os volumes atribuídos, medidos pelas forças, quanto sua concentração, expressa por $D_2$. Os painéis A e B da Figura~\ref{fig:indicadores-resultados} permitem examinar essa relação nas atividades com as seis maiores forças de saída ou de entrada em $W$.
+Entre as 66 atividades conectadas, o número efetivo de contrapartes, $D_2$, varia de 1,58 a 25,04 destinos nas saídas e de 2,13 a 22,10 origens nas entradas; as medianas são 11,50 e 13,93, respectivamente. Embora todas tenham 65 ligações em cada direção, as emissões se concentram de maneira distinta entre as contrapartes. Para compreender sua distribuição entre atividades emissoras e setores de produtos finais, é necessário considerar tanto os volumes atribuídos, medidos pelas forças, quanto sua concentração, expressa por $D_2$. Os painéis A e B da Figura~\ref{fig:indicadores-resultados} permitem examinar essa relação nas atividades com as oito maiores forças de saída ou de entrada em $W$.
 
 Energia (3500) e água, esgoto e resíduos (3680) apresentam as duas maiores forças de saída, com volumes semelhantes: 31,32 e 31,23 mil Gg, respectivamente. Esses volumes, porém, distribuem-se de maneira diferente entre os setores de produtos finais. O número efetivo de destinos é de 20,79 em energia e de 9,88 em água/resíduos, indicando maior concentração das atribuições desta última atividade. Assim, atividades com volumes semelhantes de emissões intersetoriais podem diferir quanto à concentração dessas emissões entre os destinos.
 
+A Tabela~\ref{tab:contas-energia-construcao} relaciona os volumes intersetoriais da Figura~\ref{fig:indicadores-resultados} às contas completas de três atividades. Energia e água/resíduos são mantidas na comparação por apresentarem as duas maiores forças de saída, com volumes semelhantes e concentrações distintas. Construção, com a terceira maior força de entrada, permite examinar a perspectiva do destino e o peso das emissões de outras origens no total atribuído aos seus produtos finais.
+
 \clearpage
-\begin{landscape}
 \begin{figure}[p]
 \centering
-\caption{Volume, concentração, conectividade selecionada e cobertura em atividades de maior volume externo.}
+\caption{Forças e concentração nas atividades com as oito maiores forças de saída ou de entrada na rede completa, Brasil, 2015.}
 \label{fig:indicadores-resultados}
-\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{figuras/indicadores.pdf}
-\par\smallskip
-\begin{minipage}{\linewidth}\footnotesize
-Fonte: elaboração própria. Linhas: união das seis maiores forças de saída e das seis maiores forças de entrada de $W$; não representam todas as atividades. Azul: saída; laranja: entrada. Volume e número efetivo são calculados em $W$ completa. Grau e cobertura referem-se a $\alpha=0{,}05$; os intervalos do grau abrangem $\alpha=0{,}01$--$0{,}10$ e não são intervalos de confiança. A diagonal é excluída.
-\end{minipage}
+\includegraphics[width=\textwidth,height=0.94\textheight,keepaspectratio]{figuras/indicadores_rede_completa.pdf}
+\begin{notas}
+Nota: A figura apresenta as 16 atividades que compõem a união das oito maiores forças de saída e das oito maiores forças de entrada da rede completa $W$. Essa rede relaciona as emissões geradas em cada atividade à demanda final dos produtos de outras atividades, considerando apenas atribuições entre atividades distintas. O azul representa a perspectiva de saída, na qual as emissões da atividade indicada são atribuídas aos produtos finais de outras atividades. O laranja representa a perspectiva de entrada, na qual emissões geradas em outras atividades são atribuídas aos produtos finais da atividade indicada.
+\par
+No painel A, a força de saída, $s_i^{\mathrm{out}}$, mede o volume de emissões próprias atribuído aos produtos finais de outras atividades. A força de entrada, $s_i^{\mathrm{in}}$, mede o volume de emissões de outras atividades atribuído aos produtos finais da atividade indicada. Os volumes são expressos em mil Gg de CO\textsubscript{2}; cada Gg corresponde a mil toneladas.
+\par
+No painel B, a concentração desses volumes é representada pelo número efetivo de contrapartes, $D_2$, calculado como o inverso do índice de concentração $Y$. O número efetivo expressa quantas contrapartes com participações iguais produziriam a concentração observada. Na saída, as contrapartes são os destinos das atribuições, representados por $D_{2,i}^{\mathrm{out}}$; na entrada, são as origens emissoras, representadas por $D_{2,i}^{\mathrm{in}}$. Quanto menor o número efetivo de contrapartes, maior a concentração das emissões.
+\par
+Acima da linha horizontal estão as oito atividades com maiores forças de saída; abaixo estão as oito atividades com maiores forças de entrada. Em cada grupo, as atividades aparecem em ordem decrescente da força utilizada na seleção. Os rótulos apresentam os códigos do IBGE e os nomes abreviados das atividades.
+\end{notas}
 \end{figure}
-\end{landscape}
-
-As contas completas situam esses papéis (Tabela~\ref{tab:contas-energia-construcao}). Em energia e água/resíduos, a atribuição pela produção supera a atribuição pela demanda; em construção ocorre o inverso. No entanto, construção mantém 35,91 mil Gg na diagonal, equivalentes a 92,5\% de sua conta pela produção. Sua pequena saída intersetorial corresponde a uma parcela reduzida das emissões próprias, enquanto as entradas de outras origens ampliam sua conta pela demanda. Em relação à conta pela demanda, as emissões provenientes de outras atividades correspondem a cerca de 39,5\% do total atribuído à construção; os 60,5\% restantes permanecem na diagonal.
+\clearpage
 
 \begin{table}[!ht]
 \centering
-\caption{Contas e volumes intersetoriais das atividades examinadas.}
+\caption{Decomposição das contas de emissões de CO\textsubscript{2} pela produção e pela demanda em energia, água/resíduos e construção, Brasil, 2015 (mil Gg de CO\textsubscript{2}).}
 \label{tab:contas-energia-construcao}
 \small
-\begin{tabular}{@{}lrrr@{}}
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}rrrrrr@{}}
 \toprule
-Medida & Energia & Água/resíduos & Construção \\
+\shortstack[l]{Atividade\\(código IBGE)} & \shortstack{Diagonal\\$F_{ii}$} & \shortstack{Saída\\externa\\$s_i^{\mathrm{out}}$} & \shortstack{Entrada\\externa\\$s_i^{\mathrm{in}}$} & \shortstack{Produção\\$c_i$} & \shortstack{Demanda\\$u_i$} & \shortstack{Saldo\\$u_i-c_i$} \\
 \midrule
-Produção, $c$ & 56,62 & 51,80 & 38,84 \\
-Demanda, $u$ & 28,23 & 21,74 & 59,40 \\
-Atribuição à própria atividade, $F_{ii}$ & 25,30 & 20,57 & 35,91 \\
-Saída externa, $s^{\mathrm{out}}$ & 31,32 & 31,23 & 2,93 \\
-Entrada externa, $s^{\mathrm{in}}$ & 2,92 & 1,16 & 23,48 \\
-Saldo, $u-c$ & $-28,39$ & $-30,07$ & 20,56 \\
+Energia (3500) & 25,30 & 31,32 & 2,92 & 56,62 & 28,23 & $-28,39$ \\
+Água/resíduos (3680) & 20,57 & 31,23 & 1,16 & 51,80 & 21,74 & $-30,07$ \\
+Construção (4180) & 35,91 & 2,93 & 23,48 & 38,84 & 59,40 & 20,56 \\
 \bottomrule
-\end{tabular}
-\par\smallskip\begin{minipage}{\textwidth}\footnotesize
-Fonte: elaboração própria. Valores em mil Gg de CO\textsubscript{2}, antes do filtro. Códigos IBGE: energia (3500), água, esgoto e gestão de resíduos (3680) e construção (4180). A diagonal integra $c$ e $u$, mas não as forças externas. Diferenças residuais entre somas de valores exibidos decorrem do arredondamento.
-\end{minipage}
+\end{tabular*}
+\begin{notas}
+Nota: O recorte abrange emissões da produção nacional associadas à demanda doméstica e às exportações, excluindo emissões estrangeiras. Cada linha corresponde à atividade $i$. Produção ($c_i$) contabiliza as emissões na atividade em que ocorrem; demanda ($u_i$) reúne as emissões diretas e indiretas atribuídas aos produtos finais da atividade. A diagonal ($F_{ii}$) corresponde às emissões geradas na própria atividade e atribuídas aos seus produtos finais, incluindo requisitos indiretos. A força de saída, ou saída externa ($s_i^{\mathrm{out}}$), mede as emissões próprias atribuídas aos produtos finais de outras atividades. A força de entrada, ou entrada externa ($s_i^{\mathrm{in}}$), mede as emissões de outras atividades atribuídas aos produtos finais da atividade indicada. Assim, $c_i=F_{ii}+s_i^{\mathrm{out}}$ e $u_i=F_{ii}+s_i^{\mathrm{in}}$; o saldo $u_i-c_i=s_i^{\mathrm{in}}-s_i^{\mathrm{out}}$ é entrada menos saída externa. Diferenças residuais nas somas decorrem do arredondamento.
+\par
+Seleção: energia e água/resíduos apresentam as duas maiores saídas externas; construção, a terceira maior entrada externa entre as 67 atividades. São casos ilustrativos. Nomes completos: energia elétrica, gás natural e outras utilidades (3500); água, esgoto e gestão de resíduos (3680).
+\par
+Dados: Matriz de Insumo-Produto do IBGE de 2015 e coeficientes de emissão interpolados de \textcite{sanguinetAzzoni2024}.
+\end{notas}
 \end{table}
+
+Em energia e água/resíduos, as emissões próprias atribuídas a outros produtos finais superam as emissões de outras origens atribuídas aos seus produtos finais. Por isso, suas contas pela demanda são menores que as contas pela produção; na construção, ocorre o inverso. A diagonal, comum às duas contas, permite situar o peso dessas relações intersetoriais. Na construção, 35,91 mil Gg são gerados na própria atividade e atribuídos aos seus produtos finais, equivalentes a 92,5\% da conta pela produção. Portanto, a pequena saída externa não implica um pequeno volume de emissões próprias. Já na conta pela demanda da construção, as emissões de outras atividades representam 39,5\% do total, enquanto os 60,5\% restantes correspondem à diagonal.
+
+A distribuição das emissões entre origens e produtos finais combina, portanto, atribuições dentro da própria atividade e relações entre atividades distintas. A tabela distingue o volume dessas parcelas; a composição dos perfis, examinada a seguir, identifica quais origens e destinos participam das relações intersetoriais.
 
 
 
@@ -58,36 +67,34 @@ Fonte: elaboração própria. Valores em mil Gg de CO\textsubscript{2}, antes do
 \subsection{Composição dos perfis de atribuição}
 \label{sec:composicao-perfis}
 
-A composição dos destinos ajuda a interpretar a diferença de concentração (Tabela~\ref{tab:contrapartes-completas}). O maior destino das saídas de energia é comércio, com 13,49\% do volume externo, seguido de administração pública, construção, abate e produtos de carne e agricultura. Os cinco maiores destinos reúnem 40,45\% do volume, e os demais 60 respondem por 59,55\%. A distribuição envolve produtos finais de atividades industriais, agropecuárias e de serviços.
+O contraste de concentração entre energia e água/resíduos na Figura~\ref{fig:indicadores-resultados} envolve participações distintas de destinos compartilhados. Comércio, administração pública e construção aparecem entre os cinco maiores destinos de ambas as atividades (Tabela~\ref{tab:contrapartes-completas}). Entretanto, administração pública reúne 27,22\% das saídas de água/resíduos e 8,16\% das saídas de energia. Essa diferença ajuda a interpretar por que volumes intersetoriais semelhantes se distribuem de forma mais concentrada no primeiro perfil. O peso de administração pública identifica as emissões atribuídas aos produtos finais desse setor, incluindo seus requisitos diretos e indiretos de produção; não corresponde a uma medida das compras diretas do governo junto às atividades emissoras.
 
-Em água/resíduos, administração pública concentra 27,22\% das saídas externas, seguida de comércio, saúde privada, saúde pública e construção. Os cinco maiores destinos reúnem 52,35\% do volume. Assim, a maior concentração decorre, em particular, do peso da atribuição à administração pública, cuja participação é mais de três vezes a observada nas saídas de energia. Os destinos identificam atividades dos produtos finais, conforme a fronteira do modelo; não representam categorias institucionais de compradores nem apenas aquisições diretas de energia ou de serviços de água e resíduos.
-
-Na perspectiva de entrada, construção reúne emissões de diferentes origens. Produtos de minerais não metálicos representam 12,60\% do volume externo recebido, seguidos de energia, água/resíduos, comércio e produtos de metal. As cinco maiores origens somam 38,71\%, deixando 61,29\% distribuídos entre outras 60 atividades. Sua conta pela demanda combina, portanto, as emissões atribuídas aos produtos finais da própria construção, na diagonal, com emissões intersetoriais distribuídas entre diversas origens. A posição da construção nas duas contas é esclarecida pela composição desses volumes, e não apenas pelo saldo positivo.
-
-\begin{table}[!ht]
+\begin{table}[p]
 \centering
-\caption{Principais contrapartes nos perfis completos, antes do filtro.}
+\caption{Cinco maiores contrapartes nas saídas de energia e de água/resíduos e nas entradas de construção, antes do filtro, Brasil, 2015.}
 \label{tab:contrapartes-completas}
 \small
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.65\textwidth}rr@{}}
+\begin{tabular*}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.57\textwidth}@{\extracolsep{\fill}}rr@{}}
 \toprule
-Contraparte (código IBGE) & Peso & Participação (\%) \\
+Contraparte (código IBGE) & \shortstack{Emissões\\(mil Gg de CO\textsubscript{2})} & \shortstack{Participação no\\volume externo (\%)} \\
 \midrule
-\multicolumn{3}{@{}l}{\textit{Saídas de energia (3500): produtos finais}} \\
+\multicolumn{3}{@{}l}{\textit{Saídas de energia (3500): destinos dos produtos finais}} \\
 Comércio (4580) & 4,224 & 13,49 \\
 Administração pública, defesa e seguridade social (8400) & 2,556 & 8,16 \\
 Construção (4180) & 2,263 & 7,23 \\
 Abate e produtos de carne, laticínio e pesca (1091) & 1,930 & 6,16 \\
 Agricultura (0191) & 1,693 & 5,41 \\
 Demais 60 destinos & 18,650 & 59,55 \\
+Total externo ($s_{3500}^{\mathrm{out}}$) & 31,317 & 100,00 \\
 \midrule
-\multicolumn{3}{@{}l}{\textit{Saídas de água/resíduos (3680): produtos finais}} \\
+\multicolumn{3}{@{}l}{\textit{Saídas de água/resíduos (3680): destinos dos produtos finais}} \\
 Administração pública, defesa e seguridade social (8400) & 8,501 & 27,22 \\
 Comércio (4580) & 2,964 & 9,49 \\
 Saúde privada (8692) & 1,672 & 5,35 \\
 Saúde pública (8691) & 1,621 & 5,19 \\
 Construção (4180) & 1,592 & 5,10 \\
 Demais 60 destinos & 14,880 & 47,65 \\
+Total externo ($s_{3680}^{\mathrm{out}}$) & 31,230 & 100,00 \\
 \midrule
 \multicolumn{3}{@{}l}{\textit{Entradas de construção (4180): origens emissoras}} \\
 Produtos de minerais não metálicos (2300) & 2,959 & 12,60 \\
@@ -96,16 +103,22 @@ Energia elétrica, gás natural e outras utilidades (3500) & 2,263 & 9,64 \\
 Comércio (4580) & 1,240 & 5,28 \\
 Produtos de metal, exceto máquinas e equipamentos (2500) & 1,037 & 4,42 \\
 Demais 60 origens & 14,393 & 61,29 \\
+Total externo ($s_{4180}^{\mathrm{in}}$) & 23,484 & 100,00 \\
 \bottomrule
-\end{tabular}
-\par\smallskip\begin{minipage}{\textwidth}\footnotesize
-Fonte: elaboração própria. Peso em mil Gg de CO\textsubscript{2}. As participações usam a força externa da atividade e direção indicadas, sem diagonal. As cinco maiores contrapartes são uma seleção de exposição, sem alterar $W$ ou aplicar corte adicional. Nomes abreviados; valores calculados sem arredondamento no notebook. A relação energia $\rightarrow$ construção aparece nas duas perspectivas e não deve ser somada duas vezes em totais da rede.
-\end{minipage}
+\end{tabular*}
+\begin{notas}
+Nota: cada relação atribui emissões da produção nacional a um setor de produtos finais, incluindo requisitos diretos e indiretos para a demanda doméstica e as exportações; emissões estrangeiras são excluídas. Nas saídas, a atividade indicada no título do bloco é a origem emissora $i$, e cada contraparte é um destino $j$: a emissão é $W_{ij}$, e a participação é $100W_{ij}/s_i^{\mathrm{out}}$. Nas entradas, a atividade indicada é o destino $i$, e cada contraparte é uma origem emissora $j$: a emissão é $W_{ji}$, e a participação é $100W_{ji}/s_i^{\mathrm{in}}$. As forças $s_i^{\mathrm{out}}$ e $s_i^{\mathrm{in}}$ são os volumes externos totais de cada direção. A diagonal, que atribui emissões aos produtos finais da própria atividade emissora, é excluída; os percentuais não usam as contas completas pela produção ou pela demanda.
+\par
+Seleção: energia e água/resíduos são as duas maiores forças de saída; construção é a terceira maior força de entrada entre as 67 atividades. Cada perfil completo tem 65 contrapartes com atribuição positiva. Mostram-se as cinco maiores, em ordem decrescente de emissão, e as demais 60 agregadas, sem filtragem das relações. Energia $\rightarrow$ construção e água/resíduos $\rightarrow$ construção aparecem nas perspectivas da origem e do destino, com o mesmo volume e denominadores distintos; cada relação deve ser contada apenas uma vez nos totais da rede. Nomes abreviados: energia corresponde a energia elétrica, gás natural e outras utilidades; água/resíduos, a água, esgoto e gestão de resíduos. Diferenças residuais nas somas decorrem do arredondamento dos valores calculados no notebook.
+\par
+Dados: Matriz de Insumo-Produto do IBGE de 2015 e coeficientes de emissão interpolados de \textcite{sanguinetAzzoni2024}.
+\end{notas}
 \end{table}
+\clearpage
 
-As direções inversas também distinguem os dois casos. Energia recebe 2,92 mil Gg de outras origens, com 21,59 origens efetivas; construção distribui 2,93 mil Gg a outros produtos finais, com 8,10 destinos efetivos. Neste último perfil, administração pública reúne 31,21\% do volume externo. Mesmo com forças próximas, a distribuição das saídas de construção é mais concentrada do que a das entradas de energia. Cada nó precisa, assim, ser interpretado nos dois papéis que exerce na rede.
+A comparação com construção mostra que uma concentração semelhante pode corresponder a papéis distintos na atribuição das emissões. Na Figura~\ref{fig:indicadores-resultados}, as saídas de energia e as entradas de construção têm números efetivos próximos, ambos de aproximadamente 20,8 contrapartes. Energia distribui emissões próprias entre produtos finais de outras atividades; construção reúne emissões geradas em diferentes origens. Na Tabela~\ref{tab:contrapartes-completas}, produtos de minerais não metálicos, energia e produtos de metal estão entre as principais origens da construção, mas as cinco maiores origens, em conjunto, representam apenas 38,71\% das entradas externas. A parcela intersetorial de 39,5\% da conta pela demanda, identificada na seção anterior, envolve, portanto, uma composição que ultrapassa as principais atividades produtoras de materiais e de energia. Mesmo a atividade de produtos de minerais não metálicos, a maior origem externa, representa 12,60\% das entradas externas e aproximadamente 5,0\% da conta completa pela demanda da construção.
 
-A composição dos perfis esclarece a passagem entre as contas. Em energia e água/resíduos, as saídas para outros produtos finais superam as entradas de outras origens, reduzindo a atribuição pela demanda em relação à produção. Em construção, as entradas superam as saídas e elevam essa atribuição. A diagonal integra as duas contas e cancela na diferença; as contrapartes identificadas mostram quais relações intersetoriais compõem os saldos.
+Os perfis também permitem reconhecer as duas perspectivas de uma mesma relação. Construção aparece entre os principais destinos de energia e água/resíduos, que, por sua vez, estão entre as principais origens das entradas de construção. Energia $\rightarrow$ construção representa 7,23\% das saídas externas de energia e 9,64\% das entradas externas de construção. O volume atribuído é o mesmo, mas sua participação muda conforme se examina a distribuição das emissões da origem ou a composição recebida pelo destino. Assim, a descrição das relações exige considerar as duas perspectivas: a posição de uma atividade como origem não determina o peso de cada destino, e a composição de um destino não informa, por si só, quanto ele representa para cada origem. Essa distinção orienta a leitura do filtro nas seções seguintes, em que a seleção de uma ligação é avaliada separadamente na origem e no destino.
 
 \clearpage
 \subsection{Seleção das relações e limites de cobertura}
@@ -126,12 +139,12 @@ $\alpha$ & Arestas & \% das arestas de $W$ & Peso retido & Cobertura (\%) \\
 0,10 & 755 & 17,60 & 224,92 & 77,35 \\
 \bottomrule
 \end{tabular}
-\par\smallskip\begin{minipage}{\textwidth}\footnotesize
-Fonte: elaboração própria. Peso em mil Gg de CO\textsubscript{2}. Cobertura relativa ao peso de $W$, sem diagonal. Todos os casos mantêm 67 nós, um isolado e um componente fracamente conectado de 66 atividades. O filtro é aplicado à mesma rede completa, com regra OU e sem atualização dos perfis.
-\end{minipage}
+\begin{notas}
+Nota: Peso em mil Gg de CO\textsubscript{2}. Cobertura relativa ao peso de $W$, sem diagonal. Todos os casos mantêm 67 nós, um isolado e um componente fracamente conectado de 66 atividades. O filtro é aplicado à mesma rede completa, com regra OU e sem atualização dos perfis.
+\end{notas}
 \end{table}
 
-A cobertura agregada oculta perdas locais. Em $\alpha=0{,}05$, as menores coberturas são 32,96\% nas saídas e 33,79\% nas entradas. Portanto, preservar parcela expressiva do peso total não assegura representação igualmente completa de cada atividade e direção.
+A Figura~\ref{fig:indicadores-backbone} compara os graus e as coberturas nas mesmas atividades apresentadas na Figura~\ref{fig:indicadores-resultados}. A cobertura agregada oculta perdas locais. Em $\alpha=0{,}05$, as menores coberturas são 32,96\% nas saídas e 33,79\% nas entradas. Portanto, preservar parcela expressiva do peso total não assegura representação igualmente completa de cada atividade e direção.
 
 A mudança de $\alpha$ altera as posições individuais por grau, embora o componente de 66 atividades permaneça nos três casos. A conectividade agregada não demonstra estabilidade das posições setoriais. Os valores detalhados das mudanças, a decomposição da seleção por extremidade e a sensibilidade dos perfis focais constam do \ref{anexo:diagnosticos}; $0{,}05$ permanece como referência, sem ser considerado um parâmetro ótimo.
 
@@ -140,16 +153,33 @@ A mudança de $\alpha$ altera as posições individuais por grau, embora o compo
 
 
 \clearpage
+\begin{figure}[p]
+\centering
+\caption{Graus e coberturas do backbone nas atividades com as oito maiores forças de saída ou de entrada na rede completa, Brasil, 2015.}
+\label{fig:indicadores-backbone}
+\includegraphics[width=\textwidth,height=0.94\textheight,keepaspectratio]{figuras/indicadores_backbone.pdf}
+\begin{notas}
+Nota: A figura apresenta os graus e as coberturas do backbone para as 16 atividades que compõem a união das oito maiores forças de saída e das oito maiores forças de entrada da rede completa $W$. A seleção das atividades é feita pelas forças em $W$, antes da filtragem. O backbone $B_\alpha$ é obtido pelo filtro de disparidade, que seleciona ligações com participações excepcionalmente altas na força da origem ou do destino em comparação com uma distribuição aleatória de referência. Os pesos originais das ligações selecionadas são preservados.
+\par
+O azul representa as ligações de saída da atividade indicada para outros setores de produtos finais. O laranja representa as ligações de entrada, pelas quais emissões de outras atividades são atribuídas aos produtos finais da atividade indicada.
+\par
+No painel A, os graus de saída e de entrada, $k_i^{\mathrm{out}}(B_\alpha)$ e $k_i^{\mathrm{in}}(B_\alpha)$, indicam o número de ligações preservadas em cada direção. Os pontos mostram os graus obtidos com $\alpha=0{,}05$. As barras horizontais abrangem os graus obtidos entre $\alpha=0{,}01$ e $\alpha=0{,}10$ e mostram a sensibilidade do número de ligações ao limiar do filtro.
+\par
+No painel B, as coberturas de saída e de entrada, $r_{\alpha,i}^{\mathrm{out}}$ e $r_{\alpha,i}^{\mathrm{in}}$, mostram a porcentagem do volume de emissões de cada atividade e direção preservada no backbone para $\alpha=0{,}05$. Cada cobertura compara a soma dos pesos das ligações selecionadas com a força correspondente na rede completa $W$. Assim, o grau informa quantas ligações permanecem, enquanto a cobertura informa quanto do volume original essas ligações representam.
+\par
+Acima da linha horizontal estão as oito atividades com maiores forças de saída em $W$; abaixo estão as oito atividades com maiores forças de entrada em $W$. Em cada grupo, as atividades aparecem em ordem decrescente da força utilizada na seleção. Os rótulos apresentam os códigos do IBGE e os nomes abreviados das atividades.
+\end{notas}
+\end{figure}
+\clearpage
 \begin{landscape}
 \begin{figure}[p]
 \centering
 \caption{Matriz de adjacência do backbone com $\alpha=0{,}05$: (a) presença das arestas.}
 \label{fig:matriz-backbone}
 \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/matriz_presenca.pdf}
-\par\smallskip
-\begin{minipage}{\linewidth}\footnotesize
-Fonte: elaboração própria. Linha: origem emissora; coluna: atividade do produto final. Ordem setorial do IBGE nos dois eixos. Azul identifica as 575 ligações retidas; cinza indica ausência no backbone, inclusive a diagonal. Ausência no backbone não implica valor nulo em $F$ ou $W$. Todas as 67 atividades permanecem nos eixos.
-\end{minipage}
+\begin{notas}
+Nota: Linha: origem emissora; coluna: atividade do produto final. Ordem setorial do IBGE nos dois eixos. Azul identifica as 575 ligações retidas; cinza indica ausência no backbone, inclusive a diagonal. Ausência no backbone não implica valor nulo em $F$ ou $W$. Todas as 67 atividades permanecem nos eixos.
+\end{notas}
 \end{figure}
 \clearpage
 \begin{figure}[p]
@@ -157,10 +187,9 @@ Fonte: elaboração própria. Linha: origem emissora; coluna: atividade do produ
 \centering
 \caption{Matriz de adjacência do backbone com $\alpha=0{,}05$: (b) pesos das mesmas arestas.}
 \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/matriz_peso.pdf}
-\par\smallskip
-\begin{minipage}{\linewidth}\footnotesize
-Fonte: elaboração própria. Mesma ordem e mesma seleção do painel (a). A cor representa pesos originais em Gg de CO\textsubscript{2}, em escala logarítmica, sem normalização por linha ou coluna. Cinza identifica células sem aresta retida. A cor mede volume absoluto; a concentração é descrita pelos números efetivos em $W$ completa.
-\end{minipage}
+\begin{notas}
+Nota: Mesma ordem e mesma seleção do painel (a). A cor representa pesos originais em Gg de CO\textsubscript{2}, em escala logarítmica, sem normalização por linha ou coluna. Cinza identifica células sem aresta retida. A cor mede volume absoluto; a concentração é descrita pelos números efetivos em $W$ completa.
+\end{notas}
 \end{figure}
 \end{landscape}
 
@@ -183,9 +212,9 @@ Construção: entradas & 45 & 41 & 0 & 4 & 91,4 \\
 Construção: saídas & 5 & 4 & 1 & 0 & 57,0 \\
 \bottomrule
 \end{tabular}
-\par\smallskip\begin{minipage}{\textwidth}\footnotesize
-Fonte: elaboração própria. $\alpha=0{,}05$. Saída e entrada nas colunas de motivo identificam o teste na origem e no destino da aresta, independentemente da atividade em destaque. Cobertura: peso retido dividido pela força da mesma atividade e direção em $W$. Os recortes compartilham arestas e não devem ser somados para obter totais da rede.
-\end{minipage}
+\begin{notas}
+Nota: $\alpha=0{,}05$. Saída e entrada nas colunas de motivo identificam o teste na origem e no destino da aresta, independentemente da atividade em destaque. Cobertura: peso retido dividido pela força da mesma atividade e direção em $W$. Os recortes compartilham arestas e não devem ser somados para obter totais da rede.
+\end{notas}
 \end{table}
 
 Em energia, 56 das 62 saídas retidas passam somente pelo teste de entrada no destino. Energia tem participação destacada na composição externa de muitas demandas finais, embora cada destino possa representar parcela pequena das emissões distribuídas pela origem. Por exemplo, energia $\rightarrow$ alimentação (5600) representa 3,00\% das saídas externas de energia e 4,86\% das entradas externas de alimentação. A relação é selecionada somente na perspectiva do destino, evidenciando a diferença entre a composição recebida por uma atividade e a distribuição das emissões pela outra.
@@ -208,10 +237,9 @@ A permanência de cada relação, contudo, exige verificação própria. Entre a
 \caption{Duas perspectivas do mesmo backbone: (a) destaque para energia (3500).}
 \label{fig:rede-focos}
 \includegraphics[width=\textwidth,height=0.76\textheight,keepaspectratio]{figuras/rede_foco_3500.pdf}
-\par\smallskip
-\begin{minipage}{\textwidth}\footnotesize
-Fonte: elaboração própria. Cada vista mantém 67 nós e 575 arestas em $\alpha=0{,}05$. Azul: saídas do destaque; laranja: entradas; cinza: demais arestas. Energia tem 62 saídas e sete entradas, com cobertura de 99,2\% e 42,1\% do volume externo de cada direção. Área dos nós uniforme; espessura cresce com a raiz quadrada do peso. Posição definida pelo sinal de $u-c$ e pela ordem IBGE: 33 nós com $c>u$ à esquerda, 33 com $u>c$ à direita e o isolado abaixo. A disposição não resulta de centralidade ou comunidade.
-\end{minipage}
+\begin{notas}
+Nota: Cada vista mantém 67 nós e 575 arestas em $\alpha=0{,}05$. Azul: saídas do destaque; laranja: entradas; cinza: demais arestas. Energia tem 62 saídas e sete entradas, com cobertura de 99,2\% e 42,1\% do volume externo de cada direção. Área dos nós uniforme; espessura cresce com a raiz quadrada do peso. Posição definida pelo sinal de $u-c$ e pela ordem IBGE: 33 nós com $c>u$ à esquerda, 33 com $u>c$ à direita e o isolado abaixo. A disposição não resulta de centralidade ou comunidade.
+\end{notas}
 \end{figure}
 \clearpage
 \begin{figure}[p]
@@ -219,9 +247,8 @@ Fonte: elaboração própria. Cada vista mantém 67 nós e 575 arestas em $\alph
 \centering
 \caption{Duas perspectivas do mesmo backbone: (b) destaque para construção (4180).}
 \includegraphics[width=\textwidth,height=0.76\textheight,keepaspectratio]{figuras/rede_foco_4180.pdf}
-\par\smallskip
-\begin{minipage}{\textwidth}\footnotesize
-Fonte: elaboração própria. Mesmos nós, arestas, posições e escala de espessura do painel (a). Construção tem cinco saídas e 45 entradas, com cobertura de 57,0\% e 91,4\%. Cores representam direção em relação ao destaque, não motivo de retenção. As duas vistas preservam 70,69\% do peso intersetorial de $W$. Cruzamentos e proximidade não representam trajetórias ou distâncias econômicas; relações individuais podem ser consultadas na matriz e nos painéis do anexo.
-\end{minipage}
+\begin{notas}
+Nota: Mesmos nós, arestas, posições e escala de espessura do painel (a). Construção tem cinco saídas e 45 entradas, com cobertura de 57,0\% e 91,4\%. Cores representam direção em relação ao destaque, não motivo de retenção. As duas vistas preservam 70,69\% do peso intersetorial de $W$. Cruzamentos e proximidade não representam trajetórias ou distâncias econômicas; relações individuais podem ser consultadas na matriz e nos painéis do anexo.
+\end{notas}
 \end{figure}
 \clearpage

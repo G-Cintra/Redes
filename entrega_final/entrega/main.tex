@@ -37,6 +37,13 @@
 % Notas e legendas em tamanho 9; espaço simples nos objetos.
 \DeclareCaptionFont{simples}{\setstretch{1}}
 \captionsetup{font={footnotesize,simples},labelsep=endash,justification=raggedright,singlelinecheck=false,position=top,skip=6pt}
+% Notas de figuras e tabelas, editáveis no LaTeX e com apresentação uniforme.
+\newenvironment{notas}{%
+  \par\smallskip\noindent\begin{minipage}{\linewidth}%
+  \footnotesize\setstretch{1}\raggedright
+  \setlength{\parindent}{0pt}\setlength{\parskip}{3pt}%
+}{\end{minipage}}
+
 \renewenvironment{abstract}{\par\medskip\noindent\textbf{\abstractname}\par\smallskip\small\setstretch{1}\noindent}{\par\medskip}
 \interfootnotelinepenalty=10000
 \widowpenalty=10000
