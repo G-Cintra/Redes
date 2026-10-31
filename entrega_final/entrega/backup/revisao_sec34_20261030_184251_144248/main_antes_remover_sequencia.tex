@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+% Adaptado de C:/GitHub/Mestrado/Template/Template.tex.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{graphicx,booktabs,array,amsmath,amssymb,microtype}
+\usepackage{geometry}
+\usepackage{pdflscape,caption}
+% Apresentação de artigo para leitura em tela, conforme preferência do autor.
+\geometry{a4paper,margin=2.5cm,headheight=12pt,headsep=0.5cm}
+\usepackage{setspace,parskip,csquotes}
+\setstretch{1.05}
+% Fonte padrão original e parágrafos sem recuo, separados pelo espaço de parskip.
+\setlength{\parindent}{0pt}
+\usepackage{titlesec}
+\titleformat{\section}[hang]{\normalfont\large\bfseries}{\thesection}{\fontdimen2\font}{}
+\titleformat{name=\section,numberless}[block]{\normalfont\large\bfseries\filcenter}{}{0pt}{}
+\titleformat{\subsection}[hang]{\normalfont\normalsize\bfseries}{\thesubsection}{\fontdimen2\font}{}
+\titlespacing{\section}{0pt}{0pt}{8pt}
+\titlespacing{\subsection}{0pt}{10pt}{5pt}
+\titlespacing{\paragraph}{0pt}{7pt}{0.7em}
+\AtBeginDocument{%
+  \setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}%
+  \setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}%
+  \setlength{\abovedisplayshortskip}{4pt plus 2pt}%
+  \setlength{\belowdisplayshortskip}{6pt plus 2pt minus 2pt}%
+}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footnoterule}{\kern-3pt\hrule width 5cm\kern2.6pt}
+\makeatletter
+\long\def\@makefntext#1{\parindent 0pt\noindent\hangindent=1.8em\hangafter=1\hb@xt@1.8em{\hss\@makefnmark}#1}
+\makeatother
+% Notas e legendas em tamanho 9; espaço simples nos objetos.
+\DeclareCaptionFont{simples}{\setstretch{1}}
+\captionsetup{font={footnotesize,simples},labelsep=endash,justification=raggedright,singlelinecheck=false,position=top,skip=6pt}
+% Notas de figuras e tabelas, editáveis no LaTeX e com apresentação uniforme.
+\newenvironment{notas}{%
+  \par\smallskip\noindent\begin{minipage}{\linewidth}%
+  \footnotesize\setstretch{1}\raggedright
+  \setlength{\parindent}{0pt}\setlength{\parskip}{3pt}%
+}{\end{minipage}}
+
+\renewenvironment{abstract}{\par\medskip\noindent\textbf{\abstractname}\par\smallskip\small\setstretch{1}\noindent}{\par\medskip}
+\interfootnotelinepenalty=10000
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\usepackage[backend=biber,style=abnt]{biblatex}
+\addbibresource{references.bib}
+\setlength{\bibhang}{0pt}
+\renewcommand*{\bibfont}{\normalfont\small\setstretch{1}}
+\AtBeginBibliography{\setlength{\bibitemsep}{5pt}}
+\DeclareFieldFormat{url}{\small\bibstring{urlfrom}\addcolon\addspace\url{#1}}
+\DeclareFieldFormat{urldate}{\small\bibstring{urlseen}\addcolon\addspace #1}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\newcommand{\instituicao}{UNIVERSIDADE FEDERAL DE SANTA CATARINA}
+\newcommand{\departamento}{Programa de Pós-Graduação em Economia}
+\newcommand{\curso}{Mestrado}
+\newcommand{\disciplina}{Desigualdade, Diversidade e Redes}
+\newcommand{\titulo}{Rede de emissões de CO\textsubscript{2} no Brasil}
+\newcommand{\autor}{Gabriel Pincelli Cintra}
+\newcommand{\local}{Florianópolis}
+\newcommand{\dataentrega}{18 de outubro de 2026}
+\newcommand{\imprimirtitulodois}{
+\begin{center}
+  {\small\MakeUppercase{\instituicao}\par}
+  {\small \departamento\par}
+  {\small \disciplina\ (\curso)\par}
+  \vspace{1em}{\LARGE\bfseries \titulo\par}
+  \vspace{0.7em}{\normalsize \autor\par}
+  \vspace{0.3em}{\small \local, \dataentrega\par}
+\end{center}
+\vspace{0.4em}}
+\begin{document}
+\imprimirtitulodois
+\thispagestyle{empty}
+\begin{abstract}
+Este trabalho examina a distribuição das emissões de CO\textsubscript{2} entre atividades emissoras e setores de produtos finais no Brasil, complementando a comparação das contas pela produção e pela demanda. Combina a Matriz de Insumo-Produto brasileira de 2015, com 67 atividades, e coeficientes setoriais de emissão em uma rede dirigida e ponderada. Os volumes e a concentração caracterizam as relações intersetoriais, e o filtro de disparidade seleciona ligações pela importância relativa para a origem ou o destino. Os setores de energia e de água, esgoto e resíduos distribuem volumes semelhantes entre outros produtos finais, mas com concentrações distintas. Na construção, 39,5\% das emissões atribuídas aos produtos finais do setor são geradas em outras atividades, incluindo as produtoras de materiais e de energia. Uma mesma relação pode representar participações distintas para a origem e o destino, e a seleção retém proporções desiguais dos volumes setoriais. Esses resultados oferecem elementos para coordenar a redução das emissões nos setores fornecedores com a eficiência material e a aquisição de materiais de menor emissão na construção. A interpretação ambiental depende da validação dos coeficientes utilizados.
+\end{abstract}
+\noindent\textbf{Palavras-chave:} atribuição de emissões; insumo-produto; redes dirigidas e ponderadas; mitigação.
+
+\clearpage
+\input{secoes/introducao.tex}
+% Sequência inspirada em Huang et al. (2019).
+\clearpage
+\section{Metodologia}
+\input{secoes/metodologia_dados.tex}
+\input{secoes/metodologia_modelo.tex}
+\input{secoes/metodologia_rede.tex}
+\clearpage
+\input{secoes/resultados.tex}
+\clearpage
+\section{Discussão e implicações para a coordenação da mitigação}
+
+A diferença entre as contas pela produção e pela demanda informa o saldo de uma atividade, mas não identifica as contrapartes nem a concentração dos volumes que o compõem. Energia e água/resíduos atribuem a outros produtos finais volumes superiores aos provenientes de outras origens; em construção, predomina o sentido inverso. A leitura conjunta das contas e dos perfis esclarece essas diferenças: a diagonal mantém a parcela atribuída aos produtos finais da própria atividade, e as relações intersetoriais identificam as emissões atribuídas a setores distintos de sua origem. Essa leitura complementa as comparações de atribuição entre setores, regiões e cadeias produtivas presentes na literatura brasileira \parencite{imori2015,sanguinetAzzoni2024,montoyaEtAl2026}.
+
+Volumes semelhantes também podem envolver conjuntos de contrapartes com participações diferentes. A maior concentração das saídas de água/resíduos, em comparação com energia, destaca o peso da administração pública no primeiro perfil. Já a concentração das saídas de construção não caracteriza suas entradas, mais distribuídas entre origens. Esses contrastes mostram por que a posição de uma atividade nas contas não basta para descrever sua participação nas relações intersetoriais. A representação dirigida de \textcite{huang2019} permite distinguir os dois papéis de cada atividade, enquanto a análise dos pesos considera diferenças que o grau quase uniforme da rede completa não informa.
+
+A importância local distingue, ainda, relações destacadas para a origem ou para o destino. Construção pode representar uma parcela expressiva das atribuições externas de produtos de metal sem que essa origem domine a composição recebida pela construção. Assim, examinar apenas os maiores componentes da conta de um destino pode deixar em segundo plano relações importantes na perspectiva das origens. O filtro de \textcite{serrano2009} explicita essa assimetria sob seu modelo nulo. A seleção precisa ser lida com as participações e as coberturas, pois as ligações omitidas podem representar, em conjunto, parcela expressiva de um perfil.
+
+Em uma aplicação a Santa Catarina em 2018, esse procedimento permitiria complementar a comparação das participações setoriais com duas questões: quais produtos finais estão associados às emissões dos setores cuja participação diminui na atribuição pela demanda e quais origens compõem a atribuição dos setores cuja participação aumenta. A concentração distinguiria perfis com volumes mais equilibrados entre contrapartes daqueles dominados por poucas relações. A aplicação exigirá dados harmonizados e o recálculo das contas e dos perfis na fronteira estadual; as contrapartes e os contrastes do cenário nacional não podem ser transportados para o estado.
+
+A parcela intersetorial identificada na construção justifica considerar as emissões geradas na produção dos insumos ao avaliar a mitigação associada aos produtos finais desse setor. Entre as origens identificadas estão produtos de minerais não metálicos, energia e produtos de metal. O diagnóstico pode ser relacionado às estratégias de eficiência material e aos critérios de emissões incorporadas nos projetos de construção \parencite[seções~5.1 e~6.4]{rissman2020}. Enquanto medidas nos processos fornecedores buscam reduzir a emissão por unidade produzida, mudanças de projeto podem reduzir desperdícios e necessidades de materiais para entregar o mesmo serviço.
+
+A divulgação verificável das emissões dos materiais e a preferência por produtos de menor emissão nas compras públicas são instrumentos para estimular a demanda por alternativas de menor impacto \parencite[seções~6.6 e~6.7]{rissman2020}. O diagnóstico intersetorial identifica origens a considerar na avaliação da cadeia, mas não revela contratos ou poder de negociação. A especificação de materiais requer informações de fornecedores e avaliação de ciclo de vida; estimar o alcance das compras públicas requer conhecer a participação governamental na demanda da construção. O nó de administração pública não mede essa participação.
+
+Para o setor de energia, o perfil de saída mostra que, mantidas a estrutura produtiva e a demanda do modelo, uma redução de sua intensidade emissora reduziria as emissões atribuídas a diversos produtos finais. Essa leitura dialoga com a articulação entre fornecimento energético de menor emissão e mudanças nos processos industriais \parencite[seções~4.2 e~7.2]{rissman2020}. Os dados agregados não permitem escolher tecnologias nem estimar a eficácia ou o custo de instrumentos. A distribuição normativa dos esforços de mitigação requer critérios adicionais à atribuição contábil.
+
+As interpretações ambientais permanecem condicionadas à base utilizada. A interpolação, a cobertura não reconciliada e a diferença de preços limitam a aplicação dos contrastes setoriais à economia brasileira observada. Essas restrições alcançam os volumes e as comparações entre atividades, podendo também afetar os perfis ponderados e a seleção de relações. A consistência contábil e a sensibilidade a $\alpha$ verificam aspectos distintos da validade das emissões físicas. Antes de sustentar conclusões ambientais definitivas, é necessário reconciliar a fronteira, a alocação setorial e os denominadores monetários dos coeficientes ou substituí-los por uma extensão compatível com 2015.
+
+
+141427\section{Conclusões}
+
+No cenário analisado, as emissões de energia e água/resíduos atribuídas a outros produtos finais superam as emissões provenientes de outras origens e atribuídas aos produtos finais de energia e água/resíduos. Em construção ocorre o inverso, ampliando sua conta pela demanda em relação à produção. A identificação das contrapartes esclarece esses saldos e distingue perfis de volumes próximos com concentrações diferentes, apesar da conectividade semelhante. Construção também mostra a necessidade de separar as emissões atribuídas aos produtos finais da própria atividade das relações intersetoriais. A leitura conjunta das contas e dos perfis permite compreender a composição das diferenças entre produção e demanda.
+
+O backbone distingue relações destacadas para a origem, para o destino ou para ambos. Os casos mostram que essa importância pode ser assimétrica e que a estabilidade dos papéis examinados convive com mudanças na seleção e na cobertura.
+
+Na cadeia da construção, os resultados oferecem elementos para considerar conjuntamente as emissões nos processos fornecedores, a eficiência no uso de materiais e critérios de menor emissão nos projetos e nas aquisições. A interpretação sustenta a discussão dessas estratégias, sem estabelecer a eficácia ou o custo de instrumentos. A aplicação a Santa Catarina requer contas e perfis próprios, e conclusões empíricas definitivas sobre o Brasil dependem da validação ou substituição da extensão ambiental.
+
+\clearpage
+\begingroup
+\setstretch{1}
+\raggedright
+\printbibliography[title={Referências}]
+\endgroup
+\input{secoes/apendices.tex}
+\end{document}

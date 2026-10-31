@@ -120,37 +120,42 @@ A comparação com construção mostra que uma concentração semelhante pode co
 
 Os perfis também permitem reconhecer as duas perspectivas de uma mesma relação. Construção aparece entre os principais destinos de energia e água/resíduos, que, por sua vez, estão entre as principais origens das entradas de construção. Energia $\rightarrow$ construção representa 7,23\% das saídas externas de energia e 9,64\% das entradas externas de construção. O volume atribuído é o mesmo, mas sua participação muda conforme se examina a distribuição das emissões da origem ou a composição recebida pelo destino. Assim, a descrição das relações exige considerar as duas perspectivas: a posição de uma atividade como origem não determina o peso de cada destino, e a composição de um destino não informa, por si só, quanto ele representa para cada origem. Essa distinção orienta a leitura do filtro nas seções seguintes, em que a seleção de uma ligação é avaliada separadamente na origem e no destino.
 
-\clearpage
 \subsection{Seleção das relações e limites de cobertura}
 
-O backbone de referência preserva 575 arestas, ou 13,40\% das ligações de $W$, e 70,69\% do peso intersetorial (Tabela~\ref{tab:sensibilidade-backbone}). Na Figura~\ref{fig:matriz-backbone}, a linha de energia e a coluna de construção mostram a extensão das relações retidas nesses dois perfis. O painel de pesos diferencia os volumes dessas ligações: a seleção por importância local não implica pesos absolutos semelhantes.
+As participações examinadas na seção~\ref{sec:composicao-perfis} mostram que uma relação pode ter importâncias distintas para a origem e o destino. O filtro de disparidade considera essas duas perspectivas ao selecionar as relações do backbone, mantendo as contas e os perfis completos como referência. Para interpretar a distribuição das emissões nessa representação selecionada, é necessário verificar quanto do volume permanece e se a cobertura é semelhante entre atividades e direções.
+
+Em $\alpha=0{,}05$, apenas 13,40\% das relações preservam 70,69\% das emissões intersetoriais (Tabela~\ref{tab:sensibilidade-backbone}). Uma parcela relativamente pequena das relações reúne, portanto, grande parte do volume. Essa redução também omite 29,31\% das emissões entre atividades distintas, que continuam presentes na rede completa e nas contas ambientais. O backbone permite examinar relações selecionadas, mas não substitui a composição completa descrita nas seções anteriores.
+
+A cobertura global, entretanto, não descreve igualmente os dois papéis de uma atividade. A Figura~\ref{fig:indicadores-backbone} mantém as atividades da Figura~\ref{fig:indicadores-resultados} e mostra que, em energia, a seleção representa 99,2\% das saídas, mas apenas 42,1\% das entradas. Assim, o backbone permite acompanhar quase todo o volume de emissões próprias atribuído a outros produtos finais, enquanto deixa de representar a maior parte das emissões de outras origens atribuídas aos produtos finais de energia. Uma lista curta de origens selecionadas não basta para caracterizar a concentração desse perfil: o grau conta relações retidas, a cobertura mede seu alcance em volume e o número efetivo descreve a concentração na rede completa.
+
+A matriz da Figura~\ref{fig:matriz-backbone} acrescenta a localização e o volume das relações selecionadas. Suas linhas permitem acompanhar os destinos das emissões de energia e água/resíduos; a coluna de construção reúne as origens retidas na atribuição aos produtos finais desse setor. Essas perspectivas situam no conjunto das atividades as relações examinadas na Tabela~\ref{tab:contrapartes-completas}. As diferenças de tonalidade mostram que a seleção por importância relativa admite relações de volumes absolutos distintos. Por isso, uma célula mais escura indica maior volume atribuído à relação, mas não maior concentração do perfil nem maior importância relativa para suas duas extremidades.
 
 \begin{table}[htbp]
 \centering
-\caption{Sensibilidade da seleção e da cobertura ao parâmetro do filtro.}
+\caption{Relações e emissões preservadas pelo filtro de disparidade em diferentes limiares, Brasil, 2015.}
 \label{tab:sensibilidade-backbone}
 \small
-\begin{tabular}{@{}crrrr@{}}
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}rrr@{}}
 \toprule
-$\alpha$ & Arestas & \% das arestas de $W$ & Peso retido & Cobertura (\%) \\
+Rede ou limiar & \shortstack{Relações\\n (\%)} & \shortstack{Emissões retidas\\(mil Gg de CO\textsubscript{2})} & \shortstack{Cobertura\\(\%)} \\
 \midrule
-0,01 & 338 & 7,88 & 166,88 & 57,39 \\
-0,05 & 575 & 13,40 & 205,55 & 70,69 \\
-0,10 & 755 & 17,60 & 224,92 & 77,35 \\
+Sem filtro ($W$) & 4\,290 (100,00) & 290,78 & 100,00 \\
+$\alpha=0{,}01$ & 338 (7,88) & 166,88 & 57,39 \\
+$\alpha=0{,}05$ (referência) & 575 (13,40) & 205,55 & 70,69 \\
+$\alpha=0{,}10$ & 755 (17,60) & 224,92 & 77,35 \\
 \bottomrule
-\end{tabular}
+\end{tabular*}
 \begin{notas}
-Nota: Peso em mil Gg de CO\textsubscript{2}. Cobertura relativa ao peso de $W$, sem diagonal. Todos os casos mantêm 67 nós, um isolado e um componente fracamente conectado de 66 atividades. O filtro é aplicado à mesma rede completa, com regra OU e sem atualização dos perfis.
+Nota: cada relação atribui emissões geradas em uma atividade brasileira aos produtos finais de outra, incluindo requisitos diretos e indiretos para a demanda doméstica e as exportações. Emissões estrangeiras e atribuições aos produtos finais da própria atividade emissora (diagonal) são excluídas. A rede completa $W$, sem filtro, contém 4\,290 relações e 290,78 mil Gg de CO\textsubscript{2}. Os percentuais de relações usam como denominador as relações de $W$; a cobertura é a porcentagem das emissões intersetoriais de $W$ preservada em cada seleção. Valores são calculados antes do arredondamento; cada Gg corresponde a mil toneladas.
+\par
+O parâmetro $\alpha$ é o limiar das probabilidades de cauda do modelo nulo do filtro de disparidade: valores maiores tornam a seleção mais permissiva. Pela regra OU, basta a relação ser selecionada na perspectiva da origem ou do destino. Cada filtro é aplicado à mesma rede completa, sem recalcular as participações após a seleção. Os pesos originais das relações preservadas são mantidos, e as contas completas pela produção e pela demanda não mudam. Todos os casos mantêm 67 atividades, uma isolada e um componente de 66 atividades conectadas quando se desconsidera a direção das relações. O limiar de referência não é considerado ótimo.
+\par
+Dados: Matriz de Insumo-Produto do IBGE de 2015 e coeficientes de emissão interpolados de \textcite{sanguinetAzzoni2024}.
 \end{notas}
 \end{table}
 
-A Figura~\ref{fig:indicadores-backbone} compara os graus e as coberturas nas mesmas atividades apresentadas na Figura~\ref{fig:indicadores-resultados}. A cobertura agregada oculta perdas locais. Em $\alpha=0{,}05$, as menores coberturas são 32,96\% nas saídas e 33,79\% nas entradas. Portanto, preservar parcela expressiva do peso total não assegura representação igualmente completa de cada atividade e direção.
 
-A mudança de $\alpha$ altera as posições individuais por grau, embora o componente de 66 atividades permaneça nos três casos. A conectividade agregada não demonstra estabilidade das posições setoriais. Os valores detalhados das mudanças, a decomposição da seleção por extremidade e a sensibilidade dos perfis focais constam do \ref{anexo:diagnosticos}; $0{,}05$ permanece como referência, sem ser considerado um parâmetro ótimo.
-
-
-
-
+A sensibilidade ao limiar delimita essa leitura. Na Tabela~\ref{tab:sensibilidade-backbone}, aumentar $\alpha$ amplia as relações e o volume representados, mas as coberturas agregadas não demonstram estabilidade de cada contraparte ou posição setorial. Mesmo com um componente de 66 atividades nos três limiares, a quantidade de relações e os postos por grau mudam, conforme os diagnósticos do \ref{anexo:diagnosticos}. Mantém-se $\alpha=0{,}05$ como referência convencional. A leitura do backbone precisa, portanto, combinar os volumes completos, a cobertura de cada perfil e a perspectiva responsável pela seleção, examinada a seguir.
 
 \clearpage
 \begin{figure}[p]
@@ -163,9 +168,9 @@ Nota: A figura apresenta os graus e as coberturas do backbone para as 16 ativida
 \par
 O azul representa as ligações de saída da atividade indicada para outros setores de produtos finais. O laranja representa as ligações de entrada, pelas quais emissões de outras atividades são atribuídas aos produtos finais da atividade indicada.
 \par
-No painel A, os graus de saída e de entrada, $k_i^{\mathrm{out}}(B_\alpha)$ e $k_i^{\mathrm{in}}(B_\alpha)$, indicam o número de ligações preservadas em cada direção. Os pontos mostram os graus obtidos com $\alpha=0{,}05$. As barras horizontais abrangem os graus obtidos entre $\alpha=0{,}01$ e $\alpha=0{,}10$ e mostram a sensibilidade do número de ligações ao limiar do filtro.
+No painel A, os graus de saída e de entrada, $k_i^{\mathrm{out}}(B_\alpha)$ e $k_i^{\mathrm{in}}(B_\alpha)$, indicam o número de ligações preservadas em cada direção. Os pontos mostram os graus obtidos com $\alpha=0{,}05$. As barras horizontais abrangem os graus obtidos entre $\alpha=0{,}01$ e $\alpha=0{,}10$ e mostram a sensibilidade do número de ligações ao limiar do filtro; não são intervalos de confiança.
 \par
-No painel B, as coberturas de saída e de entrada, $r_{\alpha,i}^{\mathrm{out}}$ e $r_{\alpha,i}^{\mathrm{in}}$, mostram a porcentagem do volume de emissões de cada atividade e direção preservada no backbone para $\alpha=0{,}05$. Cada cobertura compara a soma dos pesos das ligações selecionadas com a força correspondente na rede completa $W$. Assim, o grau informa quantas ligações permanecem, enquanto a cobertura informa quanto do volume original essas ligações representam.
+No painel B, as coberturas de saída e de entrada, $r_{\alpha,i}^{\mathrm{out}}$ e $r_{\alpha,i}^{\mathrm{in}}$, mostram a porcentagem do volume de emissões de cada atividade e direção preservada no backbone para $\alpha=0{,}05$. Cada cobertura compara a soma dos pesos das ligações selecionadas com a força correspondente na rede completa $W$. Assim, o grau informa quantas ligações permanecem, enquanto a cobertura informa quanto do volume original essas ligações representam. Ambos se referem à seleção; o número efetivo de contrapartes da Figura~\ref{fig:indicadores-resultados} caracteriza a concentração dos pesos na rede completa.
 \par
 Acima da linha horizontal estão as oito atividades com maiores forças de saída em $W$; abaixo estão as oito atividades com maiores forças de entrada em $W$. Em cada grupo, as atividades aparecem em ordem decrescente da força utilizada na seleção. Os rótulos apresentam os códigos do IBGE e os nomes abreviados das atividades.
 \end{notas}
@@ -174,81 +179,103 @@ Acima da linha horizontal estão as oito atividades com maiores forças de saíd
 \begin{landscape}
 \begin{figure}[p]
 \centering
-\caption{Matriz de adjacência do backbone com $\alpha=0{,}05$: (a) presença das arestas.}
+\caption{Emissões de CO\textsubscript{2} nas relações selecionadas pelo filtro de disparidade, $\alpha=0{,}05$, Brasil, 2015.}
 \label{fig:matriz-backbone}
-\includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/matriz_presenca.pdf}
+\includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{figuras/matriz_peso.pdf}
 \begin{notas}
-Nota: Linha: origem emissora; coluna: atividade do produto final. Ordem setorial do IBGE nos dois eixos. Azul identifica as 575 ligações retidas; cinza indica ausência no backbone, inclusive a diagonal. Ausência no backbone não implica valor nulo em $F$ ou $W$. Todas as 67 atividades permanecem nos eixos.
-\end{notas}
-\end{figure}
-\clearpage
-\begin{figure}[p]
-\ContinuedFloat
-\centering
-\caption{Matriz de adjacência do backbone com $\alpha=0{,}05$: (b) pesos das mesmas arestas.}
-\includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/matriz_peso.pdf}
-\begin{notas}
-Nota: Mesma ordem e mesma seleção do painel (a). A cor representa pesos originais em Gg de CO\textsubscript{2}, em escala logarítmica, sem normalização por linha ou coluna. Cinza identifica células sem aresta retida. A cor mede volume absoluto; a concentração é descrita pelos números efetivos em $W$ completa.
+Nota: cada linha identifica uma atividade emissora e cada coluna, o setor de um produto final. Cada célula colorida representa emissões da origem atribuídas ao destino, incluindo requisitos diretos e indiretos da produção nacional para a demanda doméstica e as exportações; emissões estrangeiras são excluídas. O filtro de disparidade retém a relação se ela é selecionada na perspectiva da origem ou do destino, preservando seu peso original na rede completa $W$. São representadas 575 relações, correspondentes a 70,69\% das emissões intersetoriais de $W$.
+\par
+A cor mede o volume atribuído à relação, em Gg de CO\textsubscript{2} (mil toneladas): azul claro indica menores volumes e azul escuro, maiores volumes. A escala é logarítmica; intervalos iguais entre as marcas da barra correspondem a multiplicações por dez. As cores não são normalizadas por linha ou coluna e não medem intensidade emissora ou concentração setorial. Cinza indica ausência no backbone, o que não implica necessariamente atribuição nula em $W$. A diagonal é excluída.
+\par
+Todas as 67 atividades permanecem nos eixos, na ordem do IBGE, com nomes abreviados nas linhas e códigos nas colunas. Os rótulos em negrito destacam as origens energia (3500) e água/resíduos (3680) e o destino construção (4180), examinados nas seções anteriores; não representam outra seleção de relações.
+\par
+Dados: Matriz de Insumo-Produto do IBGE de 2015 e coeficientes de emissão interpolados de \textcite{sanguinetAzzoni2024}.
 \end{notas}
 \end{figure}
 \end{landscape}
 
 \subsection{Importância local nas duas perspectivas da relação}
 
-Os perfis completos mostram como os pesos se distribuem; o filtro acrescenta a avaliação da importância local de cada relação para suas duas extremidades. As cores da Figura~\ref{fig:rede-focos} evidenciam o predomínio de saídas no recorte de energia e de entradas no de construção, mantendo as demais relações do mesmo backbone ao fundo. O motivo da retenção e a cobertura, apresentados na Tabela~\ref{tab:motivos-casos} e nos painéis do \ref{anexo:paineis}, permitem interpretar essa diferença entre as duas vistas.
+A energia aparece como origem destacada na composição das emissões de muitos produtos finais, enquanto a construção constitui um destino destacado para diversas atividades emissoras. Nas saídas de energia, 56 das 62 atribuições retidas são selecionadas apenas pelo teste no destino. Nas entradas de construção, 41 das 45 atribuições retidas são selecionadas apenas pelo teste na origem (Tabela~\ref{tab:motivos-casos}). Esses dois padrões mostram como a importância de uma atividade se manifesta nos perfis de suas contrapartes.
 
 \begin{table}[htbp]
 \centering
-\caption{Motivos de retenção e cobertura nos recortes de energia e construção.}
+\caption{Perspectivas de seleção e cobertura das atribuições de CO\textsubscript{2} em energia e construção, $\alpha=0{,}05$, Brasil, 2015.}
 \label{tab:motivos-casos}
 \small
-\begin{tabular}{@{}lrrrrr@{}}
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}rrrrr@{}}
 \toprule
-Recorte & Arestas & Só saída & Só entrada & Ambos & Cobertura (\%) \\
+\shortstack[l]{Atividade\\e direção} & \shortstack{Relações\\retidas} & \shortstack{Apenas\\na origem} & \shortstack{Apenas\\no destino} & \shortstack{Na origem\\e no destino} & \shortstack{Cobertura\\(\%)} \\
 \midrule
-Energia: entradas & 7 & 1 & 5 & 1 & 42,1 \\
 Energia: saídas & 62 & 0 & 56 & 6 & 99,2 \\
+Energia: entradas & 7 & 1 & 5 & 1 & 42,1 \\
 Construção: entradas & 45 & 41 & 0 & 4 & 91,4 \\
 Construção: saídas & 5 & 4 & 1 & 0 & 57,0 \\
 \bottomrule
-\end{tabular}
+\end{tabular*}
 \begin{notas}
-Nota: $\alpha=0{,}05$. Saída e entrada nas colunas de motivo identificam o teste na origem e no destino da aresta, independentemente da atividade em destaque. Cobertura: peso retido dividido pela força da mesma atividade e direção em $W$. Os recortes compartilham arestas e não devem ser somados para obter totais da rede.
+Nota: uma relação atribui emissões geradas em uma atividade brasileira (origem) aos produtos finais de outra (destino), incluindo requisitos diretos e indiretos para a demanda doméstica e as exportações. Emissões estrangeiras e atribuições aos produtos finais da própria atividade emissora (diagonal) são excluídas. Saídas distribuem emissões próprias entre outros produtos finais; entradas reúnem emissões de outras origens nos produtos finais da atividade indicada.
+\par
+O filtro de disparidade compara a participação de cada relação com uma distribuição aleatória de referência para os pesos de cada atividade e direção. Em $\alpha=0{,}05$, a regra OU preserva a relação se ela é selecionada pelo teste na origem ou no destino. As três colunas de motivos identificam a perspectiva responsável pela seleção, independentemente da direção indicada na linha: em entradas de construção, por exemplo, o teste na origem é aplicado às atividades emissoras. As categorias são exclusivas e somam as relações retidas de cada linha. A cobertura é $100$ vezes o volume das relações retidas dividido pelo volume externo completo de saída ($s_i^{\mathrm{out}}$) ou de entrada ($s_i^{\mathrm{in}}$) da atividade $i$ indicada na linha, antes do filtro. Cada linha contabiliza as atribuições do perfil indicado; uma atribuição compartilhada pode aparecer nas linhas de sua origem e de seu destino. Energia corresponde a energia elétrica, gás natural e outras utilidades (3500); construção tem código IBGE 4180. Percentuais são arredondados após o cálculo.
+\par
+Dados: Matriz de Insumo-Produto do IBGE de 2015 e coeficientes de emissão interpolados de \textcite{sanguinetAzzoni2024}.
 \end{notas}
 \end{table}
 
-Em energia, 56 das 62 saídas retidas passam somente pelo teste de entrada no destino. Energia tem participação destacada na composição externa de muitas demandas finais, embora cada destino possa representar parcela pequena das emissões distribuídas pela origem. Por exemplo, energia $\rightarrow$ alimentação (5600) representa 3,00\% das saídas externas de energia e 4,86\% das entradas externas de alimentação. A relação é selecionada somente na perspectiva do destino, evidenciando a diferença entre a composição recebida por uma atividade e a distribuição das emissões pela outra.
+A Figura~\ref{fig:comparacao-perspectivas} compara as participações das emissões de energia atribuídas aos produtos finais de alimentação e de construção e das emissões de produtos de metal atribuídas à construção. Para alimentação, a atribuição representa 3,00\% das saídas externas de energia e 4,86\% das entradas externas do destino. Alimentação ocupa uma posição abaixo dos cinco maiores destinos de energia apresentados na Tabela~\ref{tab:contrapartes-completas}. Ao examinar as entradas de alimentação, o filtro destaca a contribuição de energia à composição das emissões atribuídas aos produtos finais desse setor.
 
-Em construção, 41 das 45 entradas passam somente pelo teste de saída na origem. Construção representa parcela destacada das atribuições externas dessas origens, mesmo quando a contribuição individual é pequena no total recebido pelo destino. Produtos de metal (2500) $\rightarrow$ construção, por exemplo, corresponde a 32,57\% das saídas externas da origem e a 4,42\% das entradas externas do destino. O filtro retém essa ligação somente pelo teste de saída na origem. Ela identifica uma demanda final que concentra parte expressiva das atribuições externas de produtos de metal, mesmo ocupando uma posição menor na composição recebida por construção.
+Na atribuição de produtos de metal à construção, o destaque ocorre na perspectiva da origem. Produtos de metal responde por 4,42\% das entradas externas de construção e ocupa a quinta posição entre suas origens na Tabela~\ref{tab:contrapartes-completas}. Para produtos de metal, porém, a construção representa 32,57\% das saídas externas. A construção concentra, portanto, quase um terço das emissões que essa atividade atribui a outros produtos finais. A leitura pela origem identifica essa concentração em um destino específico.
 
-As entradas de construção selecionadas pelos dois testes vêm de produtos de minerais não metálicos, energia, água/resíduos e comércio. A relação energia $\rightarrow$ construção, comum aos dois recortes, pesa aproximadamente 2\,263 Gg: 7,23\% das saídas externas de energia e 9,64\% das entradas externas de construção. Sua seleção nas duas extremidades conecta os papéis predominantes dos dois casos.
+Energia e construção também estão associadas por uma atribuição selecionada pelos dois testes. As emissões de energia atribuídas aos produtos finais de construção totalizam aproximadamente 2\,263 Gg, equivalentes a 7,23\% das saídas externas da origem e a 9,64\% das entradas externas do destino. Nesse caso, energia se destaca na composição recebida por construção, e construção se destaca na distribuição das emissões de energia. As quatro primeiras origens externas da construção na Tabela~\ref{tab:contrapartes-completas} --- produtos de minerais não metálicos, energia, água/resíduos e comércio --- apresentam esse destaque nas duas perspectivas.
 
-As saídas de energia e as entradas de construção têm as maiores coberturas dos respectivos recortes (Tabela~\ref{tab:motivos-casos}). Nas direções inversas, as listas curtas não autorizam desprezar as relações omitidas em conjunto. Tampouco a diferença entre 62 saídas de energia e 45 entradas de construção indica concentração distinta: na rede completa, os respectivos números efetivos são próximos, ambos de 20,8 contrapartes.
+\begin{figure}[htbp]
+\centering
+\caption{Emissões de CO\textsubscript{2} de energia atribuídas à alimentação e à construção e de produtos de metal atribuídas à construção: participações nos volumes externos das origens e dos destinos, Brasil, 2015.}
+\label{fig:comparacao-perspectivas}
+\includegraphics[width=\textwidth,keepaspectratio]{figuras/comparacao_perspectivas.pdf}
+\begin{notas}
+Nota: cada par de barras apresenta uma atribuição de emissões da atividade emissora $i$ aos produtos finais da atividade $j$, incluindo requisitos diretos e indiretos da produção nacional para a demanda doméstica e as exportações. A barra azul mostra a parcela das saídas externas da origem associada ao destino, $100W_{ij}/s_i^{\mathrm{out}}$; a barra laranja mostra a contribuição da origem às entradas externas do destino, $100W_{ij}/s_j^{\mathrm{in}}$. As duas medidas utilizam o mesmo volume de emissões, $W_{ij}$, e totais de referência distintos: as saídas completas da origem e as entradas completas do destino. Esses totais excluem a diagonal e abrangem as atribuições anteriores ao filtro. O eixo percentual é linear e comum aos três pares de barras.
+\par
+A indicação sob o título \enquote{Perspectiva de seleção} identifica o teste pelo qual a atribuição é retida no filtro de disparidade, com $\alpha=0{,}05$. O filtro compara as participações observadas a uma distribuição aleatória de referência para cada atividade e direção. A regra OU preserva a atribuição selecionada em pelo menos uma das perspectivas, usando os valores anteriores ao arredondamento. Os exemplos foram escolhidos para apresentar os três casos: seleção apenas no destino, apenas na origem e nas duas perspectivas. Os nomes abreviados correspondem a energia elétrica, gás natural e outras utilidades (3500) e a produtos de metal, exceto máquinas e equipamentos (2500); alimentação e construção têm códigos IBGE 5600 e 4180.
+\par
+Dados: Matriz de Insumo-Produto do IBGE de 2015 e coeficientes de emissão interpolados de \textcite{sanguinetAzzoni2024}.
+\end{notas}
+\end{figure}
 
-A sensibilidade qualifica a leitura desses papéis. Entre $\alpha=0{,}01$ e $0{,}10$, energia mantém de 54 a 64 saídas, com cobertura de 92,12\% a 99,96\%, enquanto construção mantém de 32 a 55 entradas, com cobertura de 74,31\% a 97,76\% (Tabela~\ref{tab:sensibilidade-casos}). Em todos os parâmetros, predomina o teste somente de entrada no destino nas saídas de energia e somente de saída na origem nas entradas de construção. Os cinco maiores destinos de energia permanecem selecionados. Esses resultados sustentam a leitura dos papéis ilustrados dentro da faixa examinada, apesar das mudanças no número de ligações e na cobertura.
+A Figura~\ref{fig:rede-focos} situa energia e construção no mesmo conjunto de atribuições selecionadas. O destaque alternado permite acompanhar as saídas de energia entre os produtos finais e as origens das emissões atribuídas à construção. A ligação entre energia e construção aparece em azul na vista da origem e em laranja na vista do destino. A passagem entre as duas vistas mostra como uma mesma atribuição participa da distribuição das emissões de uma atividade e da composição dos produtos finais de outra.
 
-A permanência de cada relação, contudo, exige verificação própria. Entre as cinco maiores origens de construção, água/resíduos deixa de ser selecionada em $\alpha=0{,}01$, embora represente 6,78\% do perfil externo recebido. Energia $\rightarrow$ construção permanece selecionada pelos dois testes nos três parâmetros. A composição da rede completa e os saldos não mudam com $\alpha$; a instabilidade de uma ligação no backbone delimita sua seleção sob o modelo nulo, sem alterar o volume de sua atribuição.
+A extensão dessas atribuições pode ser lida junto das coberturas da Tabela~\ref{tab:motivos-casos}. O backbone representa quase todo o volume das saídas de energia e a maior parte das entradas de construção. Nas direções inversas, representa 42,1\% das entradas de energia e 57,0\% das saídas de construção. Os perfis completos de saídas de energia e entradas de construção têm concentrações semelhantes, com cerca de 20,8 contrapartes efetivas em ambos, enquanto o filtro retém 62 e 45 atribuições, respectivamente. As coberturas informam o alcance em volume desses conjuntos selecionados, e os números efetivos caracterizam a concentração dos perfis completos.
 
+O predomínio da seleção pelo destino nas saídas de energia e pela origem nas entradas de construção permanece nos três limiares examinados. Entre $\alpha=0{,}01$ e $0{,}10$, o backbone retém de 54 a 64 saídas de energia, com cobertura de 92,12\% a 99,96\%, e de 32 a 55 entradas de construção, com cobertura de 74,31\% a 97,76\% (Tabela~\ref{tab:sensibilidade-casos}). Os cinco maiores destinos de energia permanecem selecionados. A estabilidade desse padrão refere-se à perspectiva que sustenta a maior parte das atribuições retidas em cada perfil.
 
+A composição dos conjuntos selecionados varia com o limiar. Água/resíduos, uma das cinco maiores origens externas da construção, deixa de ser selecionada em $\alpha=0{,}01$, embora represente 6,78\% das entradas externas do setor. Energia $\rightarrow$ construção permanece selecionada pelos dois testes nos três limiares. As atribuições completas e os saldos contábeis são os mesmos nas três seleções; cada limiar define quais atribuições ficam representadas no backbone. Nessa faixa, a permanência dos padrões de seleção de energia e construção convive com mudanças na presença de atribuições específicas.
 
 \clearpage
 \begin{figure}[p]
 \centering
-\caption{Duas perspectivas do mesmo backbone: (a) destaque para energia (3500).}
+\caption{Rede de atribuição de emissões de CO\textsubscript{2}: (a) entradas e saídas de energia (3500), $\alpha=0{,}05$, Brasil, 2015.}
 \label{fig:rede-focos}
 \includegraphics[width=\textwidth,height=0.76\textheight,keepaspectratio]{figuras/rede_foco_3500.pdf}
 \begin{notas}
-Nota: Cada vista mantém 67 nós e 575 arestas em $\alpha=0{,}05$. Azul: saídas do destaque; laranja: entradas; cinza: demais arestas. Energia tem 62 saídas e sete entradas, com cobertura de 99,2\% e 42,1\% do volume externo de cada direção. Área dos nós uniforme; espessura cresce com a raiz quadrada do peso. Posição definida pelo sinal de $u-c$ e pela ordem IBGE: 33 nós com $c>u$ à esquerda, 33 com $u>c$ à direita e o isolado abaixo. A disposição não resulta de centralidade ou comunidade.
+Nota: os 67 nós representam atividades da MIP; cada seta atribui emissões geradas em uma atividade aos produtos finais de outra, incluindo requisitos diretos e indiretos da produção nacional. A figura apresenta as 575 atribuições retidas pelo filtro de disparidade em $\alpha=0{,}05$, equivalentes a 70,69\% das emissões intersetoriais da rede completa, para demanda doméstica e exportações. A diagonal é excluída. Azul destaca as saídas de energia; laranja, suas entradas; cinza, as demais atribuições retidas. Energia tem 62 saídas e sete entradas, que representam 99,2\% e 42,1\% dos respectivos volumes completos.
+\par
+Os códigos identificam as atividades do IBGE. A área dos nós é uniforme e a espessura das setas cresce com a raiz quadrada do volume de emissões. As posições seguem a ordem do IBGE em dois grupos: à esquerda, 33 atividades cujas emissões pela produção superam as atribuídas pela demanda; à direita, 33 com a relação inversa. Serviços domésticos (9700) é o nó isolado, abaixo dos grupos. Energia corresponde a energia elétrica, gás natural e outras utilidades.
+\par
+Dados: Matriz de Insumo-Produto do IBGE de 2015 e coeficientes de emissão interpolados de \textcite{sanguinetAzzoni2024}.
 \end{notas}
 \end{figure}
 \clearpage
 \begin{figure}[p]
 \ContinuedFloat
 \centering
-\caption{Duas perspectivas do mesmo backbone: (b) destaque para construção (4180).}
+\caption{Rede de atribuição de emissões de CO\textsubscript{2}: (b) entradas e saídas de construção (4180), $\alpha=0{,}05$, Brasil, 2015.}
 \includegraphics[width=\textwidth,height=0.76\textheight,keepaspectratio]{figuras/rede_foco_4180.pdf}
 \begin{notas}
-Nota: Mesmos nós, arestas, posições e escala de espessura do painel (a). Construção tem cinco saídas e 45 entradas, com cobertura de 57,0\% e 91,4\%. Cores representam direção em relação ao destaque, não motivo de retenção. As duas vistas preservam 70,69\% do peso intersetorial de $W$. Cruzamentos e proximidade não representam trajetórias ou distâncias econômicas; relações individuais podem ser consultadas na matriz e nos painéis do anexo.
+Nota: os 67 nós representam atividades da MIP; cada seta atribui emissões geradas em uma atividade aos produtos finais de outra, incluindo requisitos diretos e indiretos da produção nacional. A figura apresenta as 575 atribuições retidas pelo filtro de disparidade em $\alpha=0{,}05$, equivalentes a 70,69\% das emissões intersetoriais da rede completa, para demanda doméstica e exportações. A diagonal é excluída. Azul destaca as saídas de construção; laranja, suas entradas; cinza, as demais atribuições retidas. Construção tem cinco saídas e 45 entradas, que representam 57,0\% e 91,4\% dos respectivos volumes completos.
+\par
+Os códigos identificam as atividades do IBGE. A área dos nós é uniforme e a espessura das setas cresce com a raiz quadrada do volume de emissões, na mesma escala da vista de energia. As posições seguem a ordem do IBGE em dois grupos: à esquerda, 33 atividades cujas emissões pela produção superam as atribuídas pela demanda; à direita, 33 com a relação inversa. Serviços domésticos (9700) é o nó isolado, abaixo dos grupos. As posições e as atribuições são as mesmas da vista de energia; o realce identifica os dois sentidos em relação à construção.
+\par
+Dados: Matriz de Insumo-Produto do IBGE de 2015 e coeficientes de emissão interpolados de \textcite{sanguinetAzzoni2024}.
 \end{notas}
 \end{figure}
 \clearpage

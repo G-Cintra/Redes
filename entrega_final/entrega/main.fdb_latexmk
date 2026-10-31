@@ -1,12 +1,13 @@
 # Fdb version 4
-["biber main"] 1793388801.26951 "main.bcf" "main.bbl" "main" 1793389374.33356 0
-  "main.bcf" 1793389374 117262 ebeeabcaa4c825640126fff3328bbf87 "pdflatex"
+["biber main"] 1793404434.30753 "main.bcf" "main.bbl" "main" 1793404439.16444 0
+  "main.bcf" 1793404438 118296 2920f9bfa3c3a68348606060fb174887 "pdflatex"
   "references.bib" 1793186128 4384 d0c49761b7b61528e74437d82638cd98 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1793389372.59549 "main.tex" "main.pdf" "main" 1793389374.33408 0
+["pdflatex"] 1793404437.47894 "c:/GitHub/Redes-1/entrega_final/entrega/main.tex" "main.pdf" "main" 1793404439.16498 0
+  "c:/GitHub/Redes-1/entrega_final/entrega/main.tex" 1793404430 12559 562ef2acce282523f7cc9683e8fe5250 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1746734381 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1754949852 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx0800.tfm" 1746735252 3584 269b66e921ba58750c12f7f1c8ea3ebd ""
@@ -187,23 +188,23 @@
   "figuras/anexo_energia_1.pdf" 1792369120 32535 9e6e66c68550f4ca23d2582f686a2657 ""
   "figuras/anexo_energia_2.pdf" 1792369120 30810 3c337a737f30ccda12f1940fd62a3f90 ""
   "figuras/atribuicao_cadeia_alimentos.pdf" 1792260479 29313 06ee4cb33c7c2da239c613ce9431b4e6 ""
+  "figuras/comparacao_perspectivas.pdf" 1793396666 19317 1a3039eef110744f6ad1f65b60a65614 ""
   "figuras/indicadores_backbone.pdf" 1793388013 39762 bb71706cb9c083111ca6c504eed5c32f ""
   "figuras/indicadores_rede_completa.pdf" 1793388013 36488 f76eff1e2d848ff470bb243406707935 ""
-  "figuras/matriz_peso.pdf" 1792369119 37166 538616ad49f66c514dd5f1b25584cc12 ""
-  "figuras/matriz_presenca.pdf" 1792369118 32496 7d3d28a8534c2378488865567bfe8a2c ""
+  "figuras/matriz_peso.pdf" 1793392318 46644 14824d7339158dbd66f54522df7763bb ""
   "figuras/rede_foco_3500.pdf" 1792369120 69108 308b7f2c4dcd26f0def68e1394c1b025 ""
   "figuras/rede_foco_4180.pdf" 1792369120 69179 72a36b4003487d46130272cf495ed2fb ""
-  "main.aux" 1793389374 15078 9e73d07330d3a65aea5a191aeea1d9f8 "pdflatex"
-  "main.bbl" 1793388802 24107 f004ea901757a1757911b78f6e3e5fe0 "biber main"
-  "main.out" 1793389374 3907 54ac8f513d89560b7fcd585ce5e7e0b8 "pdflatex"
-  "main.run.xml" 1793389374 2443 a49a189cf1ea4291a154e0230aad86b8 "pdflatex"
-  "main.tex" 1793388013 12759 29823c3adb01c03f04b6002a895c5511 ""
+  "main.aux" 1793404438 17045 763c8dcc3da748d3b9586fd190e341b0 "pdflatex"
+  "main.bbl" 1793404435 24107 f004ea901757a1757911b78f6e3e5fe0 "biber main"
+  "main.out" 1793404438 3907 54ac8f513d89560b7fcd585ce5e7e0b8 "pdflatex"
+  "main.run.xml" 1793404438 2443 a49a189cf1ea4291a154e0230aad86b8 "pdflatex"
+  "main.tex" 1793404430 12559 562ef2acce282523f7cc9683e8fe5250 ""
   "secoes/apendices.tex" 1793388013 5789 2c6b7e3b7ec03d595b87afb012c247c7 ""
   "secoes/introducao.tex" 1793275842 4001 abea29b1bf5abcb58f933c399d2d8089 ""
   "secoes/metodologia_dados.tex" 1793285425 826 1ef05dff39b0d7dbc05ac88290c910bf ""
   "secoes/metodologia_modelo.tex" 1793388013 3599 decca1d36a3d4878107459461842c03a ""
   "secoes/metodologia_rede.tex" 1793368416 9647 81c9c0dbe0e801760375f23e922ff8f7 ""
-  "secoes/resultados.tex" 1793389372 28215 2d873f54838c9a40af2d5f05ba0cba6e ""
+  "secoes/resultados.tex" 1793397619 38858 3fa875d1e3f776c1d100678e4af13060 ""
   (generated)
   "main.aux"
   "main.bcf"

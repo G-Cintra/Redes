@@ -1,0 +1,63 @@
+Python      3.12.10
+NumPy         2.5.3
+pandas        3.0.5
+NetworkX      3.6.1
+Name: versao, dtype: str
+SHA-256 verificado: Matriz_de_Insumo_Produto_2015_Nivel_67.xls.original
+SHA-256 verificado: coeficientes_co2_sanguinet_azzoni_2011.csv
+SHA-256 verificado: coeficientes_co2_sanguinet_azzoni_2018.csv
+Elementos negativos em A publicados pelo IBGE: 1 (preservados).
+Forças, graus, densidade, perfis e limites de concentração: verificações concluídas.
+Atividades sem volume intersetorial em pelo menos uma direção (NaN na concentração correspondente):
+Maior volume de emissões próprias atribuído a outras atividades:
+Maior volume de emissões de outras atividades atribuído aos produtos finais:
+Intervalos dos números efetivos em perfis definidos:
+A densidade é 97.01%. Os graus de saída positivos são [65] e os de entrada positivos são [65]. Grau e densidade, por si sós, pouco distinguem esses perfis.
+Energia elétrica, gás natural e outras utilidades: saída externa de 31,317.04 Gg, grau 65 e 20.79 destinos efetivos.
+Água, esgoto e gestão de resíduos: saída externa de 31,229.96 Gg, grau 65 e 9.88 destinos efetivos.
+Essa comparação distingue concentração de volume: D2 menor significa maior concentração, sem medir a identidade dos destinos, que deve ser consultada nas participações.
+Um perfil externo nulo não implica emissão própria zero: a diagonal pode conter toda a conta. Nesse caso, concentração externa é indefinida e não igual a zero.
+Todos esses resultados descrevem o cenário exploratório; não constituem ranking ambiental validado.
+Seleção, nós, direção, pesos e preservação das matrizes originais: validados.
+Cobertura por atividade no alfa de referência: distribuição entre perfis definidos
+Oito menores coberturas de saida, excluindo perfis indefinidos:
+Oito menores coberturas de entrada, excluindo perfis indefinidos:
+Nós isolados no backbone de referência:
+Maiores ganhos de cobertura de saida, de alfa 0,01 para 0,10:
+Maiores ganhos de cobertura de entrada, de alfa 0,01 para 0,10:
+Cinco novas ligações de maior peso: alfa 0.01 para 0.05
+Cinco novas ligações de maior peso: alfa 0.05 para 0.1
+No alfa 0.05, retêm-se 575 das 4290 arestas (13.40%) e 70.69% do peso externo de W.
+Cobertura de saida: mínimo 32.96%, mediana 59.32% e máximo 99.23%, em 66 perfis definidos.
+Cobertura de entrada: mínimo 33.79%, mediana 55.69% e máximo 96.54%, em 66 perfis definidos.
+No alfa de referência, há 1 isolado(s) e 2 componentes fracos; o maior reúne 66 nós.
+Novos isolados em relação a G: []. A ausência de novos isolados não garante boa cobertura de cada perfil.
+Alfa 0.01: 338 arestas; 57.39% do peso externo retido.
+Alfa 0.05: 575 arestas; 70.69% do peso externo retido.
+Alfa 0.10: 755 arestas; 77.35% do peso externo retido.
+Mudanças de posto em relação ao alfa 0,05 (mediana e máximo):
+A redução de arestas preserva uma parcela relevante do peso, mas perde frações substanciais de vários perfis. A variação entre alfas deve acompanhar qualquer interpretação de conectividade; a estabilidade por construção dos conjuntos não demonstra estabilidade dos postos.
+Os motivos de retenção estão separados na tabela de seleção. A convenção de grau um foi usada em 0 ligação(ões) no alfa de referência.
+Não há inferência de causalidade ou prioridade de mitigação. As contas e a concentração originais permanecem em F e W; a visualização é apresentada na seção seguinte.
+                    peso_Gg  participacao_saida  participacao_entrada   cauda_saida  cauda_entrada   motivo motivo_0.01 motivo_0.10
+origem destino                                                                                                                     
+3500   5600      939.980346            0.030015              0.048645  1.422204e-01       0.041109  entrada  nao_retida     entrada
+2500   4180     1037.095166            0.325653              0.044162  1.118243e-11       0.055538    saida       saida       ambas
+3500   4180     2262.950752            0.072259              0.096362  8.228108e-03       0.001526    ambas       ambas       ambas
+                        arestas_retidas  cobertura_pct  so_saida  so_entrada  ambas  convencao  cinco_maiores_retidas
+atividade sentido alfa                                                                                               
+3500      saida   0.01               54      92.118547         0          51      3          0                      5
+                  0.05               62      99.227837         0          56      6          0                      5
+                  0.10               64      99.961679         0          58      6          0                      5
+3680      saida   0.01               29      74.851593         0          27      2          0                      4
+                  0.05               49      92.976379         0          44      5          0                      5
+                  0.10               57      97.242830         0          50      7          0                      5
+4180      entrada 0.01               32      74.306834        30           0      2          0                      4
+                  0.05               45      91.377017        41           0      4          0                      5
+                  0.10               55      97.761169        48           0      7          0                      5
+3500      entrada 0.01                4      25.771446         2           2      0          0                      3
+                  0.05                7      42.141585         1           5      1          0                      5
+                  0.10               12      61.935852         1           9      2          0                      5
+4180      saida   0.01                4      51.608422         3           1      0          0                      4
+                  0.05                5      56.956809         4           1      0          0                      5
+                  0.10                7      64.290641         5           0      2          0                      5

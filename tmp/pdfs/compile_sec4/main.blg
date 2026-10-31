@@ -1,0 +1,15 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'C:/GitHub/Redes-1/tmp/pdfs/compile_sec4/main.blg'
+[57] biber-MSWIN64:342> INFO - === 
+[78] Biber.pm:421> INFO - Reading 'C:/GitHub/Redes-1/tmp/pdfs/compile_sec4/main.bcf'
+[141] Biber.pm:1002> INFO - Found 12 citekeys in bib section 0
+[149] Biber.pm:4487> INFO - Processing section 0
+[155] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[181] bibtex.pm:1713> INFO - LaTeX decoding ...
+[189] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[252] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[252] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[252] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
+[252] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[261] bbl.pm:676> INFO - Writing 'C:/GitHub/Redes-1/tmp/pdfs/compile_sec4/main.bbl' with encoding 'UTF-8'
+[266] bbl.pm:779> INFO - Output to C:/GitHub/Redes-1/tmp/pdfs/compile_sec4/main.bbl
